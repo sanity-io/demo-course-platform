@@ -1,0 +1,51 @@
+{
+  "root": true,
+  "api": {
+    "projectId": "6h1mv88x",
+    "dataset": "production"
+  },
+  "project": {
+    "name": "Course Platform"
+  },
+  "plugins": [
+    "@sanity/base",
+    "@sanity/default-layout",
+    "@sanity/default-login",
+    "@sanity/desk-tool",
+    "@sanity/document-internationalization",
+    "@sanity/code-input"
+  ],
+  "env": {
+    "development": {
+      "plugins": [
+        "@sanity/vision"
+      ]
+    }
+  },
+  "parts": [
+    {
+      "name": "part:@sanity/base/schema",
+      "path": "./src/schema"
+    },
+    {
+      "name": "part:@sanity/desk-tool/structure",
+      "path": "./src/desk-structure"
+    },
+    {
+      "implements": "part:@sanity/base/document-actions/resolver",
+      "path": "./src/document-actions"
+    },
+    {
+      "name": "part:@sanity/base/initial-value-templates",
+      "path": "./src/initial-value-templates"
+    },
+    {
+      "implements": "part:@sanity/base/theme/variables/override-style",
+      "path": "./src/styles/styles.css"
+    },
+    {
+      "implements": "part:@sanity/base/brand-logo",
+      "path": "./src/components/Logo.js"
+    }
+  ]
+}
