@@ -2,4 +2,5 @@ dist
 public
 node_modules
 .env.*
+!.env.template
 webpack.sanity.js
