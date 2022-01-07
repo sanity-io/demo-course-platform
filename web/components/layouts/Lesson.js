@@ -27,9 +27,10 @@ export default function Lesson({data}) {
     versions.find((lesson) => lesson.title === title)
   )
   const translations = lessonPaths[currentLessonIndex]
-  const nextLesson = lessonPaths[currentLessonIndex + 1].find(
-    (lesson) => lesson.language === locale
-  )
+  const nextLesson =
+    currentLessonIndex + 1 === lessonPaths.length
+      ? null
+      : lessonPaths[currentLessonIndex + 1].find((lesson) => lesson.language === locale)
 
   const presentersString = presenters
     .map((presenter) => [presenter.name, presenter.title].join(', '))
