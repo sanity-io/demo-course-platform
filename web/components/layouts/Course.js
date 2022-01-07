@@ -44,12 +44,12 @@ export default function Course({data}) {
     <Layout translations={translations}>
       <div className="relative">
         <section className="bg-gradient-to-r mix-blend-multiply from-cyan-100 via-transparent to-transparent pt-16">
-          <div className="container mx-auto py-8 p-4 md:px-0 md:py-8 xl:py-16 flex flex-col justify-start items-start gap-2 md:gap-4 xl:gap-8">
+          <div className="container mx-auto py-8 p-4 md:p-8 xl:p-16 flex flex-col justify-start items-start gap-2 md:gap-4 xl:gap-8">
             <Title subtitle={summary}>{localeTitle}</Title>
           </div>
         </section>
 
-        <div className="p-4 md:px-0 md:py-8 xl:py-16 container mx-auto">
+        <div className="p-4 md:p-8 xl:p-16 container mx-auto">
           <LessonLinks lessons={lessonPaths} />
         </div>
       </div>

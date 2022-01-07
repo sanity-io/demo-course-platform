@@ -1,4 +1,4 @@
-import {FiUser} from 'react-icons/fi'
+import {FiUser, FiGlobe, FiUsers} from 'react-icons/fi'
 
 import {i18n} from '../../../../languages'
 
@@ -7,32 +7,40 @@ export default {
   title: 'Presenter',
   icon: FiUser,
   type: 'document',
+  groups: [
+    {
+      name: 'common',
+      title: 'Common',
+      icon: FiUsers,
+      default: true,
+    },
+    {
+      name: 'i18n',
+      title: 'Localised',
+      icon: FiGlobe,
+    },
+  ],
   fields: [
     {
       name: 'name',
       title: 'Name',
+      group: 'common',
       type: 'string',
     },
     {
       name: 'title',
-      title: 'Title',
-      type: 'object',
-      fieldsets: [
-        {
-          title: 'Translations',
-          name: 'translations',
-          options: {collapsible: true},
-        },
-      ],
-      fields: i18n.languages.map((lang) => ({
-        ...lang,
-        type: 'string',
-        fieldset: lang.isDefault ? null : 'translations',
-      })),
+      type: 'googleTranslateString',
     },
     {
-      name: 'image',
-      title: 'Image',
+      name: 'biography',
+      title: 'Biography',
+      group: 'i18n',
+      type: 'localizedText',
+    },
+    {
+      name: 'photo',
+      title: 'Photo',
+      group: 'common',
       type: 'image',
     },
   ],
@@ -40,7 +48,7 @@ export default {
     select: {
       title: 'name',
       subtitle: 'title.en_US',
-      media: 'image',
+      media: 'photo',
     },
   },
 }

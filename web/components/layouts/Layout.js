@@ -11,7 +11,7 @@ export default function Layout({translations, children}) {
       <Meta translations={translations} />
 
       <header className="bg-cyan-100/50 border-b border-cyan-50 text-cyan-900 font-bold fixed top-0 w-screen h-header flex items-center backdrop-blur z-20">
-        <div className="container mx-auto flex items-center justify-between px-4 md:px-0">
+        <div className="container mx-auto flex items-center justify-between px-4 md:px-8 xl:p-16">
           <h1 className="mr-auto">
             <Link href="/">
               <a className="block transition-colors duration-200 font-display font-bold group relative z-0">

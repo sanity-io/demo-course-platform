@@ -1,16 +1,20 @@
-import {localizeInput} from 'sanity-plugin-google-translate'
-import {googleTranslateLanguages} from '../../../../languages'
+import {i18n} from '../../../../languages'
 
-const localizedString = localizeInput({
+export default {
   name: 'localizedString',
-  type: {
-    type: 'string',
-  },
   title: 'Localized String',
-  languages: googleTranslateLanguages,
-  isCollapsible: false,
-  isCollapsed: false,
-  apiKey: process.env.SANITY_STUDIO_GOOGLE_TRANSLATE_API_KEY,
-})
-
-export default localizedString
+  type: 'object',
+  fieldsets: [
+    {
+      title: 'Translations',
+      name: 'translations',
+      options: {collapsible: true, collapsed: false},
+    },
+  ],
+  fields: i18n.languages.map((lang) => ({
+    name: lang.id,
+    title: lang.title,
+    type: 'string',
+    fieldset: lang.isDefault ? null : 'translations',
+  })),
+}

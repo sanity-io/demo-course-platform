@@ -30,7 +30,7 @@ const courseQueryData = groq`
 
     // "course" documents have an array of "presenter" references
     presenters[]->{
-      ...,
+      name,
       "title": title[$language],
     }
 `
@@ -45,9 +45,9 @@ export const lessonQuery = groq`*[_type == "lesson" && slug.current == $slug][0]
 
     // ...and get this lesson's course
     // Either by the _id of this document, or the _ref to the lesson's base language version
-    "course": *[_type == "course" && (references(^._id) || references(^.__18n_base._ref))][0]{
+    "course": *[_type == "course" && (references(^._id) || references(^.__i18n_base._ref))][0]{
       ${courseQueryData}
     }
 }`
 
-export const homeQuery = groq`*[_type == "course"]`
+export const homeQuery = groq`*[_type == "course" && !(_id in path('drafts.*'))]`

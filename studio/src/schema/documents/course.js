@@ -1,4 +1,4 @@
-import {FiBook} from 'react-icons/fi'
+import {FiAward, FiBook, FiGlobe, FiUsers} from 'react-icons/fi'
 
 import {i18n} from '../../../../languages'
 
@@ -7,45 +7,38 @@ export default {
   title: 'Course',
   icon: FiBook,
   type: 'document',
-  fields: [
+  groups: [
     {
-      name: 'title',
-      title: 'Title',
-      type: 'object',
-      fieldsets: [
-        {
-          title: 'Translations',
-          name: 'translations',
-          options: {collapsible: true},
-        },
-      ],
-      fields: i18n.languages.map((lang) => ({
-        ...lang,
-        type: 'string',
-        fieldset: lang.isDefault ? null : 'translations',
-      })),
-    },
-    {
-      name: 'slug',
-      title: 'Slug',
-      type: 'object',
-      fieldsets: [
-        {
-          title: 'Translations',
-          name: 'translations',
-          options: {collapsible: true},
-        },
-      ],
-      fields: i18n.languages.map((lang) => ({
-        ...lang,
-        type: 'slug',
-        fieldset: lang.isDefault ? null : 'translations',
-        options: {source: `title.${lang.name}`},
-      })),
+      name: 'i18n',
+      title: 'Localised',
+      icon: FiGlobe,
+      default: true,
     },
     {
       name: 'presenters',
       title: 'Presenters',
+      icon: FiUsers,
+    },
+    {
+      name: 'lessons',
+      title: 'Lessons',
+      icon: FiAward,
+    },
+  ],
+  fields: [
+    {
+      name: 'title',
+      type: 'localizedString',
+      group: 'i18n',
+    },
+    {
+      name: 'slug',
+      type: 'localizedSlug',
+      group: 'i18n',
+    },
+    {
+      name: 'presenters',
+      group: 'presenters',
       type: 'array',
       of: [
         {
@@ -58,7 +51,7 @@ export default {
     },
     {
       name: 'lessons',
-      title: 'Lessons',
+      group: 'lessons',
       type: 'array',
       of: [
         {
@@ -66,12 +59,12 @@ export default {
           title: 'Lesson',
           type: 'reference',
           to: [{type: 'lesson'}],
+          options: {
+            filter: '__i18n_lang == $base',
+            filterParams: {base: i18n.base},
+          },
         },
       ],
-      options: {
-        filter: '__i18n_lang == $base',
-        filterParams: {base: i18n.base},
-      },
       validation: (Rule) => [Rule.required().min(1), Rule.unique()],
     },
   ],

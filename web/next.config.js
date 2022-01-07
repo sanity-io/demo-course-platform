@@ -5,7 +5,7 @@ module.exports = {
     domains: [`cdn.sanity.io`],
   },
   i18n: {
-    locales: i18n.languages.map((item) => item.name),
+    locales: i18n.languages.map((item) => item.id),
     defaultLocale: i18n.base,
   },
   eslint: {

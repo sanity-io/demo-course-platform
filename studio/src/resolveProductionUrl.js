@@ -26,12 +26,12 @@ export default async function resolveProductionUrl(doc, returnProd = false) {
 
     // We may need to get the base language's slug
     if (doc.__i18n_lang !== i18n.base) {
-      if (!doc?.__18n_base?._ref) {
+      if (!doc?.__i18n_base?._ref) {
         throw new Error(`Lesson ${doc._id} has no slug in base language`)
       }
 
       baseSlug = await client.fetch(`*[_id == $baseId][0].slug.current`, {
-        baseId: doc.__18n_base._ref,
+        baseId: doc.__i18n_base._ref,
       })
     }
 

@@ -10,26 +10,22 @@
     "start": "sanity start",
     "build": "sanity build",
     "lint": "eslint .",
-    "lint:fix": "eslint . --fix",
-    "postinstall": "husky install"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run lint:fix"
-    }
+    "lint:fix": "eslint . --fix"
   },
   "keywords": [
     "sanity"
   ],
   "dependencies": {
     "@heroicons/react": "^1.0.5",
-    "@sanity/base": "^2.23.2",
-    "@sanity/code-input": "^2.23.2",
+    "@sanity/base": "^2.23.3",
+    "@sanity/code-input": "^2.23.3",
     "@sanity/core": "^2.23.2",
-    "@sanity/default-layout": "^2.23.2",
+    "@sanity/default-layout": "^2.23.3",
     "@sanity/default-login": "^2.23.2",
-    "@sanity/desk-tool": "^2.23.2",
-    "@sanity/vision": "^2.23.2",
+    "@sanity/desk-tool": "^2.23.4",
+    "@sanity/document-internationalization": "^0.0.1-beta.1",
+    "@sanity/language-filter": "^2.23.2",
+    "@sanity/vision": "^2.23.3",
     "@typescript-eslint/parser": "^4.33.0",
     "prop-types": "^15.7",
     "react": "^17.0",
@@ -55,7 +51,6 @@
     "eslint-plugin-prettier": "^3.1.1",
     "eslint-plugin-react": "^7.20.6",
     "eslint-plugin-react-hooks": "^4.1.2",
-    "husky": "^5.0.9",
     "prettier": "^2.3.0"
   }
 }

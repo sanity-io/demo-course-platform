@@ -1,3 +1,31 @@
 @tailwind base;
 @tailwind components;
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: theme("spacing.20");
+  overflow: auto;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  -webkit-text-size-adjust: 100%;
+  -ms-font-feature-settings: "kern" 1;
+  font-feature-settings: "kern";
+}
+
+pre[class*="language-"] {
+  @apply py-4 px-4 border-t border-b border-blue-100 text-xs;
+
+  overflow: auto;
+}
+
+@screen md {
+  pre[class*="language-"] {
+    @apply border rounded text-sm;
+  }
+}
+
 @tailwind utilities;

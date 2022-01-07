@@ -38,10 +38,13 @@ export default function ProseableText({blocks = []}) {
   if (!blockGroups?.length) return null
 
   return (
-    <div className="grid grid-cols-1 gap-4 md:gap-8 xl:gap-16">
+    <div className="grid grid-cols-1 gap-4 md:gap-8">
       {blockGroups.map((group) =>
         group[0]._type === 'block' ? (
-          <div key={group[0]._key} className="prose prose-cyan md:prose-lg lg:prose-xl w-full">
+          <div
+            key={group[0]._key}
+            className="prose prose-slate md:prose-lg lg:prose-xl w-full prose-h2:text-cyan-800 prose-h3:text-cyan-700 prose-a:text-cyan-500 prose-a:transition-colors prose-a:duration-200 hover:prose-a:text-pink-500 prose-code:text-pink-700 prose-h2:font-display prose-h3:font-display"
+          >
             <PortableText blocks={group} />
           </div>
         ) : (

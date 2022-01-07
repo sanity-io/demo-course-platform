@@ -9,6 +9,10 @@ import presenter from './documents/presenter'
 
 import seo from './objects/seo'
 import localizedString from './objects/localizedString'
+import localizedText from './objects/localizedText'
+import localizedSlug from './objects/localizedSlug'
+import callout from './objects/callout'
+import googleTranslateString from './objects/googleTranslateString'
 
 export default createSchema({
   name: 'default',
@@ -22,6 +26,10 @@ export default createSchema({
 
     // objects
     seo,
+    callout,
     localizedString,
+    localizedText,
+    localizedSlug,
+    googleTranslateString,
   ]),
 })
