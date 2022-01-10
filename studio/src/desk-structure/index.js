@@ -16,15 +16,15 @@ export const getDefaultDocumentNode = ({schemaType}) => {
 }
 
 const items = [
-  {
-    ...Structure.getFilteredDocumentTypeListItems().find((item) => item.id === 'lesson'),
-    id: 'pluginLessons',
-    title: 'Lessons (Plugin)',
-  },
+  // {
+  //   ...Structure.getFilteredDocumentTypeListItems().find((item) => item.id === 'lesson'),
+  //   id: 'pluginLessons',
+  //   title: 'Lessons (Plugin)',
+  // },
   // S.documentTypeListItem('lesson').title('Lessons All'),
   // Document-level translations
   S.listItem()
-    .title('Lessons (Custom)')
+    .title('Lessons')
     .icon(FiAward)
     .child(
       S.documentList()
