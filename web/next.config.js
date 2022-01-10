@@ -1,4 +1,4 @@
-const {i18n} = require('./languages')
+const {i18n} = require('../languages')
 
 module.exports = {
   images: {
