@@ -12,7 +12,7 @@ import Blobs from '../Blobs'
 import Layout from './Layout'
 
 export default function Lesson({data}) {
-  const {title, summary, content, course} = data
+  const {title, summary, content, course, labels} = data
   const {lessons, presenters} = course ?? {}
   const {locale} = useRouter()
 
@@ -36,6 +36,8 @@ export default function Lesson({data}) {
   const presentersString = presenters
     .map((presenter) => [presenter.name, presenter.title].join(', '))
     .join(', ')
+
+  const completeString = labels.find(({key}) => key === 'lesson.continue')?.text
 
   return (
     <Layout translations={translations}>
@@ -72,7 +74,7 @@ export default function Lesson({data}) {
                 <div className="flex items-center justify-between my-8">
                   <Button href={nextLesson.path} Icon={CheckIcon}>
                     <>
-                      Complete
+                      {completeString}
                       <span className="sr-only">
                         #{currentLessonIndex + 2} {nextLesson.title}
                       </span>

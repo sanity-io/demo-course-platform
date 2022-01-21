@@ -35,10 +35,13 @@ export default {
               subtitle: 'key',
             },
             prepare({text, subtitle}) {
-              const title = Object.keys(text)
-                .filter((key) => key !== '_type')
-                .map((lang) => text[lang])
-                .join(', ')
+              const title =
+                text && Object.keys(text).filter((key) => key !== '_type').length
+                  ? Object.keys(text)
+                      .filter((key) => key !== '_type')
+                      .map((lang) => text[lang])
+                      .join(', ')
+                  : `[No translated text strings]`
 
               return {
                 title,
