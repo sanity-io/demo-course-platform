@@ -1,3 +1,5 @@
+import GoogleTranslateInput from 'sanity-plugin-google-translate'
+
 import {i18n} from '../../../../languages'
 
 export default {
@@ -18,4 +20,8 @@ export default {
     fieldset: lang.isDefault ? null : 'translations',
     rows: 3,
   })),
+  inputComponent: GoogleTranslateInput,
+  options: {
+    apiKey: process.env.SANITY_STUDIO_GOOGLE_TRANSLATE_API_KEY,
+  },
 }

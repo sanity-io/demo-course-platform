@@ -12,7 +12,7 @@ import localizedString from './objects/localizedString'
 import localizedText from './objects/localizedText'
 import localizedSlug from './objects/localizedSlug'
 import callout from './objects/callout'
-import googleTranslateString from './objects/googleTranslateString'
+import localizedGoogleTranslateString from './objects/localizedGoogleTranslateString'
 
 export default createSchema({
   name: 'default',
@@ -30,6 +30,6 @@ export default createSchema({
     localizedString,
     localizedText,
     localizedSlug,
-    googleTranslateString,
+    localizedGoogleTranslateString,
   ]),
 })

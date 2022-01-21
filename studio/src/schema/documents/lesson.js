@@ -79,6 +79,7 @@ export default {
         {type: 'code'},
         {type: 'callout'},
       ],
+      localize: false,
     },
   ],
   preview: {

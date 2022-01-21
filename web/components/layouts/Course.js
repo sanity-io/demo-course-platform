@@ -10,11 +10,11 @@ import Blobs from '../Blobs'
 import Layout from './Layout'
 
 export default function Course({data}) {
-  const {title, slug, presenters, lessons} = data ?? {}
+  const {title, slug, presenters, lessons, labels} = data ?? {}
   const {locale} = useRouter()
 
   // Render the localized title, if it exists, otherwise fallback to base
-  const localeTitle = title[locale] ?? title[i18n.base]
+  const localeTitle = title ? title[locale] ?? title[i18n.base] : null
 
   // "course" documents have a field-level translated slug field
   // From this object we can create an array of all paths for this course
@@ -38,7 +38,10 @@ export default function Course({data}) {
   // Each document has a unique slug and are related by an
   // array of references stored in the field "__i18n_refs"
   const lessonPaths = useMemo(() => createLessonLinks(lessons, slug), [lessons, slug])
-  const summary = useMemo(() => createCourseSummary(lessons, presenters), [lessons, presenters])
+  const summary = useMemo(
+    () => createCourseSummary(lessons, presenters, labels),
+    [lessons, presenters, labels]
+  )
 
   return (
     <Layout translations={translations}>

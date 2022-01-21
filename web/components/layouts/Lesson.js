@@ -16,11 +16,12 @@ export default function Lesson({data}) {
   const {lessons, presenters} = course ?? {}
   const {locale} = useRouter()
 
+  const lessonPaths = useMemo(() => createLessonLinks(lessons, course.slug), [lessons, course.slug])
+
   const courseSlug = course.slug[locale ?? i18n.base].current
   const coursePath = `/${[locale === i18n.base ? null : locale, courseSlug]
     .filter(Boolean)
     .join('/')}`
-  const lessonPaths = useMemo(() => createLessonLinks(lessons, course.slug), [lessons, course.slug])
 
   // From the lessonPaths we can find the translations of this lesson
   const currentLessonIndex = lessonPaths.findIndex((versions) =>

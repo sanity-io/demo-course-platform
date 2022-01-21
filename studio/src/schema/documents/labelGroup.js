@@ -1,14 +1,11 @@
 import {FiType} from 'react-icons/fi'
 
-import {i18n} from '../../../../languages'
-
 export default {
   name: 'labelGroup',
   title: 'Label Group',
   icon: FiType,
   type: 'document',
   fields: [
-    {name: 'labelText', type: 'localizedString'},
     {
       name: 'labels',
       title: 'Labels',
@@ -30,17 +27,25 @@ export default {
                   'The key should contain only lowercase letters and periods'
                 ),
             },
-            // {name: 'text', type: 'localizedString'},
-            // {
-            //   name: 'text',
-            //   title: 'Text',
-            //   type: 'object',
-            //   fields: i18n.languages.map((lang) => ({
-            //     ...lang,
-            //     type: 'string',
-            //   })),
-            // },
+            {name: 'text', type: 'localizedString'},
           ],
+          preview: {
+            select: {
+              text: 'text',
+              subtitle: 'key',
+            },
+            prepare({text, subtitle}) {
+              const title = Object.keys(text)
+                .filter((key) => key !== '_type')
+                .map((lang) => text[lang])
+                .join(', ')
+
+              return {
+                title,
+                subtitle,
+              }
+            },
+          },
         },
       ],
     },

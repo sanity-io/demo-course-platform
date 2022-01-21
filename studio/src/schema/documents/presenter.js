@@ -1,7 +1,5 @@
 import {FiUser, FiGlobe, FiUsers} from 'react-icons/fi'
 
-import {i18n} from '../../../../languages'
-
 export default {
   name: 'presenter',
   title: 'Presenter',
@@ -12,11 +10,11 @@ export default {
       name: 'common',
       title: 'Common',
       icon: FiUsers,
-      default: true,
+      // default: true,
     },
     {
-      name: 'i18n',
-      title: 'Localised',
+      name: 'localized',
+      title: 'Localized',
       icon: FiGlobe,
     },
   ],
@@ -29,12 +27,13 @@ export default {
     },
     {
       name: 'title',
-      type: 'googleTranslateString',
+      type: 'localizedGoogleTranslateString',
+      group: 'localized',
     },
     {
       name: 'biography',
       title: 'Biography',
-      group: 'i18n',
+      group: 'localized',
       type: 'localizedText',
     },
     {

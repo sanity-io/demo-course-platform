@@ -1,5 +1,10 @@
 import {groq} from 'next-sanity'
 
+export const labelsQuery = groq`*[_id == "labelGroup"][0].labels[]{
+  key,
+  "text": coalesce(text[$language], text[$baseLanguage]),
+}`
+
 // We reuse this query on Courses and Lessons
 const courseQueryData = groq`
     // "course" documents have field-level translated title and slug fields
@@ -31,12 +36,18 @@ const courseQueryData = groq`
     // "course" documents have an array of "presenter" references
     presenters[]->{
       name,
-      "title": title[$language],
-    }
+      "title": coalesce(title[$language], title[$baseLanguage]),
+    },
+
+    // Plus global labels
+    "labels": ${labelsQuery}
 `
 
 export const courseQuery = groq`*[_type == "course" && slug[$language].current == $slug][0]{
-  ${courseQueryData}
+  ${courseQueryData},
+
+  // Plus global labels
+  "labels": ${labelsQuery}
 }`
 
 export const lessonQuery = groq`*[_type == "lesson" && slug.current == $slug][0]{
@@ -47,7 +58,13 @@ export const lessonQuery = groq`*[_type == "lesson" && slug.current == $slug][0]
     // Either by the _id of this document, or the _ref to the lesson's base language version
     "course": *[_type == "course" && (references(^._id) || references(^.__i18n_base._ref))][0]{
       ${courseQueryData}
-    }
+    },
+
+    // Plus global labels
+    "labels": ${labelsQuery}
 }`
 
-export const homeQuery = groq`*[_type == "course" && !(_id in path('drafts.*'))]`
+export const homeQuery = groq`{
+  "courses": *[_type == "course" && !(_id in path('drafts.*'))],
+  "labels": ${labelsQuery}
+}`

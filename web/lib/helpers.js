@@ -43,19 +43,31 @@ export function createLessonLinks(lessons = [], courseSlug = {}) {
   })
 }
 
-export function createCourseSummary(lessons = [], presenters = []) {
+export function createCourseSummary(lessons = [], presenters = [], labels = []) {
   const value = []
+
+  if (!labels.length) {
+    return ``
+  }
+
+  const lessonSingular = labels.find(({key}) => key === 'lesson.singular')?.text
+  const lessonPlural = labels.find(({key}) => key === 'lesson.plural')?.text
+  const presenterSingular = labels.find(({key}) => key === 'presenter.singular')?.text
+  const presenterPlural = labels.find(({key}) => key === 'presenter.plural')?.text
 
   if (lessons.length) {
     value.push(lessons.length)
-    value.push(lessons.length === 1 ? `Lesson` : `Lessons`)
+    value.push(lessons.length === 1 ? lessonSingular : lessonPlural)
+  }
+
+  if (lessons.length && presenters.length) {
+    value.push(`//`)
   }
 
   if (presenters.length) {
-    value.push(`//`)
     value.push(presenters.length)
-    value.push(presenters.length === 1 ? `Presenter` : `Presenters`)
+    value.push(presenters.length === 1 ? presenterSingular : presenterPlural)
   }
 
-  return value.join(` `)
+  return value.filter(Boolean).join(` `)
 }

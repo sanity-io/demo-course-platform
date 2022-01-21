@@ -36,13 +36,13 @@ export async function getStaticProps({params, locale, preview = false}) {
   let layout
   let query
   const slugEnd = params?.slug?.length ? [...params.slug].pop() : null
-  const queryParams = {slug: slugEnd, language: locale}
+  const queryParams = {slug: slugEnd, language: locale, baseLanguage: i18n.base}
 
   if (!slugEnd) {
     // Must be the "home" page
     layout = `home`
     query = homeQuery
-    data = await getClient(preview).fetch(query)
+    data = await getClient(preview).fetch(query, queryParams)
   } else if (params.slug.length === 2) {
     // Must be a "lesson" page
     layout = `lesson`

@@ -30,11 +30,13 @@ export default {
       name: 'title',
       type: 'localizedString',
       group: 'i18n',
+      validation: (Rule) => Rule.required(),
     },
     {
       name: 'slug',
       type: 'localizedSlug',
       group: 'i18n',
+      validation: (Rule) => Rule.required(),
     },
     {
       name: 'presenters',

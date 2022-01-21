@@ -3,11 +3,16 @@ import * as Structure from '@sanity/document-internationalization/lib/structure'
 import {FiAward, FiType, FiUsers} from 'react-icons/fi'
 
 import {i18n} from '../../../languages'
-import {preview} from './preview'
+import preview from './preview'
+// import transifex from './transifex'
 
 export const getDefaultDocumentNode = ({schemaType}) => {
   if (schemaType === 'lesson') {
-    return S.document().views([...Structure.getDocumentNodeViewsForSchemaType(schemaType), preview])
+    return S.document().views([
+      ...Structure.getDocumentNodeViewsForSchemaType(schemaType),
+      preview,
+      // transifex,
+    ])
   } else if (schemaType === 'course') {
     return S.document().views([S.view.form(), preview])
   }
@@ -16,13 +21,7 @@ export const getDefaultDocumentNode = ({schemaType}) => {
 }
 
 const items = [
-  // {
-  //   ...Structure.getFilteredDocumentTypeListItems().find((item) => item.id === 'lesson'),
-  //   id: 'pluginLessons',
-  //   title: 'Lessons (Plugin)',
-  // },
-  // S.documentTypeListItem('lesson').title('Lessons All'),
-  // Document-level translations
+  // Customised document-level translation structure
   S.listItem()
     .title('Lessons')
     .icon(FiAward)
