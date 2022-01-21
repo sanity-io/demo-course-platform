@@ -1,0 +1,25 @@
+name: Deploy Sanity Studio
+on:
+  push:
+    branches: [main]
+    paths-ignore:
+      - "web/**"
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v2
+        with:
+          node-version: 14.x
+      - name: Install dependencies
+        run: |
+          cd studio
+          npm install --legacy-peer-deps
+          npm install @sanity/cli
+      - name: Deploy Sanity Studio
+        run: |
+          set -e
+          cd studio
+          SANITY_AUTH_TOKEN="${{ secrets.STUDIO_DEPLOY }}" npx sanity deploy
