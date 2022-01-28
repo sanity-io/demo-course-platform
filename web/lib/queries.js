@@ -65,6 +65,16 @@ export const courseQuery = groq`*[_type == "course" && slug[$language].current =
 export const lessonQuery = groq`*[_type == "lesson" && slug.current == $slug][0]{
     // Get this whole document
     ...,
+    content[] {
+      ...,
+      markDefs[] {
+        ...,
+        _type == "reference" => {
+          ...,
+          "slug": @->.slug
+        }      
+      }
+    },
 
     // ...and get this lesson's course
     // Either by the _id of this document, or the _ref to the lesson's base language version

@@ -19,12 +19,12 @@ export default function Home({data}) {
 
   return (
     <Layout translations={translations} legals={legals}>
-      <div className="container mx-auto pt-header grid grid-cols-1 gap-header mt-header">
+      <div className="container mx-auto pt-header grid grid-cols-1 gap-header mt-header px-4 md:px-0">
         {courses?.length > 0 &&
           courses.map((course) => (
             <article
               key={course._id}
-              className="relative bg-gradient-to-tr mix-blend-multiply from-cyan-100 via-pink-100 to-yellow-100 p-8 md:p-16 xl:p-24 rounded-xl md:rounded-2xl xl:rounded-3xl w-full flex items-center justify-between group hover:scale-[1.01] hover:rotate-[-0.25deg] transition-transform duration-200"
+              className="relative bg-gradient-to-tr mix-blend-multiply from-cyan-100 via-pink-100 to-yellow-100 p-8 md:p-16 xl:p-24 rounded-xl md:rounded-2xl xl:rounded-3xl w-full flex flex-col gap-4 md:flex-row items-start md:items-center md:justify-between group hover:scale-[1.01] hover:rotate-[-0.25deg] transition-transform duration-200"
             >
               <Link href={course.slug[locale].current}>
                 <a className="block absolute inset-0 z-10 ">

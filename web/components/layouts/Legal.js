@@ -11,7 +11,7 @@ export default function Legal({data}) {
   const {locales, asPath} = useRouter()
   const translations = locales.map((id) => ({
     language: id,
-    path: id === i18n.base ? `/${asPath}` : `/${id}/${asPath}`,
+    path: id === i18n.base ? `${asPath}` : `${id}${asPath}`,
   }))
 
   return (

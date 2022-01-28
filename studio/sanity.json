@@ -14,15 +14,9 @@
     "@sanity/desk-tool",
     "@sanity/document-internationalization",
     "@sanity/code-input",
-    "@sanity/language-filter"
+    "@sanity/language-filter",
+    "@sanity/vision"
   ],
-  "env": {
-    "development": {
-      "plugins": [
-        "@sanity/vision"
-      ]
-    }
-  },
   "parts": [
     {
       "name": "part:@sanity/base/schema",
