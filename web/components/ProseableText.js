@@ -8,11 +8,25 @@ import {PortableText} from '../lib/sanity'
  * But escape `prose` styling for custom components (or `types`)
  */
 export default function ProseableText({blocks = []}) {
+  // Before grouping, inline any marketContent _type blocks
+  // (it would be nice to do this in the query, but it's not possible)
+  const inlinedBlocks = useMemo(
+    () =>
+      blocks.reduce((acc, item) => {
+        if (item._type === 'marketContent' && item?.content?.length) {
+          return [...acc, ...item.content]
+        }
+
+        return [...acc, item]
+      }, []),
+    [blocks]
+  )
+
   // Group together standard `_type === "block"`  blocks
   // eg <p>, <li>, etc – and separate out everyone else
   const blockGroups = useMemo(
     () =>
-      blocks.reduce(
+      inlinedBlocks.reduce(
         (acc, item) => {
           const lastIdx = acc.length - 1
 
@@ -32,7 +46,7 @@ export default function ProseableText({blocks = []}) {
         },
         [[]]
       ),
-    [blocks]
+    [inlinedBlocks]
   )
 
   if (!blockGroups?.length) return null

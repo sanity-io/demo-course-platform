@@ -9,7 +9,7 @@ import Title from '../Title'
 import Layout from './Layout'
 
 export default function Home({data}) {
-  const {courses, labels} = data ?? {}
+  const {courses, labels, legals} = data ?? {}
   const {locale, locales} = useRouter()
   const translations = locales.map((id) => ({
     language: id,
@@ -18,7 +18,7 @@ export default function Home({data}) {
   const courseStart = labels.find(({key}) => key === 'course.start')?.text
 
   return (
-    <Layout translations={translations}>
+    <Layout translations={translations} legals={legals}>
       <div className="container mx-auto pt-header grid grid-cols-1 gap-header mt-header">
         {courses?.length > 0 &&
           courses.map((course) => (

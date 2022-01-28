@@ -15,6 +15,7 @@ export default {
           {value: 'caution', title: 'Caution'},
         ],
       },
+      initialValue: 'positive',
     },
     {
       name: 'content',

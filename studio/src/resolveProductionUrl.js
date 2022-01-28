@@ -58,6 +58,8 @@ export default async function resolveProductionUrl(doc, returnProd = false) {
     }
   } else if (doc._type === 'course') {
     slug = doc.slug[i18n.base].current
+  } else if (doc._type === 'legal') {
+    slug = `legal/${doc?.slug?.current}`
   }
 
   // Add slug for Next.js to resolve

@@ -4,6 +4,16 @@ export const labelsQuery = groq`*[_id == "labelGroup"][0].labels[]{
   key,
   "text": coalesce(text[$language], text[$baseLanguage]),
 }`
+export const legalsQuery = groq`*[_type == "legal" && !(_id in path("drafts.**"))]{
+  _id,
+  title,
+  slug
+}`
+export const legalQuery = groq`*[_type == "legal" && slug.current == $slug][0]{
+  ...,
+  content[_type != "marketContent" || (_type == "marketContent" && market == $language)],
+  "legals": ${legalsQuery}
+}`
 
 // We reuse this query on Courses and Lessons
 const courseQueryData = groq`
@@ -39,15 +49,17 @@ const courseQueryData = groq`
       "title": coalesce(title[$language], title[$baseLanguage]),
     },
 
-    // Plus global labels
-    "labels": ${labelsQuery}
+    // Plus global data
+    "labels": ${labelsQuery},
+    "legals": ${legalsQuery}
 `
 
 export const courseQuery = groq`*[_type == "course" && slug[$language].current == $slug][0]{
   ${courseQueryData},
 
-  // Plus global labels
-  "labels": ${labelsQuery}
+  // Plus global data
+  "labels": ${labelsQuery},
+  "legals": ${legalsQuery}
 }`
 
 export const lessonQuery = groq`*[_type == "lesson" && slug.current == $slug][0]{
@@ -61,10 +73,12 @@ export const lessonQuery = groq`*[_type == "lesson" && slug.current == $slug][0]
     },
 
     // Plus global labels
-    "labels": ${labelsQuery}
+    "labels": ${labelsQuery},
+    "legals": ${legalsQuery}
 }`
 
 export const homeQuery = groq`{
   "courses": *[_type == "course" && !(_id in path('drafts.*'))],
-  "labels": ${labelsQuery}
+  "labels": ${labelsQuery},
+  "legals": ${legalsQuery}
 }`

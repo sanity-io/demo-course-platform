@@ -1,11 +1,11 @@
 import React from 'react'
+import Link from 'next/link'
 import {TranslateIcon} from '@heroicons/react/outline'
 
-import Link from 'next/link'
 import TranslationLinks from '../TranslationLinks'
 import Meta from '../Meta'
 
-export default function Layout({translations, children}) {
+export default function Layout({translations, legals = [], children}) {
   return (
     <>
       <Meta translations={translations} />
@@ -27,6 +27,23 @@ export default function Layout({translations, children}) {
         </div>
       </header>
       {children}
+      {legals?.length ? (
+        <footer className="container mx-auto p-4 md:p-8 xl:p-16 text-right">
+          {legals.map((legal) =>
+            legal?.slug?.current ? (
+              <Link key={legal._id} href={`/legal/${legal.slug.current}`}>
+                <a className="text-cyan-500 hover:text-pink-500 font-medium text-sm">
+                  {legal.title}
+                </a>
+              </Link>
+            ) : (
+              <span key={legal._id} className="text-gray-500 font-medium text-sm">
+                {legal.title}
+              </span>
+            )
+          )}
+        </footer>
+      ) : null}
     </>
   )
 }

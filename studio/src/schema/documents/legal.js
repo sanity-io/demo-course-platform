@@ -1,5 +1,7 @@
 import {FiArchive} from 'react-icons/fi'
 
+import portableText from '../objects/portableText'
+
 export default {
   name: 'legal',
   title: 'Legal',
@@ -8,20 +10,17 @@ export default {
   fields: [
     {
       name: 'title',
-      title: 'Title',
       type: 'string',
     },
     {
       name: 'slug',
-      title: 'Slug',
       type: 'slug',
       options: {source: 'title'},
     },
     {
       name: 'content',
-      title: 'Content',
       type: 'array',
-      of: [{type: 'block'}],
+      of: [{type: 'marketContent'}, ...portableText.of],
     },
   ],
 }

@@ -13,7 +13,7 @@ export const getDefaultDocumentNode = ({schemaType}) => {
       preview,
       // transifex,
     ])
-  } else if (schemaType === 'course') {
+  } else if (schemaType === 'course' || schemaType === 'legal') {
     return S.document().views([S.view.form(), preview])
   }
 
@@ -41,7 +41,7 @@ const items = [
   // Singleton, field-level translations
   S.documentListItem().schemaType(`labelGroup`).icon(FiType).id(`labelGroup`).title(`Labels`),
   S.divider(),
-  S.documentTypeListItem('legal').title('Legal Pages'),
+  S.documentTypeListItem('legal').title('Legal'),
   S.divider(),
   Structure.getMaintenanceListItem().serialize(),
 ]

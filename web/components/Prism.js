@@ -3,7 +3,12 @@ import github from 'prism-react-renderer/themes/github'
 
 export default function Prism({code = ``, language = `plaintext`}) {
   return (
-    <Highlight {...defaultProps} code={code} language={language} theme={github}>
+    <Highlight
+      {...defaultProps}
+      code={code}
+      language={language === `groq` ? `json` : language}
+      theme={github}
+    >
       {({className, style, tokens, getLineProps, getTokenProps}) => (
         <pre className={className} style={style}>
           {tokens.map((line, i) => (

@@ -13,6 +13,8 @@ import localizedText from './objects/localizedText'
 import localizedSlug from './objects/localizedSlug'
 import callout from './objects/callout'
 import localizedGoogleTranslateString from './objects/localizedGoogleTranslateString'
+import portableText from './objects/portableText'
+import marketContent from './objects/marketContent'
 
 export default createSchema({
   name: 'default',
@@ -31,5 +33,7 @@ export default createSchema({
     localizedText,
     localizedSlug,
     localizedGoogleTranslateString,
+    portableText,
+    marketContent,
   ]),
 })
