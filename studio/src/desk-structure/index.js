@@ -4,6 +4,7 @@ import {FiAward, FiType, FiUsers} from 'react-icons/fi'
 
 import {i18n} from '../../../languages'
 import preview from './preview'
+import references from './references'
 // import transifex from './transifex'
 
 export const getDefaultDocumentNode = ({schemaType}) => {
@@ -13,6 +14,8 @@ export const getDefaultDocumentNode = ({schemaType}) => {
       preview,
       // transifex,
     ])
+  } else if (schemaType === 'presenter') {
+    return S.document().views([S.view.form(), references])
   } else if (schemaType === 'course' || schemaType === 'legal') {
     return S.document().views([S.view.form(), preview])
   }

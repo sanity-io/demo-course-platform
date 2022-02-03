@@ -31,6 +31,7 @@
     "react": "^17.0",
     "react-dom": "^17.0",
     "react-icons": "^4.3.1",
+    "sanity-plugin-documents-pane": "^1.0.5",
     "sanity-plugin-google-translate": "^1.0.3",
     "sanity-plugin-iframe-pane": "^1.0.15",
     "sanity-plugin-transifex": "^0.9.85",

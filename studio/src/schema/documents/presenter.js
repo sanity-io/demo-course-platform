@@ -29,18 +29,21 @@ export default {
       name: 'title',
       type: 'localizedGoogleTranslateString',
       group: 'localized',
+      hidden: ({document}) => !document.name,
     },
     {
       name: 'biography',
       title: 'Biography',
       group: 'localized',
       type: 'localizedText',
+      hidden: ({document}) => !document.title,
     },
     {
       name: 'photo',
       title: 'Photo',
       group: 'common',
       type: 'image',
+      hidden: ({document}) => !document.title,
     },
   ],
   preview: {
