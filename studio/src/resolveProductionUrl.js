@@ -3,7 +3,8 @@ import sanityClient from 'part:@sanity/base/client'
 import {i18n} from '../../languages'
 
 // A random string that both the Studio and Next.js website know
-const previewSecret = process.env.SANITY_STUDIO_PREVIEW_SECRET ?? `SANITY_STUDIO_PREVIEW_SECRET`
+const previewSecret =
+  process.env.SANITY_STUDIO_PREVIEW_SECRET ?? `1dms79gupppykoidqowrp121vcqsfyggftlr`
 
 // URL of the Next.js website
 const remoteUrl =
