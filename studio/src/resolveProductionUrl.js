@@ -3,10 +3,11 @@ import sanityClient from 'part:@sanity/base/client'
 import {i18n} from '../../languages'
 
 // A random string that both the Studio and Next.js website know
-const previewSecret = process.env.SANITY_STUDIO_PREVIEW_SECRET
+const previewSecret = process.env.SANITY_STUDIO_PREVIEW_SECRET ?? `SANITY_STUDIO_PREVIEW_SECRET`
 
 // URL of the Next.js website
-const remoteUrl = process.env.SANITY_STUDIO_PREVIEW_URL
+const remoteUrl =
+  process.env.SANITY_STUDIO_PREVIEW_URL ?? `https://demo-course-platform.sanity.build`
 const localUrl = `http://localhost:3000`
 
 const client = sanityClient.withConfig({apiVersion: `2021-05-19`})
