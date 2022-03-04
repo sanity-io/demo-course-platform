@@ -18,29 +18,31 @@ export function createLessonLinks(lessons = [], courseSlug = {}) {
     return []
   }
 
-  return lessons.map((lesson) => {
-    const courseSlugBase = courseSlug[lesson.__i18n_lang]?.current
+  return lessons
+    .filter((lesson) => lesson?.__i18n_lang)
+    .map((lesson) => {
+      const courseSlugBase = courseSlug[lesson.__i18n_lang]?.current
 
-    const baseLanguageLesson = {
-      language: lesson.__i18n_lang, // Should always be i18n.base
-      title: lesson.title,
-      path: `/${[courseSlugBase, lesson.slug.current].join('/')}`,
-    }
-
-    const translations = lesson.__i18n_refs.map((ref) => {
-      const lessonLang = ref.__i18n_lang
-      const courseLangSlug = courseSlug[ref.__i18n_lang].current
-      const lessonLangSlug = ref.slug.current
-
-      return {
-        language: ref.__i18n_lang, // Should never be i18n.base
-        title: ref.title,
-        path: `/${[lessonLang, courseLangSlug, lessonLangSlug].join('/')}`,
+      const baseLanguageLesson = {
+        language: lesson.__i18n_lang, // Should always be i18n.base
+        title: lesson.title,
+        path: `/${[courseSlugBase, lesson.slug.current].join('/')}`,
       }
-    })
 
-    return [baseLanguageLesson, ...translations]
-  })
+      const translations = lesson.__i18n_refs.map((ref) => {
+        const lessonLang = ref.__i18n_lang
+        const courseLangSlug = courseSlug[ref.__i18n_lang].current
+        const lessonLangSlug = ref.slug.current
+
+        return {
+          language: ref.__i18n_lang, // Should never be i18n.base
+          title: ref.title,
+          path: `/${[lessonLang, courseLangSlug, lessonLangSlug].join('/')}`,
+        }
+      })
+
+      return [baseLanguageLesson, ...translations]
+    })
 }
 
 export function createCourseSummary(lessons = [], presenters = [], labels = []) {

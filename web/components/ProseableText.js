@@ -1,32 +1,33 @@
 /* eslint-disable react/forbid-prop-types */
 import React, {useMemo} from 'react'
 import PropTypes from 'prop-types'
-import {PortableText} from '../lib/sanity'
+import {PortableText} from '@portabletext/react'
 
+import {portableTextComponents} from '../lib/portableTextComponents'
 /**
  * Use Tailwind CSS's `prose` classes with Portable Text
  * But escape `prose` styling for custom components (or `types`)
  */
-export default function ProseableText({blocks = []}) {
+export default function ProseableText({value = []}) {
   // Before grouping, inline any marketContent _type blocks
   // (it would be nice to do this in the query, but it's not possible)
-  const inlinedBlocks = useMemo(
+  const inlinedValue = useMemo(
     () =>
-      blocks.reduce((acc, item) => {
+      value.reduce((acc, item) => {
         if (item._type === 'marketContent' && item?.content?.length) {
           return [...acc, ...item.content]
         }
 
         return [...acc, item]
       }, []),
-    [blocks]
+    [value]
   )
 
   // Group together standard `_type === "block"`  blocks
   // eg <p>, <li>, etc – and separate out everyone else
-  const blockGroups = useMemo(
+  const valueGroups = useMemo(
     () =>
-      inlinedBlocks.reduce(
+      inlinedValue.reduce(
         (acc, item) => {
           const lastIdx = acc.length - 1
 
@@ -46,23 +47,23 @@ export default function ProseableText({blocks = []}) {
         },
         [[]]
       ),
-    [inlinedBlocks]
+    [inlinedValue]
   )
 
-  if (!blockGroups?.length) return null
+  if (!valueGroups?.length) return null
 
   return (
     <div className="grid grid-cols-1 gap-4 md:gap-8">
-      {blockGroups.map((group) =>
+      {valueGroups.map((group) =>
         group[0]._type === 'block' ? (
           <div
             key={group[0]._key}
             className="prose prose-slate md:prose-lg lg:prose-xl w-full prose-h2:text-cyan-800 prose-h3:text-cyan-700 prose-a:text-cyan-500 prose-a:transition-colors prose-a:duration-200 hover:prose-a:text-pink-500 prose-code:text-pink-700 prose-h2:font-display prose-h3:font-display"
           >
-            <PortableText blocks={group} />
+            <PortableText components={portableTextComponents} value={group} />
           </div>
         ) : (
-          <PortableText key={group[0]._key} blocks={group} />
+          <PortableText components={portableTextComponents} key={group[0]._key} value={group} />
         )
       )}
     </div>
@@ -70,5 +71,5 @@ export default function ProseableText({blocks = []}) {
 }
 
 ProseableText.propTypes = {
-  blocks: PropTypes.array.isRequired,
+  value: PropTypes.array.isRequired,
 }

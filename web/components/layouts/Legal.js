@@ -20,7 +20,7 @@ export default function Legal({data}) {
         <section className="pt-16">
           <div className="container mx-auto py-8 p-4 md:p-8 xl:p-16 flex flex-col justify-start items-start gap-4 xl:gap-8">
             {title ? <Title>{title}</Title> : null}
-            {content?.length ? <ProseableText blocks={content} /> : null}
+            {content?.length ? <ProseableText value={content} /> : null}
           </div>
         </section>
       </div>

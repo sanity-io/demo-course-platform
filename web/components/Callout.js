@@ -24,7 +24,7 @@ export default function Callout({tone = `positive`, content = []}) {
       {React.createElement(toneIcons[tone], {
         className: `w-6 md:w-10 h-auto scale-150 transform -rotate-[10deg]`,
       })}
-      <ProseableText blocks={content} />
+      <ProseableText value={content} />
     </div>
   )
 }

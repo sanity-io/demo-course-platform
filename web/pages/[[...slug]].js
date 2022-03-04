@@ -82,7 +82,7 @@ export async function getStaticProps({params, locale, preview = false}) {
 }
 
 export async function getStaticPaths() {
-  const {courseSlugs, legalSlugs} = await getClient().fetch(
+  const {courseSlugs, legalSlugs} = await getClient(true).fetch(
     groq`{
       "courseSlugs": *[_type in ["course"] && defined(slug[$baseLanguage].current) && !(_id in path("drafts.**"))]{
         "courseSlug": slug[$baseLanguage].current,

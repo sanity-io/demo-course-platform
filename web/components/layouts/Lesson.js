@@ -16,9 +16,12 @@ export default function Lesson({data}) {
   const {lessons, presenters} = course ?? {}
   const {locale} = useRouter()
 
-  const lessonPaths = useMemo(() => createLessonLinks(lessons, course.slug), [lessons, course.slug])
+  const lessonPaths = useMemo(
+    () => createLessonLinks(lessons, course?.slug),
+    [lessons, course?.slug]
+  )
 
-  const courseSlug = course.slug[locale ?? i18n.base].current
+  const courseSlug = course?.slug[locale ?? i18n.base].current
   const coursePath = `/${[locale === i18n.base ? null : locale, courseSlug]
     .filter(Boolean)
     .join('/')}`
@@ -33,9 +36,9 @@ export default function Lesson({data}) {
       ? null
       : lessonPaths[currentLessonIndex + 1].find((lesson) => lesson.language === locale)
 
-  const presentersString = presenters
-    .map((presenter) => [presenter.name, presenter.title].join(', '))
-    .join(', ')
+  const presentersString = presenters?.length
+    ? presenters.map((presenter) => [presenter.name, presenter.title].join(', ')).join(', ')
+    : ``
 
   const completeString = labels.find(({key}) => key === 'lesson.continue')?.text
 
@@ -45,7 +48,7 @@ export default function Lesson({data}) {
         <section className="bg-gradient-to-r mix-blend-multiply from-cyan-100 via-transparent to-transparent pt-16">
           <div className="container mx-auto py-8 p-4 md:p-8 xl:p-16 flex flex-col justify-start items-start gap-4 xl:gap-8">
             <Title subtitle={presentersString}>{title}</Title>
-            {coursePath && (
+            {coursePath && course && (
               <Button href={coursePath} Icon={ChevronLeftIcon} iconFirst>
                 {course.title[locale]}
               </Button>
@@ -68,7 +71,7 @@ export default function Lesson({data}) {
                 </div>
               ) : null}
 
-              <ProseableText blocks={content} />
+              <ProseableText value={content} />
 
               {nextLesson?.path && (
                 <div className="flex items-center justify-between my-8">
