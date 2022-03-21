@@ -1,0 +1,21 @@
+[data-market-text] {
+  background-color: #efefef;
+  outline: 2px solid #ccc;
+  border-radius: 1px;
+}
+
+[data-market-text]::before {
+  padding-right: 0.25rem;
+}
+
+[data-market-text="en_US"]::before {
+  content: "🇺🇸";
+}
+
+[data-market-text="nl"]::before {
+  content: "🇳🇱";
+}
+
+[data-market-text="no"]::before {
+  content: "🇳🇴";
+}

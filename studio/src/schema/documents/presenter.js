@@ -1,4 +1,5 @@
-import {FiUser, FiGlobe, FiUsers} from 'react-icons/fi'
+import {FiUser, FiGlobe, FiUsers, FiMapPin} from 'react-icons/fi'
+import {i18n} from '../../../../languages'
 
 export default {
   name: 'presenter',
@@ -17,11 +18,15 @@ export default {
       title: 'Localized',
       icon: FiGlobe,
     },
+    {
+      name: 'markets',
+      title: 'Markets',
+      icon: FiMapPin,
+    },
   ],
   fields: [
     {
       name: 'name',
-      title: 'Name',
       group: 'common',
       type: 'string',
     },
@@ -33,17 +38,25 @@ export default {
     },
     {
       name: 'biography',
-      title: 'Biography',
       group: 'localized',
       type: 'localizedText',
       hidden: ({document}) => !document.title,
     },
     {
       name: 'photo',
-      title: 'Photo',
       group: 'common',
       type: 'image',
       hidden: ({document}) => !document.title,
+    },
+    {
+      name: 'availability',
+      group: 'markets',
+      type: 'array',
+      options: {
+        layout: 'tags',
+        list: i18n.languages.map((lang) => ({value: lang.id, title: lang.title})),
+      },
+      of: [{type: 'string'}],
     },
   ],
   preview: {

@@ -27,7 +27,7 @@ export default {
                   'The key should contain only lowercase letters and periods'
                 ),
             },
-            {name: 'text', type: 'localizedString'},
+            {name: 'text', type: 'localizedGoogleTranslateString'},
           ],
           preview: {
             select: {

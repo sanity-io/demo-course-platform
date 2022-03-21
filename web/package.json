@@ -16,7 +16,7 @@
     "@tailwindcss/typography": "^0.5.0",
     "autoprefixer": "^10.4.2",
     "detect-emoji-support": "^0.1.7",
-    "next": "12.0.7",
+    "next": "^12.0.7",
     "next-sanity": "^0.5.0",
     "prism-react-renderer": "^1.2.1",
     "prop-types": "^15.8.1",

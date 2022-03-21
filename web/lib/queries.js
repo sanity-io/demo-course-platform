@@ -11,7 +11,18 @@ export const legalsQuery = groq`*[_type == "legal" && !(_id in path("drafts.**")
 }`
 export const legalQuery = groq`*[_type == "legal" && slug.current == $slug][0]{
   ...,
-  content[_type != "marketContent" || (_type == "marketContent" && market == $language)],
+  content[_type != "marketContent" || (_type == "marketContent" && market == $language)]{
+    ...,
+    
+    // Filter markDefs down to just this language if annotation is "marketText"
+    markDefs[_type != "marketText" || (_type == "marketText" && market == $language)],
+
+    // Filter children array to items with no marks, or a key in the filtered markers
+    children[
+      !defined(marks) || count(marks) < 1 || 
+      marks[0] in ^.markDefs[_type != "marketText" || (_type == "marketText" && market == $language)]._key
+    ]
+  },
   "legals": ${legalsQuery}
 }`
 

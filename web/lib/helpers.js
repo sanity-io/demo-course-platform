@@ -31,7 +31,7 @@ export function createLessonLinks(lessons = [], courseSlug = {}) {
 
       const translations = lesson.__i18n_refs.map((ref) => {
         const lessonLang = ref.__i18n_lang
-        const courseLangSlug = courseSlug[ref.__i18n_lang].current
+        const courseLangSlug = courseSlug[ref.__i18n_lang]?.current
         const lessonLangSlug = ref.slug.current
 
         return {

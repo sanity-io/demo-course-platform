@@ -28,6 +28,11 @@ const SanityImage = ({value}) => {
 export const portableTextComponents = {
   marks: {
     reference: (props) => <Reference {...props} />,
+    marketText: (props) => (
+      <span className="bg-yellow-100 ring-yellow-100 text-yellow-900 ring-4 rounded">
+        {props.children}
+      </span>
+    ),
   },
   types: {
     code: ({value}) =>

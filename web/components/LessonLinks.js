@@ -26,7 +26,7 @@ function ListLink(props) {
   )
 }
 
-export default function LessonLinks({lessons = []}) {
+export default function LessonLinks({lessons = [], openByDefault = false}) {
   const {asPath, locale} = useRouter()
 
   const localeLessons = useMemo(
@@ -53,32 +53,33 @@ export default function LessonLinks({lessons = []}) {
   )
 
   const {width} = useWindowSize()
-  const [menuOpen, setMenuOpen] = useState(width > 768)
 
-  // Show/hide the menu on resize
-  useEffect(() => setMenuOpen(width > 768), [width])
+  const [menuOpen, setMenuOpen] = useState(openByDefault || width >= 768)
 
-  // Show/hide on navigation on mobile when item clicked
-  useEffect(() => (width <= 768 ? setMenuOpen(false) : null), [asPath])
+  useEffect(() => {
+    if (!menuOpen && width >= 768) {
+      setMenuOpen(true)
+    }
+  }, [width])
 
   if (!localeLessons?.length) {
     return null
   }
 
+  const toggleClassNames = [`md:hidden`, buttonClasses.default, buttonClasses.current].join(` `)
+
   return (
     <Menu as="div" className="grid grid-cols-1 gap-1" open={menuOpen}>
-      <button
-        type="button"
-        className={[`md:hidden`, buttonClasses.default, buttonClasses.current].join(` `)}
-        onClick={() => setMenuOpen(!menuOpen)}
-      >
-        <span className="flex-1 flex items-center gap-x-4">
-          <span className="text-pink-400 w-6">
-            <ChevronDownIcon className="w-6 h-auto" />
+      {openByDefault ? null : (
+        <button type="button" className={toggleClassNames} onClick={() => setMenuOpen(!menuOpen)}>
+          <span className="flex-1 flex items-center gap-x-4">
+            <span className="text-pink-400 w-6">
+              <ChevronDownIcon className="w-6 h-auto" />
+            </span>
+            <span className="text-cyan-500 font-medium">{localeLessons.length} Lessons</span>
           </span>
-          <span className="text-cyan-500 font-medium">{localeLessons.length} Lessons</span>
-        </span>
-      </button>
+        </button>
+      )}
 
       <Menu.Items static as="ul" className="text-cyan-500 font-medium grid grid-cols-1 gap-1">
         {menuOpen &&

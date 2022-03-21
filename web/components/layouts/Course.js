@@ -53,7 +53,7 @@ export default function Course({data}) {
         </section>
 
         <div className="p-4 md:p-8 xl:p-16 container mx-auto">
-          <LessonLinks lessons={lessonPaths} />
+          <LessonLinks lessons={lessonPaths} openByDefault />
         </div>
       </div>
       <Blobs />

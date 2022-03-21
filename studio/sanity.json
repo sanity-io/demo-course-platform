@@ -12,9 +12,9 @@
     "@sanity/default-layout",
     "@sanity/default-login",
     "@sanity/desk-tool",
+    "@sanity/language-filter",
     "@sanity/document-internationalization",
     "@sanity/code-input",
-    "@sanity/language-filter",
     "@sanity/vision"
   ],
   "parts": [
@@ -41,6 +41,10 @@
     {
       "name": "part:@sanity/language-filter/config",
       "path": "./src/languageFilterConfig.js"
+    },
+    {
+      "name": "part:@sanity/desk-tool/language-select-component?",
+      "path": "./src/languageConsolidator.js"
     }
   ]
 }

@@ -1,6 +1,5 @@
 /* eslint-disable camelcase */
 import {FiAward} from 'react-icons/fi'
-import {ImageIcon} from '@sanity/icons'
 
 import {i18n} from '../../../../languages'
 

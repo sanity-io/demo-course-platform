@@ -1,9 +1,9 @@
 // Import the plugin versions of built-in actions
-import {
-  PublishWithi18nAction,
-  DeleteWithi18nAction,
-  DuplicateWithi18nAction,
-} from '@sanity/document-internationalization/lib/actions'
+// import {
+//   PublishWithi18nAction,
+//   DeleteWithi18nAction,
+//   DuplicateWithi18nAction,
+// } from '@sanity/document-internationalization/lib/actions'
 
 // Import the default actions for comparison
 import defaultResolve, {
@@ -20,18 +20,18 @@ export default function resolveDocumentActions(props) {
   const defaultActions = defaultResolve(props)
   const documentSchema = schema.get(props.type)
 
-  if (documentSchema.i18n) {
-    const actionsWithoutDefaults = defaultActions.filter(
-      (action) => ![PublishAction, DuplicateAction, DeleteAction].includes(action)
-    )
+  // if (documentSchema.i18n) {
+  //   const actionsWithoutDefaults = defaultActions.filter(
+  //     (action) => ![PublishAction, DuplicateAction, DeleteAction].includes(action)
+  //   )
 
-    return [
-      PublishWithi18nAction,
-      ...actionsWithoutDefaults,
-      DuplicateWithi18nAction,
-      DeleteWithi18nAction,
-    ]
-  }
+  //   return [
+  //     // PublishWithi18nAction,
+  //     ...actionsWithoutDefaults,
+  //     // DuplicateWithi18nAction,
+  //     // DeleteWithi18nAction,
+  //   ]
+  // }
 
   return defaultActions
 }
