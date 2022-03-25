@@ -5,12 +5,13 @@ import {i18n} from '../../languages'
 
 import {usePreviewSubscription} from '../lib/sanity'
 import {getClient} from '../lib/sanity.server'
-import {courseQuery, homeQuery, legalQuery, lessonQuery} from '../lib/queries'
+import {courseQuery, homeQuery, legalQuery, lessonQuery, presenterQuery} from '../lib/queries'
 
 const Course = dynamic(() => import('../components/layouts/Course'))
 const Home = dynamic(() => import('../components/layouts/Home'))
 const Legal = dynamic(() => import('../components/layouts/Legal'))
 const Lesson = dynamic(() => import('../components/layouts/Lesson'))
+const Presenter = dynamic(() => import('../components/layouts/Presenter'))
 
 export default function Page({data: initialData, layout, query, queryParams, preview}) {
   const {data} = usePreviewSubscription(query, {
@@ -28,6 +29,8 @@ export default function Page({data: initialData, layout, query, queryParams, pre
       return <Legal data={data} />
     case `lesson`:
       return <Lesson data={data} />
+    case `presenter`:
+      return <Presenter data={data} />
     default:
       return null
   }
@@ -50,6 +53,11 @@ export async function getStaticProps({params, locale, preview = false}) {
     // Legal slugs start with /legal
     layout = `legal`
     query = legalQuery
+    data = await getClient(preview).fetch(query, queryParams)
+  } else if (slugStart === `presenter`) {
+    // Presenter slugs start with /presenter
+    layout = `presenter`
+    query = presenterQuery
     data = await getClient(preview).fetch(query, queryParams)
   } else if (params.slug.length === 2) {
     // Lesson slugs have /two/parts that are unpredictable
@@ -82,13 +90,14 @@ export async function getStaticProps({params, locale, preview = false}) {
 }
 
 export async function getStaticPaths() {
-  const {courseSlugs, legalSlugs} = await getClient(true).fetch(
+  const {courseSlugs, legalSlugs, presenterSlugs} = await getClient(true).fetch(
     groq`{
       "courseSlugs": *[_type in ["course"] && defined(slug[$baseLanguage].current) && !(_id in path("drafts.**"))]{
         "courseSlug": slug[$baseLanguage].current,
         "lessonSlugs": lessons[]->slug.current,
       },
-      "legalSlugs": *[_type == "legal" && defined(slug.current) && !(_id in path("drafts.**"))].slug.current
+      "legalSlugs": *[_type == "legal" && defined(slug.current) && !(_id in path("drafts.**"))].slug.current,
+      "presenterSlugs": *[_type == "presenter" && defined(slug.current) && !(_id in path("drafts.**"))].slug.current
     }`,
     {baseLanguage: i18n.base}
   )
@@ -108,8 +117,12 @@ export async function getStaticPaths() {
     ? legalSlugs.map((slug) => ({params: {slug: [`legal`, slug]}}))
     : []
 
+  const presenterPaths = presenterSlugs?.length
+    ? presenterSlugs.map((slug) => ({params: {slug: [`presenter`, slug]}}))
+    : []
+
   return {
-    paths: [...coursePaths, ...legalPaths],
+    paths: [...coursePaths, ...legalPaths, ...presenterPaths],
     // Dynamically create missing routes
     fallback: 'blocking',
   }

@@ -11,7 +11,7 @@ import references from './references'
 export const getDefaultDocumentNode = ({schemaType}) => {
   switch (schemaType) {
     case 'presenter':
-      return S.document().views([S.view.form(), references])
+      return S.document().views([S.view.form(), preview, references])
     case 'lesson':
     case 'course':
     case 'legal':

@@ -4,11 +4,19 @@ export const labelsQuery = groq`*[_id == "labelGroup"][0].labels[]{
   key,
   "text": coalesce(text[$language], text[$baseLanguage]),
 }`
+
+export const presenterQuery = groq`*[_type == "presenter" && slug.current == $slug && !(_id in path("drafts.**"))][0]{
+  ...,
+  "title": coalesce(title[$language], title[$baseLanguage]),
+  "biography": coalesce(biography[$language], biography[$baseLanguage])
+}`
+
 export const legalsQuery = groq`*[_type == "legal" && !(_id in path("drafts.**"))]{
   _id,
   title,
   slug
 }`
+
 export const legalQuery = groq`*[_type == "legal" && slug.current == $slug][0]{
   ...,
   content[_type != "marketContent" || (_type == "marketContent" && market == $language)]{

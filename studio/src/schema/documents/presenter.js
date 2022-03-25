@@ -13,6 +13,7 @@ export default {
       icon: FiUsers,
       // default: true,
     },
+
     {
       name: 'localized',
       title: 'Localized',
@@ -30,6 +31,7 @@ export default {
       group: 'common',
       type: 'string',
     },
+
     {
       name: 'title',
       type: 'localizedGoogleTranslateString',
@@ -43,6 +45,13 @@ export default {
       hidden: ({document}) => !document.title,
     },
     {
+      name: 'slug',
+      type: 'slug',
+      options: {source: 'name'},
+      hidden: ({document}) => !document.name,
+      validation: (Rule) => Rule.required(),
+    },
+    {
       name: 'photo',
       group: 'common',
       type: 'image',
@@ -52,6 +61,7 @@ export default {
       name: 'availability',
       group: 'markets',
       type: 'array',
+      hidden: ({document}) => !document.name,
       options: {
         layout: 'tags',
         list: i18n.languages.map((lang) => ({value: lang.id, title: lang.title})),
