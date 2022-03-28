@@ -55,6 +55,7 @@ export default {
       name: 'photo',
       group: 'common',
       type: 'image',
+      options: {hotspot: true},
       hidden: ({document}) => !document.title,
     },
     {

@@ -16,6 +16,7 @@
     "sanity"
   ],
   "dependencies": {
+    "@cprecioso/country-flag-emoji": "^1.0.0",
     "@heroicons/react": "^1.0.5",
     "@sanity/base": "^2.29.2",
     "@sanity/code-input": "^2.29.2",
