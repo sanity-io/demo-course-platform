@@ -5,7 +5,7 @@ const languages = [
 ]
 
 const i18n = {
-  languages: languages,
+  languages,
   base: languages.find((item) => item.isDefault)?.id,
 }
 
