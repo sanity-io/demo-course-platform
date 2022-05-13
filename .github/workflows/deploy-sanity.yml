@@ -22,4 +22,4 @@ jobs:
         run: |
           set -e
           cd studio
-          SANITY_AUTH_TOKEN="${{ secrets.STUDIO_DEPLOY }}" npx sanity deploy
+          SANITY_AUTH_TOKEN="${{ secrets.STUDIO_DEPLOY }}"  SANITY_STUDIO_GOOGLE_TRANSLATE_API_KEY="${{ secrets.SANITY_STUDIO_GOOGLE_TRANSLATE_API_KEY }}" SANITY_STUDIO_PREVIEW_SECRET="${{ secrets.SANITY_STUDIO_PREVIEW_SECRET }}" SANITY_STUDIO_PREVIEW_URL="${{ secrets.SANITY_STUDIO_PREVIEW_URL }}" npx sanity deploy
