@@ -25,8 +25,6 @@ export default () => {
   return S.list()
     .title('Content')
     .items([
-      // ...Structure.getFilteredDocumentTypeListItems(),
-
       // Custom document-level translation structure
       S.listItem()
         .title('Lessons')

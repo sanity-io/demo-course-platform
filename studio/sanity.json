@@ -43,8 +43,8 @@
       "path": "./src/languageFilterConfig.js"
     },
     {
-      "name": "part:@sanity/desk-tool/language-select-component?",
-      "path": "./src/languageConsolidator.js"
+      "implements": "part:@sanity/document-internationalization/ui/flags",
+      "path": "./src/components/customFlags.ts"
     }
   ]
 }
