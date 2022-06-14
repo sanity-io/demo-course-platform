@@ -28,7 +28,7 @@ export default function Layout({translations, legals = [], children}) {
       </header>
       {children}
       {legals?.length ? (
-        <footer className="container mx-auto p-4 md:p-8 xl:p-16 text-right">
+        <footer className="container mx-auto p-4 md:p-8 xl:p-16 flex justify-end gap-4 align-middle">
           {legals.map((legal) =>
             legal?.slug?.current ? (
               <Link key={legal._id} href={`/legal/${legal.slug.current}`}>
