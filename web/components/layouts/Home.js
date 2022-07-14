@@ -15,7 +15,7 @@ export default function Home({data}) {
     language: id,
     path: id === i18n.base ? `/` : `/${id}`,
   }))
-  const courseStart = labels.find(({key}) => key === 'course.start')?.text
+  const courseStart = labels?.length ? labels.find(({key}) => key === 'course.start')?.text : ``
 
   return (
     <Layout translations={translations} legals={legals}>

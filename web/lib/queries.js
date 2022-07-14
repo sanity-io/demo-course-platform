@@ -7,8 +7,8 @@ export const labelsQuery = groq`*[_id == "labelGroup"][0].labels[]{
 
 export const presenterQuery = groq`*[_type == "presenter" && slug.current == $slug && !(_id in path("drafts.**"))][0]{
   ...,
-  "title": coalesce(title[$language], title[$baseLanguage]),
-  "biography": coalesce(biography[$language], biography[$baseLanguage])
+  "title": coalesce(title[_key == $language][0].value, title[_key == $baseLanguage][0].value),
+  "biography": coalesce(biography[_key == $language][0].value, biography[_key == $baseLanguage][0].value),
 }`
 
 export const legalsQuery = groq`*[_type == "legal" && !(_id in path("drafts.**"))]{
@@ -65,7 +65,7 @@ const courseQueryData = groq`
     // "course" documents have an array of "presenter" references
     presenters[]->{
       name,
-      "title": coalesce(title[$language], title[$baseLanguage]),
+      "title": coalesce(title[_key == $language][0].value, title[_key == $baseLanguage][0].value),
     },
 
     // Plus global data

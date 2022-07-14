@@ -1,9 +1,9 @@
-import {internationalizedArray} from 'sanity-plugin-internationalized-array'
 import {FiUser, FiGlobe, FiUsers, FiMapPin} from 'react-icons/fi'
+import {defineField, defineType, Rule} from 'sanity'
 
-import {i18n} from '../../../../languages'
+import {i18n} from '../../../languages'
 
-export default {
+export default defineType({
   name: 'presenter',
   title: 'Presenter',
   icon: FiUser,
@@ -13,9 +13,7 @@ export default {
       name: 'common',
       title: 'Common',
       icon: FiUsers,
-      // default: true,
     },
-
     {
       name: 'localized',
       title: 'Localized',
@@ -28,63 +26,54 @@ export default {
     },
   ],
   fields: [
-    {
+    defineField({
       name: 'name',
       group: 'common',
       type: 'string',
-    },
-    internationalizedArray({
+    }),
+    defineField({
       name: 'title',
-      type: 'string',
-      languages: i18n.languages,
+      type: 'localizedGoogleTranslateString',
       group: 'localized',
-      hidden: ({document}) => !document.name,
+      hidden: ({document}) => Boolean(!document?.name),
     }),
-    internationalizedArray({
+    defineField({
       name: 'biography',
-      type: 'text',
-      languages: i18n.languages,
       group: 'localized',
-      hidden: ({document}) => !document.name,
+      type: 'localizedText',
+      hidden: ({document}) => Boolean(!document?.title),
     }),
-    {
+    defineField({
       name: 'slug',
       type: 'slug',
       options: {source: 'name'},
-      hidden: ({document}) => !document.name,
-      validation: (Rule) => Rule.required(),
-    },
-    {
+      hidden: ({document}) => Boolean(!document?.name),
+      validation: (Rule: Rule) => Rule.required(),
+    }),
+    defineField({
       name: 'photo',
       group: 'common',
       type: 'image',
       options: {hotspot: true},
-      hidden: ({document}) => !document.title,
-    },
-    {
+      hidden: ({document}) => Boolean(!document?.title),
+    }),
+    defineField({
       name: 'availability',
       group: 'markets',
       type: 'array',
-      hidden: ({document}) => !document.name,
+      hidden: ({document}) => Boolean(!document?.name),
       options: {
         layout: 'tags',
         list: i18n.languages.map((lang) => ({value: lang.id, title: lang.title})),
       },
       of: [{type: 'string'}],
-    },
+    }),
   ],
   preview: {
     select: {
       title: 'name',
-      subtitle: 'title',
+      subtitle: 'title.en_US',
       media: 'photo',
     },
-    prepare({title, subtitle, media}) {
-      return {
-        title,
-        subtitle: subtitle?.length ? subtitle.find((s) => s._key === `en_US`).value : ``,
-        media,
-      }
-    },
   },
-}
+})

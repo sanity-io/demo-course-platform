@@ -1,0 +1,30 @@
+{
+  "name": "demo-course-platform",
+  "private": true,
+  "version": "1.0.0",
+  "main": "package.json",
+  "license": "UNLICENSED",
+  "scripts": {
+    "start": "sanity start",
+    "build": "sanity build",
+    "lint": "eslint . --fix"
+  },
+  "keywords": [
+    "sanity"
+  ],
+  "dependencies": {
+    "@sanity/code-input": "^3.0.0-v3-studio.2",
+    "@sanity/eslint-config-studio": "^2.0.0",
+    "eslint": "^8.6.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "prettier": "^2.7.1",
+    "react": "^17.0.0",
+    "react-dom": "^17.0.0",
+    "react-icons": "^4.4.0",
+    "sanity": "dev-preview",
+    "sanity-plugin-documents-pane": "^1.0.8",
+    "sanity-plugin-iframe-pane": "^1.0.16",
+    "styled-components": "^5.2.0"
+  }
+}

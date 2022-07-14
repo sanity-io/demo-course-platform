@@ -1,0 +1,6 @@
+.media-flag img {
+  position: static;
+  width: 80%;
+  height: auto;
+  transform: scale(1.5);
+}

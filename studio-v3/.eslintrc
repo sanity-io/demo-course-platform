@@ -1,0 +1,17 @@
+{
+  "root": true,
+  "ignorePatterns": [".sanity", "dist", "node_modules"],
+  "extends": ["@sanity/eslint-config-studio", "prettier"],
+  "plugins": ["prettier"],
+  "rules": {
+    "prettier/prettier": [
+      "error",
+      {
+        "semi": false,
+        "printWidth": 100,
+        "bracketSpacing": false,
+        "singleQuote": true
+      }
+    ]
+  }
+}

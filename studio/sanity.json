@@ -15,7 +15,8 @@
     "@sanity/language-filter",
     "@sanity/document-internationalization",
     "@sanity/code-input",
-    "@sanity/vision"
+    "@sanity/vision",
+    "internationalized-array"
   ],
   "parts": [
     {

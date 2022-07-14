@@ -1,28 +1,12 @@
-import S from '@sanity/desk-tool/structure-builder'
-import * as Structure from '@sanity/document-internationalization/lib/structure'
 import {FiAward, FiType, FiUsers} from 'react-icons/fi'
+import {StructureResolver, DefaultDocumentNodeResolver} from 'sanity/desk'
 
-import {i18n} from '../../../languages'
-import markets from '../styles/markets.css?raw'
 import preview from './preview'
-import references from './references'
-// import transifex from './transifex'
+// import references from './references'
+import {i18n} from '../../languages'
 
-export const getDefaultDocumentNode = ({schemaType}) => {
-  switch (schemaType) {
-    case 'presenter':
-      return S.document().views([S.view.form(), preview, references])
-    case 'lesson':
-    case 'course':
-    case 'legal':
-      return S.document().views([S.view.form(), preview])
-    default:
-      return S.document()
-  }
-}
-
-export default () => {
-  return S.list()
+export const structure: StructureResolver = (S, context) =>
+  S.list()
     .title('Content')
     .items([
       // Custom document-level translation structure
@@ -48,12 +32,12 @@ export default () => {
                       .schemaType('lesson')
                       .filter('_type == "lesson" && __i18n_lang == $language')
                       .params({language: language.id})
-                      // .initialValueTemplates([
-                      //   S.initialValueTemplateItem('lesson-language', {
-                      //     language: language.id,
-                      //   }),
-                      // ])
-                      .canHandleIntent(S.documentTypeList(`lesson`).getCanHandleIntent())
+                    // .initialValueTemplates([
+                    //   S.initialValueTemplateItem('lesson-language', {
+                    //     language: language.id,
+                    //   }),
+                    // ])
+                    //   .canHandleIntent(S.documentTypeList(`lesson`).getCanHandleIntent())
                   )
               )
             )
@@ -69,6 +53,22 @@ export default () => {
       // Market-specific portable text example
       S.documentTypeListItem('legal').title('Legal'),
       S.divider(),
-      Structure.getMaintenanceListItem().serialize(),
     ])
+
+export const defaultDocumentNode: DefaultDocumentNodeResolver = (S, {schemaType}) => {
+  switch (schemaType) {
+    case 'presenter':
+      return S.document().views([
+        S.view.form(),
+        preview(S),
+        // TODO: Re-add References Pane
+        // references(S),
+      ])
+    case 'lesson':
+    case 'course':
+    case 'legal':
+      return S.document().views([S.view.form(), preview(S)])
+    default:
+      return S.document()
+  }
 }
