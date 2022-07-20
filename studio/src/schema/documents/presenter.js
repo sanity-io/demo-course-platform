@@ -39,6 +39,19 @@ export default {
       languages: i18n.languages,
       group: 'localized',
       hidden: ({document}) => !document.name,
+      // readOnly: true,
+      validation: (Rule) =>
+        Rule.custom((value, {parent}) => {
+          const businessItems = value.filter((v) => v.value?.startsWith(`Business`))
+          if (businessItems.length) {
+            return {
+              message: `No business`,
+              paths: businessItems.map((v) => ({_key: v._key})),
+            }
+          }
+
+          return true
+        }),
     }),
     internationalizedArray({
       name: 'biography',

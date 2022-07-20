@@ -23,4 +23,17 @@ export default {
       of: [{type: 'marketContent'}, ...portableText.of],
     },
   ],
+  preview: {
+    select: {
+      title: 'title',
+      slug: 'slug.current',
+    },
+    prepare({title, slug}) {
+      return {
+        title,
+        subtitle: `/legal/${slug}`,
+        media: FiArchive,
+      }
+    },
+  },
 }

@@ -4,7 +4,7 @@ import {FiGlobe} from 'react-icons/fi'
 import {i18n} from '../../../../languages'
 import Flag from '../../components/Flag'
 
-const defaults = {nonTextBehavior: 'asdf'}
+const defaults = {nonTextBehavior: ''}
 
 function blocksToText(blocks, opts = {}) {
   const options = Object.assign({}, defaults, opts)
@@ -27,7 +27,6 @@ export default {
   fields: [
     {
       name: 'market',
-      title: 'Market',
       type: 'string',
       options: {
         layout: 'select',
@@ -37,8 +36,17 @@ export default {
     },
     {
       name: 'content',
-      title: 'Content',
-      type: 'portableText',
+      type: 'array',
+      of: [{type: 'block', styles: [], lists: [], marks: {}}],
+      validation: (Rule) =>
+        Rule.custom((value, {path}) => {
+          // Inline blocks can only have one line of content
+          if (value && value.length > 1 && path.length > 3) {
+            return `This content must be a single line`
+          }
+
+          return true
+        }),
     },
   ],
   preview: {
@@ -47,7 +55,7 @@ export default {
       market: 'market',
     },
     prepare({content, market}) {
-      const title = blocksToText(content)
+      const title = content ? blocksToText(content) : `<Empty Content>`
 
       return {
         title,

@@ -19,17 +19,13 @@ export const legalsQuery = groq`*[_type == "legal" && !(_id in path("drafts.**")
 
 export const legalQuery = groq`*[_type == "legal" && slug.current == $slug][0]{
   ...,
+  // Filter portable text blocks that belong to this market are not market specific
   content[_type != "marketContent" || (_type == "marketContent" && market == $language)]{
     ...,
-    
-    // Filter markDefs down to just this language if annotation is "marketText"
-    markDefs[_type != "marketText" || (_type == "marketText" && market == $language)],
-
-    // Filter children array to items with no marks, or a key in the filtered markers
-    children[
-      !defined(marks) || count(marks) < 1 || 
-      marks[0] in ^.markDefs[_type != "marketText" || (_type == "marketText" && market == $language)]._key
-    ]
+    // filter inline blocks with the same conditions
+    "children": children[_type != "marketContent" || (_type == "marketContent" && market == $language)]{
+      ...
+    }
   },
   "legals": ${legalsQuery}
 }`
@@ -65,6 +61,7 @@ const courseQueryData = groq`
     // "course" documents have an array of "presenter" references
     presenters[]->{
       name,
+      // presenter field-level translations use arrays, not objects
       "title": coalesce(title[_key == $language][0].value, title[_key == $baseLanguage][0].value),
     },
 

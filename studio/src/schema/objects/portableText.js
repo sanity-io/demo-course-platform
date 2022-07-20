@@ -1,9 +1,8 @@
 import React from 'react'
 import {ImageIcon} from '@sanity/icons'
 
+import {FiGlobe} from 'react-icons/fi'
 import {i18n} from '../../../../languages'
-
-const MarketTextRender = ({market, children}) => <span data-market-text={market}>{children}</span>
 
 export default {
   name: 'portableText',
@@ -45,27 +44,9 @@ export default {
               modal: {width: 'medium'},
             },
           },
-          {
-            name: 'marketText',
-            type: 'object',
-            blockEditor: {
-              render: MarketTextRender,
-            },
-            fields: [
-              {
-                name: 'market',
-                title: 'Market',
-                type: 'string',
-                options: {
-                  layout: 'select',
-                  list: i18n.languages.map((lang) => ({value: lang.id, title: lang.title})),
-                },
-                initialValue: i18n.base,
-              },
-            ],
-          },
         ],
       },
+      of: [{type: 'marketContent', title: 'Inline Market Content'}],
     },
     {type: 'image', icon: ImageIcon},
     {type: 'code'},

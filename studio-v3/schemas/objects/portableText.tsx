@@ -49,25 +49,6 @@ export default defineType({
               modal: {width: 'medium'},
             },
           }),
-          {
-            name: 'marketText',
-            type: 'object',
-            blockEditor: {
-              render: MarketTextRender,
-            },
-            fields: [
-              defineField({
-                name: 'market',
-                title: 'Market',
-                type: 'string',
-                options: {
-                  layout: 'dropdown',
-                  list: i18n.languages.map((lang) => ({value: lang.id, title: lang.title})),
-                },
-                initialValue: i18n.base,
-              }),
-            ],
-          },
         ],
       },
     }),

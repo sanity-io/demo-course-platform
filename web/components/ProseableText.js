@@ -10,24 +10,24 @@ import {portableTextComponents} from '../lib/portableTextComponents'
  */
 export default function ProseableText({value = []}) {
   // Before grouping, inline any marketContent _type blocks
-  // (it would be nice to do this in the query, but it's not possible)
-  const inlinedValue = useMemo(
-    () =>
-      value.reduce((acc, item) => {
-        if (item._type === 'marketContent' && item?.content?.length) {
-          return [...acc, ...item.content]
-        }
+  // ...if you want to, I don't because I want to highlight them for demo purposes
+  // const inlinedValue = useMemo(
+  //   () =>
+  //     value.reduce((acc, item) => {
+  //       if (item._type === 'marketContent' && item?.content?.length) {
+  //         return [...acc, ...item.content]
+  //       }
 
-        return [...acc, item]
-      }, []),
-    [value]
-  )
+  //       return [...acc, item]
+  //     }, []),
+  //   [value]
+  // )
 
   // Group together standard `_type === "block"`  blocks
   // eg <p>, <li>, etc – and separate out everyone else
   const valueGroups = useMemo(
     () =>
-      inlinedValue.reduce(
+      value.reduce(
         (acc, item) => {
           const lastIdx = acc.length - 1
 
@@ -47,7 +47,7 @@ export default function ProseableText({value = []}) {
         },
         [[]]
       ),
-    [inlinedValue]
+    [value]
   )
 
   if (!valueGroups?.length) return null
@@ -63,7 +63,7 @@ export default function ProseableText({value = []}) {
             <PortableText components={portableTextComponents} value={group} />
           </div>
         ) : (
-          <PortableText components={portableTextComponents} key={group[0]._key} value={group} />
+          <PortableText key={group[0]._key} components={portableTextComponents} value={group} />
         )
       )}
     </div>

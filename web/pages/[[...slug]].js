@@ -37,7 +37,6 @@ export default function Page({data: initialData, layout, query, queryParams, pre
 }
 
 export async function getStaticProps({params, locale, preview = false}) {
-  let data
   let layout
   let query
   const slugStart = params?.slug?.length ? params.slug[0] : null
@@ -48,28 +47,25 @@ export async function getStaticProps({params, locale, preview = false}) {
     // Home page has no slug
     layout = `home`
     query = homeQuery
-    data = await getClient(preview).fetch(query, queryParams)
   } else if (slugStart === `legal`) {
     // Legal slugs start with /legal
     layout = `legal`
     query = legalQuery
-    data = await getClient(preview).fetch(query, queryParams)
   } else if (slugStart === `presenter`) {
     // Presenter slugs start with /presenter
     layout = `presenter`
     query = presenterQuery
-    data = await getClient(preview).fetch(query, queryParams)
   } else if (params.slug.length === 2) {
     // Lesson slugs have /two/parts that are unpredictable
     layout = `lesson`
     query = lessonQuery
-    data = await getClient(preview).fetch(query, queryParams)
   } else {
     // Course slugs have /one part that is unpredictable
     layout = `course`
     query = courseQuery
-    data = await getClient(preview).fetch(query, queryParams)
   }
+
+  const data = await getClient(preview).fetch(query, queryParams)
 
   if (!data) {
     return {
