@@ -24,7 +24,7 @@
     "react-icons": "^4.4.0",
     "sanity": "dev-preview",
     "sanity-plugin-documents-pane": "^1.0.8",
-    "sanity-plugin-iframe-pane": "file:.yalc/sanity-plugin-iframe-pane",
+    "sanity-plugin-iframe-pane": "^2.0.0",
     "sanity-plugin-internationalized-array": "^1.0.0",
     "styled-components": "^5.2.0"
   }
