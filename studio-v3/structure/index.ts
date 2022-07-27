@@ -5,7 +5,7 @@ import preview from './preview'
 // import references from './references'
 import {i18n} from '../../languages'
 
-export const structure: StructureResolver = (S, context) =>
+export const structure: StructureResolver = (S) =>
   S.list()
     .title('Content')
     .items([

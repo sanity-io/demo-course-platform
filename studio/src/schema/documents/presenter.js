@@ -39,19 +39,6 @@ export default {
       languages: i18n.languages,
       group: 'localized',
       hidden: ({document}) => !document.name,
-      // readOnly: true,
-      validation: (Rule) =>
-        Rule.custom((value, {parent}) => {
-          const businessItems = value.filter((v) => v.value?.startsWith(`Business`))
-          if (businessItems.length) {
-            return {
-              message: `No business`,
-              paths: businessItems.map((v) => ({_key: v._key})),
-            }
-          }
-
-          return true
-        }),
     }),
     internationalizedArray({
       name: 'biography',
@@ -93,9 +80,11 @@ export default {
       media: 'photo',
     },
     prepare({title, subtitle, media}) {
+      const subtitleText = subtitle?.length ? subtitle?.find((v) => v?._key === 'en_US')?.value : ``
+
       return {
         title,
-        subtitle: subtitle?.length ? subtitle.find((s) => s._key === `en_US`).value : ``,
+        subtitle: subtitleText ?? ``,
         media,
       }
     },

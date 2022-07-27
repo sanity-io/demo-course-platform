@@ -1,18 +1,24 @@
+import {SanityClient} from '@sanity/client'
+import {SanityDocumentLike} from 'sanity'
+
 import {i18n} from '../../languages'
 
 // A random string that both the Studio and Next.js website know
 const previewSecret =
-  process.env.SANITY_STUDIO_PREVIEW_SECRET ?? `1dms79gupppykoidqowrp121vcqsfyggftlr`
+  import.meta.env.SANITY_STUDIO_PREVIEW_SECRET ?? `1dms79gupppykoidqowrp121vcqsfyggftlr`
 
 // URL of the Next.js website
 const remoteUrl =
-  process.env.SANITY_STUDIO_PREVIEW_URL ?? `https://demo-course-platform.sanity.build`
+  import.meta.env.SANITY_STUDIO_PREVIEW_URL ?? `https://demo-course-platform.sanity.build`
 const localUrl = `http://localhost:3000`
 
-const client = sanityClient.withConfig({apiVersion: `2021-05-19`})
+type DocWithSlug = SanityDocumentLike & {
+  slug?: {current?: string}
+  __i18n_base?: {_ref?: string}
+}
 
-export default async function resolveProductionUrl(doc, returnProd = false) {
-  const baseUrl = window.location.hostname === 'localhost' && !returnProd ? localUrl : remoteUrl
+export default async function resolveProductionUrl(doc: DocWithSlug, client: SanityClient) {
+  const baseUrl = window.location.hostname === 'localhost' ? localUrl : remoteUrl
 
   // Setup preview pathname and add secret
   const previewUrl = new URL(`${baseUrl}/api/preview`)
@@ -56,7 +62,7 @@ export default async function resolveProductionUrl(doc, returnProd = false) {
           ? [courseSlug, slug].join(`/`)
           : [doc.__i18n_lang, courseSlug, slug].join(`/`)
     }
-  } else if (doc._type === 'course') {
+  } else if (doc._type === 'course' && i18n?.base && doc?.slug[i18n.base].current) {
     slug = doc.slug[i18n.base].current
   } else if (doc._type === 'legal') {
     slug = `legal/${doc?.slug?.current}`

@@ -11,4 +11,8 @@ const i18n = {
 
 const googleTranslateLanguages = languages.map(({id, title}) => ({id, title}))
 
-module.exports = {i18n, googleTranslateLanguages}
+// For v2 studio
+// module.exports = {i18n, googleTranslateLanguages}
+
+// For v3 studio
+export {i18n, googleTranslateLanguages}

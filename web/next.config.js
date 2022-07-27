@@ -1,4 +1,4 @@
-const {i18n} = require('../languages')
+const {i18n} = require('../languages.json')
 
 module.exports = {
   images: {

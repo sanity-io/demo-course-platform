@@ -1,0 +1,47 @@
+{
+  "name": "sanity-plugin-iframe-pane",
+  "version": "2.0.0",
+  "description": "Display any URL in a View Pane, along with helpful buttons to Copy the URL or open in a new tab",
+  "author": "Simeon Griggs <simeon@sanity.io>",
+  "license": "MIT",
+  "source": "./src/index.ts",
+  "main": "./lib/cjs/index.js",
+  "module": "./lib/esm/index.js",
+  "types": "./lib/types/index.d.ts",
+  "exports": {
+    ".": {
+      "require": "./lib/cjs/index.js",
+      "default": "./lib/esm/index.js"
+    }
+  },
+  "files": [
+    "src",
+    "lib",
+    "v2-incompatible.js",
+    "sanity.json"
+  ],
+  "scripts": {
+    "clean": "rimraf lib",
+    "lint": "eslint .",
+    "prebuild": "npm run clean && plugin-kit verify-package --silent",
+    "build": "parcel build --no-cache",
+    "watch": "parcel watch",
+    "link-watch": "plugin-kit link-watch",
+    "prepublishOnly": "npm run build"
+  },
+  "repository": {},
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "dependencies": {
+    "@sanity/icons": "^1.3.1",
+    "@sanity/incompatible-plugin": "^0.0.1-studio-v3.1",
+    "@sanity/ui": "^0.37.12",
+    "usehooks-ts": "^2.6.0"
+  },
+  "peerDependencies": {
+    "react": "^17.0.0 || ^18.0.0",
+    "sanity": "purple-unicorn"
+  },
+  "yalcSig": "1539c7c052096358480f5e57ea4c4c25"
+}
