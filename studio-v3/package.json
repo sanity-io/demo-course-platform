@@ -14,6 +14,7 @@
   ],
   "dependencies": {
     "@sanity/code-input": "^3.0.0-v3-studio.2",
+    "@sanity/document-internationalization": "^1.0.0-v3-studio.6",
     "@sanity/eslint-config-studio": "^2.0.0",
     "eslint": "^8.6.0",
     "eslint-config-prettier": "^8.5.0",

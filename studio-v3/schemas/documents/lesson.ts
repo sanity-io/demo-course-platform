@@ -35,7 +35,7 @@ import {i18n} from '../../../languages'
 export default defineType({
   name: 'lesson',
   title: 'Lesson',
-  i18n,
+  i18n: true,
   initialValue: {
     __i18n_lang: i18n.base,
     __i18n_refs: [],
