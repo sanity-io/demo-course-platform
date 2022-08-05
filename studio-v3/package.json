@@ -27,6 +27,7 @@
     "sanity-plugin-documents-pane": "^1.0.8",
     "sanity-plugin-iframe-pane": "^2.0.0",
     "sanity-plugin-internationalized-array": "^1.0.0",
+    "sanity-plugin-language-filter": "file:.yalc/sanity-plugin-language-filter",
     "styled-components": "^5.2.0"
   }
 }

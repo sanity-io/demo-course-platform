@@ -5908,6 +5908,13 @@
     "@sanity/ui" "^0.37.12"
     "styled-components" "^5.3.5"
 
+"sanity-plugin-language-filter@file:.yalc/sanity-plugin-language-filter":
+  "resolved" "file:.yalc/sanity-plugin-language-filter"
+  "version" "1.0.0"
+  dependencies:
+    "@sanity/incompatible-plugin" "^0.0.1-studio-v3.1"
+    "usehooks-ts" "^2.6.0"
+
 "sanity@dev-preview", "sanity@purple-unicorn":
   "integrity" "sha512-Uiv0xScXbpODE35Dm/KRnNKAo9osEEwLGUOVASLHW3gBcY2FPXzphu9N28h4/SY0KbUEWNykkPncy5b7M8RCVg=="
   "resolved" "https://registry.npmjs.org/sanity/-/sanity-3.0.0-dev-preview.11.tgz"

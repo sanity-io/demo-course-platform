@@ -27,3 +27,6 @@
 
 # Typescript
 *.tsbuildinfo
+
+yalc.lock
+.yalc

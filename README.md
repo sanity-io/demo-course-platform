@@ -2,6 +2,8 @@
 
 An example Studio and Next.js Front End handling multiple strategies for Localization with Sanity.io
 
+(The `studio-v3` folder is a work in progress as `v3` is [currently in Developer Preview](https://beta.sanity.io/))
+
 Read guides about Localization with Sanity.io on the Demo Site: [demo-course-platform.sanity.build](https://demo-course-platform.sanity.build/)
 
 ## Video Walkthrough
