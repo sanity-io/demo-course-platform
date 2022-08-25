@@ -23,9 +23,7 @@ export const legalQuery = groq`*[_type == "legal" && slug.current == $slug][0]{
   content[_type != "marketContent" || (_type == "marketContent" && market == $language)]{
     ...,
     // filter inline blocks with the same conditions
-    "children": children[_type != "marketContent" || (_type == "marketContent" && market == $language)]{
-      ...
-    }
+    "children": children[_type != "marketContent" || (_type == "marketContent" && market == $language)]
   },
   "legals": ${legalsQuery}
 }`
@@ -104,7 +102,7 @@ export const lessonQuery = groq`*[_type == "lesson" && slug.current == $slug][0]
 }`
 
 export const homeQuery = groq`{
-  "courses": *[_type == "course" && !(_id in path('drafts.*'))],
+  "courses": *[_type == "course" && !(_id in path('drafts.*')) && count(presenters) > 0 && count(lessons) > 0],
   "labels": ${labelsQuery},
   "legals": ${legalsQuery}
 }`

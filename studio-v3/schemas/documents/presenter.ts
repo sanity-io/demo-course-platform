@@ -81,7 +81,7 @@ export default defineType({
     prepare({title, subtitle, media}) {
       return {
         title,
-        subtitle: subtitle?.length ? subtitle.find((s) => s._key === `en_US`).value : ``,
+        subtitle: subtitle?.length ? subtitle.find((s) => s._key === `en`).value : ``,
         media,
       }
     },

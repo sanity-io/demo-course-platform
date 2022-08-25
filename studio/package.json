@@ -39,7 +39,7 @@
     "sanity-plugin-google-translate": "^2.0.0",
     "sanity-plugin-iframe-pane": "^1.0.15",
     "sanity-plugin-internationalized-array": "^0.0.7",
-    "sanity-plugin-transifex": "^0.9.85",
+    "sanity-plugin-transifex": "^2.0.5",
     "styled-components": "^5.2.0",
     "typescript": "^4.5.2"
   },

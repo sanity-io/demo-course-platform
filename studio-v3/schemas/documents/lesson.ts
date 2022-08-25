@@ -88,7 +88,7 @@ export default defineType({
     }) {
       const subtitle = language
         ? [
-            language,
+            language.toUpperCase(),
             translations > 0
               ? `${translations} ${translations === 1 ? `translation` : `translations`}`
               : `No translations`,

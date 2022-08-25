@@ -1,5 +1,5 @@
 const languages = [
-  {id: 'en_US', title: 'English (US)', isDefault: true},
+  {id: 'en', title: 'English', isDefault: true},
   {id: 'nl', title: 'Dutch'},
   {id: 'no', title: 'Norwegian'},
 ]

@@ -39,6 +39,7 @@ export default function LessonLinks({lessons = [], openByDefault = false}) {
             lessonGroup.find((lesson) => lesson.language === i18n.base)
           )
         })
+        .filter((lesson) => Boolean(lesson?.path))
         // Add an `active` key for styling
         .map((lesson) => {
           return {

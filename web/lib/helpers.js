@@ -57,16 +57,16 @@ export function createCourseSummary(lessons = [], presenters = [], labels = []) 
   const presenterSingular = labels.find(({key}) => key === 'presenter.singular')?.text
   const presenterPlural = labels.find(({key}) => key === 'presenter.plural')?.text
 
-  if (lessons.length) {
+  if (lessons?.length) {
     value.push(lessons.length)
     value.push(lessons.length === 1 ? lessonSingular : lessonPlural)
   }
 
-  if (lessons.length && presenters.length) {
+  if (lessons?.length && presenters?.length) {
     value.push(`//`)
   }
 
-  if (presenters.length) {
+  if (presenters?.length) {
     value.push(presenters.length)
     value.push(presenters.length === 1 ? presenterSingular : presenterPlural)
   }

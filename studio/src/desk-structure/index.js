@@ -3,17 +3,17 @@ import * as Structure from '@sanity/document-internationalization/lib/structure'
 import {FiAward, FiType, FiUsers} from 'react-icons/fi'
 
 import {i18n} from '../../../languages'
-import markets from '../styles/markets.css?raw'
 import preview from './preview'
 import references from './references'
-// import transifex from './transifex'
+import transifex from './transifex'
 
 export const getDefaultDocumentNode = ({schemaType}) => {
   switch (schemaType) {
     case 'presenter':
       return S.document().views([S.view.form(), preview, references])
-    case 'lesson':
     case 'course':
+      return S.document().views([S.view.form(), preview, transifex])
+    case 'lesson':
     case 'legal':
       return S.document().views([S.view.form(), preview])
     default:

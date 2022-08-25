@@ -75,7 +75,7 @@ export default {
     prepare({title, language, translations, media}) {
       const subtitle = language
         ? [
-            language,
+            language.toUpperCase(),
             translations > 0
               ? `${translations} ${translations === 1 ? `translation` : `translations`}`
               : `No translations`,
