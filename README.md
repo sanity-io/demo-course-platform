@@ -25,6 +25,8 @@ Document-level internationalization using the [@sanity/document-internationaliza
 
 Field-level internationalization using the [@sanity/language-filter](https://www.npmjs.com/package/@sanity/language-filter) plugin. Only some fields in this schema require localization so we have a mix of localized objects (`title` and `slug`) as well as global fields.
 
+This document type also uses the [Transifex Plugin](https://www.sanity.io/plugins/sanity-plugin-transifex) to create translations for the `title` and `slug` fields.
+
 ### Presenters
 
 Also uses Field-level internationalization using the new [sanity-plugin-internationalized-array](https://www.npmjs.com/package/sanity-plugin-internationalized-array) plugin. Again only some fields are localized and some are global. This plugin may be more beneficial if you have more than four languages to save on the number of unique attributes in a dataset.

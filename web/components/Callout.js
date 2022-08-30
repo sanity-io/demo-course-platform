@@ -1,5 +1,5 @@
 import React from 'react'
-import {CheckCircleIcon, ExclamationIcon, XCircleIcon} from '@heroicons/react/outline'
+import {CheckCircleIcon, ExclamationIcon, XCircleIcon} from '@heroicons/react/24/outline'
 
 import ProseableText from './ProseableText'
 

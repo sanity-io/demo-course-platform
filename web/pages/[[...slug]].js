@@ -17,6 +17,8 @@ export default function Page({data: initialData, layout, query, queryParams, pre
   const {data} = usePreviewSubscription(query, {
     params: queryParams,
     initialData,
+    // TODO: Fix preview mode on Legal pages
+    // enabled: preview && layout !== 'legal',
     enabled: preview,
   })
 

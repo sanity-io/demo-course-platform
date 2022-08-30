@@ -1,6 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
-import {TranslateIcon} from '@heroicons/react/outline'
+import {LanguageIcon} from '@heroicons/react/24/outline'
 
 import TranslationLinks from '../TranslationLinks'
 import Meta from '../Meta'
@@ -16,7 +16,7 @@ export default function Layout({translations, legals = [], children}) {
             <Link href="/">
               <a className="block transition-colors duration-200 font-display font-bold group relative z-0">
                 <span className="flex items-center relative z-10 group-hover:text-cyan-700">
-                  <TranslateIcon className="text-cyan-500 group-hover:text-pink-400 w-6 h-6 mr-2" />
+                  <LanguageIcon className="text-cyan-500 group-hover:text-pink-400 w-6 h-6 mr-2" />
                   Course Platform
                 </span>
                 <span className="pointer-events-none absolute inset-0 rounded-md -my-2 group-hover:scale-110  bg-white opacity-0 group-hover:opacity-100 transition-all duration-200" />

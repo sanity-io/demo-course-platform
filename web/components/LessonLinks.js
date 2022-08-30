@@ -5,7 +5,7 @@ import PropTypes from 'prop-types'
 import Link from 'next/link'
 import {useWindowSize} from 'usehooks-ts'
 
-import {ChevronDownIcon} from '@heroicons/react/outline'
+import {ChevronDownIcon} from '@heroicons/react/24/outline'
 import {i18n} from '../../languages'
 
 const buttonClasses = {

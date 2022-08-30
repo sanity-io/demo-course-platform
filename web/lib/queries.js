@@ -20,7 +20,7 @@ export const legalsQuery = groq`*[_type == "legal" && !(_id in path("drafts.**")
 export const legalQuery = groq`*[_type == "legal" && slug.current == $slug][0]{
   ...,
   // Filter portable text blocks that belong to this market are not market specific
-  content[_type != "marketContent" || (_type == "marketContent" && market == $language)]{
+  content[_type != "marketContent" || (_type == "marketContent" && market == $language)] {
     ...,
     // filter inline blocks with the same conditions
     "children": children[_type != "marketContent" || (_type == "marketContent" && market == $language)]

@@ -1,5 +1,5 @@
 import React, {useMemo} from 'react'
-import {ChevronLeftIcon, CheckIcon} from '@heroicons/react/outline'
+import {ChevronLeftIcon, CheckIcon} from '@heroicons/react/24/outline'
 import {useRouter} from 'next/router'
 
 import LessonLinks from '../LessonLinks'
