@@ -32,6 +32,13 @@ import {i18n} from '../../../languages'
 //   return client.fetch(query, params)
 // }
 
+type SelectProps = {
+  title: string
+  language: string
+  translations: number
+  media: string
+}
+
 export default defineType({
   name: 'lesson',
   title: 'Lesson',
@@ -75,17 +82,9 @@ export default defineType({
       translations: '__i18n_refs.length',
       media: 'image',
     },
-    prepare({
-      title,
-      language,
-      translations,
-      media,
-    }: {
-      title: string
-      language: string
-      translations: number
-      media: unknown
-    }) {
+    prepare(select: Record<string, any>) {
+      const {title, language, translations, media} = select
+
       const subtitle = language
         ? [
             language.toUpperCase(),

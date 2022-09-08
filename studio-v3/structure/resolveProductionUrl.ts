@@ -13,7 +13,9 @@ const remoteUrl =
 const localUrl = `http://localhost:3000`
 
 type DocWithSlug = SanityDocumentLike & {
-  slug?: {current?: string}
+  slug?: {
+    current: string | Record<string, {current: string}>
+  }
   __i18n_base?: {_ref?: string}
 }
 
@@ -62,7 +64,9 @@ export default async function resolveProductionUrl(doc: DocWithSlug, client: San
           ? [courseSlug, slug].join(`/`)
           : [doc.__i18n_lang, courseSlug, slug].join(`/`)
     }
+    // @ts-ignore
   } else if (doc._type === 'course' && i18n?.base && doc?.slug[i18n.base].current) {
+    // @ts-ignore
     slug = doc.slug[i18n.base].current
   } else if (doc._type === 'legal') {
     slug = `legal/${doc?.slug?.current}`

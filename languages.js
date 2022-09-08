@@ -6,7 +6,7 @@ const languages = [
 
 const i18n = {
   languages,
-  base: languages.find((item) => item.isDefault)?.id,
+  base: languages.find((item) => item.isDefault).id,
 }
 
 const googleTranslateLanguages = languages.map(({id, title}) => ({id, title}))

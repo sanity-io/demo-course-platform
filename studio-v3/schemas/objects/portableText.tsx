@@ -4,9 +4,9 @@ import {ImageIcon} from '@sanity/icons'
 
 import {i18n} from '../../../languages'
 
-const MarketTextRender = ({market, children}: {market: string; children: React.ReactNode}) => (
-  <span data-market-text={market}>{children}</span>
-)
+// const MarketTextRender = ({market, children}: {market: string; children: React.ReactNode}) => (
+//   <span data-market-text={market}>{children}</span>
+// )
 
 export default defineType({
   name: 'portableText',
@@ -44,6 +44,7 @@ export default defineType({
             type: 'reference',
             to: [{type: 'lesson'}],
             options: {
+              disableNew: false,
               filter: '__i18n_lang == $base',
               filterParams: {base: i18n.base},
               modal: {width: 'medium'},
@@ -51,6 +52,7 @@ export default defineType({
           }),
         ],
       },
+      of: [{type: 'marketContent', title: 'Inline Market Content'}],
     }),
     defineField({name: 'image', type: 'image', icon: ImageIcon}),
     defineField({name: 'code', type: 'code'}),

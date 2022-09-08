@@ -55,19 +55,19 @@ export const structure: StructureResolver = (S) =>
       S.divider(),
     ])
 
-export const defaultDocumentNode: DefaultDocumentNodeResolver = (S, {schemaType}) => {
+export const defaultDocumentNode: DefaultDocumentNodeResolver = (S, {schemaType, client}) => {
   switch (schemaType) {
     case 'presenter':
       return S.document().views([
         S.view.form(),
-        preview(S),
+        preview(S, client),
         // TODO: Re-add References Pane
         // references(S),
       ])
     case 'lesson':
     case 'course':
     case 'legal':
-      return S.document().views([S.view.form(), preview(S)])
+      return S.document().views([S.view.form(), preview(S, client)])
     default:
       return S.document()
   }

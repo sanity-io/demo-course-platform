@@ -11,6 +11,10 @@ import ProseableText from '../components/ProseableText'
 import {config} from './config'
 
 const SanityImage = ({value}) => {
+  if (!value.asset) {
+    return null
+  }
+
   const {width, height} = getImageDimensions(value)
 
   return (

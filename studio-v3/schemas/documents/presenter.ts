@@ -1,6 +1,6 @@
 import {FiUser, FiGlobe, FiUsers, FiMapPin} from 'react-icons/fi'
 import {defineField, defineType, Rule} from 'sanity'
-import {internationalizedArray} from 'sanity-plugin-internationalized-array'
+import {internationalizedArrayField} from 'sanity-plugin-internationalized-array'
 
 import {i18n} from '../../../languages'
 
@@ -32,19 +32,22 @@ export default defineType({
       group: 'common',
       type: 'string',
     }),
-    internationalizedArray({
+    internationalizedArrayField({
       name: 'title',
       type: 'string',
       languages: i18n.languages,
       group: 'localized',
       hidden: ({document}) => Boolean(!document?.name),
     }),
-    internationalizedArray({
+    internationalizedArrayField({
       name: 'biography',
-      type: 'text',
       languages: i18n.languages,
       group: 'localized',
       hidden: ({document}) => Boolean(!document?.name),
+      field: {
+        type: 'text',
+        rows: 2,
+      },
     }),
     defineField({
       name: 'slug',
@@ -78,10 +81,12 @@ export default defineType({
       subtitle: 'title',
       media: 'photo',
     },
-    prepare({title, subtitle, media}) {
+    prepare({title, subtitle, media}: {title: any; subtitle: any; media: any}) {
+      const subtitleText = subtitle?.length ? subtitle?.find((v) => v?._key === 'en')?.value : ``
+
       return {
         title,
-        subtitle: subtitle?.length ? subtitle.find((s) => s._key === `en`).value : ``,
+        subtitle: subtitleText ?? ``,
         media,
       }
     },

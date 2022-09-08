@@ -26,7 +26,7 @@ export function createLessonLinks(lessons = [], courseSlug = {}) {
       const baseLanguageLesson = {
         language: lesson.__i18n_lang, // Should always be i18n.base
         title: lesson.title,
-        path: `/${[courseSlugBase, lesson.slug.current].join('/')}`,
+        path: [courseSlugBase, lesson.slug.current].join('/'),
       }
 
       const translations = lesson.__i18n_refs.map((ref) => {
@@ -37,7 +37,7 @@ export function createLessonLinks(lessons = [], courseSlug = {}) {
         return {
           language: ref.__i18n_lang, // Should never be i18n.base
           title: ref.title,
-          path: `/${[lessonLang, courseLangSlug, lessonLangSlug].join('/')}`,
+          path: [lessonLang, courseLangSlug, lessonLangSlug].join('/'),
         }
       })
 

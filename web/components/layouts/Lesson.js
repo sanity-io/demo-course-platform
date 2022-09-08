@@ -22,9 +22,7 @@ export default function Lesson({data}) {
   )
 
   const courseSlug = course?.slug[locale ?? i18n.base].current
-  const coursePath = `/${[locale === i18n.base ? null : locale, courseSlug]
-    .filter(Boolean)
-    .join('/')}`
+  const coursePath = [locale === i18n.base ? null : locale, courseSlug].filter(Boolean).join('/')
 
   // From the lessonPaths we can find the translations of this lesson
   const currentLessonIndex = lessonPaths.findIndex((versions) =>
