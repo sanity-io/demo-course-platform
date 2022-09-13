@@ -42,14 +42,18 @@ type SelectProps = {
 export default defineType({
   name: 'lesson',
   title: 'Lesson',
-  i18n: true,
-  initialValue: {
-    __i18n_lang: i18n.base,
-    __i18n_refs: [],
-  },
   icon: FiAward,
   type: 'document',
   fields: [
+    defineField({
+      name: 'language',
+      type: 'string',
+      options: {
+        list: i18n.languages.map(({id, title}) => ({value: id, title})),
+      },
+      readOnly: true,
+      hidden: true,
+    }),
     defineField({
       name: 'title',
       type: 'string',
@@ -78,23 +82,13 @@ export default defineType({
   preview: {
     select: {
       title: 'title',
-      language: '__i18n_lang',
-      translations: '__i18n_refs.length',
+      language: 'language',
       media: 'image',
     },
     prepare(select: Record<string, any>) {
-      const {title, language, translations, media} = select
+      const {title, language, media} = select
 
-      const subtitle = language
-        ? [
-            language.toUpperCase(),
-            translations > 0
-              ? `${translations} ${translations === 1 ? `translation` : `translations`}`
-              : `No translations`,
-          ]
-            .filter(Boolean)
-            .join(` | `)
-        : ``
+      const subtitle = language.toUpperCase()
 
       return {
         title,

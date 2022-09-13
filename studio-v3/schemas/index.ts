@@ -5,6 +5,7 @@ import lesson from './documents/lesson'
 import presenter from './documents/presenter'
 
 import callout from './objects/callout'
+import label from './objects/label'
 import localizedGoogleTranslateString from './objects/localizedGoogleTranslateString'
 import localizedSlug from './objects/localizedSlug'
 import localizedString from './objects/localizedString'
@@ -20,6 +21,7 @@ export const schemaTypes = [
   lesson,
   presenter,
   // objects
+  label,
   callout,
   localizedGoogleTranslateString,
   localizedSlug,

@@ -1,12 +1,11 @@
 import {FiUser, FiGlobe, FiUsers, FiMapPin} from 'react-icons/fi'
 import {defineField, defineType, Rule} from 'sanity'
-import {internationalizedArrayField} from 'sanity-plugin-internationalized-array'
+// import {internationalizedArrayField} from 'sanity-plugin-internationalized-array'
 
 import {i18n} from '../../../languages'
 
 export default defineType({
   name: 'presenter',
-  title: 'Presenter',
   icon: FiUser,
   type: 'document',
   groups: [
@@ -32,22 +31,13 @@ export default defineType({
       group: 'common',
       type: 'string',
     }),
-    internationalizedArrayField({
+    defineField({
       name: 'title',
-      type: 'string',
-      languages: i18n.languages,
-      group: 'localized',
-      hidden: ({document}) => Boolean(!document?.name),
+      type: 'internationalizedArrayString',
     }),
-    internationalizedArrayField({
+    defineField({
       name: 'biography',
-      languages: i18n.languages,
-      group: 'localized',
-      hidden: ({document}) => Boolean(!document?.name),
-      field: {
-        type: 'text',
-        rows: 2,
-      },
+      type: 'internationalizedArrayText',
     }),
     defineField({
       name: 'slug',
@@ -75,20 +65,20 @@ export default defineType({
       of: [{type: 'string'}],
     }),
   ],
-  preview: {
-    select: {
-      title: 'name',
-      subtitle: 'title',
-      media: 'photo',
-    },
-    prepare({title, subtitle, media}: {title: any; subtitle: any; media: any}) {
-      const subtitleText = subtitle?.length ? subtitle?.find((v) => v?._key === 'en')?.value : ``
+  // preview: {
+  //   select: {
+  //     title: 'name',
+  //     subtitle: 'title',
+  //     media: 'photo',
+  //   },
+  //   prepare({title, subtitle, media}: {title: any; subtitle: any; media: any}) {
+  //     const subtitleText = subtitle?.length ? subtitle?.find((v) => v?._key === 'en')?.value : ``
 
-      return {
-        title,
-        subtitle: subtitleText ?? ``,
-        media,
-      }
-    },
-  },
+  //     return {
+  //       title,
+  //       subtitle: subtitleText ?? ``,
+  //       media,
+  //     }
+  //   },
+  // },
 })
