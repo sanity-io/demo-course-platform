@@ -1,5 +1,5 @@
 import React from 'react'
-import {CheckCircleIcon, ExclamationIcon, XCircleIcon} from '@heroicons/react/24/outline'
+import {CheckCircleIcon, ExclamationCircleIcon, XCircleIcon} from '@heroicons/react/24/outline'
 
 import ProseableText from './ProseableText'
 
@@ -12,7 +12,7 @@ const toneClasses = {
 
 const toneIcons = {
   positive: CheckCircleIcon,
-  caution: ExclamationIcon,
+  caution: ExclamationCircleIcon,
   error: XCircleIcon,
 }
 
