@@ -21,3 +21,5 @@ yarn-error.log*
 
 # backups
 *.tar.gz
+
+.yalc
