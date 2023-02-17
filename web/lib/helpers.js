@@ -19,23 +19,24 @@ export function createLessonLinks(lessons = [], courseSlug = {}) {
   }
 
   return lessons
-    .filter((lesson) => lesson?.__i18n_lang)
+  // Each lesson must have a language
+    .filter((lesson) => lesson?.language)
     .map((lesson) => {
-      const courseSlugBase = courseSlug[lesson.__i18n_lang]?.current
+      const courseSlugBase = courseSlug[lesson.language]?.current
 
       const baseLanguageLesson = {
-        language: lesson.__i18n_lang, // Should always be i18n.base
+        language: lesson.language, // Should always be i18n.base
         title: lesson.title,
         path: [courseSlugBase, lesson.slug.current].join('/'),
       }
 
-      const translations = lesson.__i18n_refs && lesson.__i18n_refs.map((ref) => {
-        const lessonLang = ref.__i18n_lang
-        const courseLangSlug = courseSlug[ref.__i18n_lang]?.current
+      const translations = lesson.translations?.length && lesson.translations.map((ref) => {
+        const lessonLang = ref.language
+        const courseLangSlug = courseSlug[ref.language]?.current
         const lessonLangSlug = ref.slug.current
 
         return {
-          language: ref.__i18n_lang, // Should never be i18n.base
+          language: ref.language,
           title: ref.title,
           path: [lessonLang, courseLangSlug, lessonLangSlug].join('/'),
         }
@@ -45,6 +46,10 @@ export function createLessonLinks(lessons = [], courseSlug = {}) {
     })
 }
 
+function getLabelText(key = ``, labels = []) {
+  return labels.find(({key: labelKey}) => labelKey === key)?.text
+}
+
 export function createCourseSummary(lessons = [], presenters = [], labels = []) {
   const value = []
 
@@ -52,10 +57,10 @@ export function createCourseSummary(lessons = [], presenters = [], labels = []) 
     return ``
   }
 
-  const lessonSingular = labels.find(({key}) => key === 'lesson.singular')?.text
-  const lessonPlural = labels.find(({key}) => key === 'lesson.plural')?.text
-  const presenterSingular = labels.find(({key}) => key === 'presenter.singular')?.text
-  const presenterPlural = labels.find(({key}) => key === 'presenter.plural')?.text
+  const lessonSingular = getLabelText('lesson.singular', labels)
+  const lessonPlural = getLabelText('lesson.plural', labels)
+  const presenterSingular = getLabelText('presenter.singular', labels)
+  const presenterPlural = getLabelText('presenter.plural', labels)
 
   if (lessons?.length) {
     value.push(lessons.length)

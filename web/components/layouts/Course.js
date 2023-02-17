@@ -12,6 +12,7 @@ import Layout from './Layout'
 export default function Course({data}) {
   const {title, slug, presenters, lessons, labels, legals} = data ?? {}
   const {locale} = useRouter()
+  console.log(lessons)
 
   // Render the localized title, if it exists, otherwise fallback to base
   const localeTitle = title ? title[locale] ?? title[i18n.base] : null
@@ -36,12 +37,14 @@ export default function Course({data}) {
   // Each "course" document has an array of "lesson" references
   // "lesson" documents have document-level translations
   // Each document has a unique slug and are related by an
-  // array of references stored in the field "__i18n_refs"
+  // array of references stored in a separate "translation.metadata" document
   const lessonPaths = useMemo(() => createLessonLinks(lessons, slug), [lessons, slug])
   const summary = useMemo(
     () => createCourseSummary(lessons, presenters, labels),
     [lessons, presenters, labels]
   )
+
+  console.log(lessonPaths)
 
   return (
     <Layout translations={translations} legals={legals}>

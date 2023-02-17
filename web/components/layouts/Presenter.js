@@ -2,7 +2,7 @@ import React from 'react'
 import {useRouter} from 'next/router'
 
 import {i18n} from '../../../languages'
-import {urlFor} from '../../lib/sanity'
+import {urlFor} from '../../lib/urlFor'
 import Title from '../Title'
 import Layout from './Layout'
 

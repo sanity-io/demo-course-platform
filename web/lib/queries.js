@@ -2,13 +2,13 @@ import {groq} from 'next-sanity'
 
 export const labelsQuery = groq`*[_id == "labelGroup"][0].labels[]{
   key,
-  "text": coalesce(text[$language], text[$baseLanguage]),
+  "text": coalesce(text[$language], text[$defaultLocale]),
 }`
 
 export const presenterQuery = groq`*[_type == "presenter" && slug.current == $slug && !(_id in path("drafts.**"))][0]{
   ...,
-  "title": coalesce(title[_key == $language][0].value, title[_key == $baseLanguage][0].value),
-  "biography": coalesce(biography[_key == $language][0].value, biography[_key == $baseLanguage][0].value),
+  "title": coalesce(title[_key == $language][0].value, title[_key == $defaultLocale][0].value),
+  "biography": coalesce(biography[_key == $language][0].value, biography[_key == $defaultLocale][0].value),
 }`
 
 export const legalsQuery = groq`*[_type == "legal" && !(_id in path("drafts.**"))]{
@@ -42,15 +42,14 @@ const courseQueryData = groq`
 
     // Every "lesson" is a reference to the base language version of a document
     lessons[]->{
-
       // Get each lesson's *base* language version's title and slug
-      __i18n_lang,
+      language,
       title,
       slug,
 
       // ...and all its connected document-level translations
-      __i18n_refs[]->{
-        __i18n_lang,
+      "translations": *[_type == "translation.metadata" && _id in translations[]._ref][0]{
+        language,
         title,
         slug
       }
@@ -60,7 +59,7 @@ const courseQueryData = groq`
     presenters[]->{
       name,
       // presenter field-level translations use arrays, not objects
-      "title": coalesce(title[_key == $language][0].value, title[_key == $baseLanguage][0].value),
+      "title": coalesce(title[_key == $language][0].value, title[_key == $defaultLocale][0].value),
     },
 
     // Plus global data
