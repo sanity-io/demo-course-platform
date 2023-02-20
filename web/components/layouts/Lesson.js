@@ -15,7 +15,6 @@ export default function Lesson({data}) {
   const {title, summary, content, course, labels, legals} = data
   const {lessons, presenters} = course ?? {}
   const {locale} = useRouter()
-  console.log(course)
 
   const lessonPaths = useMemo(
     () => createLessonLinks(lessons, course?.slug),
@@ -41,7 +40,6 @@ export default function Lesson({data}) {
 
   const completeString = labels.find(({key}) => key === 'lesson.continue')?.text
   const backLabel = labels.find(({key}) => key === 'back')?.text
-  console.log(translations)
 
   return (
     <Layout translations={translations} legals={legals}>

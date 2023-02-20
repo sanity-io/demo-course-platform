@@ -14,7 +14,6 @@ export default function Presenter({data}) {
     path: id === i18n.base ? `${asPath}` : `${id}${asPath}`,
   }))
 
-  //   console.log(urlFor(photo))
   const photoUrl = photo ? urlFor(photo).auto('format').width(500).height(500).url() : null
 
   return (

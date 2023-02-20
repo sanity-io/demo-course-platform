@@ -12,7 +12,6 @@ export default function SchemaVisualizer() {
     ({type, name}) => type === 'document' && !name.startsWith(`sanity.`)
   )
   const updateXarrow = useXarrow()
-  // console.log(documentTypes)
 
   const [filters, setFilters] = React.useState<string[]>([])
   const handleFilter = React.useCallback(
