@@ -15,6 +15,7 @@ export default function Lesson({data}) {
   const {title, summary, content, course, labels, legals} = data
   const {lessons, presenters} = course ?? {}
   const {locale} = useRouter()
+  console.log(course)
 
   const lessonPaths = useMemo(
     () => createLessonLinks(lessons, course?.slug),
@@ -35,11 +36,12 @@ export default function Lesson({data}) {
       : lessonPaths[currentLessonIndex + 1].find((lesson) => lesson.language === locale)
 
   const presentersString = presenters?.length
-    ? presenters.map((presenter) => [presenter.name, presenter.title].join(', ')).join(', ')
+    ? presenters.map((presenter) => [presenter.name, presenter.title].filter(Boolean).join(', ')).join(', ')
     : ``
 
   const completeString = labels.find(({key}) => key === 'lesson.continue')?.text
   const backLabel = labels.find(({key}) => key === 'back')?.text
+  console.log(translations)
 
   return (
     <Layout translations={translations} legals={legals}>

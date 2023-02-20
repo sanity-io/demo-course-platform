@@ -40,7 +40,6 @@ export async function getStaticProps({ params, locale, defaultLocale, preview = 
     language: locale,
     defaultLocale: defaultLocale,
   };
-  console.log(queryParams)
 
   if (!slugEnd) {
     // Home page has no slug

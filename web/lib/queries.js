@@ -48,10 +48,19 @@ const courseQueryData = groq`
       slug,
 
       // ...and all its connected document-level translations
-      "translations": *[_type == "translation.metadata" && _id in translations[]._ref][0]{
-        language,
-        title,
-        slug
+      "translations": *[
+        // by finding the translation metadata document
+        _type == "translation.metadata" && 
+        // that contains this lesson's _id
+        ^._id in translations[].value._ref
+        // then map over the translations array
+      ][0].translations[]{
+        // and spread the "value" of each reference to the root level
+        ...(value->{
+          language,
+          title,
+          slug
+        })
       }
     },
 
@@ -90,10 +99,20 @@ export const lessonQuery = groq`*[_type == "lesson" && slug.current == $slug][0]
     },
 
     // ...and get this lesson's course
-    // Either by the _id of this document, or the _ref to the lesson's base language version
-    "course": *[_type == "course" && (references(^._id) || references(^.__i18n_base._ref))][0]{
-      ${courseQueryData}
-    },
+    // In this Project, we have single "course" documents that reference "English" language version lessons
+    "course": select(
+      // So if this lesson isn't in English...
+      ^.language != $defaultLocale => *[_type == "translation.metadata" && ^._id in translations[].value._ref][0]{
+        // our query has to look up through the translations metadata
+        // and find the course that references the English version, not this language version
+        "course": *[
+          _type == "course" && 
+          ^.translations[_key == $defaultLocale][0].value._ref in lessons[]._ref
+        ][0]{ ${courseQueryData} }
+      }.course,
+      // By default, 
+      *[_type == "course" && ^._id in translations[].value._ref][0]{ ${courseQueryData} }
+    ),
 
     // Plus global labels
     "labels": ${labelsQuery},

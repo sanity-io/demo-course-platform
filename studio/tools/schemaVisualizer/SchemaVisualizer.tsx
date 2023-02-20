@@ -1,5 +1,5 @@
 import React from 'react'
-import {Button, Box, Stack, Flex, Card, Text, Code} from '@sanity/ui'
+import {Button, Box, Stack, Flex, Card, Text} from '@sanity/ui'
 import {useSchema} from 'sanity'
 import {useXarrow} from 'react-xarrows'
 
@@ -12,7 +12,7 @@ export default function SchemaVisualizer() {
     ({type, name}) => type === 'document' && !name.startsWith(`sanity.`)
   )
   const updateXarrow = useXarrow()
-  console.log(documentTypes)
+  // console.log(documentTypes)
 
   const [filters, setFilters] = React.useState<string[]>([])
   const handleFilter = React.useCallback(

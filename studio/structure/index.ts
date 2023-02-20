@@ -19,11 +19,7 @@ export const structure: StructureResolver = (S) =>
             .items(
               i18n.languages.map((language) =>
                 S.listItem()
-                  .title(
-                    `Lessons (${language.id.toLocaleUpperCase()}) ${
-                      language.isDefault ? `(Base)` : ``
-                    }`
-                  )
+                  .title(`Lessons (${language.id.toLocaleUpperCase()})`)
                   .icon(FiAward)
                   .child(
                     S.documentList()

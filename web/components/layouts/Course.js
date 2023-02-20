@@ -12,7 +12,6 @@ import Layout from './Layout'
 export default function Course({data}) {
   const {title, slug, presenters, lessons, labels, legals} = data ?? {}
   const {locale} = useRouter()
-  console.log(lessons)
 
   // Render the localized title, if it exists, otherwise fallback to base
   const localeTitle = title ? title[locale] ?? title[i18n.base] : null
@@ -43,8 +42,6 @@ export default function Course({data}) {
     () => createCourseSummary(lessons, presenters, labels),
     [lessons, presenters, labels]
   )
-
-  console.log(lessonPaths)
 
   return (
     <Layout translations={translations} legals={legals}>
