@@ -39,7 +39,7 @@ export default defineConfig({
       filterField: (enclosingType: any, field: any, selectedLanguageIds: any) =>
         !enclosingType.name.startsWith('localized') || selectedLanguageIds.includes(field.name),
     }),
-    visionTool()
+    visionTool(),
   ],
   schema: {
     types: schemaTypes,
