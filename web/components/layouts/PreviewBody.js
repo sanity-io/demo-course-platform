@@ -1,6 +1,7 @@
 import React from "react";
 
 import { usePreview } from "../../lib/sanity.preview";
+import ExitPreview from "../ExitPreview";
 import Body from "./Body";
 
 export default function PreviewBody(props) {
@@ -11,6 +12,7 @@ export default function PreviewBody(props) {
   return (
     <>
       <Body layout={layout} data={data} />
+      <ExitPreview />
     </>
   );
 }

@@ -1,7 +1,6 @@
-import {SanityDocumentLike} from 'sanity'
+import {SanityClient, SanityDocumentLike} from 'sanity'
 import Iframe, {IframeOptions} from 'sanity-plugin-iframe-pane'
 import {StructureBuilder} from 'sanity/desk'
-import {SanityClient} from 'sanity/lib/dts/src/datastores'
 
 import resolveProductionUrl from './resolveProductionUrl'
 

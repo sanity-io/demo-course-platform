@@ -1,7 +1,7 @@
+import { PreviewSuspense } from "next-sanity/preview";
 import { groq } from "next-sanity";
 import dynamic from "next/dynamic";
 
-import { i18n } from "../../languages";
 import Body from "../components/layouts/Body";
 import {
   courseQuery,
@@ -13,6 +13,7 @@ import {
 import { client } from "../lib/sanity.client";
 
 const PreviewBody = dynamic(() => import("../components/layouts/PreviewBody"));
+const Loading = dynamic(() => import("../components/Loading"));
 
 export default function Page({
   data: initialData,
@@ -21,16 +22,23 @@ export default function Page({
   queryParams,
   preview,
 }) {
-  // if (preview && query && queryParams) {
-  //   <PreviewSuspense fallback={<div>Loading...</div>}>
-  //     <PreviewBody layout={layout} query={query} queryParams={queryParams} />
-  //   </PreviewSuspense>;
-  // }
+  if (preview && query && queryParams) {
+    return (
+      <PreviewSuspense fallback={<Loading />}>
+        <PreviewBody layout={layout} query={query} queryParams={queryParams} />
+      </PreviewSuspense>
+    )
+  }
 
   return <Body layout={layout} data={initialData} />;
 }
 
-export async function getStaticProps({ params, locale, defaultLocale, preview = false }) {
+export async function getStaticProps({
+  params,
+  locale,
+  defaultLocale,
+  preview = false,
+}) {
   let layout;
   let query;
   const slugStart = params?.slug?.length ? params.slug[0] : null;
@@ -63,10 +71,12 @@ export async function getStaticProps({ params, locale, defaultLocale, preview = 
     query = courseQuery;
   }
 
-  
   const data = await client.fetch(query, queryParams);
 
-  if (!data) {
+  // Server-side we're only using an unauthenticated client
+  // which won't find drafts, but client-side we might 
+  // if preview mode is active
+  if (!data && !preview) {
     return {
       notFound: true,
     };
@@ -84,7 +94,7 @@ export async function getStaticProps({ params, locale, defaultLocale, preview = 
   };
 }
 
-export async function getStaticPaths({defaultLocale}) {
+export async function getStaticPaths({ defaultLocale }) {
   const { courseSlugs, legalSlugs, presenterSlugs } = await client.fetch(
     groq`{
       "courseSlugs": *[_type in ["course"] && !(_id in path("drafts.**"))]{

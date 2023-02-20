@@ -7,9 +7,8 @@ const Legal = dynamic(() => import('./Legal'))
 const Lesson = dynamic(() => import('./Lesson'))
 const Presenter = dynamic(() => import('./Presenter'))
 
-export default function Body(props) {
-  const { layout, data } = props;
-
+export default function Body({ layout, data }) {
+  
   switch (layout) {
     case `course`:
       return <Course data={data} />;

@@ -1,9 +1,10 @@
 import {FiAward, FiType, FiUsers} from 'react-icons/fi'
 import {StructureResolver, DefaultDocumentNodeResolver} from 'sanity/desk'
 
-import preview from './preview'
-// import references from './references'
 import {i18n} from '../../languages'
+import preview from './preview'
+import references from './references'
+import transifex from './transifex'
 
 export const structure: StructureResolver = (S) =>
   S.list()
@@ -51,17 +52,16 @@ export const structure: StructureResolver = (S) =>
       S.divider(),
     ])
 
-export const defaultDocumentNode: DefaultDocumentNodeResolver = (S, {schemaType, client}) => {
+export const defaultDocumentNode: DefaultDocumentNodeResolver = (S, {schemaType, getClient}) => {
+  const client = getClient({apiVersion: `2023-01-01`})
+
   switch (schemaType) {
     case 'presenter':
-      return S.document().views([
-        S.view.form(),
-        preview(S, client),
-        // TODO: Re-add References Pane
-        // references(S),
-      ])
-    case 'lesson':
+      return S.document().views([S.view.form(), preview(S, client), references(S)])
     case 'course':
+      return S.document().views([S.view.form(), preview(S, client), transifex(S)])
+    case 'lesson':
+      return S.document().views([S.view.form(), preview(S, client)])
     case 'legal':
       return S.document().views([S.view.form(), preview(S, client)])
     default:

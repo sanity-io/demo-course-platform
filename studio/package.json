@@ -34,6 +34,7 @@
     "sanity": "^3.4.0",
     "sanity-plugin-documents-pane": "^2.0.0",
     "sanity-plugin-iframe-pane": "^2.0.0",
+    "sanity-plugin-transifex": "^3.0.0",
     "styled-components": "^5.2.0"
   }
 }

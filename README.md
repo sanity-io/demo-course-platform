@@ -17,7 +17,9 @@ Each schema demonstrates a unique strategy:
 
 ### Lessons
 
-Document-level internationalization using the [@sanity/document-internationalization](https://www.npmjs.com/package/@sanity/document-internationalization) plugin. The documents in this schema are all text and use Portable Text so it is best to translate the entire document – not just fields within them.
+Document-level internationalization using the [@sanity/document-internationalization](https://www.npmjs.com/package/@sanity/document-internationalization) plugin. The documents in this schema are all text and use Portable Text so it is best to translate the entire document – not just the fields within them.
+
+The version of this plugin used in this project is [currently in Beta release](https://github.com/sanity-io/document-internationalization/tree/studio-v3-plugin-v2). It does not **require** a "base language", but this project still uses the idea of a base throughout the schema for content fallbacks and organization.
 
 ### Courses
 
