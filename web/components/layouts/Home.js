@@ -1,21 +1,23 @@
-import {ArrowRightIcon} from '@heroicons/react/24/outline'
-import {useRouter} from 'next/router'
-import Link from 'next/link'
+import { ArrowRightIcon } from "@heroicons/react/24/outline";
+import { useRouter } from "next/router";
+import Link from "next/link";
 
-import {createCourseSummary} from '../../lib/helpers'
-import {i18n} from '../../../languages'
-import Button from '../Button'
-import Title from '../Title'
-import Layout from './Layout'
+import { createCourseSummary } from "../../lib/helpers";
+import { i18n } from "../../../languages";
+import Button from "../Button";
+import Title from "../Title";
+import Layout from "./Layout";
 
-export default function Home({data}) {
-  const {courses, labels, legals} = data ?? {}
-  const {locale, locales} = useRouter()
+export default function Home({ data }) {
+  const { courses, labels, legals } = data ?? {};
+  const { locale, locales } = useRouter();
   const translations = locales.map((id) => ({
     language: id,
     path: id === i18n.base ? `/` : `/${id}`,
-  }))
-  const courseStart = labels?.length ? labels.find(({key}) => key === 'course.start')?.text : ``
+  }));
+  const courseStart = labels?.length
+    ? labels.find(({ key }) => key === "course.start")?.text
+    : ``;
 
   return (
     <Layout translations={translations} legals={legals}>
@@ -28,20 +30,36 @@ export default function Home({data}) {
             >
               {course?.slug?.[locale].current ? (
                 <>
-                  <Link href={course.slug[locale].current}>
-                    <a className="block absolute inset-0 z-10 ">
-                      <span className="sr-only">{course.title[locale]}</span>
-                    </a>
+                  <Link
+                    href={course.slug[locale].current}
+                    className="block absolute inset-0 z-10"
+                  >
+                    <span className="sr-only">{course.title[locale]}</span>
                   </Link>
-                  <Title subtitle={createCourseSummary(course.lessons, course.presenters, labels)}>
+                  <Title
+                    subtitle={createCourseSummary(
+                      course.lessons,
+                      course.presenters,
+                      labels
+                    )}
+                  >
                     {course.title[locale]}
                   </Title>
-                  <Button Icon={ArrowRightIcon} href={course.slug[locale].current}>
+                  <Button
+                    Icon={ArrowRightIcon}
+                    href={course.slug[locale].current}
+                  >
                     {courseStart}
                   </Button>
                 </>
               ) : (
-                <Title subtitle={createCourseSummary(course.lessons, course.presenters, labels)}>
+                <Title
+                  subtitle={createCourseSummary(
+                    course.lessons,
+                    course.presenters,
+                    labels
+                  )}
+                >
                   {course.title[locale]}
                 </Title>
               )}
@@ -49,5 +67,5 @@ export default function Home({data}) {
           ))}
       </div>
     </Layout>
-  )
+  );
 }

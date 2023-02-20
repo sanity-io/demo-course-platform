@@ -16,7 +16,7 @@ export default function Reference({children, mark}) {
 
   return link ? (
     <Link href={link}>
-      <a>{children}</a>
+      {children}
     </Link>
   ) : (
     <span>{children}</span>

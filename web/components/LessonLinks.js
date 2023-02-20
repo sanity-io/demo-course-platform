@@ -20,8 +20,8 @@ function ListLink(props) {
   const {href, children, ...rest} = props
 
   return (
-    <Link href={href}>
-      <a {...rest}>{children}</a>
+    <Link href={href} {...rest}>
+      {children}
     </Link>
   )
 }

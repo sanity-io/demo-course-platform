@@ -36,7 +36,7 @@ export default function Course({data}) {
   // Each "course" document has an array of "lesson" references
   // "lesson" documents have document-level translations
   // Each document has a unique slug and are related by an
-  // array of references stored in the field "__i18n_refs"
+  // array of references stored in a separate "translation.metadata" document
   const lessonPaths = useMemo(() => createLessonLinks(lessons, slug), [lessons, slug])
   const summary = useMemo(
     () => createCourseSummary(lessons, presenters, labels),

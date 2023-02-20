@@ -2,7 +2,7 @@ import React from 'react'
 import {useRouter} from 'next/router'
 
 import {i18n} from '../../../languages'
-import {urlFor} from '../../lib/sanity'
+import {urlFor} from '../../lib/urlFor'
 import Title from '../Title'
 import Layout from './Layout'
 
@@ -14,7 +14,6 @@ export default function Presenter({data}) {
     path: id === i18n.base ? `${asPath}` : `${id}${asPath}`,
   }))
 
-  //   console.log(urlFor(photo))
   const photoUrl = photo ? urlFor(photo).auto('format').width(500).height(500).url() : null
 
   return (

@@ -2,13 +2,13 @@ import {groq} from 'next-sanity'
 
 export const labelsQuery = groq`*[_id == "labelGroup"][0].labels[]{
   key,
-  "text": coalesce(text[$language], text[$baseLanguage]),
+  "text": coalesce(text[$language], text[$defaultLocale]),
 }`
 
 export const presenterQuery = groq`*[_type == "presenter" && slug.current == $slug && !(_id in path("drafts.**"))][0]{
   ...,
-  "title": coalesce(title[_key == $language][0].value, title[_key == $baseLanguage][0].value),
-  "biography": coalesce(biography[_key == $language][0].value, biography[_key == $baseLanguage][0].value),
+  "title": coalesce(title[_key == $language][0].value, title[_key == $defaultLocale][0].value),
+  "biography": coalesce(biography[_key == $language][0].value, biography[_key == $defaultLocale][0].value),
 }`
 
 export const legalsQuery = groq`*[_type == "legal" && !(_id in path("drafts.**"))]{
@@ -42,17 +42,25 @@ const courseQueryData = groq`
 
     // Every "lesson" is a reference to the base language version of a document
     lessons[]->{
-
       // Get each lesson's *base* language version's title and slug
-      __i18n_lang,
+      language,
       title,
       slug,
 
       // ...and all its connected document-level translations
-      __i18n_refs[]->{
-        __i18n_lang,
-        title,
-        slug
+      "translations": *[
+        // by finding the translation metadata document
+        _type == "translation.metadata" && 
+        // that contains this lesson's _id
+        ^._id in translations[].value._ref
+        // then map over the translations array
+      ][0].translations[]{
+        // and spread the "value" of each reference to the root level
+        ...(value->{
+          language,
+          title,
+          slug
+        })
       }
     },
 
@@ -60,7 +68,7 @@ const courseQueryData = groq`
     presenters[]->{
       name,
       // presenter field-level translations use arrays, not objects
-      "title": coalesce(title[_key == $language][0].value, title[_key == $baseLanguage][0].value),
+      "title": coalesce(title[_key == $language][0].value, title[_key == $defaultLocale][0].value),
     },
 
     // Plus global data
@@ -91,10 +99,20 @@ export const lessonQuery = groq`*[_type == "lesson" && slug.current == $slug][0]
     },
 
     // ...and get this lesson's course
-    // Either by the _id of this document, or the _ref to the lesson's base language version
-    "course": *[_type == "course" && (references(^._id) || references(^.__i18n_base._ref))][0]{
-      ${courseQueryData}
-    },
+    // In this Project, we have single "course" documents that reference "English" language version lessons
+    "course": select(
+      // So if this lesson isn't in English...
+      ^.language != $defaultLocale => *[_type == "translation.metadata" && ^._id in translations[].value._ref][0]{
+        // our query has to look up through the translations metadata
+        // and find the course that references the English version, not this language version
+        "course": *[
+          _type == "course" && 
+          ^.translations[_key == $defaultLocale][0].value._ref in lessons[]._ref
+        ][0]{ ${courseQueryData} }
+      }.course,
+      // By default, 
+      *[_type == "course" && ^._id in translations[].value._ref][0]{ ${courseQueryData} }
+    ),
 
     // Plus global labels
     "labels": ${labelsQuery},
