@@ -2,8 +2,6 @@ import React from 'react'
 import {defineField, defineType} from 'sanity'
 import {ImageIcon} from '@sanity/icons'
 
-import {i18n} from '../../../languages'
-
 // const MarketTextRender = ({market, children}: {market: string; children: React.ReactNode}) => (
 //   <span data-market-text={market}>{children}</span>
 // )
