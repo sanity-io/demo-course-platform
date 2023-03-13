@@ -23,7 +23,6 @@ export default defineConfig({
       structure,
       defaultDocumentNode,
     }),
-    codeInput(),
     documentInternationalization({
       supportedLanguages: i18n.languages,
       schemaTypes: ['lesson'],
@@ -40,10 +39,27 @@ export default defineConfig({
         !enclosingType.name.startsWith('localized') || selectedLanguageIds.includes(field.name),
     }),
     visionTool(),
-
-    schemaVisualizer(),
+    codeInput(),
+    schemaVisualizer({
+      defaultSchemaTypes: ['course', 'legal', 'lesson', 'presenter'],
+      hiddenSchemaTypes: ['translation.metadata'],
+    }),
   ],
   schema: {
     types: schemaTypes,
+    templates: (prev) => {
+      return [
+        ...prev,
+        {
+          id: 'lesson-language',
+          title: 'Lesson with Language',
+          schemaType: 'lesson',
+          parameters: [{name: 'language', type: 'string'}],
+          value: (params: {language: string}) => ({
+            language: params.language,
+          }),
+        },
+      ]
+    },
   },
 })
