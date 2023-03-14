@@ -41,7 +41,7 @@ export default defineConfig({
     visionTool(),
     codeInput(),
     schemaVisualizer({
-      defaultSchemaTypes: ['course', 'legal', 'lesson', 'presenter'],
+      defaultSchemaTypes: ['course', 'lesson', 'presenter'],
       hiddenSchemaTypes: ['translation.metadata'],
     }),
   ],

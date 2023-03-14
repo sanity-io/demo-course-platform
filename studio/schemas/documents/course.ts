@@ -47,7 +47,6 @@ export default defineType({
       of: [
         defineField({
           name: 'presenter',
-          title: 'Presenter',
           type: 'reference',
           to: [{type: 'presenter'}],
         }),
