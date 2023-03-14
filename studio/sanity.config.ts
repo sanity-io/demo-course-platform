@@ -10,6 +10,7 @@ import {schemaVisualizer} from 'sanity-plugin-schema-visualizer'
 import {structure, defaultDocumentNode} from './structure'
 import {schemaTypes} from './schemas'
 import {i18n} from '../languages'
+import deskTable from './plugins/deskTable'
 
 export default defineConfig({
   name: 'default',
@@ -19,10 +20,10 @@ export default defineConfig({
   dataset: 'production-v3',
 
   plugins: [
-    deskTool({
-      structure,
-      defaultDocumentNode,
-    }),
+    // deskTool({
+    //   structure,
+    //   defaultDocumentNode,
+    // }),
     documentInternationalization({
       supportedLanguages: i18n.languages,
       schemaTypes: ['lesson'],
@@ -44,6 +45,7 @@ export default defineConfig({
       defaultSchemaTypes: ['course', 'lesson', 'presenter'],
       hiddenSchemaTypes: ['translation.metadata'],
     }),
+    deskTable(),
   ],
   schema: {
     types: schemaTypes,
