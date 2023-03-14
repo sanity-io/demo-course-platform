@@ -5,11 +5,11 @@ import {visionTool} from '@sanity/vision'
 import {documentInternationalization} from '@sanity/document-internationalization'
 import {languageFilter} from '@sanity/language-filter'
 import {internationalizedArray} from 'sanity-plugin-internationalized-array'
+import {schemaVisualizer} from 'sanity-plugin-schema-visualizer'
 
 import {structure, defaultDocumentNode} from './structure'
 import {schemaTypes} from './schemas'
 import {i18n} from '../languages'
-import {schemaVizualizer} from './tools/schemaVisualizer'
 
 export default defineConfig({
   name: 'default',
@@ -23,7 +23,6 @@ export default defineConfig({
       structure,
       defaultDocumentNode,
     }),
-    codeInput(),
     documentInternationalization({
       supportedLanguages: i18n.languages,
       schemaTypes: ['lesson'],
@@ -40,9 +39,27 @@ export default defineConfig({
         !enclosingType.name.startsWith('localized') || selectedLanguageIds.includes(field.name),
     }),
     visionTool(),
+    codeInput(),
+    schemaVisualizer({
+      defaultSchemaTypes: ['course', 'lesson', 'presenter'],
+      hiddenSchemaTypes: ['translation.metadata'],
+    }),
   ],
   schema: {
     types: schemaTypes,
+    templates: (prev) => {
+      return [
+        ...prev,
+        {
+          id: 'lesson-language',
+          title: 'Lesson with Language',
+          schemaType: 'lesson',
+          parameters: [{name: 'language', type: 'string'}],
+          value: (params: {language: string}) => ({
+            language: params.language,
+          }),
+        },
+      ]
+    },
   },
-  tools: (all) => [...all, schemaVizualizer()],
 })
