@@ -7,19 +7,24 @@ import _ from 'lodash'
 import {Form} from './form'
 
 type DataProps = {
-  type: string
+  schemaType: string
   keys: string[]
 }
 
 export default function Data(props: DataProps) {
-  const {type, keys = []} = props
+  const {schemaType, keys = []} = props
   const schema = useSchema()
-  const schemaType = schema.get(type)
+  const fullSchema = schema.get(schemaType)
 
-  const query = [`*[_type == $type]`, `{_id, type,`, keys.join(`, `), `}`].join(``)
+  const query = [
+    `*[_type == $schemaType]`,
+    `{_id, type,`,
+    keys.map((k) => `"${k}": ${k}`).join(`, `),
+    `}`,
+  ].join(``)
   const {data, loading, error} = useListeningQuery<SanityDocument[]>(query, {
     initialValue: [],
-    params: {type},
+    params: {schemaType},
   })
 
   const [currentId, setCurrentId] = React.useState(``)
@@ -29,7 +34,7 @@ export default function Data(props: DataProps) {
     return <Spinner />
   }
 
-  if (error || !schemaType) {
+  if (error || !fullSchema) {
     return <Feedback title="Error" tone="critical" />
   }
 
@@ -57,7 +62,7 @@ export default function Data(props: DataProps) {
             <Cell padding={2} borderTop>
               <Stack>
                 <Button onClick={() => setCurrentId(doc._id)} padding={0} mode="bleed">
-                  <Preview layout="default" value={doc} schemaType={schemaType} />
+                  <Preview layout="default" value={doc} schemaType={fullSchema} />
                 </Button>
               </Stack>
             </Cell>
@@ -72,7 +77,7 @@ export default function Data(props: DataProps) {
       {currentId && (
         <Dialog header="Example" id="dialog-example" onClose={onClose} zOffset={1000} width={2}>
           <Box padding={4}>
-            <Form documentType={type} documentId={currentId} />
+            <Form documentType={schemaType} documentId={currentId} />
           </Box>
         </Dialog>
       )}

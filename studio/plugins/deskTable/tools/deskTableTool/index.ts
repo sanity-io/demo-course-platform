@@ -1,5 +1,6 @@
 import {Tool} from 'sanity'
 import {StackIcon} from '@sanity/icons'
+import {route} from 'sanity/router'
 
 import {SchemaVisualizerConfig} from './types'
 import DeskTable from './DeskTable'
@@ -12,4 +13,9 @@ export const deskTableTool: SchemaVisualizerToolConfig = (options: SchemaVisuali
   component: DeskTable,
   icon: StackIcon,
   options,
+  router: route.create('/', [
+    route.create({
+      path: '/:schemaType',
+    }),
+  ]),
 })

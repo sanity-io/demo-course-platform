@@ -1,16 +1,27 @@
 import React from 'react'
-import {Flex, Button, Card, Stack} from '@sanity/ui'
+import {Card, Stack} from '@sanity/ui'
 import {SchemaTypeDefinition, useSchema, Tool} from 'sanity'
 
 import {SchemaVisualizerConfig} from './types'
+import SchemaSelector from './SchemaSelector'
 import Data from './Data'
+import {useRouter, useRouterState} from 'sanity/router'
 
 type SchemaVisualizerProps = {
   tool: Tool<SchemaVisualizerConfig>
 }
 
+const selector = (state: any) => {
+  return {
+    schemaType: state.schemaType,
+  }
+}
+
 export default function DeskTable(props: SchemaVisualizerProps) {
   const {defaultSchemaTypes = [], hiddenSchemaTypes = []} = props?.tool?.options ?? {}
+
+  const {navigate} = useRouter()
+  const state = useRouterState<{schemaType: string}>(selector)
 
   const schema = useSchema()
   const schemaTypes = schema?._original?.types
@@ -23,24 +34,30 @@ export default function DeskTable(props: SchemaVisualizerProps) {
         : [],
     [schemaTypes, hiddenSchemaTypes]
   )
-  const [currentSchema, setCurrentSchema] = React.useState(documentTypes[0].name)
+
+  const [currentSchema, setCurrentSchema] = React.useState(
+    state.schemaType ?? documentTypes[0].name
+  )
+
+  const handleChange = React.useCallback(
+    (newValue: string) => {
+      setCurrentSchema(newValue)
+      navigate({schemaType: newValue})
+    },
+    [navigate]
+  )
 
   return (
     <Card tone="transparent" height="fill">
       <Stack space={4} padding={4}>
-        <Flex gap={2}>
-          {documentTypes.map((type) => (
-            <Button
-              key={type.name}
-              text={type.title}
-              icon={type.icon}
-              mode={type.name === currentSchema ? 'default' : 'ghost'}
-              tone={type.name === currentSchema ? 'primary' : 'default'}
-              onClick={() => setCurrentSchema(type.name)}
-            />
-          ))}
-        </Flex>
-        <Data type={currentSchema} keys={['_createdAt', '_rev']} />
+        <Card padding={2} border>
+          <SchemaSelector
+            schemaTypes={documentTypes}
+            onChange={handleChange}
+            value={currentSchema}
+          />
+        </Card>
+        <Data schemaType={currentSchema} keys={['_createdAt', '_rev']} />
       </Stack>
     </Card>
   )
