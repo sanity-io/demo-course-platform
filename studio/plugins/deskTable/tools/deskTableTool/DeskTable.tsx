@@ -1,5 +1,5 @@
 import React from 'react'
-import {Card, Stack} from '@sanity/ui'
+import {Text, Checkbox, Flex, Card, Stack} from '@sanity/ui'
 import {SchemaTypeDefinition, useSchema, Tool} from 'sanity'
 
 import {SchemaVisualizerConfig} from './types'
@@ -35,10 +35,14 @@ export default function DeskTable(props: SchemaVisualizerProps) {
     [schemaTypes, hiddenSchemaTypes]
   )
 
+  const [keys, setKeys] = React.useState<string[]>([`_createdAt`, `_rev`])
+  const [currentKeys, setCurrentKeys] = React.useState<string[]>([])
+
   const [currentSchema, setCurrentSchema] = React.useState(
     state.schemaType ?? documentTypes[0].name
   )
 
+  // Handle change in schema selector
   const handleChange = React.useCallback(
     (newValue: string) => {
       setCurrentSchema(newValue)
@@ -51,13 +55,34 @@ export default function DeskTable(props: SchemaVisualizerProps) {
     <Card tone="transparent" height="fill">
       <Stack space={4} padding={4}>
         <Card padding={2} border>
-          <SchemaSelector
-            schemaTypes={documentTypes}
-            onChange={handleChange}
-            value={currentSchema}
-          />
+          <Flex align="center" justify="space-between" gap={2}>
+            <SchemaSelector
+              schemaTypes={documentTypes}
+              onChange={handleChange}
+              value={currentSchema}
+            />
+            <Stack space={2}>
+              {keys.map((k) => {
+                return (
+                  <Flex key={k} as="label" align="center" gap={2}>
+                    <Checkbox
+                      checked={currentKeys.includes(k)}
+                      onChange={(e) => {
+                        if (e.target.checked) {
+                          setCurrentKeys([...currentKeys, k])
+                        } else {
+                          setCurrentKeys(currentKeys.filter((x) => x !== k))
+                        }
+                      }}
+                    />
+                    <Text size={1}>{k}</Text>
+                  </Flex>
+                )
+              })}
+            </Stack>
+          </Flex>
         </Card>
-        <Data schemaType={currentSchema} keys={['_createdAt', '_rev']} />
+        {currentSchema ? <Data schemaType={currentSchema} keys={currentKeys} /> : null}
       </Stack>
     </Card>
   )

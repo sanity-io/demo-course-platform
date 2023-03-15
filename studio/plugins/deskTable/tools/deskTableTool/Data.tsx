@@ -15,11 +15,12 @@ export default function Data(props: DataProps) {
   const {schemaType, keys = []} = props
   const schema = useSchema()
   const fullSchema = schema.get(schemaType)
+  const projection = [`_id`, `_type`, ...keys]
 
   const query = [
     `*[_type == $schemaType]`,
-    `{_id, type,`,
-    keys.map((k) => `"${k}": ${k}`).join(`, `),
+    `{`,
+    projection.map((k) => (k.includes(`.`) ? `"${k}": ${k}` : k)).join(`, `),
     `}`,
   ].join(``)
   const {data, loading, error} = useListeningQuery<SanityDocument[]>(query, {
