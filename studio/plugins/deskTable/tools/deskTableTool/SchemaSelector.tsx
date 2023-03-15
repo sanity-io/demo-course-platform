@@ -5,7 +5,7 @@ import {SchemaTypeDefinition} from 'sanity'
 type SchemaSelectorProps = {
   schemaTypes: SchemaTypeDefinition<'document'>[]
   onChange: (value: string) => void
-  value: string
+  value?: string
 }
 
 export default function SchemaSelector(props: SchemaSelectorProps) {
@@ -45,6 +45,7 @@ export default function SchemaSelector(props: SchemaSelectorProps) {
   return (
     <Autocomplete
       id="schema-type-selector"
+      // disabled={!value}
       options={schemaTypes.map((documentType) => ({
         id: documentType.name,
         value: documentType.name,

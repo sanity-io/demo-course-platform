@@ -1,26 +1,30 @@
 import React from 'react'
 import {Cell, Feedback, Row, Table, useListeningQuery} from 'sanity-plugin-utils'
-import {Stack, Box, Button, Dialog, Code, Spinner, Text} from '@sanity/ui'
+import {Stack, Box, Button, Dialog, Code, Spinner} from '@sanity/ui'
 import {Preview, SanityDocument, useSchema} from 'sanity'
 import _ from 'lodash'
 
 import {Form} from './form'
+import {FlatField} from './lib/generateFlatFields'
+import RenderValue from './RenderValue'
 
 type DataProps = {
   schemaType: string
-  keys: string[]
+  fields: FlatField[]
 }
 
 export default function Data(props: DataProps) {
-  const {schemaType, keys = []} = props
+  const {schemaType, fields = []} = props
   const schema = useSchema()
   const fullSchema = schema.get(schemaType)
-  const projection = [`_id`, `_type`, ...keys]
+  const projection = [{name: `_id`}, {name: `_type`}, ...fields]
 
   const query = [
     `*[_type == $schemaType]`,
     `{`,
-    projection.map((k) => (k.includes(`.`) ? `"${k}": ${k}` : k)).join(`, `),
+    projection
+      .map((field) => (field.name.includes(`.`) ? `"${field.name}": ${field.name}` : field.name))
+      .join(`, `),
     `}`,
   ].join(``)
   const {data, loading, error} = useListeningQuery<SanityDocument[]>(query, {
@@ -52,11 +56,11 @@ export default function Data(props: DataProps) {
       <thead>
         <Row>
           <Cell padding={3}>
-            <Code size={1}>Document</Code>
+            <Code size={1}>document</Code>
           </Cell>
-          {keys.map((keyValue) => (
-            <Cell key={keyValue} paddingY={3}>
-              <Code size={1}>{keyValue}</Code>
+          {fields.map((fieldValue) => (
+            <Cell key={fieldValue.name} paddingY={3}>
+              <Code size={1}>{fieldValue.name}</Code>
             </Cell>
           ))}
         </Row>
@@ -65,15 +69,15 @@ export default function Data(props: DataProps) {
         {data.map((doc) => (
           <Row key={doc._id}>
             <Cell padding={2} borderTop>
-              <Stack>
+              <Stack style={{minWidth: 300}}>
                 <Button onClick={() => setCurrentId(doc._id)} padding={1} mode="bleed">
                   <Preview layout="default" value={doc} schemaType={fullSchema} />
                 </Button>
               </Stack>
             </Cell>
-            {keys.map((keyValue) => (
-              <Cell key={keyValue} paddingY={2} borderTop>
-                <Text size={1}>{_.get(doc, keyValue) as string}</Text>
+            {fields.map((fieldValue) => (
+              <Cell key={fieldValue.name} paddingY={2} borderTop>
+                <RenderValue value={_.get(doc, fieldValue.name)} />
               </Cell>
             ))}
           </Row>

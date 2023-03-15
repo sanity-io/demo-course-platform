@@ -1,12 +1,13 @@
 import React from 'react'
 import {Text, Checkbox, Flex, Card, Stack} from '@sanity/ui'
-import {SchemaTypeDefinition, useSchema, Tool} from 'sanity'
+import {SchemaTypeDefinition, useSchema, Tool, SchemaType} from 'sanity'
 
 import {SchemaVisualizerConfig} from './types'
 import SchemaSelector from './SchemaSelector'
 import Data from './Data'
 import {useRouter, useRouterState} from 'sanity/router'
 import {Feedback} from 'sanity-plugin-utils'
+import {FlatField, generateFlatFields} from './lib/generateFlatFields'
 
 type SchemaVisualizerProps = {
   tool: Tool<SchemaVisualizerConfig>
@@ -19,11 +20,10 @@ const selector = (state: any) => {
 }
 
 export default function DeskTable(props: SchemaVisualizerProps) {
-  const {defaultSchemaTypes = [], hiddenSchemaTypes = []} = props?.tool?.options ?? {}
+  const {hiddenSchemaTypes = []} = props?.tool?.options ?? {}
 
   const {navigate} = useRouter()
   const state = useRouterState<{schemaType: string}>(selector)
-  console.log(state.schemaType)
 
   const schema = useSchema()
   const schemaTypes = schema?._original?.types
@@ -37,28 +37,43 @@ export default function DeskTable(props: SchemaVisualizerProps) {
     [schemaTypes, hiddenSchemaTypes]
   )
 
-  const [keys, setKeys] = React.useState<string[]>([`_createdAt`, `_rev`])
-  const [currentKeys, setCurrentKeys] = React.useState<string[]>([])
-
-  const [currentSchema, setCurrentSchema] = React.useState(
-    state.schemaType ?? documentTypes[0].name
+  const [currentSchema, setCurrentSchema] = React.useState<SchemaType | undefined>(
+    state.schemaType ? schema.get(state.schemaType) : schema.get(documentTypes[0].name)
   )
 
   // Handle change of url
   React.useEffect(() => {
-    if (state.schemaType && state.schemaType !== currentSchema) {
-      setCurrentSchema(state.schemaType)
+    if (state.schemaType && state.schemaType !== currentSchema?.name) {
+      const newSchema = schema.get(state.schemaType)
+      if (newSchema) {
+        setCurrentSchema(newSchema)
+      }
     }
-  }, [state.schemaType, currentSchema])
+  }, [state.schemaType, schema, currentSchema])
 
   // Handle change in schema selector
   const handleChange = React.useCallback(
     (newValue: string) => {
-      setCurrentSchema(newValue)
-      navigate({schemaType: newValue})
+      const newSchema = schema.get(newValue)
+
+      if (newValue) {
+        setCurrentSchema(newSchema)
+        navigate({schemaType: newValue})
+        setCurrentFields([])
+      }
     },
-    [navigate]
+    [navigate, schema]
   )
+
+  // Handle selectable fields
+  const [fields, setFields] = React.useState<FlatField[]>([])
+  const [currentFields, setCurrentFields] = React.useState<FlatField[]>([])
+
+  React.useEffect(() => {
+    if (currentSchema) {
+      setFields(generateFlatFields(currentSchema))
+    }
+  }, [currentSchema])
 
   return (
     <Card tone="transparent" height="fill">
@@ -68,23 +83,23 @@ export default function DeskTable(props: SchemaVisualizerProps) {
             <SchemaSelector
               schemaTypes={documentTypes}
               onChange={handleChange}
-              value={currentSchema}
+              value={currentSchema?.name}
             />
             <Stack space={2}>
-              {keys.map((k) => {
+              {fields.map((field) => {
                 return (
-                  <Flex key={k} as="label" align="center" gap={2}>
+                  <Flex key={field.name} as="label" align="center" gap={2}>
                     <Checkbox
-                      checked={currentKeys.includes(k)}
+                      checked={currentFields.find((c) => c.name === field.name)}
                       onChange={(e) => {
                         if (e.target.checked) {
-                          setCurrentKeys([...currentKeys, k])
+                          setCurrentFields([...currentFields, field])
                         } else {
-                          setCurrentKeys(currentKeys.filter((x) => x !== k))
+                          setCurrentFields(currentFields.filter((x) => x.name !== field.name))
                         }
                       }}
                     />
-                    <Text size={1}>{k}</Text>
+                    <Text size={1}>{field.title || field.name}</Text>
                   </Flex>
                 )
               })}
@@ -92,7 +107,7 @@ export default function DeskTable(props: SchemaVisualizerProps) {
           </Flex>
         </Card>
         {currentSchema ? (
-          <Data schemaType={currentSchema} keys={currentKeys} />
+          <Data schemaType={currentSchema.name} fields={currentFields} />
         ) : (
           <Feedback
             tone="caution"
