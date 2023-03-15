@@ -6,6 +6,7 @@ import {SchemaVisualizerConfig} from './types'
 import SchemaSelector from './SchemaSelector'
 import Data from './Data'
 import {useRouter, useRouterState} from 'sanity/router'
+import {Feedback} from 'sanity-plugin-utils'
 
 type SchemaVisualizerProps = {
   tool: Tool<SchemaVisualizerConfig>
@@ -22,6 +23,7 @@ export default function DeskTable(props: SchemaVisualizerProps) {
 
   const {navigate} = useRouter()
   const state = useRouterState<{schemaType: string}>(selector)
+  console.log(state.schemaType)
 
   const schema = useSchema()
   const schemaTypes = schema?._original?.types
@@ -41,6 +43,13 @@ export default function DeskTable(props: SchemaVisualizerProps) {
   const [currentSchema, setCurrentSchema] = React.useState(
     state.schemaType ?? documentTypes[0].name
   )
+
+  // Handle change of url
+  React.useEffect(() => {
+    if (state.schemaType && state.schemaType !== currentSchema) {
+      setCurrentSchema(state.schemaType)
+    }
+  }, [state.schemaType, currentSchema])
 
   // Handle change in schema selector
   const handleChange = React.useCallback(
@@ -82,7 +91,15 @@ export default function DeskTable(props: SchemaVisualizerProps) {
             </Stack>
           </Flex>
         </Card>
-        {currentSchema ? <Data schemaType={currentSchema} keys={currentKeys} /> : null}
+        {currentSchema ? (
+          <Data schemaType={currentSchema} keys={currentKeys} />
+        ) : (
+          <Feedback
+            tone="caution"
+            title="No schema selected"
+            description="Select a schema from the dropdown list to view documents"
+          />
+        )}
       </Stack>
     </Card>
   )

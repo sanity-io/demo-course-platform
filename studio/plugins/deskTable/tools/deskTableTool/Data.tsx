@@ -32,7 +32,11 @@ export default function Data(props: DataProps) {
   const onClose = React.useCallback(() => setCurrentId(``), [])
 
   if (loading) {
-    return <Spinner />
+    return (
+      <Feedback>
+        <Spinner />
+      </Feedback>
+    )
   }
 
   if (error || !fullSchema) {
@@ -44,14 +48,14 @@ export default function Data(props: DataProps) {
   }
 
   return (
-    <Table shadow={2} radius={2} padding={1}>
+    <Table shadow={2}>
       <thead>
         <Row>
-          <Cell padding={2}>
+          <Cell padding={3}>
             <Code size={1}>Document</Code>
           </Cell>
           {keys.map((keyValue) => (
-            <Cell key={keyValue} padding={2}>
+            <Cell key={keyValue} paddingY={3}>
               <Code size={1}>{keyValue}</Code>
             </Cell>
           ))}
@@ -62,13 +66,13 @@ export default function Data(props: DataProps) {
           <Row key={doc._id}>
             <Cell padding={2} borderTop>
               <Stack>
-                <Button onClick={() => setCurrentId(doc._id)} padding={0} mode="bleed">
+                <Button onClick={() => setCurrentId(doc._id)} padding={1} mode="bleed">
                   <Preview layout="default" value={doc} schemaType={fullSchema} />
                 </Button>
               </Stack>
             </Cell>
             {keys.map((keyValue) => (
-              <Cell key={keyValue} padding={2} borderTop>
+              <Cell key={keyValue} paddingY={2} borderTop>
                 <Text size={1}>{_.get(doc, keyValue) as string}</Text>
               </Cell>
             ))}
@@ -78,7 +82,7 @@ export default function Data(props: DataProps) {
       {currentId && (
         <Dialog header="Example" id="dialog-example" onClose={onClose} zOffset={1000} width={2}>
           <Box padding={4}>
-            <Form documentType={schemaType} documentId={currentId} />
+            <Form documentType={schemaType} documentId={currentId.replace(`drafts.`, ``)} />
           </Box>
         </Dialog>
       )}
