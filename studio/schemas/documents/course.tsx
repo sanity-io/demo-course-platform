@@ -1,7 +1,9 @@
-import {FiAward, FiBook, FiGlobe, FiUsers} from 'react-icons/fi'
-import {defineType, defineField} from 'sanity'
+import {FiAward, FiBook, FiGlobe, FiImage, FiUsers} from 'react-icons/fi'
+import {defineType, defineField, Reference} from 'sanity'
+import {SanityImageObjectStub} from '@sanity/asset-utils'
 
 import {i18n} from '../../../languages'
+import CourseMedia from '../../components/CourseMedia'
 
 export default defineType({
   name: 'course',
@@ -24,6 +26,11 @@ export default defineType({
       name: 'lessons',
       title: 'Lessons',
       icon: FiAward,
+    },
+    {
+      name: 'media',
+      title: 'Media',
+      icon: FiImage,
     },
   ],
   fields: [
@@ -66,19 +73,49 @@ export default defineType({
       ],
       validation: (Rule) => [Rule.required().min(1), Rule.unique()],
     }),
+    defineField({
+      name: 'image',
+      type: 'image',
+      group: ['media'],
+    }),
   ],
   preview: {
     select: {
       title: `title.${i18n.base}`,
-      lessonCount: 'lessons.length',
+      lessons: 'lessons',
+      presenters: 'presenters',
+      image: 'image',
     },
-    prepare({title, lessonCount}: {title: string; lessonCount: number}) {
+    // Overloading the type causes an error
+    // @ts-ignore
+    prepare({
+      title,
+      lessons,
+      presenters,
+      image,
+    }: {
+      title: string
+      lessons: Reference[]
+      presenters: Reference[]
+      image: SanityImageObjectStub
+    }) {
+      const lessonCount = lessons?.length || 0
+      const lessonSubtitle = lessonCount
+        ? `${lessonCount} ${lessonCount === 1 ? `lesson` : `lessons`}`
+        : 'No lessons'
+      const presenterCount = presenters?.length || 0
+      const presenterSubtitle = presenterCount
+        ? `${presenterCount} ${presenterCount === 1 ? `presenter` : `presenters`}`
+        : 'No presenters'
+
       return {
         title,
-        subtitle: lessonCount
-          ? `${lessonCount} ${lessonCount === 1 ? `lesson` : `lessons`}`
-          : 'No lessons',
-        media: FiBook,
+        subtitle: [lessonSubtitle, presenterSubtitle].join(' · '),
+        media: presenterCount ? (
+          <CourseMedia image={image} presenters={presenters} />
+        ) : (
+          image ?? FiBook
+        ),
       }
     },
   },
