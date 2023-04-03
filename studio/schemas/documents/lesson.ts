@@ -17,15 +17,15 @@ export default defineType({
       type: 'slug',
       options: {
         source: 'title',
-        // isUnique: isUniqueOutsideOfTranslations
       },
-      validation: (rule) => rule.required(),
+      validation: (rule) =>
+        rule.required().error('A slug is required to generate a page on the website'),
     }),
     defineField({
       name: 'summary',
       type: 'text',
       rows: 3,
-      validation: (rule) => rule.max(200),
+      validation: (rule) => rule.max(200).warning('Summary should be less than 200 characters'),
     }),
     defineField({
       name: 'content',

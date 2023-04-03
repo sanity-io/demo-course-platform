@@ -8,6 +8,7 @@
     "start": "sanity start",
     "dev": "sanity dev",
     "build": "sanity build",
+    "deploy": "sanity deploy",
     "lint": "eslint . --fix"
   },
   "keywords": [

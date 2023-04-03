@@ -45,7 +45,8 @@ export default defineType({
       name: 'slug',
       type: 'localizedSlug',
       group: ['i18n'],
-      validation: (Rule) => Rule.required(),
+      validation: (Rule) =>
+        Rule.required().error('A slug is required to generate a page on the website'),
     }),
     defineField({
       name: 'presenters',
