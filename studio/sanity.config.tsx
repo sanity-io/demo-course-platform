@@ -6,7 +6,8 @@ import {documentInternationalization} from '@sanity/document-internationalizatio
 import {languageFilter} from '@sanity/language-filter'
 import {internationalizedArray} from 'sanity-plugin-internationalized-array'
 import {schemaVisualizer} from 'sanity-plugin-schema-visualizer'
-import {theme} from 'https://themer.sanity.build/api/hues?preset=tw-cyan'
+// @ts-ignore
+import {theme} from 'https://themer.sanity.build/api/hues?preset=tw-cyan&positive=lightest:eefdf5&caution=lightest:fefbea&critical=lightest:fdf2f2&lightest=ffffff'
 
 import {structure, defaultDocumentNode} from './structure'
 import {schemaTypes} from './schemas'
@@ -68,5 +69,14 @@ export default defineConfig({
     components: {
       logo: () => <Logo />,
     },
+  },
+  tools: (prev, {currentUser}) => {
+    const isAdmin = currentUser?.roles.some((role) => role.name === 'administrator')
+
+    if (isAdmin) {
+      return prev
+    }
+
+    return prev.filter((tool) => tool.name !== 'vision')
   },
 })
