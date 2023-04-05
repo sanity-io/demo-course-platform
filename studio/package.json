@@ -34,6 +34,7 @@
     "react-xarrows": "^2.0.2",
     "sanity": "^3.4.0",
     "sanity-plugin-documents-pane": "^2.0.0",
+    "sanity-plugin-google-translate": "^3.0.0",
     "sanity-plugin-iframe-pane": "^2.0.0",
     "sanity-plugin-schema-visualizer": "^1.0.0",
     "sanity-plugin-transifex": "^3.0.0",

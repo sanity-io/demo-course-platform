@@ -6,6 +6,7 @@ import {documentInternationalization} from '@sanity/document-internationalizatio
 import {languageFilter} from '@sanity/language-filter'
 import {internationalizedArray} from 'sanity-plugin-internationalized-array'
 import {schemaVisualizer} from 'sanity-plugin-schema-visualizer'
+import {googleTranslate} from 'sanity-plugin-google-translate'
 // @ts-ignore
 import {theme} from 'https://themer.sanity.build/api/hues?preset=tw-cyan&positive=lightest:eefdf5&caution=lightest:fefbea&critical=lightest:fdf2f2&lightest=ffffff'
 
@@ -41,6 +42,7 @@ export default defineConfig({
       filterField: (enclosingType: any, field: any, selectedLanguageIds: any) =>
         !enclosingType.name.startsWith('localized') || selectedLanguageIds.includes(field.name),
     }),
+    googleTranslate(),
     visionTool(),
     codeInput(),
     schemaVisualizer({
