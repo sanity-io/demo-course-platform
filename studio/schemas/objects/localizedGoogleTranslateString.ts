@@ -1,4 +1,3 @@
-// import GoogleTranslateInput from 'sanity-plugin-google-translate'
 import {defineType} from 'sanity'
 
 export default defineType({
