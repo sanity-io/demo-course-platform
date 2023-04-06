@@ -16,10 +16,11 @@ export default async function preview(
   const host = req.headers.host;
 
   // Is the SEO plugin trying to fetch and return HTML?
+  // AND is the Studio on a different URL to the website?
   if (req.query.fetch) {
     // Allow requests from the Studio's URL
     const corsOrigin = host.includes("localhost")
-      ? // Required for Node 18 which doesn't like "localhost"
+      ? // Possibly required for Node 18 which doesn't like "localhost"
         // STUDIO_URL_DEV.replace("//localhost:", "//127.0.0.1:")
         // Otherwise fine on Node 16
         STUDIO_URL_DEV
