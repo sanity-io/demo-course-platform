@@ -11,6 +11,7 @@ import localizedString from './objects/localizedString'
 import localizedText from './objects/localizedText'
 import marketContent from './objects/marketContent'
 import portableText from './objects/portableText'
+import seo from './objects/seo'
 
 export const schemaTypes = [
   // documents
@@ -27,4 +28,5 @@ export const schemaTypes = [
   localizedText,
   marketContent,
   portableText,
+  seo,
 ]

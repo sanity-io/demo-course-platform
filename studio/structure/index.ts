@@ -2,6 +2,7 @@ import {FiAward, FiType, FiUsers} from 'react-icons/fi'
 import {StructureResolver, DefaultDocumentNodeResolver} from 'sanity/desk'
 
 import {i18n} from '../../languages'
+import seo from './seo'
 import preview from './preview'
 import references from './references'
 import transifex from './transifex'
@@ -101,7 +102,7 @@ export const defaultDocumentNode: DefaultDocumentNodeResolver = (S, {schemaType,
     case 'course':
       return S.document().views([S.view.form(), preview(S, client), transifex(S)])
     case 'lesson':
-      return S.document().views([S.view.form(), preview(S, client)])
+      return S.document().views([S.view.form(), preview(S, client), seo(S, client)])
     case 'legal':
       return S.document().views([S.view.form(), preview(S, client)])
     default:

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import { usePreview } from "../../lib/sanity.preview";
 import ExitPreview from "../ExitPreview";

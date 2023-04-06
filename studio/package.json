@@ -37,8 +37,10 @@
     "sanity-plugin-google-translate": "^3.0.0",
     "sanity-plugin-iframe-pane": "^2.0.0",
     "sanity-plugin-schema-visualizer": "^1.0.0",
+    "sanity-plugin-seo-pane": "^2.0.0",
     "sanity-plugin-transifex": "^3.0.0",
-    "styled-components": "^5.2.0"
+    "styled-components": "^5.2.0",
+    "vite-plugin-node-polyfills": "^0.7.0"
   },
   "devDependencies": {
     "@types/styled-components": "^5.1.26"

@@ -36,6 +36,11 @@ export default defineType({
       type: 'string',
       readOnly: true,
     }),
+    defineField({
+      name: 'seo',
+      title: 'SEO',
+      type: 'seo',
+    }),
   ],
   preview: {
     select: {
