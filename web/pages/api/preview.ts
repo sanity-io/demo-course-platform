@@ -5,7 +5,7 @@ import { NextApiRequest, NextApiResponse } from "next";
 
 export const STUDIO_URL_DEV = "http://localhost:3333";
 export const STUDIO_URL_PROD = process.env.VERCEL
-  ? process.env.VERCEL_URL
+  ? "https://demo-course-platform-studio-git-seo-pane.sanity.build"
   // Default fallback
   : "https://demo-course-platform.sanity.studio";
 
