@@ -6,10 +6,12 @@ import { NextApiRequest, NextApiResponse } from "next";
 export const STUDIO_URL_DEV = "http://localhost:3333";
 export const STUDIO_URL_PROD = process.env.VERCEL
   ? process.env.VERCEL_URL
+  // Default fallback
   : "https://demo-course-platform.sanity.studio";
 
 export const WEBSITE_URL_DEV = "http://localhost:3000";
-export const WEBSITE_URL_PROD = "https://demo-course-platform.sanity.build";
+// export const WEBSITE_URL_PROD = "https://demo-course-platform.sanity.build";
+export const WEBSITE_URL_PROD = "https://demo-course-platform-git-seo-pane.sanity.build";
 
 export default async function preview(
   req: NextApiRequest,
