@@ -4,7 +4,9 @@ import { previewClient } from "../../lib/sanity.client";
 import { NextApiRequest, NextApiResponse } from "next";
 
 export const STUDIO_URL_DEV = "http://localhost:3333";
-export const STUDIO_URL_PROD = "https://demo-course-platform.sanity.studio";
+export const STUDIO_URL_PROD = process.env.VERCEL
+  ? process.env.VERCEL_URL
+  : "https://demo-course-platform.sanity.studio";
 
 export const WEBSITE_URL_DEV = "http://localhost:3000";
 export const WEBSITE_URL_PROD = "https://demo-course-platform.sanity.build";
@@ -103,7 +105,7 @@ export default async function preview(
     const previewHtml = await fetch(absoluteUrl, { headers })
       .then((previewRes) => previewRes.text())
       .catch((err) => console.error(err));
-
+    console.log(previewHtml);
     return res.send(previewHtml);
   }
 

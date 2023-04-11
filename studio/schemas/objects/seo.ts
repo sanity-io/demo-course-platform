@@ -6,19 +6,24 @@ export default defineField({
   type: 'object',
   fields: [
     defineField({
-      name: 'seoTitle',
-      title: 'SEO Title',
+      name: 'title',
       type: 'string',
     }),
     defineField({
-      name: 'seoDescription',
-      title: 'SEO Description',
+      name: 'description',
       type: 'string',
     }),
     defineField({
-      name: 'seoImage',
-      title: 'SEO Image',
+      name: 'image',
       type: 'image',
+    }),
+    defineField({
+      name: 'keywords',
+      type: 'string',
+    }),
+    defineField({
+      name: 'synonyms',
+      type: 'string',
     }),
   ],
 })
