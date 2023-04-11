@@ -43,6 +43,7 @@
     "vite-plugin-node-polyfills": "^0.7.0"
   },
   "devDependencies": {
-    "@types/styled-components": "^5.1.26"
+    "@types/styled-components": "^5.1.26",
+    "typescript": "^5.0.4"
   }
 }
