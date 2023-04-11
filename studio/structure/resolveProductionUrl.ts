@@ -1,11 +1,10 @@
 import {SanityClient} from '@sanity/client'
 import {SanityDocumentLike} from 'sanity'
-import {i18n} from '../../languages'
 
 // URL of the Next.js website
-const remoteUrl =
-  import.meta.env.SANITY_STUDIO_PREVIEW_URL ?? `https://demo-course-platform.sanity.build`
-const localUrl = `http://localhost:3000`
+export const WEBSITE_URL_DEV = 'http://localhost:3000'
+// export const WEBSITE_URL_PROD = "https://demo-course-platform.sanity.build";
+export const WEBSITE_URL_PROD = 'https://demo-course-platform-git-seo-pane.sanity.build'
 
 type DocWithSlug = SanityDocumentLike & {
   slug?: any
@@ -13,7 +12,7 @@ type DocWithSlug = SanityDocumentLike & {
 }
 
 export default async function resolveProductionUrl(doc: DocWithSlug, client: SanityClient) {
-  const baseUrl = window.location.hostname === 'localhost' ? localUrl : remoteUrl
+  const baseUrl = window.location.hostname === 'localhost' ? WEBSITE_URL_DEV : WEBSITE_URL_PROD
 
   const {_id} = doc
 
