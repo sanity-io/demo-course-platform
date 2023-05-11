@@ -53,8 +53,10 @@ export default defineConfig({
   schema: {
     types: schemaTypes,
     templates: (prev) => {
+      const prevFiltered = prev.filter((template) => template.id !== 'lesson')
+
       return [
-        ...prev,
+        ...prevFiltered,
         {
           id: 'lesson-language',
           title: 'Lesson with Language',
