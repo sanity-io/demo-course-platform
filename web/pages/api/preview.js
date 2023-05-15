@@ -10,9 +10,9 @@ export default async function preview(req, res) {
   }
 
   // Ensure this slug actually exists in the dataset
-  const query = groq`*[_id == $id][0]`;
-  const doc = await previewClient.fetch(query, { id });
-
+  const query = groq`*[_id in [$id, $draftId]]|order(_updatedAt desc)[0]`;
+  const doc = await previewClient.fetch(query, { id, draftId: `drafts.${id}` });
+ 
   if (!doc) {
     return res.status(401).json({ message: "Invalid document id" });
   }
