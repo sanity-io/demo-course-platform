@@ -1,6 +1,5 @@
 import {SanityClient} from '@sanity/client'
 import {SanityDocumentLike} from 'sanity'
-import {i18n} from '../../languages'
 
 // URL of the Next.js website
 const remoteUrl =
@@ -20,7 +19,7 @@ export default async function resolveProductionUrl(doc: DocWithSlug, client: San
   const previewUrl = new URL(`${baseUrl}/api/preview`)
 
   if (_id) {
-    previewUrl.searchParams.set(`id`, _id)
+    previewUrl.searchParams.set(`id`, _id.replace(`drafts.`, ``))
   }
 
   return previewUrl.toString()
