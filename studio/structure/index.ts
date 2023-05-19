@@ -52,7 +52,7 @@ export const structure: StructureResolver = (S) =>
                         }
 
                         // Template name structure example: "lesson-en"
-                        const [_, languageValue] = params?.template?.split(`-`)
+                        const languageValue = params?.template?.split(`-`).pop()
 
                         return languageValue === language.id
                       })

@@ -1,9 +1,9 @@
-import React from "react";
-import Link from "next/link";
-import { clsx } from "clsx";
+import React from 'react'
+import Link from 'next/link'
+import {clsx} from 'clsx'
 
-export default function Button({ href, children, className = ``, Icon, iconFirst = false }) {
-  if (!href) return null;
+export default function Button({href, children, className = ``, Icon, iconFirst = false}) {
+  if (!href) return null
 
   return (
     <Link
@@ -26,5 +26,5 @@ export default function Button({ href, children, className = ``, Icon, iconFirst
         />
       )}
     </Link>
-  );
+  )
 }

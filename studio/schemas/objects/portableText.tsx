@@ -1,10 +1,5 @@
-import React from 'react'
 import {defineField, defineType} from 'sanity'
 import {ImageIcon} from '@sanity/icons'
-
-// const MarketTextRender = ({market, children}: {market: string; children: React.ReactNode}) => (
-//   <span data-market-text={market}>{children}</span>
-// )
 
 export default defineType({
   name: 'portableText',

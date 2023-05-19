@@ -18,7 +18,6 @@ const SanityImage = ({value}) => {
   const {width, height} = getImageDimensions(value)
 
   return (
-    // eslint-disable-next-line @next/next/no-img-element
     <img
       src={urlBuilder(config).image(value).width(800).auto('format').url()}
       alt={value.alt || ' '}

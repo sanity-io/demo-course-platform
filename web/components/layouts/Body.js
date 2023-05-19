@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react'
 import dynamic from 'next/dynamic'
 
 const Course = dynamic(() => import('./Course'))
@@ -7,20 +7,19 @@ const Legal = dynamic(() => import('./Legal'))
 const Lesson = dynamic(() => import('./Lesson'))
 const Presenter = dynamic(() => import('./Presenter'))
 
-export default function Body({ layout, data }) {
-  
+export default function Body({layout, data}) {
   switch (layout) {
     case `course`:
-      return <Course data={data} />;
+      return <Course data={data} />
     case `home`:
-      return <Home data={data} />;
+      return <Home data={data} />
     case `legal`:
-      return <Legal data={data} />;
+      return <Legal data={data} />
     case `lesson`:
-      return <Lesson data={data} />;
+      return <Lesson data={data} />
     case `presenter`:
-      return <Presenter data={data} />;
+      return <Presenter data={data} />
     default:
-      return null;
+      return null
   }
 }

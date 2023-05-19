@@ -50,7 +50,7 @@ export default function LessonLinks({lessons = [], openByDefault = false}) {
                 : asPath === lesson.path.replace(`/${locale}`, ''),
           }
         }),
-    [lessons, locale]
+    [asPath, lessons, locale]
   )
 
   const {width} = useWindowSize()
@@ -61,7 +61,7 @@ export default function LessonLinks({lessons = [], openByDefault = false}) {
     if (!menuOpen && width >= 768) {
       setMenuOpen(true)
     }
-  }, [width])
+  }, [width, menuOpen])
 
   if (!localeLessons?.length) {
     return null

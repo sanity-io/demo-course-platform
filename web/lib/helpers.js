@@ -18,32 +18,36 @@ export function createLessonLinks(lessons = [], courseSlug = {}) {
     return []
   }
 
-  return lessons
-  // Each lesson must have a language
-    .filter((lesson) => lesson?.language)
-    .map((lesson) => {
-      const courseSlugBase = courseSlug[lesson.language]?.current
+  return (
+    lessons
+      // Each lesson must have a language
+      .filter((lesson) => lesson?.language)
+      .map((lesson) => {
+        const courseSlugBase = courseSlug[lesson.language]?.current
 
-      const baseLanguageLesson = {
-        language: lesson.language, // Should always be i18n.base
-        title: lesson.title,
-        path: [courseSlugBase, lesson.slug.current].join('/'),
-      }
-
-      const translations = lesson.translations?.length && lesson.translations.map((ref) => {
-        const lessonLang = ref.language
-        const courseLangSlug = courseSlug[ref.language]?.current
-        const lessonLangSlug = ref.slug.current
-
-        return {
-          language: ref.language,
-          title: ref.title,
-          path: [lessonLang, courseLangSlug, lessonLangSlug].join('/'),
+        const baseLanguageLesson = {
+          language: lesson.language, // Should always be i18n.base
+          title: lesson.title,
+          path: [courseSlugBase, lesson.slug.current].join('/'),
         }
-      })
 
-      return [baseLanguageLesson, ...translations ? translations : []]
-    })
+        const translations =
+          lesson.translations?.length &&
+          lesson.translations.map((ref) => {
+            const lessonLang = ref.language
+            const courseLangSlug = courseSlug[ref.language]?.current
+            const lessonLangSlug = ref.slug.current
+
+            return {
+              language: ref.language,
+              title: ref.title,
+              path: [lessonLang, courseLangSlug, lessonLangSlug].join('/'),
+            }
+          })
+
+        return [baseLanguageLesson, ...(translations ? translations : [])]
+      })
+  )
 }
 
 function getLabelText(key = ``, labels = []) {

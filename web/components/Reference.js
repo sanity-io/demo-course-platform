@@ -14,11 +14,5 @@ export default function Reference({children, mark}) {
     ? asPath.split(`/`).slice(0, -1).filter(Boolean).concat(mark.slug.current).join(`/`)
     : null
 
-  return link ? (
-    <Link href={link}>
-      {children}
-    </Link>
-  ) : (
-    <span>{children}</span>
-  )
+  return link ? <Link href={link}>{children}</Link> : <span>{children}</span>
 }

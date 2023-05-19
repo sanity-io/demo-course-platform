@@ -1,13 +1,11 @@
-import React from 'react'
 import {FiGlobe} from 'react-icons/fi'
-import {Block, defineField, defineType} from 'sanity'
+import {PortableTextTextBlock, defineField, defineType} from 'sanity'
 
 import {i18n} from '../../../languages'
-import Flag from '../../components/Flag'
 
 const defaults = {nonTextBehavior: ''}
 
-function blocksToText(blocks: Block[], opts = {}) {
+function blocksToText(blocks: PortableTextTextBlock[], opts = {}) {
   const options = Object.assign({}, defaults, opts)
   return blocks
     .map((block) => {

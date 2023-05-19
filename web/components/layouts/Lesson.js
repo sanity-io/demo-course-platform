@@ -35,7 +35,9 @@ export default function Lesson({data}) {
       : lessonPaths[currentLessonIndex + 1].find((lesson) => lesson.language === locale)
 
   const presentersString = presenters?.length
-    ? presenters.map((presenter) => [presenter.name, presenter.title].filter(Boolean).join(', ')).join(', ')
+    ? presenters
+        .map((presenter) => [presenter.name, presenter.title].filter(Boolean).join(', '))
+        .join(', ')
     : ``
 
   const completeString = labels.find(({key}) => key === 'lesson.continue')?.text

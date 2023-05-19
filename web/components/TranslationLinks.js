@@ -33,13 +33,15 @@ export default function TranslationLinks({translations = []}) {
           }`}
         >
           {version?.path ? (
-            <Link href={version.path} locale={version.language} className="flex items-center group leading-none">
-
-                <span className="block uppercase font-mono text-xs tracking-widest py-2 px-3">
-                  {version.language}
-                </span>
-                <span className="sr-only">{version.title}</span>
-
+            <Link
+              href={version.path}
+              locale={version.language}
+              className="flex items-center group leading-none"
+            >
+              <span className="block uppercase font-mono text-xs tracking-widest py-2 px-3">
+                {version.language}
+              </span>
+              <span className="sr-only">{version.title}</span>
             </Link>
           ) : (
             <span className="flex items-center group leading-none opacity-25 pointer-events-none">
