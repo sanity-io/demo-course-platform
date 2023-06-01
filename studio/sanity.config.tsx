@@ -74,6 +74,27 @@ export default defineConfig({
       logo: () => <Logo />,
     },
   },
+  form: {
+    components: {
+      field: (props) => {
+        console.log(props)
+        if (props.path.length === 1) {
+          return (
+            <div
+              style={{
+                // border: '1px solid red',
+                padding: 30,
+              }}
+            >
+              {props.renderDefault(props)}
+            </div>
+          )
+        }
+
+        return props.renderDefault(props)
+      },
+    },
+  },
   tools: (prev, {currentUser}) => {
     const isAdmin = currentUser?.roles.some((role) => role.name === 'administrator')
 

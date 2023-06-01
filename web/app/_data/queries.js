@@ -77,11 +77,7 @@ const courseQueryData = groq`
 `
 
 export const courseQuery = groq`*[_type == "course" && slug[$language].current == $slug][0]{
-  ${courseQueryData},
-
-  // Plus global data
-  "labels": ${labelsQuery},
-  "legals": ${legalsQuery}
+  ${courseQueryData}
 }`
 
 export const lessonQuery = groq`*[_type == "lesson" && slug.current == $slug][0]{
@@ -113,14 +109,8 @@ export const lessonQuery = groq`*[_type == "lesson" && slug.current == $slug][0]
       // By default, 
       *[_type == "course" && ^._id in translations[].value._ref][0]{ ${courseQueryData} }
     ),
-
-    // Plus global labels
-    "labels": ${labelsQuery},
-    "legals": ${legalsQuery}
 }`
 
 export const homeQuery = groq`{
-  "courses": *[_type == "course" && !(_id in path('drafts.*')) && count(presenters) > 0 && count(lessons) > 0],
-  "labels": ${labelsQuery},
-  "legals": ${legalsQuery}
+  "courses": *[_type == "course" && !(_id in path('drafts.*')) && count(presenters) > 0 && count(lessons) > 0]
 }`

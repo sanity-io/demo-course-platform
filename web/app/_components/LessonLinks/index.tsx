@@ -1,12 +1,15 @@
+'use client'
+
 import {Menu} from '@headlessui/react'
 import React, {useMemo, useState, useEffect} from 'react'
-import {useRouter} from 'next/router'
+import {usePathname} from 'next/navigation'
+
 import PropTypes from 'prop-types'
-import Link from 'next/link'
 import {useWindowSize} from 'usehooks-ts'
 
 import {ChevronDownIcon} from '@heroicons/react/24/outline'
-import {i18n} from '../../languages'
+import {i18n} from '../../../../languages'
+import {ListLink} from './ListLink'
 
 const buttonClasses = {
   default: `rounded-md flex w-full items-center p-3 transition-colors duration-300 border`,
@@ -16,18 +19,9 @@ const buttonClasses = {
   notActive: ``,
 }
 
-function ListLink(props) {
-  const {href, children, ...rest} = props
-
-  return (
-    <Link href={href} {...rest}>
-      {children}
-    </Link>
-  )
-}
-
 export default function LessonLinks({lessons = [], openByDefault = false}) {
-  const {asPath, locale} = useRouter()
+  const pathname = usePathname()
+  const locale = i18n.base
 
   const localeLessons = useMemo(
     () =>
@@ -46,11 +40,11 @@ export default function LessonLinks({lessons = [], openByDefault = false}) {
             ...lesson,
             current:
               locale === i18n.base
-                ? asPath === lesson.path
-                : asPath === lesson.path.replace(`/${locale}`, ''),
+                ? pathname === lesson.path
+                : pathname === lesson.path.replace(`/${locale}`, ''),
           }
         }),
-    [asPath, lessons, locale]
+    [pathname, lessons, locale]
   )
 
   const {width} = useWindowSize()

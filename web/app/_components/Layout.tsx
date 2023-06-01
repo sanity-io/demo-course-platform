@@ -1,14 +1,23 @@
-import React from 'react'
+'use client'
+
+import React, {PropsWithChildren} from 'react'
 import Link from 'next/link'
 import {LanguageIcon} from '@heroicons/react/24/outline'
 
-import TranslationLinks from '../TranslationLinks'
-import Meta from '../Meta'
+import TranslationLinks from '../../components/TranslationLinks'
+import Meta from '../../components/Meta'
 
-export default function Layout({translations, legals = [], children}) {
+type LayoutProps = PropsWithChildren & {
+  legals: any[]
+  translations: any[]
+}
+
+export function Layout(props: LayoutProps) {
+  const {children, legals, translations} = props
+
   return (
     <>
-      <Meta translations={translations} />
+      {/* <Meta translations={translations} /> */}
 
       <header className="bg-cyan-100/50 border-b border-cyan-50 text-cyan-900 font-bold fixed top-0 w-screen h-header flex items-center backdrop-blur z-20">
         <div className="container mx-auto flex items-center justify-between px-4 md:px-8 xl:p-16">
@@ -24,7 +33,7 @@ export default function Layout({translations, legals = [], children}) {
               <span className="pointer-events-none absolute inset-0 rounded-md -my-2 group-hover:scale-110  bg-white opacity-0 group-hover:opacity-100 transition-all duration-200" />
             </Link>
           </h1>
-          <TranslationLinks translations={translations} />
+          {/* <TranslationLinks translations={translations} /> */}
         </div>
       </header>
       {children}

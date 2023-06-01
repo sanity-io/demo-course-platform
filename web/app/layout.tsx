@@ -8,16 +8,30 @@ export const metadata: Metadata = {
   description: 'Welcome to Next.js',
 }
 
-export default function RootLayout(props) {
+import './_styles/globals.css'
+import {Layout} from './_components/Layout'
+import {getLegals} from './_data/loaders'
+
+export default async function RootLayout(props) {
   const {children} = props
+  const legals = await getLegals()
 
   return (
-    <html lang={extractLanguageFromCode(this.props.lang || i18n.base)}>
+    <html
+      lang={extractLanguageFromCode(
+        // TODO: re-add current locale
+        i18n.base
+      )}
+    >
       <head>
         <link rel="stylesheet" href="https://use.typekit.net/ogy2uky.css" />
         <meta charSet="utf-8" />
       </head>
-      <body className="font-sans bg-white text-gray-900">{children}</body>
+      <body className="font-sans bg-white text-gray-900">
+        <Layout translations={[]} legals={legals}>
+          {children}
+        </Layout>
+      </body>
     </html>
   )
 }
