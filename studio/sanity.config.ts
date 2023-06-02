@@ -52,35 +52,12 @@ export default defineConfig({
   ],
   schema: {
     types: schemaTypes,
-    templates: (prev) => {
-      const prevFiltered = prev.filter((template) => template.id !== 'lesson')
-
-      return [
-        ...prevFiltered,
-        {
-          id: 'lesson-language',
-          title: 'Lesson with Language',
-          schemaType: 'lesson',
-          parameters: [{name: 'language', type: 'string'}],
-          value: (params: {language: string}) => ({
-            language: params.language,
-          }),
-        },
-      ]
-    },
+    // Remove template for new 'lesson' document without a language
+    templates: (prev) => prev.filter((template) => template.id !== 'lesson'),
   },
   studio: {
     components: {
-      logo: () => <Logo />,
+      logo: Logo,
     },
-  },
-  tools: (prev, {currentUser}) => {
-    const isAdmin = currentUser?.roles.some((role) => role.name === 'administrator')
-
-    if (isAdmin) {
-      return prev
-    }
-
-    return prev.filter((tool) => tool.name !== 'vision')
   },
 })
