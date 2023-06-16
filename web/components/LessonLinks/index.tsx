@@ -1,14 +1,12 @@
 'use client'
 
 import {Menu} from '@headlessui/react'
-import React, {useMemo, useState, useEffect} from 'react'
-import {usePathname} from 'next/navigation'
-
-import PropTypes from 'prop-types'
+import {ChevronDownIcon} from '@heroicons/react/24/outline'
+import {useParams} from 'next/navigation'
+import React, {useEffect, useMemo, useState} from 'react'
 import {useWindowSize} from 'usehooks-ts'
 
-import {ChevronDownIcon} from '@heroicons/react/24/outline'
-import {i18n} from '../../../../languages'
+import {Translation} from '../../lib/types'
 import {ListLink} from './ListLink'
 
 const buttonClasses = {
@@ -19,32 +17,32 @@ const buttonClasses = {
   notActive: ``,
 }
 
-export default function LessonLinks({lessons = [], openByDefault = false}) {
-  const pathname = usePathname()
-  const locale = i18n.base
+type LessonLinksProps = {
+  lessons: Translation[][]
+  openByDefault?: boolean
+}
+
+export default function LessonLinks(props: LessonLinksProps) {
+  const {lessons, openByDefault = false} = props
+  const {language: currentLanguage} = useParams()
 
   const localeLessons = useMemo(
     () =>
       lessons
-        // Filter list down to either the current locale or the base language
-        .map((lessonGroup) => {
-          return (
-            lessonGroup.find((lesson) => lesson.language === locale) ??
-            lessonGroup.find((lesson) => lesson.language === i18n.base)
-          )
-        })
+        // Filter list down to just the current locale
+        .map((lessonGroup) => lessonGroup.find((lesson) => lesson.language === currentLanguage))
         .filter((lesson) => Boolean(lesson?.path))
         // Add an `active` key for styling
         .map((lesson) => {
           return {
             ...lesson,
-            current:
-              locale === i18n.base
-                ? pathname === lesson.path
-                : pathname === lesson.path.replace(`/${locale}`, ''),
+            // current:
+            //   locale === i18n.base
+            //     ? pathname === lesson.path
+            //     : pathname === lesson.path.replace(`/${locale}`, ''),
           }
         }),
-    [pathname, lessons, locale]
+    [currentLanguage, lessons]
   )
 
   const {width} = useWindowSize()
@@ -103,8 +101,4 @@ export default function LessonLinks({lessons = [], openByDefault = false}) {
       </Menu.Items>
     </Menu>
   )
-}
-
-LessonLinks.propTypes = {
-  lessons: PropTypes.array,
 }

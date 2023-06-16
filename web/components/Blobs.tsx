@@ -1,5 +1,5 @@
-import React from 'react'
 import {GlobeAltIcon, LanguageIcon} from '@heroicons/react/24/outline'
+import React from 'react'
 
 export default function Blobs() {
   return (

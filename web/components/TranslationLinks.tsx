@@ -1,23 +1,30 @@
-import React, {useMemo} from 'react'
+'use client'
+
+import clsx from 'clsx'
 import Link from 'next/link'
-import {useRouter} from 'next/router'
+import {useParams} from 'next/navigation'
+import React, {useMemo} from 'react'
+
+import {Translation} from '@/lib/types'
 
 import {i18n} from '../../languages'
 
-export default function TranslationLinks({translations = []}) {
-  const {locale} = useRouter()
+type TranslationLinksProps = {
+  translations: Translation[]
+}
 
-  const availableTranslations = useMemo(
+export default function TranslationLinks(props: TranslationLinksProps) {
+  const {translations = []} = props
+  const {language: currentLanguage} = useParams()
+
+  const availableTranslations = useMemo<Translation[]>(
     () =>
-      i18n.languages.map((language) => {
-        const availableTranslation =
-          translations.find((translation) => translation.language === language.id) ?? {}
-
-        return {
-          language: language.id,
-          ...availableTranslation,
-        }
-      }),
+      i18n.languages.reduce<Translation[]>((acc, cur) => {
+        const availableTranslation = translations.find(
+          (translation) => translation.language === cur.id
+        )
+        return availableTranslation ? [...acc, availableTranslation] : acc
+      }, []),
     [translations]
   )
 
@@ -26,11 +33,12 @@ export default function TranslationLinks({translations = []}) {
       {availableTranslations.map((version) => (
         <li
           key={version.language}
-          className={`transition-colors duration-200 ${
-            version.language === locale
+          className={clsx(
+            `transition-colors duration-200`,
+            version.language === currentLanguage
               ? `bg-white pointer-events-none`
               : `bg-white/50 hover:bg-cyan-100`
-          }`}
+          )}
         >
           {version?.path ? (
             <Link

@@ -1,38 +1,42 @@
+'use client'
+
 import {CheckIcon, ChevronLeftIcon} from '@heroicons/react/24/outline'
-import {useRouter} from 'next/router'
+import {PortableText} from '@portabletext/react'
+import {useParams} from 'next/navigation'
 import React, {useMemo} from 'react'
 
-import {i18n} from '../../../languages'
-import {createLessonLinks} from '../../lib/helpers'
-import Blobs from '../Blobs'
-import Button from '../Button'
-import LessonLinks from '../LessonLinks'
-import ProseableText from '../ProseableText'
-import Title from '../Title'
-import Layout from './Layout'
+import {createLessonLinks} from '@/lib/helpers'
 
-export default function Lesson({data}) {
-  const {title, summary, content, course, labels, legals} = data
+import {i18n} from '../../languages'
+import Blobs from './Blobs'
+import Button from './Button'
+import LessonLinks from './LessonLinks'
+import Title from './Title'
+import TranslationLinks from './TranslationLinks'
+
+export function LessonLayout({data}) {
+  const {title, summary, content, course, labels = []} = data
   const {lessons, presenters} = course ?? {}
-  const {locale} = useRouter()
+  const {language: currentLanguage} = useParams()
 
   const lessonPaths = useMemo(
     () => createLessonLinks(lessons, course?.slug),
     [lessons, course?.slug]
   )
 
-  const courseSlug = course?.slug[locale ?? i18n.base].current
-  const coursePath = [locale === i18n.base ? null : locale, courseSlug].filter(Boolean).join('/')
+  const courseSlug = course?.slug[currentLanguage ?? i18n.base].current
+  const coursePath = [currentLanguage === i18n.base ? null : currentLanguage, courseSlug]
+    .filter(Boolean)
+    .join('/')
 
   // From the lessonPaths we can find the translations of this lesson
   const currentLessonIndex = lessonPaths.findIndex((versions) =>
     versions.find((lesson) => lesson.title === title)
   )
-  const translations = lessonPaths[currentLessonIndex]
   const nextLesson =
     currentLessonIndex + 1 === lessonPaths.length
       ? null
-      : lessonPaths[currentLessonIndex + 1].find((lesson) => lesson.language === locale)
+      : lessonPaths[currentLessonIndex + 1].find((lesson) => lesson.language === currentLanguage)
 
   const presentersString = presenters?.length
     ? presenters
@@ -44,7 +48,7 @@ export default function Lesson({data}) {
   const backLabel = labels.find(({key}) => key === 'back')?.text
 
   return (
-    <Layout translations={translations} legals={legals}>
+    <>
       <div className="relative z-10">
         <section className="bg-gradient-to-r mix-blend-multiply from-cyan-100 via-transparent to-transparent pt-16">
           <div className="container mx-auto py-8 p-4 md:p-8 xl:p-16 flex flex-col justify-start items-start gap-4 xl:gap-8">
@@ -61,7 +65,7 @@ export default function Lesson({data}) {
           {lessons?.length > 0 ? (
             <div className="md:col-span-2 md:col-start-4 md:sticky md:top-24 self-start">
               <h2 className="font-display text-lg md:text-2xl text-cyan-800 mb-2 md:mb-4">
-                {course.title[locale]}
+                {course.title[currentLanguage]}
               </h2>
               <LessonLinks lessons={lessonPaths} />
             </div>
@@ -75,7 +79,11 @@ export default function Lesson({data}) {
                 </div>
               ) : null}
 
-              <ProseableText value={content} />
+              {content && content.length > 0 ? (
+                <div className="prose prose-slate md:prose-lg lg:prose-xl w-full prose-h2:text-cyan-800 prose-h3:text-cyan-700 prose-a:text-cyan-500 prose-a:transition-colors prose-a:duration-200 hover:prose-a:text-pink-500 prose-code:text-pink-700 prose-h2:font-display prose-h3:font-display">
+                  <PortableText value={content} />
+                </div>
+              ) : null}
 
               {nextLesson?.path && (
                 <div className="flex items-center justify-between my-8">
@@ -94,6 +102,6 @@ export default function Lesson({data}) {
         </div>
       </div>
       <Blobs />
-    </Layout>
+    </>
   )
 }

@@ -77,8 +77,30 @@ const courseQueryData = groq`
 `
 
 export const courseQuery = groq`*[_type == "course" && slug[$language].current == $slug][0]{
-  ${courseQueryData}
+  ${courseQueryData},
 }`
+
+export const courseSlugsQuery = groq`*[_type == "course" && defined(slug)]{
+  "course": slug
+}.course`
+
+export const lessonSlugsQuery = groq`*[_type == "lesson" && defined(language) && defined(slug.current)]{
+  language,
+  "slug": slug.current,
+  "course": select(
+      // So if this lesson isn't in English...
+      ^.language != $defaultLocale => *[_type == "translation.metadata" && ^._id in translations[].value._ref][0]{
+        // our query has to look up through the translations metadata
+        // and find the course that references the English version, not this language version
+        "course": *[
+          _type == "course" && 
+          ^.translations[_key == $defaultLocale][0].value._ref in lessons[]._ref
+        ][0].slug
+      }.course,
+      // By default, 
+      *[_type == "course" && ^._id in translations[].value._ref][0].slug
+    )
+}[defined(course)]`
 
 export const lessonQuery = groq`*[_type == "lesson" && slug.current == $slug][0]{
     // Get this whole document

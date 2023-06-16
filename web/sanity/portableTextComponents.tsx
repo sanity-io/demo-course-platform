@@ -1,14 +1,12 @@
 /* eslint-disable react/display-name */
-import urlBuilder from '@sanity/image-url'
-import {getImageDimensions} from '@sanity/asset-utils'
 import {PortableText} from '@portabletext/react'
+import {getImageDimensions} from '@sanity/asset-utils'
+import urlBuilder from '@sanity/image-url'
 
 import Callout from '../components/Callout'
 import Prism from '../components/Prism'
 import Reference from '../components/Reference'
-
-import ProseableText from '../components/ProseableText'
-import {config} from './config'
+import {dataset, projectId} from './client'
 
 const SanityImage = ({value}) => {
   if (!value.asset) {
@@ -19,13 +17,10 @@ const SanityImage = ({value}) => {
 
   return (
     <img
-      src={urlBuilder(config).image(value).width(800).auto('format').url()}
+      src={urlBuilder({projectId, dataset}).image(value).width(800).auto('format').url()}
       alt={value.alt || ' '}
       loading="lazy"
-      style={{
-        // Avoid jumping around with aspect-ratio CSS property
-        aspectRatio: width / height,
-      }}
+      style={{aspectRatio: width / height}}
     />
   )
 }
@@ -34,13 +29,10 @@ const inlineComponents = {
   block: {
     normal: ({children}) =>
       children ? (
-        <>
-          {` `}
-          <span className="bg-purple-50 ring-purple-50 text-purple-900 ring-4 rounded">
-            {children}
-          </span>
-          {` `}
-        </>
+        // This is deliberately highlighted for the demo
+        <span className="bg-purple-50 ring-purple-50 text-purple-900 ring-4 rounded">
+          {children}
+        </span>
       ) : null,
   },
 }
@@ -69,7 +61,7 @@ export const portableTextComponents = {
       ) : (
         // This is deliberately highlighted for the demo
         <div className="bg-yellow-50 ring-yellow-50 text-yellow-900 ring-4 rounded">
-          <ProseableText value={value} components={portableTextComponents} />
+          <PortableText value={value} components={portableTextComponents} />
         </div>
       )
     },
