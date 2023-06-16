@@ -37,8 +37,6 @@ export const structure: StructureResolver = (S) =>
                         }),
                       ])
                       .canHandleIntent((intentName, params) => {
-                        console.log({intentName}, params)
-
                         // TODO: Handle **existing** documents (like search results when clicked)
                         // to return `true` on the correct language list!
                         if (intentName === 'edit') {
