@@ -1,25 +1,24 @@
-# Demo Course Platform
+# "Course Platform" Demo
 
-Sanity Studio v3 example and Next.js 13 front end handling multiple strategies for Localization with Sanity.io
+Sanity Studio and Next.js 13 front-end demonstrating multiple strategies for Localization with Sanity
 
-Read guides about Localization with Sanity.io on the docs: [Localization on Sanity.io](https://www.sanity.io/docs/localization)
+Read more about [Localization with Sanity in the docs](https://www.sanity.io/docs/localization).
 
 ## Video Walkthrough
 
-➡️ [Watch a 6 minute walkthrough on Loom](https://www.loom.com/share/38426f7e33ce45bcab9c19eaeec10809)
+➡️ [Watch a 4 minute Studio walkthrough on YouTube](https://www.youtube.com/watch?v=6acLvAvvG2w)
 
 ![Course Platform Studio](./img/course-platform-studio.png)
+
 ![Course Platform Website](./img/course-platform-website.png)
 
 ## Schema
 
-Each schema demonstrates a unique strategy:
+Each schema contains a unique strategy:
 
 ### Lessons
 
 Document-level internationalization using the [@sanity/document-internationalization](https://www.npmjs.com/package/@sanity/document-internationalization) plugin. The documents in this schema are all text and use Portable Text so it is best to translate the entire document – not just the fields within them.
-
-The version of this plugin used in this project is [currently in Beta release](https://github.com/sanity-io/document-internationalization/tree/studio-v3-plugin-v2). It does not **require** a "base language", but this project still uses the idea of a base throughout the schema for content fallbacks and organization.
 
 ### Courses
 
