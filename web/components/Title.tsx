@@ -1,8 +1,8 @@
 import {PropsWithChildren} from 'react'
 
-type TitleProps = PropsWithChildren & {
+type TitleProps = PropsWithChildren<{
   subtitle?: string
-}
+}>
 
 export default function Title(props: TitleProps) {
   const {subtitle = ``, children} = props

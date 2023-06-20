@@ -1,4 +1,4 @@
-import {defineConfig} from 'sanity'
+import {defineConfig, isKeyedObject} from 'sanity'
 import {deskTool} from 'sanity/desk'
 import {codeInput} from '@sanity/code-input'
 import {visionTool} from '@sanity/vision'
@@ -33,14 +33,33 @@ export default defineConfig({
     }),
     internationalizedArray({
       languages: i18n.languages,
+      defaultLanguages: [i18n.base],
       fieldTypes: ['string', 'text'],
     }),
     languageFilter({
       supportedLanguages: i18n.languages,
       defaultLanguages: [i18n.base],
       documentTypes: [`presenter`, `course`, `labelGroup`],
-      filterField: (enclosingType: any, field: any, selectedLanguageIds: any) =>
-        !enclosingType.name.startsWith('localized') || selectedLanguageIds.includes(field.name),
+      filterField: (enclosingType, member, selectedLanguageIds) => {
+        // Filter internationalized arrays
+        if (
+          enclosingType.jsonType === 'object' &&
+          enclosingType.name.startsWith('internationalizedArray') &&
+          'kind' in member
+        ) {
+          const language = isKeyedObject(member.field.path[1]) ? member.field.path[1]._key : null
+
+          return language ? selectedLanguageIds.includes(language) : false
+        }
+
+        // Filter internationalized objects
+        // `localeString` must be registered as a custom schema type
+        if (enclosingType.jsonType === 'object' && enclosingType.name.startsWith('locale')) {
+          return selectedLanguageIds.includes(member.name)
+        }
+
+        return true
+      },
     }),
     googleTranslate(),
     visionTool(),

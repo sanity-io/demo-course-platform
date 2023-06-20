@@ -19,6 +19,9 @@ export default async function RootLayout(props) {
 
   return (
     <html lang={language}>
+      <head>
+        <link rel="stylesheet" href="https://use.typekit.net/ogy2uky.css" />
+      </head>
       <body className="font-sans bg-white text-gray-900">
         {children}
         <LegalLinks legals={legals} />

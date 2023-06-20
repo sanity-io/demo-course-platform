@@ -2,12 +2,12 @@ import {clsx} from 'clsx'
 import Link from 'next/link'
 import React, {PropsWithChildren} from 'react'
 
-type ButtonProps = PropsWithChildren & {
+type ButtonProps = PropsWithChildren<{
   href: string
   className?: string
   Icon?: React.ComponentType<{className?: string}>
   iconFirst?: boolean
-}
+}>
 
 export default function Button(props: ButtonProps) {
   const {href, children, className = ``, Icon, iconFirst = false} = props

@@ -11,8 +11,8 @@ import {i18n} from '../../languages'
 import Blobs from './Blobs'
 import Button from './Button'
 import LessonLinks from './LessonLinks'
+import Prose from './Prose'
 import Title from './Title'
-import TranslationLinks from './TranslationLinks'
 
 export function LessonLayout({data}) {
   const {title, summary, content, course, labels = []} = data
@@ -54,7 +54,7 @@ export function LessonLayout({data}) {
           <div className="container mx-auto py-8 p-4 md:p-8 xl:p-16 flex flex-col justify-start items-start gap-4 xl:gap-8">
             <Title subtitle={presentersString}>{title}</Title>
             {coursePath && course && backLabel && (
-              <Button href={coursePath} Icon={ChevronLeftIcon} iconFirst>
+              <Button href={`/${coursePath}`} Icon={ChevronLeftIcon} iconFirst>
                 {backLabel}
               </Button>
             )}
@@ -79,11 +79,7 @@ export function LessonLayout({data}) {
                 </div>
               ) : null}
 
-              {content && content.length > 0 ? (
-                <div className="prose prose-slate md:prose-lg lg:prose-xl w-full prose-h2:text-cyan-800 prose-h3:text-cyan-700 prose-a:text-cyan-500 prose-a:transition-colors prose-a:duration-200 hover:prose-a:text-pink-500 prose-code:text-pink-700 prose-h2:font-display prose-h3:font-display">
-                  <PortableText value={content} />
-                </div>
-              ) : null}
+              {content && content.length > 0 ? <Prose value={content} /> : null}
 
               {nextLesson?.path && (
                 <div className="flex items-center justify-between my-8">

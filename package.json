@@ -15,6 +15,7 @@
     }
   },
   "dependencies": {
+    "@sanity/language-filter": "^3.1.1",
     "husky": "^8.0.3",
     "prettier": "^2.8.8",
     "sanity": "^3.11.3"

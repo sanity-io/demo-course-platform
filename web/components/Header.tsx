@@ -2,22 +2,25 @@ import {LanguageIcon} from '@heroicons/react/24/outline'
 import Link from 'next/link'
 import React from 'react'
 
-import {Translation} from '../_types'
+import {Translation} from '@/lib/types'
+
+import {i18n} from '../../languages'
 import TranslationLinks from './TranslationLinks'
 
 type HeaderProps = {
   translations: Translation[]
+  currentLanguage: string
 }
 
 export default function Header(props: HeaderProps) {
-  const {translations} = props
+  const {translations, currentLanguage = i18n.base} = props
 
   return (
     <header className="bg-cyan-100/50 border-b border-cyan-50 text-cyan-900 font-bold fixed top-0 w-screen h-header flex items-center backdrop-blur z-20">
       <div className="container mx-auto flex items-center justify-between px-4 md:px-8 xl:p-16">
         <h1 className="mr-auto">
           <Link
-            href="/"
+            href={`/${currentLanguage}`}
             className="block transition-colors duration-200 font-display font-bold group relative z-0"
           >
             <span className="flex items-center relative z-10 group-hover:text-cyan-700">

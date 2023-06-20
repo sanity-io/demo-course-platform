@@ -7,8 +7,14 @@ export const labelsQuery = groq`*[_id == "labelGroup"][0].labels[]{
 
 export const presenterQuery = groq`*[_type == "presenter" && slug.current == $slug && !(_id in path("drafts.**"))][0]{
   ...,
-  "title": coalesce(title[_key == $language][0].value, title[_key == $defaultLocale][0].value),
-  "biography": coalesce(biography[_key == $language][0].value, biography[_key == $defaultLocale][0].value),
+  "title": coalesce(
+    title[_key == $language][0].value, 
+    title[_key == $defaultLocale][0].value
+  ),
+  "biography": coalesce(
+    biography[_key == $language][0].value, 
+    biography[_key == $defaultLocale][0].value
+  ),
 }`
 
 export const legalsQuery = groq`*[_type == "legal" && !(_id in path("drafts.**"))]{
@@ -24,8 +30,7 @@ export const legalQuery = groq`*[_type == "legal" && slug.current == $slug][0]{
     ...,
     // filter inline blocks with the same conditions
     "children": children[_type != "marketContent" || (_type == "marketContent" && market == $language)]
-  },
-  "legals": ${legalsQuery}
+  }
 }`
 
 // We reuse this query on Courses and Lessons

@@ -18,7 +18,7 @@
     "@sanity/code-input": "^4.0.0",
     "@sanity/document-internationalization": "^2.0.1",
     "@sanity/eslint-config-studio": "^2.0.0",
-    "@sanity/language-filter": "^3.0.0",
+    "@sanity/language-filter": "^3.1.2",
     "@sanity/vision": "^3.4.0",
     "eslint": "^8.6.0",
     "eslint-config-prettier": "^8.5.0",
@@ -36,6 +36,7 @@
     "sanity-plugin-documents-pane": "^2.0.0",
     "sanity-plugin-google-translate": "^3.0.0",
     "sanity-plugin-iframe-pane": "^2.0.0",
+    "sanity-plugin-internationalized-array": "^1.7.0",
     "sanity-plugin-schema-visualizer": "^1.0.0",
     "sanity-plugin-transifex": "^3.0.0",
     "styled-components": "^5.2.0"

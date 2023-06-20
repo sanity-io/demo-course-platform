@@ -19,7 +19,7 @@ export default async function Page({params}) {
 
   return (
     <>
-      <Header translations={translations} />
+      <Header translations={translations} currentLanguage={language} />
       <HomeLayout {...home} labels={labels} />
     </>
   )

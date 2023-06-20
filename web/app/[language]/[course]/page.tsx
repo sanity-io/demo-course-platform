@@ -1,9 +1,15 @@
+import {Metadata} from 'next'
+
 import {CourseLayout} from '@/components/CourseLayout'
 import Header from '@/components/Header'
-import {createLessonLinks} from '@/lib/helpers'
+import {Translation} from '@/lib/types'
 import {getCourse, getCoursesWithSlugs} from '@/sanity/loaders'
 
 import {i18n} from '../../../../languages'
+
+export const metadata: Metadata = {
+  title: 'Course Page',
+}
 
 // Static params for every course, in every language
 export async function generateStaticParams() {
@@ -28,15 +34,27 @@ export default async function Page({params}) {
   const {course, language} = params
   const data = await getCourse({slug: course, language})
 
-  const lessonPaths = data?.lessons.length > 0 ? createLessonLinks(data.lessons, course?.slug) : []
-  const currentLessonIndex = lessonPaths.findIndex((versions) =>
-    versions.find((lesson) => lesson.title === data.title)
-  )
-  const translations = lessonPaths[currentLessonIndex]
+  const currentTitle = data?.title ? data.title[language] ?? data.title[i18n.base] : null
+
+  const translations = i18n.languages.reduce<Translation[]>((acc, lang) => {
+    const translationSlug = data?.slug ? data.slug[lang.id]?.current : null
+    const translationTitle = data?.title ? data.title[lang.id] : currentTitle
+
+    return translationSlug && translationTitle
+      ? [
+          ...acc,
+          {
+            language: lang.id,
+            path: '/' + lang.id + '/' + translationSlug,
+            title: translationTitle,
+          },
+        ]
+      : acc
+  }, [])
 
   return (
     <>
-      <Header translations={translations} />
+      <Header translations={translations} currentLanguage={language} />
       <CourseLayout data={data} />
     </>
   )
