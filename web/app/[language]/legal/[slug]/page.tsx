@@ -2,24 +2,9 @@ import {Metadata} from 'next'
 import {draftMode} from 'next/headers'
 
 import Header from '@/components/Header'
-import LegalLayout from '@/components/LegalLayout'
-import {getLegal, getLessonsWithSlugs} from '@/sanity/loaders'
+import {getLegal} from '@/sanity/loaders'
 
 import {i18n} from '../../../../../languages'
-
-export async function generateStaticParams() {
-  const {isEnabled: preview} = draftMode()
-  const lessons = await getLessonsWithSlugs(preview)
-
-  const params = lessons.map((lesson) => ({
-    ...lesson,
-    // Couldn't filter down the object of slugs in the GROQ query,
-    // so we filter them here instead
-    course: lesson.course[lesson.language].current,
-  }))
-
-  return params
-}
 
 export const metadata: Metadata = {
   title: 'Legal Page',
@@ -39,7 +24,7 @@ export default async function Page({params}) {
   return (
     <>
       <Header translations={translations} currentLanguage={language} />
-      {/* <LegalLayout {...data} /> */}
+      <LegalLayout {...data} />
     </>
   )
 }
