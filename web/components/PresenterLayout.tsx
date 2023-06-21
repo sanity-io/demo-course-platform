@@ -6,7 +6,7 @@ import Title from '@/components/Title'
 import {urlFor} from '@/sanity/urlFor'
 
 type PresenterLayoutProps = {
-  data: {
+  data?: {
     name?: string
     title?: string
     photo?: SanityImageSource
@@ -15,6 +15,10 @@ type PresenterLayoutProps = {
 }
 
 export default function PresenterLayout(props: PresenterLayoutProps) {
+  if (!props.data) {
+    return null
+  }
+
   const {name, title, photo, biography} = props.data
 
   const photoUrl = photo ? urlFor(photo).auto('format').width(500).height(500).url() : null

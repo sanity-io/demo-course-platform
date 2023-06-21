@@ -5,7 +5,9 @@ import {getSecret, SECRET_ID} from './getSecret'
 
 export default async function resolvePreviewUrl(doc: SanityDocument, client: SanityClient) {
   const baseUrl =
-    process.env.NODE_ENV === 'development' ? `http://localhost:3000` : process.env.VERCEL_URL
+    process.env.NODE_ENV === 'development'
+      ? `http://localhost:3000`
+      : `https://demo-course-platform-git-next-13.sanity.build`
 
   const {_id} = doc
 

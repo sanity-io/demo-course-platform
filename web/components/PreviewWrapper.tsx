@@ -8,7 +8,7 @@ import {PropsWithChildren} from 'react'
 // T default to any
 type PreviewWrapperProps<T> = PropsWithChildren<{
   preview?: boolean
-  data: T
+  initialData: T
   query: string | null
   params: QueryParams | null
 }>
@@ -31,7 +31,11 @@ export function PreviewWrapper<T>(props: PreviewWrapperProps<T>) {
     // Render child, with the wrapper's initial data and props
     <Slot {...rest} />
   ) : (
-    <PreviewData<typeof props.data> initialData={props.data} query={query} params={params ?? {}}>
+    <PreviewData<typeof props.initialData>
+      initialData={props.initialData}
+      query={query}
+      params={params ?? {}}
+    >
       {props.children}
     </PreviewData>
   )
