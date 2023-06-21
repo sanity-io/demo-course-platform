@@ -42,7 +42,6 @@ export default defineType({
       of: [{type: 'marketContent', title: 'Inline Market Content'}],
     }),
     defineField({name: 'image', type: 'image', icon: ImageIcon}),
-    defineField({name: 'code', type: 'code'}),
     defineField({name: 'callout', type: 'callout'}),
   ],
 })

@@ -24,7 +24,7 @@ export default function PresenterLayout(props: PresenterLayoutProps) {
               <img
                 src={photoUrl}
                 alt={name}
-                className="w-48 md:w-64 w-48 md:h-64 object-cover rounded-full shadow-inner"
+                className="w-48 md:w-64 h-48 md:h-64 object-cover rounded-full shadow-inner"
               />
             ) : null}
             {name ? <Title subtitle={title}>{name}</Title> : null}

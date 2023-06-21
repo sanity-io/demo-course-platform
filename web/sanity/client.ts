@@ -10,21 +10,17 @@ export const config = {
   dataset,
   apiVersion,
   useCdn: process.env.NODE_ENV === 'production',
+  // perspective: 'published',
 }
 
-export const client = createClient({
-  projectId,
-  dataset,
-  apiVersion,
-  useCdn: false,
-})
-
-export const cachedClientFetch = cache(client.fetch.bind(client))
+export const client = createClient(config)
 
 export const previewClient = createClient({
-  projectId,
-  dataset,
-  apiVersion,
+  ...config,
   useCdn: false,
   token: process.env.SANITY_API_TOKEN,
+  perspective: 'previewDrafts',
 })
+
+export const cachedClientFetch = (preview = false) =>
+  preview ? cache(previewClient.fetch.bind(client)) : cache(client.fetch.bind(client))

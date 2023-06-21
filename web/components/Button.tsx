@@ -7,14 +7,16 @@ type ButtonProps = PropsWithChildren<{
   className?: string
   Icon?: React.ComponentType<{className?: string}>
   iconFirst?: boolean
+  prefetch?: boolean
 }>
 
 export default function Button(props: ButtonProps) {
-  const {href, children, className = ``, Icon, iconFirst = false} = props
+  const {href, children, className = ``, Icon, iconFirst = false, prefetch = true} = props
   if (!href) return null
 
   return (
     <Link
+      prefetch={prefetch}
       href={href}
       className={clsx(
         iconFirst && `flex-row-reverse`,

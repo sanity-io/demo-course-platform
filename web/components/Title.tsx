@@ -13,7 +13,7 @@ export default function Title(props: TitleProps) {
         {children && typeof children === 'string' ? children : `Untitled`}
       </h1>
       {subtitle && typeof subtitle === 'string' ? (
-        <h2 className="uppercase md:tracking-widest font-bold text-xs md:text-sm text-cyan-500">
+        <h2 className="uppercase tracking-widest font-bold text-xs md:text-sm text-cyan-500">
           {subtitle}
         </h2>
       ) : null}

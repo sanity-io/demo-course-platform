@@ -1,4 +1,5 @@
 import {Metadata} from 'next'
+import {draftMode} from 'next/headers'
 
 import Header from '@/components/Header'
 import {LessonLayout} from '@/components/LessonLayout'
@@ -24,8 +25,9 @@ export const metadata: Metadata = {
 
 export default async function Page({params}) {
   const {lesson, language} = params
-  const data = await getLesson({slug: lesson, language})
-  const labels = await getLabels({language})
+  const {isEnabled: preview} = draftMode()
+  const data = await getLesson({slug: lesson, language}, preview)
+  const labels = await getLabels({language}, preview)
 
   const lessonPaths = createLessonLinks(data.course.lessons, data.course.slug)
   const currentLessonIndex = lessonPaths.findIndex((versions) =>

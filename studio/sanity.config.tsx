@@ -1,6 +1,5 @@
 import {defineConfig, isKeyedObject} from 'sanity'
 import {deskTool} from 'sanity/desk'
-import {codeInput} from '@sanity/code-input'
 import {visionTool} from '@sanity/vision'
 import {documentInternationalization} from '@sanity/document-internationalization'
 import {languageFilter} from '@sanity/language-filter'
@@ -63,7 +62,6 @@ export default defineConfig({
     }),
     googleTranslate(),
     visionTool(),
-    codeInput(),
     schemaVisualizer({
       defaultSchemaTypes: ['course', 'lesson', 'presenter'],
       hiddenSchemaTypes: ['translation.metadata'],
