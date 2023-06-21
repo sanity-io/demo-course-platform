@@ -18,8 +18,17 @@ function isLinkToOurDomain(url: string) {
   return suppliedUrl.origin === checkUrl.origin
 }
 
+import {getSecret, SECRET_ID} from '../../../../studio/structure/getSecret'
+
 export async function GET(request: Request) {
   const {origin, searchParams} = new URL(request.url)
+
+  const secret = await getSecret(previewClient, SECRET_ID, false)
+
+  if (searchParams.get('secret') !== secret) {
+    return new Response('Invalid secret', {status: 401})
+  }
+
   const id = searchParams.get('id')
 
   if (!id) {
@@ -37,7 +46,7 @@ export async function GET(request: Request) {
   }
 
   // Create the full slug from the id
-  const {_type, language} = doc
+  const {_type} = doc
 
   let slug
   const courseSlug = `come-back-and-make-this-actually-required`

@@ -1,17 +1,21 @@
+'use client'
+
 import {SanityImageSource} from '@sanity/asset-utils'
 
 import Title from '@/components/Title'
 import {urlFor} from '@/sanity/urlFor'
 
 type PresenterLayoutProps = {
-  name?: string
-  title?: string
-  photo?: SanityImageSource
-  biography?: string
+  data: {
+    name?: string
+    title?: string
+    photo?: SanityImageSource
+    biography?: string
+  }
 }
 
 export default function PresenterLayout(props: PresenterLayoutProps) {
-  const {name, title, photo, biography} = props
+  const {name, title, photo, biography} = props.data
 
   const photoUrl = photo ? urlFor(photo).auto('format').width(500).height(500).url() : null
 
