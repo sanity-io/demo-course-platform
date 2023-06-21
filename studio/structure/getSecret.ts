@@ -1,11 +1,10 @@
 import type {SanityClient} from '@sanity/client'
-import groq from 'groq'
 
 export const SECRET_ID = `sanity.preview.secret`
 
 // updated within the hour, if it's older it'll create a new secret or return null
 const query = (ttl: number) =>
-  groq`*[_id == $id && dateTime(_updatedAt) > dateTime(now()) - ${ttl}][0].secret`
+  `*[_id == $id && dateTime(_updatedAt) > dateTime(now()) - ${ttl}][0].secret`
 
 const tag = 'preview.secret'
 
