@@ -83,5 +83,5 @@ export async function GET(request: Request) {
   // Initialise draft mode
   draftMode().enable()
 
-  return Response.redirect(redirectUrl)
+  return Response.redirect(redirectUrl.toString())
 }

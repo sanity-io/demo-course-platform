@@ -7,10 +7,10 @@ import {PropsWithChildren} from 'react'
 
 // T default to any
 type PreviewWrapperProps<T> = PropsWithChildren<{
-  preview?: boolean
   initialData: T
-  query: string | null
-  params: QueryParams | null
+  preview?: boolean
+  query?: string
+  params?: QueryParams
 }>
 
 // Suspense boundary prevents useLiveQuery from running on the server
@@ -34,7 +34,7 @@ export function PreviewWrapper<T>(props: PreviewWrapperProps<T>) {
     <PreviewData<typeof props.initialData>
       initialData={props.initialData}
       query={query}
-      params={params ?? {}}
+      params={params}
     >
       {props.children}
     </PreviewData>
