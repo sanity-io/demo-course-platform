@@ -62,7 +62,7 @@ export default function LessonLinks(props: LessonLinksProps) {
   const toggleClassNames = [`md:hidden`, buttonClasses.default, buttonClasses.current].join(` `)
 
   return (
-    <Menu as="div" className="grid grid-cols-1 gap-1" open={menuOpen}>
+    <Menu as="div" className="grid grid-cols-1 gap-1">
       {openByDefault ? null : (
         <button type="button" className={toggleClassNames} onClick={() => setMenuOpen(!menuOpen)}>
           <span className="flex-1 flex items-center gap-x-4">
@@ -84,13 +84,13 @@ export default function LessonLinks(props: LessonLinksProps) {
                   locale={lesson.language}
                   className={[
                     buttonClasses.default,
-                    lesson.current ? buttonClasses.current : buttonClasses.notCurrent,
+                    // lesson.current ? buttonClasses.current : buttonClasses.notCurrent,
                     active ? buttonClasses.active : buttonClasses.notActive,
                   ].join(` `)}
                 >
                   <span className="flex-1 flex items-center gap-x-4">
                     <span className="font-display font-bold text-sm text-pink-400 w-6">
-                      {String(index + 1).padStart(2, 0)}
+                      {String(index + 1).padStart(2, '0')}
                     </span>
                     <span>{lesson.title}</span>
                   </span>

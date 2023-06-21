@@ -39,7 +39,7 @@ export default async function Page({params}) {
   return (
     <>
       <Header translations={translations} currentLanguage={language} />
-      <LegalLayout {...data} />
+      {/* <LegalLayout {...data} /> */}
     </>
   )
 }

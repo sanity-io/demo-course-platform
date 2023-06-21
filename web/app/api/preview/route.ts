@@ -1,6 +1,7 @@
 import {draftMode} from 'next/headers'
 import {groq} from 'next-sanity'
 
+import {getSecret, SECRET_ID} from '@/lib/getSecret'
 import {previewClient} from '@/sanity/client'
 
 import {i18n} from '../../../../languages'
@@ -17,8 +18,6 @@ function isLinkToOurDomain(url: string) {
   // to a site that's not ours!
   return suppliedUrl.origin === checkUrl.origin
 }
-
-import {getSecret, SECRET_ID} from '../../../../studio/structure/getSecret'
 
 export async function GET(request: Request) {
   const {origin, searchParams} = new URL(request.url)

@@ -59,7 +59,11 @@ export const portableTextComponents = {
       }
 
       return isInline ? (
-        <PortableText value={value} components={inlineComponents} />
+        <PortableText
+          value={value}
+          // @ts-expect-error
+          components={inlineComponents}
+        />
       ) : (
         // This is deliberately highlighted for the demo
         <div className="bg-yellow-50 ring-yellow-50 text-yellow-900 ring-4 rounded">
