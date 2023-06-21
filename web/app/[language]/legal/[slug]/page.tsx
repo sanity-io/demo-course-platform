@@ -2,6 +2,7 @@ import {Metadata} from 'next'
 import {draftMode} from 'next/headers'
 
 import Header from '@/components/Header'
+import LegalLayout from '@/components/LegalLayout'
 import {getLegal} from '@/sanity/loaders'
 
 import {i18n} from '../../../../../languages'
