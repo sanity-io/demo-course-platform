@@ -6,7 +6,7 @@ import Header from '@/components/Header'
 import {PreviewWrapper} from '@/components/PreviewWrapper'
 import {Translation} from '@/lib/types'
 import {cachedClientFetch} from '@/sanity/client'
-import {COMMON_PARAMS, getCourse, getCoursesWithSlugs} from '@/sanity/loaders'
+import {COMMON_PARAMS, getCoursesWithSlugs} from '@/sanity/loaders'
 import {courseQuery} from '@/sanity/queries'
 
 import {i18n} from '../../../../languages'

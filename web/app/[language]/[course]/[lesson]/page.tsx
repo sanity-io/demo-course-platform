@@ -6,7 +6,7 @@ import {LessonLayout} from '@/components/LessonLayout'
 import {PreviewWrapper} from '@/components/PreviewWrapper'
 import {createLessonLinks} from '@/lib/helpers'
 import {cachedClientFetch} from '@/sanity/client'
-import {COMMON_PARAMS, getLabels, getLesson, getLessonsWithSlugs} from '@/sanity/loaders'
+import {COMMON_PARAMS, getLabels, getLessonsWithSlugs} from '@/sanity/loaders'
 import {lessonQuery} from '@/sanity/queries'
 
 export async function generateStaticParams() {
