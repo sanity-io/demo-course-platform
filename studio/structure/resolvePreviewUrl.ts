@@ -4,10 +4,19 @@ import {SanityDocument} from 'sanity'
 import {getSecret, SECRET_ID} from './getSecret'
 
 export default async function resolvePreviewUrl(doc: SanityDocument, client: SanityClient) {
-  const baseUrl =
-    process.env.NODE_ENV === 'development'
-      ? `http://localhost:3000`
-      : `https://demo-course-platform-git-next-13.sanity.build`
+  let baseUrl = `http://localhost:3000`
+
+  if (process.env.VERCEL) {
+    // This is the URL of the Studio deployment, not the web deployment
+    baseUrl = `https://${
+      process.env.VERCEL_ENV === 'production'
+        ? process.env.VERCEL_URL
+        : process.env.VERCEL_BRANCH_URL
+    }`
+
+    // Remove `-studio` from the URL origin
+    baseUrl = baseUrl.replace(`-studio.`, ``)
+  }
 
   const {_id} = doc
 
