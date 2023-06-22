@@ -3,23 +3,22 @@ on:
   push:
     branches: [main]
     paths-ignore:
-      - "web/**"
+      - 'web/**'
 jobs:
-  deploy:
+  sanity-deploy:
     runs-on: ubuntu-latest
+    name: Deploy Sanity
     steps:
-      - uses: actions/checkout@v2
-      - name: Setup Node.js environment
-        uses: actions/setup-node@v2
-        with:
-          node-version: 16.x
+      - name: Checkout
+        uses: actions/checkout@master
       - name: Install dependencies
         run: |
           cd studio
-          npm install --legacy-peer-deps
-          npm install @sanity/cli
-      - name: Deploy Sanity Studio
+          npm install
+      - name: Deploy
+        env:
+          SANITY_AUTH_TOKEN: ${{ secrets.STUDIO_DEPLOY }}
         run: |
           set -e
           cd studio
-          SANITY_AUTH_TOKEN="${{ secrets.STUDIO_DEPLOY }}"  SANITY_STUDIO_GOOGLE_TRANSLATE_API_KEY="${{ secrets.SANITY_STUDIO_GOOGLE_TRANSLATE_API_KEY }}" SANITY_STUDIO_PREVIEW_SECRET="${{ secrets.SANITY_STUDIO_PREVIEW_SECRET }}" SANITY_STUDIO_PREVIEW_URL="${{ secrets.SANITY_STUDIO_PREVIEW_URL }}" npx sanity deploy
+          SANITY_AUTH_TOKEN="${{ secrets.STUDIO_DEPLOY }}"  SANITY_STUDIO_GOOGLE_TRANSLATE_API_KEY="${{ secrets.SANITY_STUDIO_GOOGLE_TRANSLATE_API_KEY }}" SANITY_STUDIO_PREVIEW_SECRET="${{ secrets.SANITY_STUDIO_PREVIEW_SECRET }}" SANITY_STUDIO_PREVIEW_URL="${{ secrets.SANITY_STUDIO_PREVIEW_URL }}" npx sanity@latest deploy

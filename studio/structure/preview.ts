@@ -1,13 +1,14 @@
-import {SanityClient, SanityDocumentLike} from 'sanity'
-import Iframe, {IframeOptions} from 'sanity-plugin-iframe-pane'
+import {SanityClient, SanityDocument} from 'sanity'
+import Iframe from 'sanity-plugin-iframe-pane'
 import {StructureBuilder} from 'sanity/desk'
 
-import resolveProductionUrl from './resolveProductionUrl'
-
-const getOptions = (client: any): IframeOptions => ({
-  url: (doc: SanityDocumentLike) => resolveProductionUrl(doc, client),
-  reload: {button: true},
-})
+import resolvePreviewUrl from './resolvePreviewUrl'
 
 export default (S: StructureBuilder, client: SanityClient) =>
-  S.view.component(Iframe).options(getOptions(client)).title('Preview')
+  S.view
+    .component(Iframe)
+    .options({
+      url: (doc: SanityDocument) => resolvePreviewUrl(doc, client),
+      reload: {button: true},
+    })
+    .title('Preview')

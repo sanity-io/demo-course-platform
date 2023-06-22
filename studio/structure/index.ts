@@ -37,8 +37,6 @@ export const structure: StructureResolver = (S) =>
                         }),
                       ])
                       .canHandleIntent((intentName, params) => {
-                        console.log({intentName}, params)
-
                         // TODO: Handle **existing** documents (like search results when clicked)
                         // to return `true` on the correct language list!
                         if (intentName === 'edit') {
@@ -52,7 +50,7 @@ export const structure: StructureResolver = (S) =>
                         }
 
                         // Template name structure example: "lesson-en"
-                        const [_, languageValue] = params?.template?.split(`-`)
+                        const languageValue = params?.template?.split(`-`).pop()
 
                         return languageValue === language.id
                       })

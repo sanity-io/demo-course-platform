@@ -1,7 +1,6 @@
-import React from 'react'
 import {CheckCircleIcon, ExclamationCircleIcon, XCircleIcon} from '@heroicons/react/24/outline'
-
-import ProseableText from './ProseableText'
+import {PortableText} from '@portabletext/react'
+import React from 'react'
 
 const toneClasses = {
   default: `p-6 pr-12 border border-dashed rounded-lg flex items-start gap-4`,
@@ -24,7 +23,7 @@ export default function Callout({tone = `positive`, content = []}) {
       {React.createElement(toneIcons[tone], {
         className: `w-6 md:w-10 h-auto scale-150 transform -rotate-[10deg]`,
       })}
-      <ProseableText value={content} />
+      <PortableText value={content} />
     </div>
   )
 }

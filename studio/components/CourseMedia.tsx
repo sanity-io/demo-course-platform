@@ -56,7 +56,6 @@ export default function CourseMedia(props: CourseMediaType) {
         })
     }
   }, [client, presenters, presenterDocs])
-  console.log(presenterDocs)
 
   const builder = useImageUrlBuilder(options)
 
@@ -71,8 +70,6 @@ export default function CourseMedia(props: CourseMediaType) {
 
     return [...acc, builder.image(doc.photo).width(100).height(100).auto('format').toString()]
   }, [])
-
-  console.log(presenterDocs, presenterImages)
 
   return (
     <SquareFlex align="center" justify="center">
