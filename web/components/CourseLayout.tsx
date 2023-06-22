@@ -10,8 +10,12 @@ import {createCourseSummary, createLessonLinks} from '@/lib/helpers'
 
 import {i18n} from '../../languages'
 
-export function CourseLayout({data}) {
-  const {title, slug, presenters, lessons, labels} = data ?? {}
+type CourseLayoutProps = {
+  data?: any
+}
+
+export function CourseLayout(props: CourseLayoutProps) {
+  const {title, slug, presenters, lessons, labels} = props.data ?? {}
   const {language: currentLanguage} = useParams()
 
   // Render the localized title, if it exists, otherwise fallback to base

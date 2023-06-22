@@ -84,7 +84,7 @@ export default function LessonLinks(props: LessonLinksProps) {
                   locale={lesson.language}
                   className={[
                     buttonClasses.default,
-                    // lesson.current ? buttonClasses.current : buttonClasses.notCurrent,
+                    buttonClasses.notCurrent,
                     active ? buttonClasses.active : buttonClasses.notActive,
                   ].join(` `)}
                 >

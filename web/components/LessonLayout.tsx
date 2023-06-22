@@ -14,9 +14,16 @@ import LessonLinks from './LessonLinks'
 import Prose from './Prose'
 import Title from './Title'
 
-export function LessonLayout({data}) {
-  const {title, summary, content, course, labels = []} = data
+type LessonLayoutProps = {
+  data?: any
+  labels?: any[]
+}
+
+export function LessonLayout(props: LessonLayoutProps) {
+  const {labels = []} = props
+  const {title, summary, content, course} = props.data ?? {}
   const {lessons, presenters} = course ?? {}
+  console.log({course})
   const {language: currentLanguage} = useParams()
 
   const lessonPaths = useMemo(

@@ -3,7 +3,9 @@ import {draftMode} from 'next/headers'
 
 import Header from '@/components/Header'
 import LegalLayout from '@/components/LegalLayout'
+import {PreviewWrapper} from '@/components/PreviewWrapper'
 import {getLegal} from '@/sanity/loaders'
+import {legalQuery} from '@/sanity/queries'
 
 import {i18n} from '../../../../../languages'
 
@@ -14,7 +16,7 @@ export const metadata: Metadata = {
 export default async function Page({params}) {
   const {language, slug} = params
   const {isEnabled: preview} = draftMode()
-  const data = await getLegal({language, slug}, preview)
+  const data = await getLegal(params, preview)
 
   const translations = i18n.languages.map((lang) => ({
     language: lang.id,
@@ -25,7 +27,9 @@ export default async function Page({params}) {
   return (
     <>
       <Header translations={translations} currentLanguage={language} />
-      <LegalLayout {...data} />
+      <PreviewWrapper preview={preview} initialData={data} query={legalQuery} params={params}>
+        <LegalLayout />
+      </PreviewWrapper>
     </>
   )
 }

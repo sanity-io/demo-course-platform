@@ -5,12 +5,14 @@ import Prose from './Prose'
 import Title from './Title'
 
 type LegalLayoutProps = {
-  title: string
-  content: TypedObject[]
+  data?: {
+    title: string
+    content: TypedObject[]
+  }
 }
 
 export default function LegalLayout(props: LegalLayoutProps) {
-  const {title, content = []} = props
+  const {title, content = []} = props.data ?? {}
 
   return (
     <section className="pt-16">

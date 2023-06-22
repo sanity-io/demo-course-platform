@@ -3,8 +3,10 @@ import {draftMode} from 'next/headers'
 
 import Header from '@/components/Header'
 import {LessonLayout} from '@/components/LessonLayout'
+import {PreviewWrapper} from '@/components/PreviewWrapper'
 import {createLessonLinks} from '@/lib/helpers'
 import {getLabels, getLesson, getLessonsWithSlugs} from '@/sanity/loaders'
+import {lessonQuery} from '@/sanity/queries'
 
 export async function generateStaticParams() {
   const lessons = await getLessonsWithSlugs()
@@ -25,8 +27,9 @@ export const metadata: Metadata = {
 
 export default async function Page({params}) {
   const {lesson, language} = params
+  const queryParams = {slug: lesson, language}
   const {isEnabled: preview} = draftMode()
-  const data = await getLesson({slug: lesson, language}, preview)
+  const data = await getLesson(queryParams, preview)
   const labels = await getLabels({language}, preview)
 
   const lessonPaths = createLessonLinks(data.course.lessons, data.course.slug)
@@ -38,7 +41,9 @@ export default async function Page({params}) {
   return (
     <>
       <Header translations={translations} currentLanguage={language} />
-      <LessonLayout data={{...data, labels}} />
+      <PreviewWrapper preview={preview} initialData={data} query={lessonQuery} params={queryParams}>
+        <LessonLayout labels={labels} />
+      </PreviewWrapper>
     </>
   )
 }

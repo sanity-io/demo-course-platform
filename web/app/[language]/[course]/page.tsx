@@ -1,9 +1,12 @@
 import {Metadata} from 'next'
+import {draftMode} from 'next/headers'
 
 import {CourseLayout} from '@/components/CourseLayout'
 import Header from '@/components/Header'
+import {PreviewWrapper} from '@/components/PreviewWrapper'
 import {Translation} from '@/lib/types'
 import {getCourse, getCoursesWithSlugs} from '@/sanity/loaders'
+import {courseQuery} from '@/sanity/queries'
 
 import {i18n} from '../../../../languages'
 
@@ -32,7 +35,9 @@ export async function generateStaticParams() {
 
 export default async function Page({params}) {
   const {course, language} = params
-  const data = await getCourse({slug: course, language})
+  const {isEnabled: preview} = draftMode()
+  const queryParams = {slug: course, language}
+  const data = await getCourse(queryParams, preview)
 
   const currentTitle = data?.title ? data.title[language] ?? data.title[i18n.base] : null
 
@@ -55,7 +60,9 @@ export default async function Page({params}) {
   return (
     <>
       <Header translations={translations} currentLanguage={language} />
-      <CourseLayout data={data} />
+      <PreviewWrapper preview={preview} initialData={data} query={courseQuery} params={queryParams}>
+        <CourseLayout />
+      </PreviewWrapper>
     </>
   )
 }

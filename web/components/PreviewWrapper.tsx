@@ -27,10 +27,15 @@ export function PreviewWrapper<T>(props: PreviewWrapperProps<T>) {
     ...rest
   } = props
 
-  return !preview || !query ? (
-    // Render child, with the wrapper's initial data and props
-    <Slot {...rest} />
-  ) : (
+  // Render child, with the wrapper's initial data and props
+  if (!preview || !query) {
+    const nonPreviewProps = {...rest, data: props.initialData}
+
+    return <Slot {...nonPreviewProps} />
+  }
+
+  // Swap initialData for live data
+  return (
     <PreviewData<typeof props.initialData>
       initialData={props.initialData}
       query={query}
