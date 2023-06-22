@@ -11,12 +11,12 @@ import {lazy} from 'react'
 
 import ExitPreview from '@/components/ExitPreview'
 import LegalLinks from '@/components/LegalLinks'
-import {getLegals} from '@/sanity/loaders'
+import {COMMON_PARAMS, getLegals} from '@/sanity/loaders'
 const PreviewProvider = lazy(() => import('@/components/PreviewProvider'))
 
 export default async function RootLayout(props) {
-  const {language} = props.params
-  const legals = await getLegals({language})
+  const queryParams = {...COMMON_PARAMS, language: props.params.language}
+  const legals = await getLegals(queryParams)
 
   const preview = draftMode().isEnabled ? process.env.SANITY_API_READ_TOKEN : undefined
   if (draftMode().isEnabled && !preview) {
@@ -34,7 +34,7 @@ export default async function RootLayout(props) {
   )
 
   return (
-    <html lang={language}>
+    <html lang={props.params.language}>
       <head>
         <link rel="stylesheet" href="https://use.typekit.net/ogy2uky.css" />
       </head>

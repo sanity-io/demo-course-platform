@@ -23,7 +23,6 @@ export function LessonLayout(props: LessonLayoutProps) {
   const {labels = []} = props
   const {title, summary, content, course} = props.data ?? {}
   const {lessons, presenters} = course ?? {}
-  console.log({course})
   const {language: currentLanguage} = useParams()
 
   const lessonPaths = useMemo(
@@ -32,9 +31,7 @@ export function LessonLayout(props: LessonLayoutProps) {
   )
 
   const courseSlug = course?.slug[currentLanguage ?? i18n.base].current
-  const coursePath = [currentLanguage === i18n.base ? null : currentLanguage, courseSlug]
-    .filter(Boolean)
-    .join('/')
+  const coursePath = [currentLanguage, courseSlug].filter(Boolean).join('/')
 
   // From the lessonPaths we can find the translations of this lesson
   const currentLessonIndex = lessonPaths.findIndex((versions) =>

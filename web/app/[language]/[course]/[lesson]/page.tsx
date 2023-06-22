@@ -5,7 +5,8 @@ import Header from '@/components/Header'
 import {LessonLayout} from '@/components/LessonLayout'
 import {PreviewWrapper} from '@/components/PreviewWrapper'
 import {createLessonLinks} from '@/lib/helpers'
-import {getLabels, getLesson, getLessonsWithSlugs} from '@/sanity/loaders'
+import {cachedClientFetch} from '@/sanity/client'
+import {COMMON_PARAMS, getLabels, getLesson, getLessonsWithSlugs} from '@/sanity/loaders'
 import {lessonQuery} from '@/sanity/queries'
 
 export async function generateStaticParams() {
@@ -27,10 +28,10 @@ export const metadata: Metadata = {
 
 export default async function Page({params}) {
   const {lesson, language} = params
-  const queryParams = {slug: lesson, language}
+  const queryParams = {...COMMON_PARAMS, slug: lesson, language}
   const {isEnabled: preview} = draftMode()
-  const data = await getLesson(queryParams, preview)
-  const labels = await getLabels({language}, preview)
+  const data = await cachedClientFetch(preview)(lessonQuery, queryParams)
+  const labels = await getLabels(queryParams, preview)
 
   const lessonPaths = createLessonLinks(data.course.lessons, data.course.slug)
   const currentLessonIndex = lessonPaths.findIndex((versions) =>

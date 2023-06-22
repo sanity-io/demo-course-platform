@@ -5,7 +5,8 @@ import {CourseLayout} from '@/components/CourseLayout'
 import Header from '@/components/Header'
 import {PreviewWrapper} from '@/components/PreviewWrapper'
 import {Translation} from '@/lib/types'
-import {getCourse, getCoursesWithSlugs} from '@/sanity/loaders'
+import {cachedClientFetch} from '@/sanity/client'
+import {COMMON_PARAMS, getCourse, getCoursesWithSlugs} from '@/sanity/loaders'
 import {courseQuery} from '@/sanity/queries'
 
 import {i18n} from '../../../../languages'
@@ -36,8 +37,8 @@ export async function generateStaticParams() {
 export default async function Page({params}) {
   const {course, language} = params
   const {isEnabled: preview} = draftMode()
-  const queryParams = {slug: course, language}
-  const data = await getCourse(queryParams, preview)
+  const queryParams = {...COMMON_PARAMS, slug: course, language}
+  const data = await cachedClientFetch(preview)(courseQuery, queryParams)
 
   const currentTitle = data?.title ? data.title[language] ?? data.title[i18n.base] : null
 
