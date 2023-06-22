@@ -6,12 +6,13 @@ import {getSecret, SECRET_ID} from './getSecret'
 export default async function resolvePreviewUrl(doc: SanityDocument, client: SanityClient) {
   let baseUrl = `http://localhost:3000`
 
-  if (process.env.VERCEL) {
+  // Use public vars because Studio is all client-side
+  if (process.env.NEXT_PUBLIC_VERCEL_ENV) {
     // This is the URL of the Studio deployment, not the web deployment
     baseUrl = `https://${
-      process.env.VERCEL_ENV === 'production'
-        ? process.env.VERCEL_URL
-        : process.env.VERCEL_BRANCH_URL
+      process.env.NEXT_PUBLIC_VERCEL_ENV === 'production'
+        ? process.env.NEXT_PUBLIC_VERCEL_URL
+        : process.env.NEXT_PUBLIC_VERCEL_BRANCH_URL
     }`
 
     // Remove `-studio` from the URL origin
