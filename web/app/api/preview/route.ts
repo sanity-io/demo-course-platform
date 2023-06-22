@@ -10,8 +10,13 @@ function isLinkToOurDomain(url: string) {
   let suppliedUrl = new URL(url)
 
   // If url is relative, the 2nd arg will act as the base domain.
-  const safeOrigin =
-    process.env.NODE_ENV === 'development' ? `http://localhost:3000` : process.env.VERCEL_URL
+  const safeOrigin = process.env.VERCEL
+    ? `https://${
+        process.env.VERCEL_ENV === 'production'
+          ? process.env.VERCEL_URL
+          : process.env.VERCEL_BRANCH_URL
+      }`
+    : `http://localhost:3000`
   let checkUrl = new URL(url, safeOrigin)
 
   // if the origins don't match we've been given a url
