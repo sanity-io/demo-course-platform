@@ -7,12 +7,12 @@ export default async function resolvePreviewUrl(doc: SanityDocument, client: San
   let baseUrl = `http://localhost:3000`
 
   // Use public vars because Studio is all client-side
-  if (process.env.NEXT_PUBLIC_VERCEL_ENV) {
+  if (process.env.SANITY_STUDIO_VERCEL_ENV) {
     // This is the URL of the Studio deployment, not the web deployment
     baseUrl = `https://${
-      process.env.NEXT_PUBLIC_VERCEL_ENV === 'production'
-        ? process.env.NEXT_PUBLIC_VERCEL_URL
-        : process.env.NEXT_PUBLIC_VERCEL_BRANCH_URL
+      process.env.SANITY_STUDIO_VERCEL_ENV === 'production'
+        ? process.env.SANITY_STUDIO_VERCEL_URL
+        : process.env.SANITY_STUDIO_VERCEL_BRANCH_URL
     }`
 
     // Remove `-studio` from the URL origin
