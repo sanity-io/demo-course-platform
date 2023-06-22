@@ -12,11 +12,17 @@ export default async function resolvePreviewUrl(doc: SanityDocument, client: San
     baseUrl = `https://${
       process.env.SANITY_STUDIO_VERCEL_ENV === 'production'
         ? process.env.SANITY_STUDIO_VERCEL_URL
-        : process.env.SANITY_STUDIO_VERCEL_BRANCH_URL
+        : `demo-course-platform-git-${process.env.SANITY_STUDIO_VERCEL_GIT_COMMIT_REF}.sanity.build`
+      // This should work, but doesn't
+      // : process.env.SANITY_STUDIO_VERCEL_BRANCH_URL
     }`
 
     console.log(`SANITY_STUDIO_VERCEL_URL`, process.env.SANITY_STUDIO_VERCEL_URL)
     console.log(`SANITY_STUDIO_VERCEL_BRANCH_URL`, process.env.SANITY_STUDIO_VERCEL_BRANCH_URL)
+    console.log(
+      `SANITY_STUDIO_VERCEL_GIT_COMMIT_REF`,
+      process.env.SANITY_STUDIO_VERCEL_GIT_COMMIT_REF
+    )
 
     console.log({baseUrl})
 
