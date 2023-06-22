@@ -22,9 +22,9 @@ export default async function Page({params}) {
   return (
     <>
       <Header translations={translations} currentLanguage={language} />
-      <PreviewWrapper preview={preview} initialData={data} query={presenterQuery} params={params}>
-        <PresenterLayout />
-      </PreviewWrapper>
+      <PresenterLayout data={data} />
+      {/* <PreviewWrapper preview={preview} initialData={data} query={presenterQuery} params={params}>
+      </PreviewWrapper> */}
     </>
   )
 }
