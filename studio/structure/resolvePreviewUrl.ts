@@ -9,15 +9,14 @@ export default async function resolvePreviewUrl(doc: SanityDocument, client: San
   // Use public vars because Studio is all client-side
   if (process.env.SANITY_STUDIO_VERCEL_ENV) {
     // This is the URL of the Studio deployment, not the web deployment
-    baseUrl = `https://${
+    baseUrl =
       process.env.SANITY_STUDIO_VERCEL_ENV === 'production'
-        ? process.env.SANITY_STUDIO_VERCEL_URL?.replace(`-studio`, ``)
+        ? `https://demo-course-platform.sanity.build`
         : // This should work, but doesn't
           // the env seems to be `undefined` in vercel
           // : process.env.SANITY_STUDIO_VERCEL_BRANCH_URL
           // So I'm DIY-ing a branch URL for the web deployment
-          `demo-course-platform-git-${process.env.SANITY_STUDIO_VERCEL_GIT_COMMIT_REF}.sanity.build`
-    }`
+          `https://demo-course-platform-git-${process.env.SANITY_STUDIO_VERCEL_GIT_COMMIT_REF}.sanity.build`
 
     console.log({baseUrl})
   }
