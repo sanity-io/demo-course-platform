@@ -9,6 +9,6 @@ export default (S: StructureBuilder, client: SanityClient) =>
     .component(Iframe)
     .options({
       url: (doc: SanityDocument) => resolvePreviewUrl(doc, client),
-      reload: {button: true, revision: false},
+      reload: {button: true},
     })
     .title('Preview')
