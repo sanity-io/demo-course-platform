@@ -15,6 +15,11 @@ export default async function resolvePreviewUrl(doc: SanityDocument, client: San
         : process.env.SANITY_STUDIO_VERCEL_BRANCH_URL
     }`
 
+    console.log(`SANITY_STUDIO_VERCEL_URL`, process.env.SANITY_STUDIO_VERCEL_URL)
+    console.log(`SANITY_STUDIO_VERCEL_BRANCH_URL`, process.env.SANITY_STUDIO_VERCEL_BRANCH_URL)
+
+    console.log({baseUrl})
+
     // Remove `-studio` from the URL origin
     baseUrl = baseUrl.replace(`-studio.`, ``)
   }
