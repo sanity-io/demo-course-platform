@@ -11,23 +11,15 @@ export default async function resolvePreviewUrl(doc: SanityDocument, client: San
     // This is the URL of the Studio deployment, not the web deployment
     baseUrl = `https://${
       process.env.SANITY_STUDIO_VERCEL_ENV === 'production'
-        ? process.env.SANITY_STUDIO_VERCEL_URL
-        : `demo-course-platform-git-${process.env.SANITY_STUDIO_VERCEL_GIT_COMMIT_REF}.sanity.build`
-      // This should work, but doesn't
-      // : process.env.SANITY_STUDIO_VERCEL_BRANCH_URL
+        ? process.env.SANITY_STUDIO_VERCEL_URL?.replace(`-studio`, ``)
+        : // This should work, but doesn't
+          // the env seems to be `undefined` in vercel
+          // : process.env.SANITY_STUDIO_VERCEL_BRANCH_URL
+          // So I'm DIY-ing a branch URL for the web deployment
+          `demo-course-platform-git-${process.env.SANITY_STUDIO_VERCEL_GIT_COMMIT_REF}.sanity.build`
     }`
 
-    console.log(`SANITY_STUDIO_VERCEL_URL`, process.env.SANITY_STUDIO_VERCEL_URL)
-    console.log(`SANITY_STUDIO_VERCEL_BRANCH_URL`, process.env.SANITY_STUDIO_VERCEL_BRANCH_URL)
-    console.log(
-      `SANITY_STUDIO_VERCEL_GIT_COMMIT_REF`,
-      process.env.SANITY_STUDIO_VERCEL_GIT_COMMIT_REF
-    )
-
     console.log({baseUrl})
-
-    // Remove `-studio` from the URL origin
-    baseUrl = baseUrl.replace(`-studio.`, ``)
   }
 
   const {_id} = doc
