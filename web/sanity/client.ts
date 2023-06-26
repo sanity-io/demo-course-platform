@@ -41,12 +41,28 @@ export const config = {
   // "as const" satisfies `createClient` below
   perspective: 'published' as const,
   studioUrl: getStudioUrl(),
-  // encodeSourceMap: process.env.VERCEL_ENV !== 'production',
-  encodeSourceMap: true,
+  encodeSourceMap: process.env.VERCEL
+    ? process.env.VERCEL_ENV !== 'production'
+    : process.env.NODE_ENV !== 'production',
   logger: console,
-}
+  encodeSourceMapAtPath: (props) => {
+    // Remove source map for label key values
+    if (props.path[0] === 'labels' && props.path[2] === 'key') {
+      return false
+    }
 
-console.log({config})
+    // Internationalized object slugs need to be ignored
+    if (props.path[0] === 'slug' && props.path.includes('current')) {
+      return false
+    }
+
+    if (props.path.length === 1 && props.path[0] === 'language') {
+      return false
+    }
+
+    return props.filterDefault(props)
+  },
+}
 
 export const client = createClient(config)
 

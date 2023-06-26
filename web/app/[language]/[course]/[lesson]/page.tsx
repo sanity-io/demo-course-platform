@@ -1,3 +1,4 @@
+import get from 'lodash/get'
 import {Metadata} from 'next'
 import {draftMode} from 'next/headers'
 
@@ -12,12 +13,14 @@ import {lessonQuery} from '@/sanity/queries'
 export async function generateStaticParams() {
   const lessons = await getLessonsWithSlugs()
 
-  const params = lessons.map((lesson) => ({
-    ...lesson,
-    // Couldn't filter down the object of slugs in the GROQ query,
-    // so we filter them here instead
-    course: lesson.course[lesson.language].current,
-  }))
+  const params = lessons
+    .map((lesson) => ({
+      ...lesson,
+      // Couldn't filter down the object of slugs in the GROQ query,
+      // so we filter them here instead
+      course: lesson.language ? get(lesson, [`course`, lesson.language, `current`], null) : null,
+    }))
+    .filter((lesson) => lesson.course)
 
   return params
 }
