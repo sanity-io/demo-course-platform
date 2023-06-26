@@ -30,7 +30,7 @@ export const config = {
   // "as const" satisfies `createClient` below
   perspective: 'published' as const,
   studioUrl: getStudioUrl(),
-  encodeSourceMap: process.env.VERCEL_ENV === 'preview',
+  encodeSourceMap: process.env.NODE_ENV !== 'production',
 }
 
 console.log({config})
