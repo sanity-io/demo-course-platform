@@ -22,6 +22,8 @@ function getStudioUrl() {
         : process.env.VERCEL_BRANCH_URL!
 
     webUrl = webUrl.replace('-platform.', '-platform-studio.')
+
+    return `https://${webUrl}`
   }
 
   return webUrl
