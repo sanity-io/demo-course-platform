@@ -6,7 +6,11 @@ export const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET! || 'production-v3
 export const apiVersion = process.env.NEXT_PUBLIC_SANITY_API_VERSION! || '2023-06-01'
 
 function getStudioUrl() {
-  let webUrl = 'http://localhost:3333'
+  if (process.env.NODE_ENV !== 'production') {
+    return `http://localhost:3333`
+  }
+
+  let webUrl = `https://demo-course-platform-studio.sanity.build`
 
   console.log(`VERCEL`, process.env.VERCEL)
   console.log(`VERCEL_ENV`, process.env.VERCEL_ENV)
