@@ -33,6 +33,8 @@ export const config = {
   encodeSourceMap: process.env.VERCEL_ENV === 'preview',
 }
 
+console.log({config})
+
 export const client = createClient(config)
 
 export const previewClient = createClient({
