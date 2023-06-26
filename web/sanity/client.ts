@@ -12,11 +12,6 @@ const getStudioUrl = () => {
 
   let webUrl = `https://demo-course-platform-studio.sanity.build`
 
-  console.log(`VERCEL`, process.env.VERCEL)
-  console.log(`VERCEL_ENV`, process.env.VERCEL_ENV)
-  console.log(`VERCEL_URL`, process.env.VERCEL_URL)
-  console.log(`VERCEL_BRANCH_URL`, process.env.VERCEL_BRANCH_URL)
-
   if (process.env.VERCEL) {
     // Web (this) URL: https://demo-course-platform.sanity.build/
     // Studio URL:     https://demo-course-platform-studio.sanity.build/
