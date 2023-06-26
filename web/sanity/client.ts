@@ -8,6 +8,11 @@ export const apiVersion = process.env.NEXT_PUBLIC_SANITY_API_VERSION! || '2023-0
 function getStudioUrl() {
   let webUrl = 'http://localhost:3333'
 
+  console.log(`VERCEL`, process.env.VERCEL)
+  console.log(`VERCEL_ENV`, process.env.VERCEL_ENV)
+  console.log(`VERCEL_URL`, process.env.VERCEL_URL)
+  console.log(`VERCEL_BRANCH_URL`, process.env.VERCEL_BRANCH_URL)
+
   if (process.env.VERCEL) {
     // Web (this) URL: https://demo-course-platform.sanity.build/
     // Studio URL:     https://demo-course-platform-studio.sanity.build/
@@ -31,6 +36,7 @@ export const config = {
   perspective: 'published' as const,
   studioUrl: getStudioUrl(),
   encodeSourceMap: process.env.VERCEL_ENV !== 'production',
+  logger: console,
 }
 
 console.log({config})
