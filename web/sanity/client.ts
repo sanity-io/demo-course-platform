@@ -1,16 +1,35 @@
-import {createClient, SanityClient} from 'next-sanity'
+import {ClientConfig, createClient, SanityClient} from 'next-sanity'
 import {cache} from 'react'
 
 export const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || '6h1mv88x'
 export const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET || 'production-v3'
-export const apiVersion = process.env.NEXT_PUBLIC_SANITY_API_VERSION || '2023-01-01'
+export const apiVersion = process.env.NEXT_PUBLIC_SANITY_API_VERSION || '2023-06-01'
 
-export const config = {
+function getStudioUrl() {
+  let webUrl = 'http://localhost:3333'
+
+  if (process.env.VERCEL) {
+    // Web (this) URL: https://demo-course-platform.sanity.studio/
+    // Studio URL:     https://demo-course-platform-studio.sanity.build/
+    webUrl =
+      process.env.VERCEL_ENV === 'production'
+        ? process.env.VERCEL_URL!
+        : process.env.VERCEL_BRANCH_URL!
+
+    webUrl = webUrl.replace('-platform', '-platform-studio')
+  }
+
+  return webUrl
+}
+
+export const config: ClientConfig = {
   projectId,
   dataset,
-  apiVersion: 'X',
+  apiVersion,
   useCdn: process.env.NODE_ENV === 'production',
-  // perspective: 'published',
+  perspective: 'published',
+  studioUrl: getStudioUrl(),
+  encodeSourceMap: process.env.VERCEL_ENV === 'preview',
 }
 
 export const client = createClient(config)
