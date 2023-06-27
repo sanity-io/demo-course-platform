@@ -16,6 +16,7 @@
   ],
   "dependencies": {
     "@sanity/code-input": "^4.0.0",
+    "@sanity/dashboard": "^3.1.4",
     "@sanity/document-internationalization": "^2.0.1",
     "@sanity/eslint-config-studio": "^2.0.0",
     "@sanity/language-filter": "^3.1.2",
@@ -33,6 +34,7 @@
     "react-is": "^18.2.0",
     "react-xarrows": "^2.0.2",
     "sanity": "^3.12.2",
+    "sanity-plugin-dashboard-widget-vercel": "^2.0.1",
     "sanity-plugin-documents-pane": "^2.0.0",
     "sanity-plugin-google-translate": "^3.0.0",
     "sanity-plugin-iframe-pane": "^2.0.0",
