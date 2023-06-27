@@ -1,7 +1,7 @@
 'use client'
 
 import {CheckIcon, ChevronLeftIcon} from '@heroicons/react/24/outline'
-import {PortableText} from '@portabletext/react'
+import {vercelStegaSplit} from '@vercel/stega'
 import {useParams} from 'next/navigation'
 import React, {useMemo} from 'react'
 
@@ -44,7 +44,12 @@ export function LessonLayout(props: LessonLayoutProps) {
 
   const presentersString = presenters?.length
     ? presenters
-        .map((presenter) => [presenter.name, presenter.title].filter(Boolean).join(', '))
+        .map((presenter) =>
+          [presenter.name, presenter.title]
+            .filter(Boolean)
+            .map((part) => vercelStegaSplit(part.toString()).cleaned)
+            .join(', ')
+        )
         .join(', ')
     : ``
 

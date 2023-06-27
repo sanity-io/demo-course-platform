@@ -16,6 +16,7 @@ type CourseLayoutProps = {
 
 export function CourseLayout(props: CourseLayoutProps) {
   const {title, slug, presenters, lessons, labels} = props.data ?? {}
+  console.log(lessons)
   const {language: currentLanguage} = useParams()
 
   // Render the localized title, if it exists, otherwise fallback to base

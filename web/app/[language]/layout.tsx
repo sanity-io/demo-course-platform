@@ -42,7 +42,7 @@ export default async function RootLayout(props) {
         {preview ? (
           <PreviewProvider token={preview}>
             {children}
-            <ExitPreview />
+            {/* <ExitPreview /> */}
           </PreviewProvider>
         ) : (
           children

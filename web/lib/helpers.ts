@@ -1,3 +1,4 @@
+import {vercelStegaSplit} from '@vercel/stega'
 import {SanityDocument, Slug} from 'sanity'
 
 import {getLabelByKey} from './getLabelByKey'
@@ -92,5 +93,8 @@ export function createCourseSummary(
     value.push(presenters.length === 1 ? presenterSingular : presenterPlural)
   }
 
-  return value.filter(Boolean).join(` `)
+  return value
+    .filter(Boolean)
+    .map((part) => vercelStegaSplit(part.toString()).cleaned)
+    .join(` `)
 }
