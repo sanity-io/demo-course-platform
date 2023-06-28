@@ -17,8 +17,6 @@ export default async function resolvePreviewUrl(doc: SanityDocument, client: San
           // : process.env.SANITY_STUDIO_VERCEL_BRANCH_URL
           // So I'm DIY-ing a branch URL for the web deployment
           `https://demo-course-platform-git-${process.env.SANITY_STUDIO_VERCEL_GIT_COMMIT_REF}.sanity.build`
-
-    console.log({baseUrl})
   }
 
   const {_id} = doc

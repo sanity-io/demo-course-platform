@@ -92,4 +92,4 @@ export function getClient({preview}: {preview?: {token: string}}): SanityClient 
 }
 
 export const cachedClientFetch = (preview = false) =>
-  preview ? cache(previewClient.fetch.bind(client)) : cache(client.fetch.bind(client))
+  preview ? cache(previewClient.fetch.bind(previewClient)) : cache(client.fetch.bind(client))

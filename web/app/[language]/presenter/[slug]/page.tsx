@@ -14,8 +14,6 @@ export default async function Page({params}) {
   const queryParams = {...COMMON_PARAMS, slug, language}
   const {isEnabled: preview} = draftMode()
   const data = await cachedClientFetch(preview)(presenterQuery, queryParams)
-  console.log({preview, _originalId: data._originalId, _id: data._id})
-  console.log(previewClient.config())
 
   const translations = i18n.languages.map((lang) => ({
     language: lang.id,
