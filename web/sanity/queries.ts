@@ -5,7 +5,7 @@ export const labelsQuery = groq`*[_id == "labelGroup"][0].labels[]{
   "text": coalesce(text[$language], text[$defaultLocale]),
 }`
 
-export const presenterQuery = groq`*[_type == "presenter" && slug.current == $slug && !(_id in path("drafts.**"))][0]{
+export const presenterQuery = groq`*[_type == "presenter" && slug.current == $slug][0]{
   ...,
   "title": coalesce(
     title[_key == $language][0].value, 
@@ -17,7 +17,7 @@ export const presenterQuery = groq`*[_type == "presenter" && slug.current == $sl
   ),
 }`
 
-export const legalsQuery = groq`*[_type == "legal" && !(_id in path("drafts.**"))]{
+export const legalsQuery = groq`*[_type == "legal"]{
   _id,
   title,
   slug
@@ -75,10 +75,6 @@ const courseQueryData = groq`
       // presenter field-level translations use arrays, not objects
       "title": coalesce(title[_key == $language][0].value, title[_key == $defaultLocale][0].value),
     },
-
-    // Plus global data
-    "labels": ${labelsQuery},
-    "legals": ${legalsQuery}
 `
 
 export const courseQuery = groq`*[_type == "course" && slug[$language].current == $slug][0]{
@@ -139,5 +135,5 @@ export const lessonQuery = groq`*[_type == "lesson" && slug.current == $slug][0]
 }`
 
 export const homeQuery = groq`{
-  "courses": *[_type == "course" && !(_id in path('drafts.*')) && count(presenters) > 0 && count(lessons) > 0]
+  "courses": *[_type == "course" && count(presenters) > 0 && count(lessons) > 0]
 }`

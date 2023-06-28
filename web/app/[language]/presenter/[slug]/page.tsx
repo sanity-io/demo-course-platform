@@ -3,7 +3,7 @@ import {draftMode} from 'next/headers'
 import Header from '@/components/Header'
 import PresenterLayout from '@/components/PresenterLayout'
 import {PreviewWrapper} from '@/components/PreviewWrapper'
-import {cachedClientFetch} from '@/sanity/client'
+import {cachedClientFetch, previewClient} from '@/sanity/client'
 import {COMMON_PARAMS} from '@/sanity/loaders'
 import {presenterQuery} from '@/sanity/queries'
 
@@ -14,6 +14,8 @@ export default async function Page({params}) {
   const queryParams = {...COMMON_PARAMS, slug, language}
   const {isEnabled: preview} = draftMode()
   const data = await cachedClientFetch(preview)(presenterQuery, queryParams)
+  console.log({preview, _originalId: data._originalId, _id: data._id})
+  console.log(previewClient.config())
 
   const translations = i18n.languages.map((lang) => ({
     language: lang.id,

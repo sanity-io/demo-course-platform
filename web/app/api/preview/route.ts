@@ -1,6 +1,8 @@
+import {vercelStegaSplit} from '@vercel/stega'
 import {draftMode} from 'next/headers'
 import {groq} from 'next-sanity'
 
+import {clean} from '@/components/Clean'
 import {getSecret, SECRET_ID} from '@/lib/getSecret'
 import {previewClient} from '@/sanity/client'
 
@@ -27,18 +29,22 @@ function isLinkToOurDomain(url: string) {
 export async function GET(request: Request) {
   const {origin, searchParams} = new URL(request.url)
 
-  const secret = await getSecret(previewClient, SECRET_ID, false)
-
-  if (searchParams.get('secret') !== secret) {
-    return new Response('Invalid secret', {status: 401})
-  }
-
   const id = searchParams.get('id')
 
   if (!id) {
     return new Response('No "id" provided', {status: 401})
   } else if (id.startsWith('drafts.')) {
-    return new Response('must use a published "id"', {status: 401})
+    return new Response('Must use a published "id"', {status: 401})
+  } else if (!searchParams.get('secret')) {
+    return new Response('No "secret" provided', {status: 401})
+  }
+
+  const secret = clean(await getSecret(previewClient, SECRET_ID, false))
+
+  if (!secret) {
+    return new Response('No "secret" found', {status: 401})
+  } else if (searchParams.get('secret') !== secret) {
+    return new Response('Invalid "secret"', {status: 401})
   }
 
   // Ensure this slug actually exists in the dataset
@@ -46,7 +52,7 @@ export async function GET(request: Request) {
   const doc = await previewClient.fetch(query, {id})
 
   if (!doc) {
-    return new Response('"id" not found', {status: 401})
+    return new Response('Document not found', {status: 401})
   }
 
   // Create the full slug from the id
