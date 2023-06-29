@@ -22,7 +22,8 @@ const getStudioUrl = () => {
 
     // webUrl = webUrl.replace('-platform', '-platform-studio')
 
-    return `https://${webUrl}`
+    return webUrl
+    // return `https://${webUrl}`
   } else if (process.env.NODE_ENV !== 'production') {
     return `http://localhost:3333`
   }
