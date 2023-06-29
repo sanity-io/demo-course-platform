@@ -55,7 +55,7 @@ export const baseConfig = {
   useCdn: process.env.NODE_ENV === 'production',
   // "as const" satisfies `createClient`
   perspective: 'published' as const,
-  studioUrl: 'https://google.com',
+  studioUrl: '',
 }
 
 const sourceMapConfig = {
@@ -63,9 +63,9 @@ const sourceMapConfig = {
   // Because live preview and click-to-edit aren't working nicely together...
   // Enabled:  Vercel preview builds
   // Disabled: Vercel production builds and local development
-  encodeSourceMap: process.env.VERCEL ? process.env.VERCEL_ENV !== 'production' : false,
+  encodeSourceMap: process.env.VERCEL ? process.env.VERCEL_ENV === 'preview' : false,
   encodeSourceMapAtPath: handleEncodeSourceMap,
-  // logger: console,
+  logger: console,
 }
 
 export const client = createClient(baseConfig)
