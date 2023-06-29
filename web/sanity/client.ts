@@ -58,8 +58,6 @@ export const baseConfig = {
   studioUrl: 'https://google.com',
 }
 
-console.log(`studioUrl`, getStudioUrl())
-
 const sourceMapConfig = {
   studioUrl: getStudioUrl(),
   // Because live preview and click-to-edit aren't working nicely together...
