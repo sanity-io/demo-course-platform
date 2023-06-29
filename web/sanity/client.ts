@@ -55,17 +55,12 @@ export const baseConfig = {
   useCdn: process.env.NODE_ENV === 'production',
   // "as const" satisfies `createClient`
   perspective: 'published' as const,
-  studioUrl: '',
-}
-
-const sourceMapConfig = {
-  studioUrl: getStudioUrl(),
   // Because live preview and click-to-edit aren't working nicely together...
   // Enabled:  Vercel preview builds
   // Disabled: Vercel production builds and local development
   encodeSourceMap: process.env.VERCEL ? process.env.VERCEL_ENV === 'preview' : false,
   encodeSourceMapAtPath: handleEncodeSourceMap,
-  logger: console,
+  studioUrl: getStudioUrl(),
 }
 
 export const client = createClient(baseConfig)
@@ -76,7 +71,6 @@ export const previewClient = createClient({
   token: process.env.SANITY_API_READ_TOKEN,
   ignoreBrowserTokenWarning: true,
   perspective: 'previewDrafts',
-  ...sourceMapConfig,
 })
 
 export function getClient({preview}: {preview?: {token: string}}): SanityClient {
