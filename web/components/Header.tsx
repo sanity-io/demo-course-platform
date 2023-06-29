@@ -5,6 +5,7 @@ import React from 'react'
 import {Translation} from '@/lib/types'
 
 import {i18n} from '../../languages'
+import {clean} from './Clean'
 import TranslationLinks from './TranslationLinks'
 
 type HeaderProps = {
@@ -20,7 +21,7 @@ export default function Header(props: HeaderProps) {
       <div className="container mx-auto flex items-center justify-between px-4 md:px-8 xl:p-16">
         <h1 className="mr-auto">
           <Link
-            href={`/${currentLanguage}`}
+            href={`/${clean(currentLanguage)}`}
             className="block transition-colors duration-200 font-display font-bold group relative z-0"
           >
             <span className="flex items-center relative z-10 group-hover:text-cyan-700">

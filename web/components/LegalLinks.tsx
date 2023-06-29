@@ -2,6 +2,8 @@ import Link from 'next/link'
 import React from 'react'
 import {SanityDocument, Slug} from 'sanity'
 
+import {clean} from './Clean'
+
 type LegalLinksProps = {
   legals: SanityDocument[] & {
     slug: Slug
@@ -16,7 +18,7 @@ export default function LegalLinks(props: LegalLinksProps) {
         legal?.slug?.current ? (
           <Link
             key={legal._id}
-            href={`/legal/${legal.slug.current}`}
+            href={`/legal/${clean(legal.slug.current)}`}
             className="text-cyan-500 hover:text-pink-500 font-medium text-sm"
           >
             {legal.title}

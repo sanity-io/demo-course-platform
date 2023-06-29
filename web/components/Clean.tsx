@@ -1,7 +1,7 @@
 import {vercelStegaSplit} from '@vercel/stega'
 
-export function clean(value?: string | null) {
-  return value ? vercelStegaSplit(value).cleaned : null
+export function clean(value?: string | null): string {
+  return value ? vercelStegaSplit(value).cleaned : ``
 }
 
 export default function Clean({value}: {value: string}) {
