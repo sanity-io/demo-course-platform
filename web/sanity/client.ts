@@ -58,11 +58,12 @@ export const baseConfig = {
 
 const sourceMapConfig = {
   studioUrl: getStudioUrl(),
-  encodeSourceMap: process.env.VERCEL ? process.env.VERCEL_ENV !== 'production' : true,
-  // Just make it true since we only use it in the previewClient
-  // encodeSourceMap: true,
-  // logger: console,
+  // Because live preview and click-to-edit aren't working nicely together...
+  // Enabled:  Vercel preview builds
+  // Disabled: Vercel production builds and local development
+  encodeSourceMap: process.env.VERCEL ? process.env.VERCEL_ENV !== 'production' : false,
   encodeSourceMapAtPath: handleEncodeSourceMap,
+  // logger: console,
 }
 
 export const client = createClient(baseConfig)
