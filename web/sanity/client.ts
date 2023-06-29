@@ -14,13 +14,15 @@ const getStudioUrl = () => {
     // Web (this) URL: https://demo-course-platform.sanity.build/
     // Studio URL:     https://demo-course-platform-studio.sanity.build/
     webUrl =
-      process.env.VERCEL_ENV === 'production'
-        ? process.env.VERCEL_URL!
-        : process.env.VERCEL_BRANCH_URL!
+      process.env.VERCEL_ENV === 'preview'
+        ? process.env.VERCEL_BRANCH_URL!
+        : process.env.VERCEL_URL!
 
-    webUrl = webUrl.replace('-platform', '-platform-studio')
+    if (webUrl) {
+      webUrl = webUrl.replace('-platform', '-platform-studio')
 
-    return `https://${webUrl}`
+      return `https://${webUrl}`
+    }
   } else if (process.env.NODE_ENV !== 'production') {
     return `http://localhost:3333`
   }
@@ -53,8 +55,10 @@ export const baseConfig = {
   useCdn: process.env.NODE_ENV === 'production',
   // "as const" satisfies `createClient`
   perspective: 'published' as const,
-  studioUrl: '',
+  studioUrl: 'https://google.com',
 }
+
+console.log(`studioUrl`, getStudioUrl())
 
 const sourceMapConfig = {
   studioUrl: getStudioUrl(),
