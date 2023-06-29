@@ -1,3 +1,5 @@
+'use client'
+
 import React from 'react'
 import {TypedObject} from 'sanity'
 
@@ -12,6 +14,11 @@ type LegalLayoutProps = {
 }
 
 export default function LegalLayout(props: LegalLayoutProps) {
+  if (!props.data) {
+    // console.log(`LegalLayout data empty: ${JSON.stringify(props)}`)
+    return null
+  }
+
   const {title, content = []} = props.data ?? {}
 
   return (
