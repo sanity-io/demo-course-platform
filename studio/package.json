@@ -33,7 +33,7 @@
     "react-icons": "^4.4.0",
     "react-is": "^18.2.0",
     "react-xarrows": "^2.0.2",
-    "sanity": "^3.12.2",
+    "sanity": "^3.13.0",
     "sanity-plugin-dashboard-widget-vercel": "^2.0.1",
     "sanity-plugin-documents-pane": "^2.0.0",
     "sanity-plugin-google-translate": "^3.0.0",

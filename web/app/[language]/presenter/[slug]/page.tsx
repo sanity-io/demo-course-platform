@@ -3,7 +3,7 @@ import {draftMode} from 'next/headers'
 import Header from '@/components/Header'
 import PresenterLayout from '@/components/PresenterLayout'
 import {PreviewWrapper} from '@/components/PreviewWrapper'
-import {cachedClientFetch} from '@/sanity/client'
+import {cachedClientFetch, previewClient} from '@/sanity/client'
 import {COMMON_PARAMS} from '@/sanity/loaders'
 import {presenterQuery} from '@/sanity/queries'
 

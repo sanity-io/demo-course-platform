@@ -20,10 +20,7 @@ export default async function RootLayout(props) {
 
   const preview = draftMode().isEnabled ? process.env.SANITY_API_READ_TOKEN : undefined
   if (draftMode().isEnabled && !preview) {
-    console.info(
-      `Preview mode is enabled but no token was found.`,
-      process.env.SANITY_API_READ_TOKEN
-    )
+    console.info(`Preview mode is enabled but no token was found.`)
   }
 
   const children = (
@@ -42,7 +39,7 @@ export default async function RootLayout(props) {
         {preview ? (
           <PreviewProvider token={preview}>
             {children}
-            {/* <ExitPreview /> */}
+            <ExitPreview />
           </PreviewProvider>
         ) : (
           children
