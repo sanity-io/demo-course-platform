@@ -13,16 +13,15 @@ const getStudioUrl = () => {
   if (process.env.VERCEL) {
     // Web (this) URL: https://demo-course-platform.sanity.build/
     // Studio URL:     https://demo-course-platform-studio.sanity.build/
-    webUrl =
-      process.env.VERCEL_ENV === 'preview'
-        ? process.env.VERCEL_BRANCH_URL!
-        : process.env.VERCEL_URL!
+    // webUrl =
+    //   process.env.VERCEL_ENV === 'preview'
+    //     ? process.env.VERCEL_BRANCH_URL!
+    //     : process.env.VERCEL_URL!
+    webUrl = process.env.VERCEL_URL!
 
-    if (webUrl) {
-      webUrl = webUrl.replace('-platform', '-platform-studio')
+    webUrl = webUrl.replace('-platform', '-platform-studio')
 
-      return `https://${webUrl}`
-    }
+    return `https://${webUrl}`
   } else if (process.env.NODE_ENV !== 'production') {
     return `http://localhost:3333`
   }
