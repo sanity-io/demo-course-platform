@@ -8,10 +8,6 @@ export const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET!
 export const apiVersion = process.env.NEXT_PUBLIC_SANITY_API_VERSION!
 
 const getStudioUrl = () => {
-  if (process.env.NODE_ENV !== 'production') {
-    return `http://localhost:3333`
-  }
-
   let webUrl = `https://demo-course-platform-studio.sanity.build`
 
   if (process.env.VERCEL) {
@@ -25,6 +21,8 @@ const getStudioUrl = () => {
     webUrl = webUrl.replace('-platform', '-platform-studio')
 
     return `https://${webUrl}`
+  } else if (process.env.NODE_ENV !== 'production') {
+    return `http://localhost:3333`
   }
 
   return webUrl
@@ -60,9 +58,7 @@ export const baseConfig = {
 
 const sourceMapConfig = {
   studioUrl: getStudioUrl(),
-  encodeSourceMap: process.env.VERCEL
-    ? process.env.VERCEL_ENV !== 'production'
-    : process.env.NODE_ENV !== 'production',
+  encodeSourceMap: process.env.VERCEL ? process.env.VERCEL_ENV !== 'production' : true,
   // Just make it true since we only use it in the previewClient
   // encodeSourceMap: true,
   // logger: console,
