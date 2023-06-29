@@ -60,9 +60,9 @@ export const baseConfig = {
 
 const sourceMapConfig = {
   studioUrl: getStudioUrl(),
-  // encodeSourceMap: process.env.VERCEL
-  //   ? process.env.VERCEL_ENV !== 'production'
-  //   : process.env.NODE_ENV !== 'production',
+  encodeSourceMap: process.env.VERCEL
+    ? process.env.VERCEL_ENV !== 'production'
+    : process.env.NODE_ENV !== 'production',
   // Just make it true since we only use it in the previewClient
   // encodeSourceMap: true,
   // logger: console,
