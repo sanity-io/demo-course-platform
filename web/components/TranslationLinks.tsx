@@ -8,6 +8,7 @@ import React, {useMemo} from 'react'
 import {Translation} from '@/lib/types'
 
 import {i18n} from '../../languages'
+import {clean} from './Clean'
 
 type TranslationLinksProps = {
   translations: Translation[]
@@ -42,7 +43,7 @@ export default function TranslationLinks(props: TranslationLinksProps) {
         >
           {version?.path ? (
             <Link
-              href={version.path}
+              href={clean(version.path)}
               locale={version.language}
               className="flex items-center group leading-none"
             >

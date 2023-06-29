@@ -13,6 +13,7 @@ const getStudioUrl = () => {
   if (process.env.VERCEL) {
     // Web (this) URL: https://demo-course-platform.sanity.build/
     // Studio URL:     https://demo-course-platform-studio.sanity.build/
+    // TODO: Renew functionality to use both `preview` + `production` Studio URLs
     // webUrl =
     //   process.env.VERCEL_ENV === 'preview'
     //     ? process.env.VERCEL_BRANCH_URL!
