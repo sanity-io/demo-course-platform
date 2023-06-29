@@ -18,9 +18,9 @@ const getStudioUrl = () => {
     //   process.env.VERCEL_ENV === 'preview'
     //     ? process.env.VERCEL_BRANCH_URL!
     //     : process.env.VERCEL_URL!
-    webUrl = process.env.VERCEL_URL!
+    // webUrl = process.env.VERCEL_URL!
 
-    webUrl = webUrl.replace('-platform', '-platform-studio')
+    // webUrl = webUrl.replace('-platform', '-platform-studio')
 
     return `https://${webUrl}`
   } else if (process.env.NODE_ENV !== 'production') {
