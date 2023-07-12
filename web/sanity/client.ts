@@ -72,6 +72,10 @@ export const baseConfig = {
 }
 
 export const client = createClient(baseConfig)
+export const cleanClient = createClient({
+  ...baseConfig,
+  encodeSourceMap: false,
+})
 
 export const previewClient = createClient({
   ...baseConfig,
