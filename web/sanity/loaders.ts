@@ -14,7 +14,7 @@ export const COMMON_PARAMS = {
   defaultLocale: i18n.base,
 }
 
-// Helper functions for re-used or non-preview queries
+// Helper functions for re-used queries
 export const getHome = (params: ParamsLanguage, preview = false) =>
   cachedClientFetch(preview)(homeQuery, params)
 

@@ -11,20 +11,10 @@ const getStudioUrl = () => {
   let webUrl = `https://demo-course-platform-studio.sanity.build`
 
   if (process.env.VERCEL) {
-    // Web (this) URL: https://demo-course-platform.sanity.build/
-    // Studio URL:     https://demo-course-platform-studio.sanity.build/
-    // TODO: Renew functionality to use both `preview` + `production` Studio URLs
-    // webUrl =
-    //   process.env.VERCEL_ENV === 'preview'
-    //     ? process.env.VERCEL_BRANCH_URL!
-    //     : process.env.VERCEL_URL!
-    // webUrl = process.env.VERCEL_URL!
-
-    // webUrl = webUrl.replace('-platform', '-platform-studio')
-
     return webUrl
-    // return `https://${webUrl}`
-  } else if (process.env.NODE_ENV !== 'production') {
+  } else if (process.env.NETLIFY) {
+    return webUrl
+  } else if (!process.env.VERCEL && !process.env.NETLIFY && process.env.NODE_ENV !== 'production') {
     return `http://localhost:3333`
   }
 
@@ -56,9 +46,6 @@ export const baseConfig = {
   useCdn: process.env.NODE_ENV === 'production',
   // "as const" satisfies `createClient`
   perspective: 'published' as const,
-  // Because live preview and click-to-edit aren't working nicely together...
-  // Enabled:  Vercel + Netlify non-production builds
-  // Disabled: Vercel + Netlify production builds and local development
   encodeSourceMap:
     // On Vercel
     (process.env.VERCEL && process.env.VERCEL_ENV !== 'production') ||
@@ -66,12 +53,12 @@ export const baseConfig = {
     (process.env.NETLIFY && process.env.CONTEXT !== 'production') ||
     // Local development
     (!process.env.VERCEL && !process.env.NETLIFY && process.env.NODE_ENV !== 'production'),
-  // encodeSourceMap: true,
   encodeSourceMapAtPath: handleEncodeSourceMap,
   studioUrl: getStudioUrl(),
 }
 
 export const client = createClient(baseConfig)
+
 export const cleanClient = createClient({
   ...baseConfig,
   encodeSourceMap: false,
@@ -91,7 +78,7 @@ export function getClient({preview}: {preview?: {token: string}}): SanityClient 
     if (!preview.token) {
       throw new Error('You must provide a token to preview drafts')
     }
-    return previewClient.withConfig()
+    return previewClient
   }
   return client
 }

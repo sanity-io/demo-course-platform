@@ -10,20 +10,20 @@ import {cachedClientFetch} from '@/sanity/client'
 import {COMMON_PARAMS, getLabels, getLessonsWithSlugs} from '@/sanity/loaders'
 import {lessonQuery} from '@/sanity/queries'
 
-export async function generateStaticParams() {
-  const lessons = await getLessonsWithSlugs()
+// export async function generateStaticParams() {
+//   const lessons = await getLessonsWithSlugs()
 
-  const params = lessons
-    .map((lesson) => ({
-      ...lesson,
-      // Couldn't filter down the object of slugs in the GROQ query,
-      // so we filter them here instead
-      course: lesson.language ? get(lesson, [`course`, lesson.language, `current`], null) : null,
-    }))
-    .filter((lesson) => lesson.course)
+//   const params = lessons
+//     .map((lesson) => ({
+//       ...lesson,
+//       // Couldn't filter down the object of slugs in the GROQ query,
+//       // so we filter them here instead
+//       course: lesson.language ? get(lesson, [`course`, lesson.language, `current`], null) : null,
+//     }))
+//     .filter((lesson) => lesson.course)
 
-  return params
-}
+//   return params
+// }
 
 export const metadata: Metadata = {
   title: 'Lesson Page',

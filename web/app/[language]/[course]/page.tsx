@@ -16,23 +16,23 @@ export const metadata: Metadata = {
 }
 
 // Static params for every course, in every language
-export async function generateStaticParams() {
-  const courses = await getCoursesWithSlugs()
+// export async function generateStaticParams() {
+//   const courses = await getCoursesWithSlugs()
 
-  const params = courses
-    .map((course) =>
-      i18n.languages
-        .map((language) =>
-          course?.[language.id]?.current
-            ? {course: course[language.id].current, language: language.id}
-            : null
-        )
-        .filter(Boolean)
-    )
-    .flat()
+//   const params = courses
+//     .map((course) =>
+//       i18n.languages
+//         .map((language) =>
+//           course?.[language.id]?.current
+//             ? {course: course[language.id].current, language: language.id}
+//             : null
+//         )
+//         .filter(Boolean)
+//     )
+//     .flat()
 
-  return params
-}
+//   return params
+// }
 
 export default async function Page({params}) {
   const {course, language} = params
