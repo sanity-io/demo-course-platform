@@ -7,6 +7,11 @@ export const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!
 export const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET!
 export const apiVersion = process.env.NEXT_PUBLIC_SANITY_API_VERSION!
 
+const isVercelNonProduction = () => process.env.VERCEL && process.env.VERCEL_ENV !== 'production'
+const isNetlifyNonProduction = () => process.env.NETLIFY && process.env.CONTEXT !== 'production'
+const isLocalDevelopment = () =>
+  !process.env.VERCEL && !process.env.NETLIFY && process.env.NODE_ENV !== 'production'
+
 const getStudioUrl = () => {
   let webUrl = `https://demo-course-platform-studio.sanity.build`
 
@@ -14,7 +19,7 @@ const getStudioUrl = () => {
     return webUrl
   } else if (process.env.NETLIFY) {
     return webUrl
-  } else if (!process.env.VERCEL && !process.env.NETLIFY && process.env.NODE_ENV !== 'production') {
+  } else if (isLocalDevelopment()) {
     return `http://localhost:3333`
   }
 
@@ -46,13 +51,7 @@ export const baseConfig = {
   useCdn: process.env.NODE_ENV === 'production',
   // "as const" satisfies `createClient`
   perspective: 'published' as const,
-  encodeSourceMap:
-    // On Vercel
-    (process.env.VERCEL && process.env.VERCEL_ENV !== 'production') ||
-    // On Netlify
-    (process.env.NETLIFY && process.env.CONTEXT !== 'production') ||
-    // Local development
-    (!process.env.VERCEL && !process.env.NETLIFY && process.env.NODE_ENV !== 'production'),
+  encodeSourceMap: isVercelNonProduction() || isNetlifyNonProduction() || isLocalDevelopment(),
   encodeSourceMapAtPath: handleEncodeSourceMap,
   studioUrl: getStudioUrl(),
 }
