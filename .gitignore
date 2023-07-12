@@ -23,3 +23,5 @@ yarn-error.log*
 *.tar.gz
 
 .yalc
+# Local Netlify folder
+.netlify

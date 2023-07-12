@@ -11,6 +11,7 @@ import {lazy} from 'react'
 
 import ExitPreview from '@/components/ExitPreview'
 import LegalLinks from '@/components/LegalLinks'
+import VisualEditing from '@/components/VisualEditing'
 import {COMMON_PARAMS, getLegals} from '@/sanity/loaders'
 const PreviewProvider = lazy(() => import('@/components/PreviewProvider'))
 
@@ -44,6 +45,7 @@ export default async function RootLayout(props) {
         ) : (
           children
         )}
+        {process.env.CONTEXT !== 'production' ? <VisualEditing /> : null}
       </body>
     </html>
   )

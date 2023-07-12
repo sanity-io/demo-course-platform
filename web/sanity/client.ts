@@ -60,6 +60,7 @@ export const baseConfig = {
   // Enabled:  Vercel preview builds
   // Disabled: Vercel production builds and local development
   encodeSourceMap: process.env.VERCEL ? process.env.VERCEL_ENV === 'preview' : false,
+  // encodeSourceMap: true,
   encodeSourceMapAtPath: handleEncodeSourceMap,
   studioUrl: getStudioUrl(),
 }
@@ -80,7 +81,7 @@ export function getClient({preview}: {preview?: {token: string}}): SanityClient 
     if (!preview.token) {
       throw new Error('You must provide a token to preview drafts')
     }
-    return previewClient
+    return previewClient.withConfig()
   }
   return client
 }
