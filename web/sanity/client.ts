@@ -57,9 +57,15 @@ export const baseConfig = {
   // "as const" satisfies `createClient`
   perspective: 'published' as const,
   // Because live preview and click-to-edit aren't working nicely together...
-  // Enabled:  Vercel preview builds
-  // Disabled: Vercel production builds and local development
-  encodeSourceMap: process.env.VERCEL ? process.env.VERCEL_ENV === 'preview' : false,
+  // Enabled:  Vercel + Netlify non-production builds
+  // Disabled: Vercel + Netlify production builds and local development
+  encodeSourceMap:
+    // On Vercel
+    (process.env.VERCEL && process.env.VERCEL_ENV !== 'production') ||
+    // On Netlify
+    (process.env.NETLIFY && process.env.CONTEXT !== 'production') ||
+    // Local development
+    (!process.env.VERCEL && !process.env.NETLIFY && process.env.NODE_ENV !== 'production'),
   // encodeSourceMap: true,
   encodeSourceMapAtPath: handleEncodeSourceMap,
   studioUrl: getStudioUrl(),
