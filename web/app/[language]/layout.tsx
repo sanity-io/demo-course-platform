@@ -31,6 +31,10 @@ export default async function RootLayout(props) {
     </>
   )
 
+  const enableVisualEditing =
+    (process.env.NETLIFY && process.env.CONTEXT !== 'production') ||
+    (process.env.VERCEL && process.env.VERCEL_ENV !== 'production')
+
   return (
     <html lang={props.params.language}>
       <head>
@@ -45,7 +49,7 @@ export default async function RootLayout(props) {
         ) : (
           children
         )}
-        {process.env.CONTEXT !== 'production' ? <VisualEditing /> : null}
+        {enableVisualEditing ? <VisualEditing /> : null}
       </body>
     </html>
   )
