@@ -86,7 +86,7 @@ export const courseSlugsQuery = groq`*[_type == "course" && defined(slug)]{
 
 export const lessonSlugsQuery = groq`*[_type == "lesson" && defined(language) && defined(slug.current)]{
   language,
-  "slug": slug.current,
+  "lesson": slug.current,
   "course": select(
       // So if this lesson isn't in English...
       ^.language != $defaultLocale => *[_type == "translation.metadata" && ^._id in translations[].value._ref][0]{

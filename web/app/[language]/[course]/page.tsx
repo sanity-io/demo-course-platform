@@ -19,7 +19,7 @@ export const metadata: Metadata = {
 export async function generateStaticParams() {
   const courses = await getCoursesWithSlugs()
 
-  const params = courses
+  const params: {language: string; course: string}[] = courses
     .map((course) =>
       i18n.languages
         .map((language) =>

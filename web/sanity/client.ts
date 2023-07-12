@@ -7,24 +7,19 @@ export const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!
 export const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET!
 export const apiVersion = process.env.NEXT_PUBLIC_SANITY_API_VERSION!
 
+const isVercelNonProduction = () => process.env.VERCEL && process.env.VERCEL_ENV !== 'production'
+const isNetlifyNonProduction = () => process.env.NETLIFY && process.env.CONTEXT !== 'production'
+const isLocalDevelopment = () =>
+  !process.env.VERCEL && !process.env.NETLIFY && process.env.NODE_ENV !== 'production'
+
 const getStudioUrl = () => {
   let webUrl = `https://demo-course-platform-studio.sanity.build`
 
   if (process.env.VERCEL) {
-    // Web (this) URL: https://demo-course-platform.sanity.build/
-    // Studio URL:     https://demo-course-platform-studio.sanity.build/
-    // TODO: Renew functionality to use both `preview` + `production` Studio URLs
-    // webUrl =
-    //   process.env.VERCEL_ENV === 'preview'
-    //     ? process.env.VERCEL_BRANCH_URL!
-    //     : process.env.VERCEL_URL!
-    // webUrl = process.env.VERCEL_URL!
-
-    // webUrl = webUrl.replace('-platform', '-platform-studio')
-
     return webUrl
-    // return `https://${webUrl}`
-  } else if (process.env.NODE_ENV !== 'production') {
+  } else if (process.env.NETLIFY) {
+    return webUrl
+  } else if (isLocalDevelopment()) {
     return `http://localhost:3333`
   }
 
@@ -56,15 +51,17 @@ export const baseConfig = {
   useCdn: process.env.NODE_ENV === 'production',
   // "as const" satisfies `createClient`
   perspective: 'published' as const,
-  // Because live preview and click-to-edit aren't working nicely together...
-  // Enabled:  Vercel preview builds
-  // Disabled: Vercel production builds and local development
-  encodeSourceMap: process.env.VERCEL ? process.env.VERCEL_ENV === 'preview' : false,
+  encodeSourceMap: isVercelNonProduction() || isNetlifyNonProduction() || isLocalDevelopment(),
   encodeSourceMapAtPath: handleEncodeSourceMap,
   studioUrl: getStudioUrl(),
 }
 
 export const client = createClient(baseConfig)
+
+export const cleanClient = createClient({
+  ...baseConfig,
+  encodeSourceMap: false,
+})
 
 export const previewClient = createClient({
   ...baseConfig,

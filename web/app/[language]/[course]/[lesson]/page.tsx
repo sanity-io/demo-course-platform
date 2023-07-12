@@ -13,7 +13,7 @@ import {lessonQuery} from '@/sanity/queries'
 export async function generateStaticParams() {
   const lessons = await getLessonsWithSlugs()
 
-  const params = lessons
+  const params: {language: string; course: string; lesson: string}[] = lessons
     .map((lesson) => ({
       ...lesson,
       // Couldn't filter down the object of slugs in the GROQ query,
