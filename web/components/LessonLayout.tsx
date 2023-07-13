@@ -10,7 +10,9 @@ import {createLessonLinks} from '@/lib/helpers'
 import {i18n} from '../../languages'
 import Blobs from './Blobs'
 import Button from './Button'
+import Clean, {clean} from './Clean'
 import LessonLinks from './LessonLinks'
+import Presenters from './Presenters'
 import Prose from './Prose'
 import Title from './Title'
 
@@ -42,17 +44,6 @@ export function LessonLayout(props: LessonLayoutProps) {
       ? null
       : lessonPaths[currentLessonIndex + 1].find((lesson) => lesson.language === currentLanguage)
 
-  const presentersString = presenters?.length
-    ? presenters
-        .map((presenter) =>
-          [presenter.name, presenter.title]
-            .filter(Boolean)
-            .map((part) => vercelStegaSplit(part.toString()).cleaned)
-            .join(', ')
-        )
-        .join(', ')
-    : ``
-
   const completeString = labels.find(({key}) => key === 'lesson.continue')?.text
   const backLabel = labels.find(({key}) => key === 'back')?.text
 
@@ -61,7 +52,7 @@ export function LessonLayout(props: LessonLayoutProps) {
       <div className="relative z-10">
         <section className="bg-gradient-to-r mix-blend-multiply from-cyan-100 via-transparent to-transparent pt-16">
           <div className="container mx-auto py-8 p-4 md:p-8 xl:p-16 flex flex-col justify-start items-start gap-4 xl:gap-8">
-            <Title subtitle={presentersString}>{title}</Title>
+            <Title subtitle={<Presenters presenters={presenters} />}>{title}</Title>
             {coursePath && course && backLabel && (
               <Button href={`/${coursePath}`} Icon={ChevronLeftIcon} iconFirst>
                 {backLabel}

@@ -65,6 +65,8 @@ export const cleanClient = createClient({
 
 export const previewClient = createClient({
   ...baseConfig,
+  // TODO: Find out why source maps + live preview don't work together
+  encodeSourceMap: false,
   useCdn: false,
   token: process.env.SANITY_API_READ_TOKEN,
   ignoreBrowserTokenWarning: true,

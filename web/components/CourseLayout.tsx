@@ -9,6 +9,7 @@ import Title from '@/components/Title'
 import {createCourseSummary, createLessonLinks} from '@/lib/helpers'
 
 import {i18n} from '../../languages'
+import Presenters from './Presenters'
 
 type CourseLayoutProps = {
   data?: any
@@ -27,17 +28,12 @@ export function CourseLayout(props: CourseLayoutProps) {
   // array of references stored in a separate "translation.metadata" document
   const lessonPaths = useMemo(() => createLessonLinks(lessons, slug), [lessons, slug])
 
-  const summary = useMemo(
-    () => createCourseSummary(lessons, presenters, labels),
-    [lessons, presenters, labels]
-  )
-
   return (
     <>
       <div className="relative">
         <section className="bg-gradient-to-r mix-blend-multiply from-cyan-100 via-transparent to-transparent pt-16">
           <div className="container mx-auto py-8 p-4 md:p-8 xl:p-16 flex flex-col justify-start items-start gap-2 md:gap-4 xl:gap-8">
-            <Title subtitle={summary}>{currentTitle}</Title>
+            <Title subtitle={<Presenters presenters={presenters} />}>{currentTitle}</Title>
           </div>
         </section>
 
