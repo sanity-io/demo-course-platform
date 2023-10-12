@@ -6,7 +6,7 @@ import React, {useMemo} from 'react'
 import Blobs from '@/components/Blobs'
 import LessonLinks from '@/components/LessonLinks'
 import Title from '@/components/Title'
-import {createCourseSummary, createLessonLinks} from '@/lib/helpers'
+import {createLessonLinks} from '@/lib/helpers'
 
 import {i18n} from '../../languages'
 import Presenters from './Presenters'

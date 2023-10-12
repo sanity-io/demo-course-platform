@@ -16,7 +16,8 @@ type TranslationLinksProps = {
 
 export default function TranslationLinks(props: TranslationLinksProps) {
   const {translations = []} = props
-  const {language: currentLanguage} = useParams()
+  const params = useParams()
+  const language = Array.isArray(params.language) ? params.language[0] : params.language
 
   const availableTranslations = useMemo<Translation[]>(
     () =>
@@ -36,7 +37,7 @@ export default function TranslationLinks(props: TranslationLinksProps) {
           key={version.language}
           className={clsx(
             `transition-colors duration-200`,
-            version.language === currentLanguage
+            version.language === language
               ? `bg-white pointer-events-none`
               : `bg-white/50 hover:bg-cyan-100`
           )}
