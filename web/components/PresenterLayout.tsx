@@ -5,7 +5,7 @@ import {SanityImageSource} from '@sanity/asset-utils'
 import Title from '@/components/Title'
 import {urlFor} from '@/sanity/urlFor'
 
-type PresenterLayoutProps = {
+export type PresenterLayoutProps = {
   data?: {
     name?: string
     title?: string

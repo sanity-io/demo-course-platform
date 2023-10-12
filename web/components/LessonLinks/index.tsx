@@ -24,25 +24,15 @@ type LessonLinksProps = {
 
 export default function LessonLinks(props: LessonLinksProps) {
   const {lessons, openByDefault = false} = props
-  const {language: currentLanguage} = useParams()
+  const params = useParams()
+  const language = Array.isArray(params.language) ? params.language[0] : params.language
 
   const localeLessons = useMemo(
     () =>
       lessons
         // Filter list down to just the current locale
-        .map((lessonGroup) => lessonGroup.find((lesson) => lesson.language === currentLanguage))
-        .filter((lesson) => Boolean(lesson?.path))
-        // Add an `active` key for styling
-        .map((lesson) => {
-          return {
-            ...lesson,
-            // current:
-            //   locale === i18n.base
-            //     ? pathname === lesson.path
-            //     : pathname === lesson.path.replace(`/${locale}`, ''),
-          }
-        }),
-    [currentLanguage, lessons]
+        .map((lessonGroup) => lessonGroup.find((lesson) => lesson.language === language)),
+    [language, lessons]
   )
 
   const {width} = useWindowSize()
@@ -76,28 +66,30 @@ export default function LessonLinks(props: LessonLinksProps) {
 
       <Menu.Items static as="ul" className="text-cyan-500 font-medium grid grid-cols-1 gap-1">
         {menuOpen &&
-          localeLessons.map((lesson, index) => (
-            <Menu.Item as="li" key={lesson.path} className="flex items-center">
-              {({active}) => (
-                <ListLink
-                  href={lesson.path}
-                  locale={lesson.language}
-                  className={[
-                    buttonClasses.default,
-                    buttonClasses.notCurrent,
-                    active ? buttonClasses.active : buttonClasses.notActive,
-                  ].join(` `)}
-                >
-                  <span className="flex-1 flex items-center gap-x-4">
-                    <span className="font-display font-bold text-sm text-pink-400 w-6">
-                      {String(index + 1).padStart(2, '0')}
+          localeLessons.map((lesson, index) =>
+            lesson ? (
+              <Menu.Item as="li" key={lesson.path} className="flex items-center">
+                {({active}) => (
+                  <ListLink
+                    href={lesson.path}
+                    locale={lesson.language}
+                    className={[
+                      buttonClasses.default,
+                      buttonClasses.notCurrent,
+                      active ? buttonClasses.active : buttonClasses.notActive,
+                    ].join(` `)}
+                  >
+                    <span className="flex-1 flex items-center gap-x-4">
+                      <span className="font-display font-bold text-sm text-pink-400 w-6">
+                        {String(index + 1).padStart(2, '0')}
+                      </span>
+                      <span>{lesson.title}</span>
                     </span>
-                    <span>{lesson.title}</span>
-                  </span>
-                </ListLink>
-              )}
-            </Menu.Item>
-          ))}
+                  </ListLink>
+                )}
+              </Menu.Item>
+            ) : null
+          )}
       </Menu.Items>
     </Menu>
   )

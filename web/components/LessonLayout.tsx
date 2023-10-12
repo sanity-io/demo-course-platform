@@ -1,7 +1,6 @@
 'use client'
 
 import {CheckIcon, ChevronLeftIcon} from '@heroicons/react/24/outline'
-import {vercelStegaSplit} from '@vercel/stega'
 import {useParams} from 'next/navigation'
 import React, {useMemo} from 'react'
 
@@ -11,6 +10,7 @@ import {i18n} from '../../languages'
 import Blobs from './Blobs'
 import Button from './Button'
 import LessonLinks from './LessonLinks'
+import Presenters from './Presenters'
 import Prose from './Prose'
 import Title from './Title'
 
@@ -23,15 +23,16 @@ export function LessonLayout(props: LessonLayoutProps) {
   const {labels = []} = props
   const {title, summary, content, course} = props.data ?? {}
   const {lessons, presenters} = course ?? {}
-  const {language: currentLanguage} = useParams()
+  const params = useParams()
+  const language = Array.isArray(params.language) ? params.language[0] : params.language
 
   const lessonPaths = useMemo(
     () => createLessonLinks(lessons, course?.slug),
     [lessons, course?.slug]
   )
 
-  const courseSlug = course?.slug[currentLanguage ?? i18n.base].current
-  const coursePath = [currentLanguage, courseSlug].filter(Boolean).join('/')
+  const courseSlug = course?.slug[language ?? i18n.base].current
+  const coursePath = [language, courseSlug].filter(Boolean).join('/')
 
   // From the lessonPaths we can find the translations of this lesson
   const currentLessonIndex = lessonPaths.findIndex((versions) =>
@@ -40,18 +41,7 @@ export function LessonLayout(props: LessonLayoutProps) {
   const nextLesson =
     currentLessonIndex + 1 === lessonPaths.length
       ? null
-      : lessonPaths[currentLessonIndex + 1].find((lesson) => lesson.language === currentLanguage)
-
-  const presentersString = presenters?.length
-    ? presenters
-        .map((presenter) =>
-          [presenter.name, presenter.title]
-            .filter(Boolean)
-            .map((part) => vercelStegaSplit(part.toString()).cleaned)
-            .join(', ')
-        )
-        .join(', ')
-    : ``
+      : lessonPaths[currentLessonIndex + 1].find((lesson) => lesson.language === language)
 
   const completeString = labels.find(({key}) => key === 'lesson.continue')?.text
   const backLabel = labels.find(({key}) => key === 'back')?.text
@@ -61,7 +51,7 @@ export function LessonLayout(props: LessonLayoutProps) {
       <div className="relative z-10">
         <section className="bg-gradient-to-r mix-blend-multiply from-cyan-100 via-transparent to-transparent pt-16">
           <div className="container mx-auto py-8 p-4 md:p-8 xl:p-16 flex flex-col justify-start items-start gap-4 xl:gap-8">
-            <Title subtitle={presentersString}>{title}</Title>
+            <Title subtitle={<Presenters presenters={presenters} />}>{title}</Title>
             {coursePath && course && backLabel && (
               <Button href={`/${coursePath}`} Icon={ChevronLeftIcon} iconFirst>
                 {backLabel}
@@ -74,7 +64,7 @@ export function LessonLayout(props: LessonLayoutProps) {
           {lessons?.length > 0 ? (
             <div className="md:col-span-2 md:col-start-4 md:sticky md:top-24 self-start">
               <h2 className="font-display text-lg md:text-2xl text-cyan-800 mb-2 md:mb-4">
-                {course.title[currentLanguage]}
+                {course.title[language]}
               </h2>
               <LessonLinks lessons={lessonPaths} />
             </div>

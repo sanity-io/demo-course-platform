@@ -1,4 +1,3 @@
-import {vercelStegaSplit} from '@vercel/stega'
 import {draftMode} from 'next/headers'
 import {groq} from 'next-sanity'
 
@@ -29,12 +28,10 @@ function isLinkToOurDomain(url: string) {
 export async function GET(request: Request) {
   const {origin, searchParams} = new URL(request.url)
 
-  const id = searchParams.get('id')
+  const id = searchParams.get('id')?.replace(`drafts.`, ``)
 
   if (!id) {
     return new Response('No "id" provided', {status: 401})
-  } else if (id.startsWith('drafts.')) {
-    return new Response('Must use a published "id"', {status: 401})
   } else if (!searchParams.get('secret')) {
     return new Response('No "secret" provided', {status: 401})
   }

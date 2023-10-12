@@ -17,7 +17,8 @@ type HomeLayoutProps = {
 
 export function HomeLayout(props: HomeLayoutProps) {
   const {courses, labels} = props
-  const {language} = useParams()
+  const params = useParams()
+  const language = Array.isArray(params.language) ? params.language[0] : params.language
   const courseStart = getLabelByKey('course.start', labels)
 
   return (

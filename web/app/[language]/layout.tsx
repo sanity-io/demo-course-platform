@@ -12,17 +12,14 @@ import {lazy} from 'react'
 import ExitPreview from '@/components/ExitPreview'
 import LegalLinks from '@/components/LegalLinks'
 import VisualEditing from '@/components/VisualEditing'
+import {token} from '@/sanity/client'
 import {COMMON_PARAMS, getLegals} from '@/sanity/loaders'
 const PreviewProvider = lazy(() => import('@/components/PreviewProvider'))
 
 export default async function RootLayout(props) {
   const queryParams = {...COMMON_PARAMS, language: props.params.language}
   const legals = await getLegals(queryParams)
-
-  const preview = draftMode().isEnabled ? process.env.SANITY_API_READ_TOKEN : undefined
-  if (draftMode().isEnabled && !preview) {
-    console.info(`Preview mode is enabled but no token was found.`)
-  }
+  const preview = draftMode().isEnabled
 
   const children = (
     <>
@@ -42,7 +39,7 @@ export default async function RootLayout(props) {
       </head>
       <body className="font-sans bg-white text-gray-900">
         {preview ? (
-          <PreviewProvider token={preview}>
+          <PreviewProvider token={token!}>
             {children}
             <ExitPreview />
           </PreviewProvider>

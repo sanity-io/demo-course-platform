@@ -1,12 +1,13 @@
+import {LiveQuery} from '@sanity/preview-kit/live-query'
 import get from 'lodash/get'
 import {Metadata} from 'next'
 import {draftMode} from 'next/headers'
+import {SanityDocument} from 'next-sanity'
 
 import Header from '@/components/Header'
 import {LessonLayout} from '@/components/LessonLayout'
-import {PreviewWrapper} from '@/components/PreviewWrapper'
 import {createLessonLinks} from '@/lib/helpers'
-import {cachedClientFetch} from '@/sanity/client'
+import {sanityFetch} from '@/sanity/client'
 import {COMMON_PARAMS, getLabels, getLessonsWithSlugs} from '@/sanity/loaders'
 import {lessonQuery} from '@/sanity/queries'
 
@@ -32,9 +33,13 @@ export const metadata: Metadata = {
 export default async function Page({params}) {
   const {lesson, language} = params
   const queryParams = {...COMMON_PARAMS, slug: lesson, language}
-  const {isEnabled: preview} = draftMode()
-  const data = await cachedClientFetch(preview)(lessonQuery, queryParams)
-  const labels = await getLabels(queryParams, preview)
+  const data = await sanityFetch<SanityDocument>({
+    query: lessonQuery,
+    params: queryParams,
+    tags: ['lesson'],
+  })
+
+  const labels = await getLabels(queryParams)
 
   const lessonPaths = createLessonLinks(data.course.lessons, data.course.slug)
   const currentLessonIndex = lessonPaths.findIndex((versions) =>
@@ -45,9 +50,14 @@ export default async function Page({params}) {
   return (
     <>
       <Header translations={translations} currentLanguage={language} />
-      <PreviewWrapper preview={preview} initialData={data} query={lessonQuery} params={queryParams}>
+      <LiveQuery
+        enabled={draftMode().isEnabled}
+        initialData={data}
+        query={lessonQuery}
+        params={queryParams}
+      >
         <LessonLayout labels={labels} />
-      </PreviewWrapper>
+      </LiveQuery>
     </>
   )
 }

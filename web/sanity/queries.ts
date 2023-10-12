@@ -70,6 +70,7 @@ const courseQueryData = groq`
 
   // "course" documents have an array of "presenter" references
   presenters[]->{
+    _id,
     name,
     // presenter field-level translations use arrays, not objects
     "title": coalesce(title[_key == $language][0].value, title[_key == $defaultLocale][0].value),

@@ -1,28 +1,39 @@
+import {QueryParams, SanityDocument} from 'next-sanity'
+
+import {Label} from '@/lib/types'
+
 import {i18n} from '../../languages'
-import {cachedClientFetch, cleanClient} from './client'
+import {cleanClient, sanityFetch} from './client'
 import {courseSlugsQuery, homeQuery, labelsQuery, legalsQuery, lessonSlugsQuery} from './queries'
-
-type CommonParams = {
-  defaultLocale: string
-}
-
-type ParamsLanguage = CommonParams & {
-  language: string
-}
 
 export const COMMON_PARAMS = {
   defaultLocale: i18n.base,
 }
 
 // Helper functions for re-used queries
-export const getHome = (params: ParamsLanguage, preview = false) =>
-  cachedClientFetch(preview)(homeQuery, params)
+export async function getHome(params: QueryParams) {
+  return sanityFetch<{courses: SanityDocument[]}>({
+    query: homeQuery,
+    params,
+    tags: ['home'],
+  })
+}
 
-export const getLabels = (params: ParamsLanguage, preview = false) =>
-  cachedClientFetch(preview)(labelsQuery, params)
+export async function getLabels(params: QueryParams) {
+  return sanityFetch<Label[]>({
+    query: labelsQuery,
+    params,
+    tags: ['labels'],
+  })
+}
 
-export const getLegals = (params: ParamsLanguage, preview = false) =>
-  cachedClientFetch(preview)(legalsQuery, params)
+export async function getLegals(params: QueryParams) {
+  return sanityFetch<SanityDocument[]>({
+    query: legalsQuery,
+    params,
+    tags: ['legals'],
+  })
+}
 
 // "Clean client" used because we never want encoding in these fetches
 export const getCoursesWithSlugs = () => cleanClient.fetch(courseSlugsQuery)

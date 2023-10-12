@@ -77,9 +77,9 @@ export const structure: StructureResolver = (S) =>
                 ),
             ])
         ),
-      S.divider(),
       // Field-level translations
       S.documentTypeListItem('course').title('Courses'),
+      S.divider(),
       S.documentTypeListItem('presenter').title('Presenters').icon(FiUsers),
       S.divider(),
       // Singleton, field-level translations

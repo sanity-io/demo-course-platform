@@ -1,11 +1,11 @@
+import {LiveQuery} from '@sanity/preview-kit/live-query'
 import {Metadata} from 'next'
-import {draftMode} from 'next/headers'
+import {SanityDocument} from 'next-sanity'
 
 import {CourseLayout} from '@/components/CourseLayout'
 import Header from '@/components/Header'
-import {PreviewWrapper} from '@/components/PreviewWrapper'
 import {Translation} from '@/lib/types'
-import {cachedClientFetch} from '@/sanity/client'
+import {sanityFetch} from '@/sanity/client'
 import {COMMON_PARAMS, getCoursesWithSlugs} from '@/sanity/loaders'
 import {courseQuery} from '@/sanity/queries'
 
@@ -36,9 +36,12 @@ export async function generateStaticParams() {
 
 export default async function Page({params}) {
   const {course, language} = params
-  const {isEnabled: preview} = draftMode()
   const queryParams = {...COMMON_PARAMS, slug: course, language}
-  const data = await cachedClientFetch(preview)(courseQuery, queryParams)
+  const data = await sanityFetch<SanityDocument>({
+    query: courseQuery,
+    params: queryParams,
+    tags: ['course'],
+  })
 
   const currentTitle = data?.title ? data.title[language] ?? data.title[i18n.base] : null
 
@@ -61,9 +64,9 @@ export default async function Page({params}) {
   return (
     <>
       <Header translations={translations} currentLanguage={language} />
-      <PreviewWrapper preview={preview} initialData={data} query={courseQuery} params={queryParams}>
+      <LiveQuery enabled initialData={data} query={courseQuery} params={queryParams}>
         <CourseLayout />
-      </PreviewWrapper>
+      </LiveQuery>
     </>
   )
 }
