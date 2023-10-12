@@ -1,10 +1,11 @@
+import LiveQuery from '@sanity/preview-kit/live-query'
 import {Metadata} from 'next'
 import {draftMode} from 'next/headers'
+import {SanityDocument} from 'next-sanity'
 
 import Header from '@/components/Header'
 import LegalLayout from '@/components/LegalLayout'
-import {PreviewWrapper} from '@/components/PreviewWrapper'
-import {cachedClientFetch} from '@/sanity/client'
+import {sanityFetch} from '@/sanity/client'
 import {COMMON_PARAMS} from '@/sanity/loaders'
 import {legalQuery} from '@/sanity/queries'
 
@@ -16,9 +17,12 @@ export const metadata: Metadata = {
 
 export default async function Page({params}) {
   const {language, slug} = params
-  const {isEnabled: preview} = draftMode()
   const queryParams = {...COMMON_PARAMS, slug, language}
-  const data = await cachedClientFetch(preview)(legalQuery, queryParams)
+  const data = await sanityFetch<SanityDocument>({
+    query: legalQuery,
+    params: queryParams,
+    tags: ['legal'],
+  })
 
   const translations = i18n.languages.map((lang) => ({
     language: lang.id,
@@ -29,9 +33,14 @@ export default async function Page({params}) {
   return (
     <>
       <Header translations={translations} currentLanguage={language} />
-      <PreviewWrapper preview={preview} initialData={data} query={legalQuery} params={queryParams}>
+      <LiveQuery
+        enabled={draftMode().isEnabled}
+        initialData={data}
+        query={legalQuery}
+        params={queryParams}
+      >
         <LegalLayout />
-      </PreviewWrapper>
+      </LiveQuery>
     </>
   )
 }

@@ -1,13 +1,11 @@
 import Link from 'next/link'
+import {SanityDocument} from 'next-sanity'
 import React from 'react'
-import {SanityDocument, Slug} from 'sanity'
 
 import {clean} from './Clean'
 
 type LegalLinksProps = {
-  legals: SanityDocument[] & {
-    slug: Slug
-  }
+  legals: SanityDocument[]
 }
 export default function LegalLinks(props: LegalLinksProps) {
   const {legals = []} = props

@@ -1,11 +1,11 @@
 // Using Client from preview-kit for source map support
-import type {SanityClient} from '@sanity/preview-kit/client'
+import type {QueryParams} from '@sanity/preview-kit/client'
 import {createClient} from '@sanity/preview-kit/client'
-import {cache} from 'react'
 
 export const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!
 export const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET!
 export const apiVersion = process.env.NEXT_PUBLIC_SANITY_API_VERSION!
+export const token = process.env.SANITY_API_READ_TOKEN
 
 const isVercelNonProduction = () => process.env.VERCEL && process.env.VERCEL_ENV !== 'production'
 const isNetlifyNonProduction = () => process.env.NETLIFY && process.env.CONTEXT !== 'production'
@@ -58,31 +58,47 @@ export const baseConfig = {
 
 export const client = createClient(baseConfig)
 
+export const previewClient = createClient({
+  ...baseConfig,
+  token,
+  useCdn: false,
+  perspective: 'previewDrafts',
+})
+
 export const cleanClient = createClient({
   ...baseConfig,
   encodeSourceMap: false,
 })
 
-export const previewClient = createClient({
-  ...baseConfig,
-  // TODO: Find out why source maps + live preview don't work together
-  encodeSourceMap: false,
-  useCdn: false,
-  token: process.env.SANITY_API_READ_TOKEN,
-  ignoreBrowserTokenWarning: true,
-  perspective: 'previewDrafts',
-})
+const DEFAULT_PARAMS = {} as QueryParams
+const DEFAULT_TAGS = [] as string[]
 
-export function getClient({preview}: {preview?: {token: string}}): SanityClient {
-  const client = createClient(baseConfig)
-  if (preview) {
-    if (!preview.token) {
-      throw new Error('You must provide a token to preview drafts')
-    }
-    return previewClient
+export async function sanityFetch<QueryResponse>({
+  query,
+  params = DEFAULT_PARAMS,
+  tags = DEFAULT_TAGS,
+  previewDrafts = false,
+}: {
+  query: string
+  params?: QueryParams
+  tags: string[]
+  previewDrafts?: boolean
+}): Promise<QueryResponse> {
+  if (previewDrafts && !token) {
+    throw new Error('The `SANITY_API_READ_TOKEN` environment variable is required.')
   }
-  return client
-}
 
-export const cachedClientFetch = (preview = false) =>
-  preview ? cache(previewClient.fetch.bind(previewClient)) : cache(client.fetch.bind(client))
+  const REVALIDATE_SKIP_CACHE = 0
+  const REVALIDATE_CACHE_FOREVER = false
+
+  return client.fetch<QueryResponse>(query, params, {
+    ...(previewDrafts && {
+      token: token,
+      perspective: 'previewDrafts',
+    }),
+    next: {
+      revalidate: previewDrafts ? REVALIDATE_SKIP_CACHE : REVALIDATE_CACHE_FOREVER,
+      tags,
+    },
+  })
+}
