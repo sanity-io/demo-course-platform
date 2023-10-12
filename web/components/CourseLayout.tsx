@@ -16,11 +16,12 @@ type CourseLayoutProps = {
 }
 
 export function CourseLayout(props: CourseLayoutProps) {
-  const {title, slug, presenters, lessons, labels} = props.data ?? {}
-  const {language: currentLanguage} = useParams()
+  const {title, slug, presenters, lessons} = props.data ?? {}
 
   // Render the localized title, if it exists, otherwise fallback to base
-  const currentTitle = title ? title[currentLanguage] ?? title[i18n.base] : null
+  const {language: currentLanguage} = useParams()
+  const titleLanguage = Array.isArray(currentLanguage) ? currentLanguage[0] : currentLanguage
+  const currentTitle = title ? title[titleLanguage] ?? title[i18n.base] : null
 
   // Each "course" document has an array of "lesson" references
   // "lesson" documents have document-level translations

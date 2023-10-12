@@ -23,7 +23,7 @@
     "groq": "^3.18.0",
     "negotiator": "^0.6.3",
     "next": "^13.5.4",
-    "next-sanity": "latest",
+    "next-sanity": "^5.5.8",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
