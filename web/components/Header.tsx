@@ -10,7 +10,7 @@ import TranslationLinks from './TranslationLinks'
 
 type HeaderProps = {
   translations: Translation[]
-  currentLanguage: string
+  currentLanguage?: string
 }
 
 export default function Header(props: HeaderProps) {

@@ -1,7 +1,7 @@
 'use client'
 
 import {useParams} from 'next/navigation'
-import React, {useMemo} from 'react'
+import React, {PropsWithChildren, useMemo} from 'react'
 
 import Blobs from '@/components/Blobs'
 import LessonLinks from '@/components/LessonLinks'
@@ -10,10 +10,11 @@ import {createLessonLinks} from '@/lib/helpers'
 
 import {i18n} from '../../languages'
 import Presenters from './Presenters'
+import Prose from './Prose'
 
-type CourseLayoutProps = {
+type CourseLayoutProps = PropsWithChildren<{
   data?: any
-}
+}>
 
 export function CourseLayout(props: CourseLayoutProps) {
   const {title, slug, presenters, lessons} = props.data ?? {}
@@ -39,7 +40,11 @@ export function CourseLayout(props: CourseLayoutProps) {
         </section>
 
         <div className="p-4 md:p-8 xl:p-16 container mx-auto">
-          <LessonLinks lessons={lessonPaths} openByDefault />
+          {lessonPaths.length > 0 ? (
+            <LessonLinks lessons={lessonPaths} openByDefault />
+          ) : (
+            <Prose>{props.children}</Prose>
+          )}
         </div>
       </div>
       <Blobs />

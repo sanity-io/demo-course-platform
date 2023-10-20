@@ -2,6 +2,7 @@ import {LiveQuery} from '@sanity/preview-kit/live-query'
 import get from 'lodash/get'
 import {Metadata} from 'next'
 import {draftMode} from 'next/headers'
+import {notFound} from 'next/navigation'
 import {SanityDocument} from 'next-sanity'
 
 import Header from '@/components/Header'
@@ -33,11 +34,17 @@ export const metadata: Metadata = {
 export default async function Page({params}) {
   const {lesson, language} = params
   const queryParams = {...COMMON_PARAMS, slug: lesson, language}
+  const previewDrafts = draftMode().isEnabled
   const data = await sanityFetch<SanityDocument>({
     query: lessonQuery,
     params: queryParams,
     tags: ['lesson'],
+    previewDrafts,
   })
+
+  if (!data) {
+    notFound()
+  }
 
   const labels = await getLabels(queryParams)
 
@@ -51,12 +58,12 @@ export default async function Page({params}) {
     <>
       <Header translations={translations} currentLanguage={language} />
       <LiveQuery
-        enabled={draftMode().isEnabled}
+        enabled={previewDrafts}
         initialData={data}
         query={lessonQuery}
         params={queryParams}
       >
-        <LessonLayout labels={labels} />
+        <LessonLayout labels={labels} data={data} />
       </LiveQuery>
     </>
   )
