@@ -29,7 +29,7 @@ export default async function Page({params}) {
   const translations = i18n.languages.map((lang) => ({
     language: lang.id,
     path: `/${lang.id}/legal/${slug}`,
-    title: data.title,
+    title: data?.title ?? ``,
   }))
 
   return (
