@@ -18,10 +18,12 @@ export const metadata: Metadata = {
 export default async function Page({params}) {
   const {language, slug} = params
   const queryParams = {...COMMON_PARAMS, slug, language}
+  const previewDrafts = draftMode().isEnabled
   const data = await sanityFetch<SanityDocument>({
     query: legalQuery,
     params: queryParams,
     tags: ['legal'],
+    previewDrafts,
   })
 
   const translations = i18n.languages.map((lang) => ({
@@ -33,12 +35,7 @@ export default async function Page({params}) {
   return (
     <>
       <Header translations={translations} currentLanguage={language} />
-      <LiveQuery
-        enabled={draftMode().isEnabled}
-        initialData={data}
-        query={legalQuery}
-        params={queryParams}
-      >
+      <LiveQuery enabled={previewDrafts} initialData={data} query={legalQuery} params={queryParams}>
         <LegalLayout />
       </LiveQuery>
     </>

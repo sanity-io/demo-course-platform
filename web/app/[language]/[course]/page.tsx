@@ -2,7 +2,6 @@ import {LiveQuery} from '@sanity/preview-kit/live-query'
 import {Metadata} from 'next'
 import {draftMode} from 'next/headers'
 import {notFound} from 'next/navigation'
-import {redirect} from 'next/navigation'
 import {SanityDocument} from 'next-sanity'
 
 import {CourseLayout} from '@/components/CourseLayout'
