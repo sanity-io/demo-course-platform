@@ -1,5 +1,8 @@
 import {LiveQuery} from '@sanity/preview-kit/live-query'
 import {Metadata} from 'next'
+import {draftMode} from 'next/headers'
+import {notFound} from 'next/navigation'
+import {redirect} from 'next/navigation'
 import {SanityDocument} from 'next-sanity'
 
 import {CourseLayout} from '@/components/CourseLayout'
@@ -37,11 +40,17 @@ export async function generateStaticParams() {
 export default async function Page({params}) {
   const {course, language} = params
   const queryParams = {...COMMON_PARAMS, slug: course, language}
+  const previewDrafts = draftMode().isEnabled
   const data = await sanityFetch<SanityDocument>({
     query: courseQuery,
     params: queryParams,
     tags: ['course'],
+    previewDrafts,
   })
+
+  if (!data) {
+    notFound()
+  }
 
   const currentTitle = data?.title ? data.title[language] ?? data.title[i18n.base] : null
 
@@ -64,7 +73,12 @@ export default async function Page({params}) {
   return (
     <>
       <Header translations={translations} currentLanguage={language} />
-      <LiveQuery enabled initialData={data} query={courseQuery} params={queryParams}>
+      <LiveQuery
+        enabled={previewDrafts}
+        initialData={data}
+        query={courseQuery}
+        params={queryParams}
+      >
         <CourseLayout />
       </LiveQuery>
     </>

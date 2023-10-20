@@ -13,7 +13,7 @@ import {i18n} from '../../../../../languages'
 export default async function Page({params}) {
   const {language, slug} = params
   const queryParams = {...COMMON_PARAMS, slug, language}
-  const {isEnabled: previewDrafts} = draftMode()
+  const previewDrafts = draftMode().isEnabled
   const data = await sanityFetch<PresenterLayoutProps['data']>({
     query: presenterQuery,
     params: queryParams,

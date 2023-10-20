@@ -1,5 +1,6 @@
 import {defineConfig, isKeyedObject} from 'sanity'
 import {deskTool} from 'sanity/desk'
+import {assist} from '@sanity/assist'
 import {visionTool} from '@sanity/vision'
 import {documentInternationalization} from '@sanity/document-internationalization'
 import {languageFilter} from '@sanity/language-filter'
@@ -71,6 +72,7 @@ export default defineConfig({
       defaultSchemaTypes: ['course', 'lesson', 'presenter'],
       hiddenSchemaTypes: ['translation.metadata'],
     }),
+    assist(),
   ],
   schema: {
     types: schemaTypes,
