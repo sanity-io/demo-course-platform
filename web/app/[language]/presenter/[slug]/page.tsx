@@ -36,7 +36,7 @@ export default async function Page({params}) {
         query={presenterQuery}
         params={queryParams}
       >
-        <PresenterLayout />
+        <PresenterLayout data={data} />
       </LiveQuery>
     </>
   )

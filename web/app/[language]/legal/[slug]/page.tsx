@@ -4,7 +4,7 @@ import {draftMode} from 'next/headers'
 import {SanityDocument} from 'next-sanity'
 
 import Header from '@/components/Header'
-import LegalLayout from '@/components/LegalLayout'
+import LegalLayout, {LegalLayoutProps} from '@/components/LegalLayout'
 import {sanityFetch} from '@/sanity/client'
 import {COMMON_PARAMS} from '@/sanity/loaders'
 import {legalQuery} from '@/sanity/queries'
@@ -19,7 +19,7 @@ export default async function Page({params}) {
   const {language, slug} = params
   const queryParams = {...COMMON_PARAMS, slug, language}
   const previewDrafts = draftMode().isEnabled
-  const data = await sanityFetch<SanityDocument>({
+  const data = await sanityFetch<LegalLayoutProps['data']>({
     query: legalQuery,
     params: queryParams,
     tags: ['legal'],
@@ -36,7 +36,7 @@ export default async function Page({params}) {
     <>
       <Header translations={translations} currentLanguage={language} />
       <LiveQuery enabled={previewDrafts} initialData={data} query={legalQuery} params={queryParams}>
-        <LegalLayout />
+        <LegalLayout data={data} />
       </LiveQuery>
     </>
   )

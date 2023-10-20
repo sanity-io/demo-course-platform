@@ -6,7 +6,7 @@ import {TypedObject} from 'sanity'
 import Prose from './Prose'
 import Title from './Title'
 
-type LegalLayoutProps = {
+export type LegalLayoutProps = {
   data?: {
     title: string
     content: TypedObject[]

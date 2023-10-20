@@ -78,7 +78,7 @@ export default async function Page({params}) {
         query={courseQuery}
         params={queryParams}
       >
-        <CourseLayout />
+        <CourseLayout data={data} />
       </LiveQuery>
     </>
   )
