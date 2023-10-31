@@ -46,17 +46,19 @@ export function createLessonLinks(
       // Each lesson must have a language
       .filter((lesson) => lesson?.language)
       .map((lesson) => {
-        const translations = lesson.translations.map((ref) => {
-          const lessonLang = ref.language
-          const courseLangSlug = courseSlug[ref.language]?.current
-          const lessonLangSlug = ref.slug.current
+        const translations = lesson.translations
+          .filter((ref) => ref?.slug?.current)
+          .map((ref) => {
+            const lessonLang = ref.language
+            const courseLangSlug = courseSlug[ref.language]?.current
+            const lessonLangSlug = ref.slug.current
 
-          return {
-            language: ref.language,
-            title: ref.title,
-            path: '/' + [lessonLang, courseLangSlug, lessonLangSlug].join('/'),
-          }
-        })
+            return {
+              language: ref.language,
+              title: ref.title,
+              path: '/' + [lessonLang, courseLangSlug, lessonLangSlug].join('/'),
+            }
+          })
 
         return translations
       })
