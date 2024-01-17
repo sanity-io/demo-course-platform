@@ -1,4 +1,4 @@
-import {StructureBuilder} from 'sanity/desk'
+import {StructureBuilder} from 'sanity/structure'
 import {TranslationsTab, defaultFieldLevelConfig} from 'sanity-plugin-transifex'
 
 export default (S: StructureBuilder) =>

@@ -1,5 +1,5 @@
 import {defineConfig, isKeyedObject} from 'sanity'
-import {deskTool} from 'sanity/desk'
+import {structureTool} from 'sanity/structure'
 import {assist} from '@sanity/assist'
 import {visionTool} from '@sanity/vision'
 import {documentInternationalization} from '@sanity/document-internationalization'
@@ -7,8 +7,6 @@ import {languageFilter} from '@sanity/language-filter'
 import {internationalizedArray} from 'sanity-plugin-internationalized-array'
 import {schemaVisualizer} from 'sanity-plugin-schema-visualizer'
 import {googleTranslate} from 'sanity-plugin-google-translate'
-// @ts-ignore
-import {theme} from 'https://themer.sanity.build/api/hues?preset=tw-cyan&positive=lightest:eefdf5&caution=lightest:fefbea&critical=lightest:fdf2f2&lightest=ffffff'
 
 import {structure, defaultDocumentNode} from './structure'
 import {schemaTypes} from './schemas'
@@ -20,12 +18,11 @@ import {dashboardTool} from '@sanity/dashboard'
 export default defineConfig({
   name: 'default',
   title: 'Course Platform',
-  theme,
   projectId: '6h1mv88x',
   dataset: 'production-v3',
 
   plugins: [
-    deskTool({
+    structureTool({
       structure,
       defaultDocumentNode,
     }),
