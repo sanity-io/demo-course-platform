@@ -20,13 +20,19 @@ import {dashboardTool} from '@sanity/dashboard'
 const enableUrl = process.env.SANITY_STUDIO_VERCEL_ENV
   ? `https://${
       process.env.SANITY_STUDIO_VERCEL_ENV === 'production'
-        ? process.env.SANITY_STUDIO_VERCEL_URL
+        ? 'demo-course-platform.sanity.build' // I don't understand why the primary domain doesn't have a variable
         : process.env.SANITY_STUDIO_VERCEL_BRANCH_URL?.replace(
             'demo-course-platform-studio',
             'demo-course-platform'
           )
     }/api/draft`
   : 'http://localhost:3000/api/draft'
+
+console.log({
+  enableUrl,
+  env: process.env.SANITY_STUDIO_VERCEL_ENV,
+  branchUrl: process.env.SANITY_STUDIO_VERCEL_BRANCH_URL,
+})
 
 export default defineConfig({
   name: 'default',
