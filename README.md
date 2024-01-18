@@ -1,6 +1,12 @@
 # "Course Platform" Demo
 
-Sanity Studio and Next.js 13 front-end demonstrating multiple strategies for Localization with Sanity
+Sanity Studio and Next.js 14 front-end demonstrating multiple strategies for Localization with Sanity.
+
+It also demonstrates:
+
+- [React Loaders](https://www.sanity.io/docs/loaders-and-overlays) and
+- [Presentation](https://www.sanity.io/docs/presentation) for
+- [Visual Editing](https://www.sanity.io/docs/visual-editing).
 
 Read more about [Localization with Sanity in the docs](https://www.sanity.io/docs/localization).
 
