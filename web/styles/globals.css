@@ -28,9 +28,4 @@ pre[class*='language-'] {
   }
 }
 
-#sanity-visual-editing {
-  position: relative;
-  z-index: 100000;
-}
-
 @tailwind utilities;
