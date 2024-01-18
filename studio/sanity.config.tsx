@@ -16,6 +16,15 @@ import Logo from './components/Logo'
 import {vercelWidget} from 'sanity-plugin-dashboard-widget-vercel'
 import {dashboardTool} from '@sanity/dashboard'
 
+const enableUrl = process.env.VERCEL
+  ? `https://${process.env.VERCEL_BRANCH_URL?.replace(
+      'demo-course-platform-studio',
+      'demo-course-platform'
+    )}/api/draft`
+  : 'http://localhost:3000/api/draft'
+
+console.log({enableUrl})
+
 export default defineConfig({
   name: 'default',
   title: 'Course Platform',
@@ -30,12 +39,7 @@ export default defineConfig({
     presentationTool({
       previewUrl: {
         draftMode: {
-          enable: process.env.VERCEL
-            ? `https://${process.env.VERCEL_BRANCH_URL?.replace(
-                'demo-course-platform-studio',
-                'demo-course-platform'
-              )}/api/draft`
-            : 'http://localhost:3000/api/draft',
+          enable: enableUrl,
         },
       },
     }),

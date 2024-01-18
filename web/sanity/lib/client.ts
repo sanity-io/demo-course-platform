@@ -8,6 +8,15 @@ export const baseConfig = {
   projectId,
 }
 
+const studioUrl = process.env.VERCEL
+  ? `https://${process.env.VERCEL_BRANCH_URL?.replace(
+      'demo-course-platform',
+      'demo-course-platform-studio'
+    )}`
+  : 'http://localhost:3333'
+
+console.log({studioUrl})
+
 export const client = createClient({
   apiVersion,
   dataset,
@@ -18,11 +27,6 @@ export const client = createClient({
   perspective: 'published',
   stega: {
     enabled: true,
-    studioUrl: process.env.VERCEL
-      ? `https://${process.env.VERCEL_BRANCH_URL?.replace(
-          'demo-course-platform',
-          'demo-course-platform-studio'
-        )}`
-      : 'http://localhost:3333',
+    studioUrl,
   },
 })
