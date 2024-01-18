@@ -28,12 +28,6 @@ const enableUrl = process.env.SANITY_STUDIO_VERCEL_ENV
     }/api/draft`
   : 'http://localhost:3000/api/draft'
 
-console.log({
-  enableUrl,
-  env: process.env.SANITY_STUDIO_VERCEL_ENV,
-  branchUrl: process.env.SANITY_STUDIO_VERCEL_BRANCH_URL,
-})
-
 export default defineConfig({
   name: 'default',
   title: 'Course Platform',
