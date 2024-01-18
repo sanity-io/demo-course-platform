@@ -16,11 +16,16 @@ import Logo from './components/Logo'
 import {vercelWidget} from 'sanity-plugin-dashboard-widget-vercel'
 import {dashboardTool} from '@sanity/dashboard'
 
-const enableUrl = process.env.VERCEL
-  ? `https://${process.env.VERCEL_BRANCH_URL?.replace(
-      'demo-course-platform-studio',
-      'demo-course-platform'
-    )}/api/draft`
+// URL to the front end from this Studio build
+const enableUrl = process.env.SANITY_STUDIO_VERCEL_ENV
+  ? `https://${
+      process.env.SANITY_STUDIO_VERCEL_ENV === 'production'
+        ? process.env.SANITY_STUDIO_VERCEL_URL
+        : process.env.SANITY_STUDIO_VERCEL_BRANCH_URL?.replace(
+            'demo-course-platform-studio',
+            'demo-course-platform'
+          )
+    }/api/draft`
   : 'http://localhost:3000/api/draft'
 
 console.log({enableUrl})

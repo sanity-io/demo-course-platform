@@ -8,11 +8,16 @@ export const baseConfig = {
   projectId,
 }
 
-const studioUrl = process.env.VERCEL
-  ? `https://${process.env.VERCEL_BRANCH_URL?.replace(
-      'demo-course-platform',
-      'demo-course-platform-studio'
-    )}`
+// URL to the Studio from this front end build
+const studioUrl = process.env.NEXT_PUBLIC_VERCEL_ENV
+  ? `https://${
+      process.env.NEXT_PUBLIC_VERCEL_ENV === 'production'
+        ? process.env.NEXT_PUBLIC_VERCEL_URL
+        : process.env.NEXT_PUBLIC_VERCEL_BRANCH_URL?.replace(
+            'demo-course-platform',
+            'demo-course-platform-studio'
+          )
+    }`
   : 'http://localhost:3333'
 
 console.log({studioUrl})
