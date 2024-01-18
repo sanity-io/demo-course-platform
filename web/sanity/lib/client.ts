@@ -8,7 +8,7 @@ export const baseConfig = {
   projectId,
 }
 
-// URL to the Studio from this front end build
+// URL for the Studio from this front end build
 const studioUrl = process.env.NEXT_PUBLIC_VERCEL_ENV
   ? `https://${
       process.env.NEXT_PUBLIC_VERCEL_ENV === 'production'
@@ -20,8 +20,6 @@ const studioUrl = process.env.NEXT_PUBLIC_VERCEL_ENV
     }`
   : 'http://localhost:3333'
 
-console.log({studioUrl})
-
 export const client = createClient({
   apiVersion,
   dataset,
@@ -31,7 +29,7 @@ export const client = createClient({
   // ./sanity/lib/store.ts when draftMode is enabled
   perspective: 'published',
   stega: {
-    enabled: true,
+    enabled: false,
     studioUrl,
   },
 })

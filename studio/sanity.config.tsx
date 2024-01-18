@@ -16,7 +16,7 @@ import Logo from './components/Logo'
 import {vercelWidget} from 'sanity-plugin-dashboard-widget-vercel'
 import {dashboardTool} from '@sanity/dashboard'
 
-// URL to the front end from this Studio build
+// URL for the front end from this Studio build
 const enableUrl = process.env.SANITY_STUDIO_VERCEL_ENV
   ? `https://${
       process.env.SANITY_STUDIO_VERCEL_ENV === 'production'
@@ -27,8 +27,6 @@ const enableUrl = process.env.SANITY_STUDIO_VERCEL_ENV
           )
     }/api/draft`
   : 'http://localhost:3000/api/draft'
-
-console.log({enableUrl})
 
 export default defineConfig({
   name: 'default',
