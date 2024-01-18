@@ -1,4 +1,3 @@
-import {LiveQuery} from '@sanity/preview-kit/live-query'
 import get from 'lodash/get'
 import {Metadata} from 'next'
 import {draftMode} from 'next/headers'
@@ -7,10 +6,13 @@ import {SanityDocument} from 'next-sanity'
 
 import Header from '@/components/Header'
 import {LessonLayout} from '@/components/LessonLayout'
+import {LiveQueryWrapper} from '@/components/LiveQueryWrapper'
+import {COMMON_PARAMS, DEFAULT_EMPTY_PARAMS} from '@/lib/constants'
 import {createLessonLinks} from '@/lib/helpers'
-import {sanityFetch} from '@/sanity/client'
-import {COMMON_PARAMS, getLabels, getLessonsWithSlugs} from '@/sanity/loaders'
-import {lessonQuery} from '@/sanity/queries'
+import {Label} from '@/lib/types'
+import {getLessonsWithSlugs} from '@/sanity/fetchers'
+import {loadQuery} from '@/sanity/lib/store'
+import {LABELS_QUERY, LESSON_QUERY} from '@/sanity/queries'
 
 export async function generateStaticParams() {
   const lessons = await getLessonsWithSlugs()
@@ -34,37 +36,36 @@ export const metadata: Metadata = {
 export default async function Page({params}) {
   const {lesson, language} = params
   const queryParams = {...COMMON_PARAMS, slug: lesson, language}
-  const previewDrafts = draftMode().isEnabled
-  const data = await sanityFetch<SanityDocument>({
-    query: lessonQuery,
-    params: queryParams,
-    tags: ['lesson'],
-    previewDrafts,
+  const {isEnabled} = draftMode()
+  const initial = await loadQuery<SanityDocument>(LESSON_QUERY, queryParams, {
+    perspective: isEnabled ? 'previewDrafts' : 'published',
+    next: {tags: ['lesson']},
+  })
+  const labelsInitial = await loadQuery<Label[]>(LABELS_QUERY, queryParams, {
+    perspective: isEnabled ? 'previewDrafts' : 'published',
   })
 
-  if (!data) {
+  if (!initial.data) {
     notFound()
   }
 
-  const labels = await getLabels(queryParams)
-
-  const lessonPaths = createLessonLinks(data.course.lessons, data.course.slug)
+  const lessonPaths = createLessonLinks(initial.data.course.lessons, initial.data.course.slug)
   const currentLessonIndex = lessonPaths.findIndex((versions) =>
-    versions.find((lesson) => lesson.title === data.title)
+    versions.find((lesson) => lesson.title === initial.data.title)
   )
   const translations = lessonPaths[currentLessonIndex]
 
   return (
     <>
       <Header translations={translations} currentLanguage={language} />
-      <LiveQuery
-        enabled={previewDrafts}
-        initialData={data}
-        query={lessonQuery}
-        params={queryParams}
+      <LiveQueryWrapper
+        isEnabled={isEnabled}
+        query={isEnabled ? LESSON_QUERY : ``}
+        params={isEnabled ? queryParams : DEFAULT_EMPTY_PARAMS}
+        initial={initial}
       >
-        <LessonLayout labels={labels} data={data} />
-      </LiveQuery>
+        <LessonLayout labels={labelsInitial.data} />
+      </LiveQueryWrapper>
     </>
   )
 }

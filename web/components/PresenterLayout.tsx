@@ -16,7 +16,6 @@ export type PresenterLayoutProps = {
 
 export default function PresenterLayout(props: PresenterLayoutProps) {
   if (!props.data) {
-    // console.log(`PresenterLayout data empty: ${JSON.stringify(props)}`)
     return null
   }
 

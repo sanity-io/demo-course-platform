@@ -1,4 +1,3 @@
-import {LiveQuery} from '@sanity/preview-kit/live-query'
 import {Metadata} from 'next'
 import {draftMode} from 'next/headers'
 import {notFound} from 'next/navigation'
@@ -6,10 +5,12 @@ import {SanityDocument} from 'next-sanity'
 
 import {CourseLayout} from '@/components/CourseLayout'
 import Header from '@/components/Header'
+import {LiveQueryWrapper} from '@/components/LiveQueryWrapper'
+import {COMMON_PARAMS, DEFAULT_EMPTY_PARAMS} from '@/lib/constants'
 import {Translation} from '@/lib/types'
-import {sanityFetch} from '@/sanity/client'
-import {COMMON_PARAMS, getCoursesWithSlugs} from '@/sanity/loaders'
-import {courseQuery} from '@/sanity/queries'
+import {getCoursesWithSlugs} from '@/sanity/fetchers'
+import {loadQuery} from '@/sanity/lib/store'
+import {COURSE_QUERY} from '@/sanity/queries'
 
 import {i18n} from '../../../../languages'
 
@@ -39,23 +40,23 @@ export async function generateStaticParams() {
 export default async function Page({params}) {
   const {course, language} = params
   const queryParams = {...COMMON_PARAMS, slug: course, language}
-  const previewDrafts = draftMode().isEnabled
-  const data = await sanityFetch<SanityDocument>({
-    query: courseQuery,
-    params: queryParams,
-    tags: ['course'],
-    previewDrafts,
+  const {isEnabled} = draftMode()
+  const initial = await loadQuery<SanityDocument>(COURSE_QUERY, queryParams, {
+    perspective: isEnabled ? 'previewDrafts' : 'published',
+    next: {tags: ['course']},
   })
 
-  if (!data) {
+  if (!initial.data) {
     notFound()
   }
 
-  const currentTitle = data?.title ? data.title[language] ?? data.title[i18n.base] : null
+  const currentTitle = initial.data?.title
+    ? initial.data.title[language] ?? initial.data.title[i18n.base]
+    : null
 
   const translations = i18n.languages.reduce<Translation[]>((acc, lang) => {
-    const translationSlug = data?.slug ? data.slug[lang.id]?.current : null
-    const translationTitle = data?.title ? data.title[lang.id] : currentTitle
+    const translationSlug = initial?.data?.slug ? initial?.data.slug[lang.id]?.current : null
+    const translationTitle = initial?.data?.title ? initial?.data.title[lang.id] : currentTitle
 
     return translationSlug && translationTitle
       ? [
@@ -72,14 +73,14 @@ export default async function Page({params}) {
   return (
     <>
       <Header translations={translations} currentLanguage={language} />
-      <LiveQuery
-        enabled={previewDrafts}
-        initialData={data}
-        query={courseQuery}
-        params={queryParams}
+      <LiveQueryWrapper
+        isEnabled={isEnabled}
+        query={isEnabled ? COURSE_QUERY : ''}
+        params={isEnabled ? queryParams : DEFAULT_EMPTY_PARAMS}
+        initial={initial}
       >
-        <CourseLayout data={data} />
-      </LiveQuery>
+        <CourseLayout />
+      </LiveQueryWrapper>
     </>
   )
 }

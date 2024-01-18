@@ -2,6 +2,7 @@ import {defineConfig, isKeyedObject} from 'sanity'
 import {structureTool} from 'sanity/structure'
 import {assist} from '@sanity/assist'
 import {visionTool} from '@sanity/vision'
+import {presentationTool} from 'sanity/presentation'
 import {documentInternationalization} from '@sanity/document-internationalization'
 import {languageFilter} from '@sanity/language-filter'
 import {internationalizedArray} from 'sanity-plugin-internationalized-array'
@@ -25,6 +26,18 @@ export default defineConfig({
     structureTool({
       structure,
       defaultDocumentNode,
+    }),
+    presentationTool({
+      previewUrl: {
+        draftMode: {
+          enable: process.env.VERCEL
+            ? `https://${process.env.VERCEL_BRANCH_URL?.replace(
+                'demo-course-platform-studio',
+                'demo-course-platform'
+              )}/api/draft`
+            : 'http://localhost:3000/api/draft',
+        },
+      },
     }),
     documentInternationalization({
       supportedLanguages: i18n.languages,

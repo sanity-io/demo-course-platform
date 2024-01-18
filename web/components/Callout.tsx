@@ -20,10 +20,10 @@ export default function Callout({tone = `positive`, content = []}) {
 
   return (
     <div className={classNames}>
-      {React.createElement(toneIcons[tone], {
+      {/* {React.createElement(toneIcons[tone], {
         className: `w-6 md:w-10 h-auto scale-150 transform -rotate-[10deg]`,
       })}
-      <PortableText value={content} />
+      <PortableText value={content} /> */}
     </div>
   )
 }

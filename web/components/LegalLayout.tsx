@@ -15,7 +15,6 @@ export type LegalLayoutProps = {
 
 export default function LegalLayout(props: LegalLayoutProps) {
   if (!props.data) {
-    // console.log(`LegalLayout data empty: ${JSON.stringify(props)}`)
     return null
   }
 
