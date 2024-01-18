@@ -1,6 +1,6 @@
 import {SanityClient, SanityDocument} from 'sanity'
 import Iframe from 'sanity-plugin-iframe-pane'
-import {StructureBuilder} from 'sanity/desk'
+import {StructureBuilder} from 'sanity/structure'
 
 import resolvePreviewUrl from './resolvePreviewUrl'
 

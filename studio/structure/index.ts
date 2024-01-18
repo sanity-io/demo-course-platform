@@ -1,5 +1,5 @@
 import {FiAward, FiType, FiUsers} from 'react-icons/fi'
-import {StructureResolver, DefaultDocumentNodeResolver} from 'sanity/desk'
+import {StructureResolver, DefaultDocumentNodeResolver} from 'sanity/structure'
 
 import {i18n} from '../../languages'
 import preview from './preview'
@@ -82,11 +82,11 @@ export const structure: StructureResolver = (S) =>
       S.divider(),
       S.documentTypeListItem('presenter').title('Presenters').icon(FiUsers),
       S.divider(),
-      // Singleton, field-level translations
-      S.documentListItem().schemaType('labelGroup').icon(FiType).id('labelGroup').title('Labels'),
-      S.divider(),
       // Market-specific portable text example
       S.documentTypeListItem('legal').title('Legal'),
+      S.divider(),
+      // Singleton, field-level translations
+      S.documentListItem().schemaType('labelGroup').icon(FiType).id('labelGroup').title('Labels'),
       S.divider(),
     ])
 

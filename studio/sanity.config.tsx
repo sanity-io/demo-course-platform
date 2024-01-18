@@ -1,14 +1,13 @@
 import {defineConfig, isKeyedObject} from 'sanity'
-import {deskTool} from 'sanity/desk'
+import {structureTool} from 'sanity/structure'
 import {assist} from '@sanity/assist'
 import {visionTool} from '@sanity/vision'
+import {presentationTool} from 'sanity/presentation'
 import {documentInternationalization} from '@sanity/document-internationalization'
 import {languageFilter} from '@sanity/language-filter'
 import {internationalizedArray} from 'sanity-plugin-internationalized-array'
 import {schemaVisualizer} from 'sanity-plugin-schema-visualizer'
 import {googleTranslate} from 'sanity-plugin-google-translate'
-// @ts-ignore
-import {theme} from 'https://themer.sanity.build/api/hues?preset=tw-cyan&positive=lightest:eefdf5&caution=lightest:fefbea&critical=lightest:fdf2f2&lightest=ffffff'
 
 import {structure, defaultDocumentNode} from './structure'
 import {schemaTypes} from './schemas'
@@ -17,17 +16,35 @@ import Logo from './components/Logo'
 import {vercelWidget} from 'sanity-plugin-dashboard-widget-vercel'
 import {dashboardTool} from '@sanity/dashboard'
 
+// URL for the front end from this Studio build
+const enableUrl = process.env.SANITY_STUDIO_VERCEL_ENV
+  ? `https://${
+      process.env.SANITY_STUDIO_VERCEL_ENV === 'production'
+        ? process.env.SANITY_STUDIO_VERCEL_URL
+        : process.env.SANITY_STUDIO_VERCEL_BRANCH_URL?.replace(
+            'demo-course-platform-studio',
+            'demo-course-platform'
+          )
+    }/api/draft`
+  : 'http://localhost:3000/api/draft'
+
 export default defineConfig({
   name: 'default',
   title: 'Course Platform',
-  theme,
   projectId: '6h1mv88x',
   dataset: 'production-v3',
 
   plugins: [
-    deskTool({
+    structureTool({
       structure,
       defaultDocumentNode,
+    }),
+    presentationTool({
+      previewUrl: {
+        draftMode: {
+          enable: enableUrl,
+        },
+      },
     }),
     documentInternationalization({
       supportedLanguages: i18n.languages,

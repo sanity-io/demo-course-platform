@@ -6,7 +6,7 @@ import {ReactNode} from 'react'
 
 import Callout from '../components/Callout'
 import Reference from '../components/Reference'
-import {dataset, projectId} from './client'
+import {baseConfig} from './lib/client'
 
 const SanityImage = ({value}) => {
   if (!value.asset) {
@@ -17,7 +17,7 @@ const SanityImage = ({value}) => {
 
   return (
     <img
-      src={urlBuilder({projectId, dataset}).image(value).width(800).auto('format').url()}
+      src={urlBuilder(baseConfig).image(value).width(800).auto('format').url()}
       alt={value.alt || ' '}
       loading="lazy"
       style={{aspectRatio: width / height}}
