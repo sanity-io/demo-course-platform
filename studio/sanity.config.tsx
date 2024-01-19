@@ -13,8 +13,6 @@ import {structure, defaultDocumentNode} from './structure'
 import {schemaTypes} from './schemas'
 import {i18n} from '../languages'
 import Logo from './components/Logo'
-import {vercelWidget} from 'sanity-plugin-dashboard-widget-vercel'
-import {dashboardTool} from '@sanity/dashboard'
 import {enableUrl, locate} from './presentation'
 
 export default defineConfig({
@@ -69,9 +67,6 @@ export default defineConfig({
 
         return true
       },
-    }),
-    dashboardTool({
-      widgets: [vercelWidget()],
     }),
     googleTranslate(),
     visionTool(),
