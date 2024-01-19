@@ -15,18 +15,7 @@ import {i18n} from '../languages'
 import Logo from './components/Logo'
 import {vercelWidget} from 'sanity-plugin-dashboard-widget-vercel'
 import {dashboardTool} from '@sanity/dashboard'
-
-// URL for the front end from this Studio build
-const enableUrl = process.env.SANITY_STUDIO_VERCEL_ENV
-  ? `https://${
-      process.env.SANITY_STUDIO_VERCEL_ENV === 'production'
-        ? 'demo-course-platform.sanity.build' // I don't understand why the primary domain doesn't have a variable
-        : process.env.SANITY_STUDIO_VERCEL_BRANCH_URL?.replace(
-            'demo-course-platform-studio',
-            'demo-course-platform'
-          )
-    }/api/draft`
-  : 'http://localhost:3000/api/draft'
+import {enableUrl, locate} from './presentation'
 
 export default defineConfig({
   name: 'default',
@@ -40,6 +29,7 @@ export default defineConfig({
       defaultDocumentNode,
     }),
     presentationTool({
+      locate,
       previewUrl: {
         draftMode: {
           enable: enableUrl,
