@@ -91,17 +91,31 @@ export const structure: StructureResolver = (S) =>
     ])
 
 export const defaultDocumentNode: DefaultDocumentNodeResolver = (S, {schemaType, getClient}) => {
-  const client = getClient({apiVersion: `2023-01-01`})
+  // const client = getClient({apiVersion: `2023-01-01`})
 
   switch (schemaType) {
     case 'presenter':
-      return S.document().views([S.view.form(), preview(S, client), references(S)])
+      return S.document().views([
+        S.view.form(),
+        // preview(S, client)
+        references(S),
+      ])
     case 'course':
-      return S.document().views([S.view.form(), preview(S, client), transifex(S)])
+      return S.document().views([
+        S.view.form(),
+        // preview(S, client)
+        transifex(S),
+      ])
     case 'lesson':
-      return S.document().views([S.view.form(), preview(S, client)])
+      return S.document().views([
+        S.view.form(),
+        // preview(S, client)
+      ])
     case 'legal':
-      return S.document().views([S.view.form(), preview(S, client)])
+      return S.document().views([
+        S.view.form(),
+        // preview(S, client)
+      ])
     default:
       return S.document()
   }
