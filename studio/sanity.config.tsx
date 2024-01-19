@@ -1,4 +1,5 @@
-import {defineConfig, isKeyedObject} from 'sanity'
+import {Card} from '@sanity/ui'
+import {buildLegacyTheme, defineConfig, isKeyedObject} from 'sanity'
 import {structureTool} from 'sanity/structure'
 import {assist} from '@sanity/assist'
 import {visionTool} from '@sanity/vision'
@@ -12,14 +13,17 @@ import {googleTranslate} from 'sanity-plugin-google-translate'
 import {structure, defaultDocumentNode} from './structure'
 import {schemaTypes} from './schemas'
 import {i18n} from '../languages'
-import Logo from './components/Logo'
 import {enableUrl, locate} from './presentation'
+import {theme} from './utils/theme'
+import Icon from './components/Icon'
 
 export default defineConfig({
   name: 'default',
   title: 'Course Platform',
   projectId: '6h1mv88x',
   dataset: 'production-v3',
+  icon: Icon,
+  theme,
 
   plugins: [
     structureTool({
@@ -104,7 +108,7 @@ export default defineConfig({
   },
   studio: {
     components: {
-      logo: () => <Logo />,
+      navbar: (props) => <Card scheme="dark">{props.renderDefault(props)}</Card>,
     },
   },
   form: {
