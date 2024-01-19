@@ -36,6 +36,11 @@ export default defineType({
       type: 'internationalizedArrayString',
       group: 'localized',
       hidden: (context) => context?.document?.name === undefined,
+      options: {
+        aiWritingAssistance: {
+          translateAction: true,
+        },
+      },
     }),
     defineField({
       name: 'biography',

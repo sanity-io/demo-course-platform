@@ -79,7 +79,14 @@ export default defineConfig({
       defaultSchemaTypes: ['course', 'lesson', 'presenter'],
       hiddenSchemaTypes: ['translation.metadata'],
     }),
-    assist(),
+    assist({
+      translate: {
+        field: {
+          documentTypes: ['presenter'],
+          languages: i18n.languages,
+        },
+      },
+    }),
   ],
   schema: {
     types: schemaTypes,
