@@ -86,7 +86,6 @@ export const structure: StructureResolver = (S) =>
       S.documentTypeListItem('legal').title('Legal'),
       S.divider(),
       // Singleton, field-level translations
-      // S.documentListItem().schemaType('labelGroup').icon(FiType).id('labelGroup').title('Labels'),
       S.listItem()
         .icon(FiType)
         .id('labelGroup')
