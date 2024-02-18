@@ -21,7 +21,7 @@ export default defineConfig({
   name: 'default',
   title: 'Course Platform',
   projectId: '6h1mv88x',
-  dataset: 'production-v3-ken-dev',
+  dataset: 'production-v3',
   icon: Icon,
   theme,
 
