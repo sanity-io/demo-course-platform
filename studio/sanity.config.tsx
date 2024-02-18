@@ -21,7 +21,7 @@ export default defineConfig({
   name: 'default',
   title: 'Course Platform',
   projectId: '6h1mv88x',
-  dataset: 'production-v3',
+  dataset: 'production-v3-ken-dev',
   icon: Icon,
   theme,
 
@@ -83,6 +83,10 @@ export default defineConfig({
         field: {
           documentTypes: ['presenter'],
           languages: i18n.languages,
+        },
+        document: {
+          languageField: 'language',
+          documentTypes: ['lesson'],
         },
       },
     }),
