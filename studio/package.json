@@ -15,11 +15,11 @@
     "sanity"
   ],
   "dependencies": {
-    "@sanity/assist": "^1.2.15-lang.7",
+    "@sanity/assist": "^2.0.0",
     "@sanity/code-input": "^4.0.0",
-    "@sanity/document-internationalization": "^2.0.1",
+    "@sanity/document-internationalization": "^2.0.3",
     "@sanity/eslint-config-studio": "^2.0.0",
-    "@sanity/language-filter": "^3.1.2",
+    "@sanity/language-filter": "^3.2.2",
     "@sanity/vision": "^3.4.0",
     "eslint": "^8.6.0",
     "eslint-config-prettier": "^8.5.0",
@@ -33,7 +33,7 @@
     "react-icons": "^4.4.0",
     "react-is": "^18.2.0",
     "react-xarrows": "^2.0.2",
-    "sanity": "^3.18.0",
+    "sanity": "^3.29.1",
     "sanity-plugin-documents-pane": "^2.0.0",
     "sanity-plugin-google-translate": "^3.0.0",
     "sanity-plugin-iframe-pane": "^2.0.0",

@@ -84,6 +84,10 @@ export default defineConfig({
           documentTypes: ['presenter'],
           languages: i18n.languages,
         },
+        document: {
+          languageField: 'language',
+          documentTypes: ['lesson'],
+        },
       },
     }),
   ],
