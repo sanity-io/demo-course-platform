@@ -21,7 +21,7 @@
     "@sanity/eslint-config-studio": "^2.0.0",
     "@sanity/language-filter": "^3.2.2",
     "@sanity/vision": "^3.4.0",
-    "eslint": "^8.6.0",
+    "eslint": "^9.0.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.2.1",
     "framer-motion": "^9.0.4",
