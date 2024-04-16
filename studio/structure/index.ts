@@ -2,7 +2,6 @@ import {FiAward, FiType, FiUsers} from 'react-icons/fi'
 import {StructureResolver, DefaultDocumentNodeResolver} from 'sanity/structure'
 
 import {i18n} from '../../languages'
-import preview from './preview'
 import references from './references'
 import transifex from './transifex'
 

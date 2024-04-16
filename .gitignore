@@ -25,3 +25,5 @@ yarn-error.log*
 .yalc
 # Local Netlify folder
 .netlify
+
+tsconfig.tsbuildinfo

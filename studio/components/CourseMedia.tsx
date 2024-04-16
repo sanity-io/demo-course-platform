@@ -41,9 +41,9 @@ type CourseMediaType = {
 }
 
 export default function CourseMedia(props: CourseMediaType) {
-  const {presenters = []} = props
   const [presenterDocs, setPresenterDocs] = useState<SanityDocument[]>([])
   const client = useClient(options)
+  const presenters = Array.isArray(props.presenters) ? props.presenters : []
 
   useEffect(() => {
     if (!presenterDocs.length && presenters.length) {

@@ -9,7 +9,7 @@ type PresentersProps = {
 }
 
 export default function Presenters(props: PresentersProps) {
-  const {presenters = []} = props
+  const presenters = Array.isArray(props.presenters) ? props.presenters : []
 
   return (
     <div className="mr-auto flex flex-col gap-y-4">

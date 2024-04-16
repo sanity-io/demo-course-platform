@@ -1,5 +1,5 @@
 import {Card} from '@sanity/ui'
-import {buildLegacyTheme, defineConfig, isKeyedObject} from 'sanity'
+import {defineConfig, isKeyedObject} from 'sanity'
 import {structureTool} from 'sanity/structure'
 import {assist} from '@sanity/assist'
 import {visionTool} from '@sanity/vision'
@@ -92,6 +92,7 @@ export default defineConfig({
     }),
   ],
   schema: {
+    // @ts-expect-error
     types: schemaTypes,
     templates: (prev) => {
       const prevFiltered = prev.filter((template) => template.id !== 'lesson')
