@@ -20,7 +20,8 @@ export const metadata: Metadata = {
 
 // Static params for every course, in every language
 export async function generateStaticParams() {
-  const courses = await getCoursesWithSlugs()
+  let courses = await getCoursesWithSlugs()
+  courses = Array.isArray(courses) ? courses : []
 
   const params: {language: string; course: string}[] = courses
     .map((course) =>

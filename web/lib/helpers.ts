@@ -46,7 +46,7 @@ export function createLessonLinks(
       // Each lesson must have a language
       .filter((lesson) => lesson?.language)
       .map((lesson) => {
-        const translations = lesson.translations
+        const translations = (lesson.translations ?? [])
           .filter((ref) => ref?.slug?.current)
           .map((ref) => {
             const lessonLang = ref.language

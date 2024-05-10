@@ -43,7 +43,7 @@ export default defineType({
       content: 'content',
       market: 'market',
     },
-    prepare({content, market}: {content: Block[]; market: string}) {
+    prepare({content, market}: {content: PortableTextTextBlock[]; market: string}) {
       const title = blocksToText(content)
 
       return {

@@ -15,7 +15,8 @@ import {loadQuery} from '@/sanity/lib/store'
 import {LABELS_QUERY, LESSON_QUERY} from '@/sanity/queries'
 
 export async function generateStaticParams() {
-  const lessons = await getLessonsWithSlugs()
+  let lessons = await getLessonsWithSlugs()
+  lessons = Array.isArray(lessons) ? lessons : []
 
   const params: {language: string; course: string; lesson: string}[] = lessons
     .map((lesson) => ({
