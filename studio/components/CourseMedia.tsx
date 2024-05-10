@@ -43,6 +43,7 @@ type CourseMediaType = {
 export default function CourseMedia(props: CourseMediaType) {
   const [presenterDocs, setPresenterDocs] = useState<SanityDocument[]>([])
   const client = useClient(options)
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const presenters = Array.isArray(props.presenters) ? props.presenters : []
 
   useEffect(() => {

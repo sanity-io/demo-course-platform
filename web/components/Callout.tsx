@@ -1,4 +1,4 @@
-import {CheckCircleIcon, ExclamationCircleIcon, XCircleIcon} from '@heroicons/react/24/outline'
+// import {CheckCircleIcon, ExclamationCircleIcon, XCircleIcon} from '@heroicons/react/24/outline'
 import {PortableText} from '@portabletext/react'
 import React from 'react'
 
@@ -9,11 +9,11 @@ const toneClasses = {
   error: 'border-red-500 bg-red-100 text-red-600 shadow-lg shadow-red-100',
 }
 
-const toneIcons = {
-  positive: CheckCircleIcon,
-  caution: ExclamationCircleIcon,
-  error: XCircleIcon,
-}
+// const toneIcons = {
+//   positive: CheckCircleIcon,
+//   caution: ExclamationCircleIcon,
+//   error: XCircleIcon,
+// }
 
 export default function Callout({tone = `positive`, content = []}) {
   const classNames = [toneClasses.default, toneClasses[tone]].join(' ')
