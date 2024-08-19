@@ -37,7 +37,7 @@ export function HomeLayout(props: HomeLayoutProps) {
             {course?.slug?.[language]?.current ? (
               <>
                 <Title subtitle={createCourseSummary(course.lessons, course.presenters, labels)}>
-                  {course.title[language]}
+                  {course.title ? course.title[language] : 'Untitled'}
                 </Title>
                 <Button
                   Icon={ArrowRightIcon}
@@ -49,7 +49,7 @@ export function HomeLayout(props: HomeLayoutProps) {
               </>
             ) : (
               <Title subtitle={createCourseSummary(course.lessons, course.presenters, labels)}>
-                {course.title[language]}
+                {course.title ? course.title[language] : 'Untitled'}
               </Title>
             )}
           </article>

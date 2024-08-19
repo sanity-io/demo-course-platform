@@ -64,7 +64,7 @@ export function LessonLayout(props: LessonLayoutProps) {
           {lessons?.length > 0 ? (
             <div className="md:col-span-2 md:col-start-4 md:sticky md:top-24 self-start">
               <h2 className="font-display text-lg md:text-2xl text-cyan-800 mb-2 md:mb-4">
-                {course.title[language]}
+                {course.title ? course.title[language] : 'Untitled'}
               </h2>
               <LessonLinks lessons={lessonPaths} />
             </div>
