@@ -20,6 +20,6 @@ export default function Clean({value, as}: CleanProps) {
       <span style={{display: 'none'}}>{encoded}</span>
     </Element>
   ) : (
-    cleaned
+    <Element>{cleaned}</Element>
   )
 }
