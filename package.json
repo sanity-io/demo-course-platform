@@ -18,7 +18,7 @@
     "@sanity/language-filter": "^4.0.2",
     "husky": "^8.0.3",
     "prettier": "^2.8.8",
-    "sanity": "^3.41.1"
+    "sanity": "^3.62.0"
   },
   "devDependencies": {
     "@sanity/eslint-config-studio": "^4.0.0",
