@@ -18,7 +18,7 @@
     "@sanity/assist": "^3.0.4",
     "@sanity/code-input": "^4.1.4",
     "@sanity/document-internationalization": "^3.0.0",
-    "@sanity/eslint-config-studio": "^4.0.0",
+    "@sanity/eslint-config-studio": "^5.0.0",
     "@sanity/language-filter": "^4.0.2",
     "@sanity/vision": "^3.41.1",
     "eslint": "^8.57.0",
