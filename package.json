@@ -7,7 +7,8 @@
   "scripts": {
     "lint": "eslint .",
     "lint:fix": "eslint ./web ./studio --fix",
-    "postinstall": "husky install"
+    "postinstall": "husky install",
+    "generate-seed": "ts-node studio/scripts/generateSeedData.ts"
   },
   "husky": {
     "hooks": {
@@ -18,7 +19,8 @@
     "@sanity/language-filter": "^4.0.2",
     "husky": "^8.0.3",
     "prettier": "^2.8.8",
-    "sanity": "^3.41.1"
+    "sanity": "^3.41.1",
+    "uuid": "^9.0.0"
   },
   "devDependencies": {
     "@sanity/eslint-config-studio": "^4.0.0",

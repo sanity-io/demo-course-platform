@@ -18,6 +18,42 @@ Read more about [Localization with Sanity in the docs](https://www.sanity.io/doc
 
 ![Course Platform Website](./img/course-platform-website.png)
 
+## Link this to your own project
+
+1. Clone the repository
+
+```bash
+git clone https://github.com/sanity-io/course-platform.git
+```
+
+2. Install dependencies in the root, `/studio` and `/web` folders
+
+```bash
+pnpm install
+```
+
+3. Create a new Sanity project and replace the `sanity.config.tsx` file with the following:
+
+```bash
+npx sanity@latest init --env
+```
+
+## Generate Seed Data
+
+Import the seed data into Sanity:
+
+```bash
+npx sanity dataset import seed-data.ndjson
+```
+
+Seed data is generated in the `/studio` folder. You can modify the generation script `studio/scripts/generateSeedData.ts` to add or remove data as needed.
+
+Run the following command to generate new seed data:
+
+```bash
+npm run generate-seed
+```
+
 ## Schema
 
 Each schema contains a unique strategy:

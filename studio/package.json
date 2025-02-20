@@ -9,7 +9,8 @@
     "dev": "sanity dev",
     "build": "sanity build",
     "deploy": "sanity deploy",
-    "lint": "eslint . --fix"
+    "lint": "eslint . --fix",
+    "generate-seed": "ts-node scripts/generateSeedData.ts"
   },
   "keywords": [
     "sanity"
@@ -19,7 +20,10 @@
     "@sanity/code-input": "^4.1.4",
     "@sanity/document-internationalization": "^3.0.0",
     "@sanity/eslint-config-studio": "^4.0.0",
+    "@sanity/icons": "^3.6.0",
+    "@sanity/image-url": "^1.1.0",
     "@sanity/language-filter": "^4.0.2",
+    "@sanity/ui": "^2.14.0",
     "@sanity/vision": "^3.41.1",
     "eslint": "^8.57.0",
     "eslint-config-prettier": "^8.10.0",
@@ -32,6 +36,7 @@
     "react-icons": "^5.2.1",
     "react-is": "^18.3.1",
     "react-xarrows": "^2.0.2",
+    "rxjs": "^7.8.1",
     "sanity": "^3.41.1",
     "sanity-plugin-documents-pane": "^2.3.0",
     "sanity-plugin-google-translate": "^3.0.0",
@@ -39,9 +44,12 @@
     "sanity-plugin-internationalized-array": "^3.0.0",
     "sanity-plugin-schema-visualizer": "^1.1.1",
     "sanity-plugin-transifex": "^4.0.0",
-    "styled-components": "^6.1.11"
+    "styled-components": "^6.1.11",
+    "uuid": "^11.1.0"
   },
   "devDependencies": {
-    "@types/styled-components": "^5.1.34"
+    "@types/node": "^22.13.4",
+    "@types/styled-components": "^5.1.34",
+    "ts-node": "^10.9.2"
   }
 }

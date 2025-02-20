@@ -20,8 +20,8 @@ import Icon from './components/Icon'
 export default defineConfig({
   name: 'default',
   title: 'Course Platform',
-  projectId: '6h1mv88x',
-  dataset: 'production-v3',
+  projectId: process.env.SANITY_STUDIO_PROJECT_ID!,
+  dataset: process.env.SANITY_STUDIO_DATASET!,
   icon: Icon,
   theme,
 
