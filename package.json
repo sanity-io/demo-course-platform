@@ -16,19 +16,19 @@
     }
   },
   "dependencies": {
-    "@sanity/language-filter": "^4.0.2",
+    "@sanity/language-filter": "^4.0.5",
     "husky": "^8.0.3",
     "prettier": "^2.8.8",
-    "sanity": "^3.41.1",
-    "uuid": "^9.0.0"
+    "sanity": "^3.99.0",
+    "uuid": "^9.0.1"
   },
   "devDependencies": {
     "@sanity/eslint-config-studio": "^4.0.0",
-    "eslint": "^8.57.0",
-    "eslint-plugin-prettier": "^4.2.1",
+    "eslint": "^8.57.1",
+    "eslint-plugin-prettier": "^4.2.5",
     "eslint-plugin-simple-import-sort": "^10.0.0",
     "prettier": "2.8.8",
-    "typescript": "^5.4.5"
+    "typescript": "^5.9.3"
   },
   "prettier": {
     "semi": false,
