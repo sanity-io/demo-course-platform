@@ -20,7 +20,7 @@
     "husky": "^8.0.3",
     "prettier": "^2.8.8",
     "sanity": "^3.41.1",
-    "uuid": "^9.0.0"
+    "uuid": "^11.1.1"
   },
   "devDependencies": {
     "@sanity/eslint-config-studio": "^4.0.0",
