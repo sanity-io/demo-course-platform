@@ -10,16 +10,16 @@ importers:
     dependencies:
       '@sanity/assist':
         specifier: ^3.0.4
-        version: 3.1.1(@emotion/is-prop-valid@1.3.1)(@sanity/mutator@3.76.1(@types/react@19.0.10))(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1)(sanity@3.76.1(@emotion/is-prop-valid@1.3.1)(@types/babel__core@7.20.5)(@types/node@22.13.4)(@types/react@19.0.10)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(terser@5.39.0)(typescript@5.7.3)(yaml@2.7.0))(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1))
+        version: 3.1.1(@emotion/is-prop-valid@1.3.1)(@sanity/mutator@3.76.1(@types/react@19.0.10)(supports-color@8.1.1))(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1)(sanity@3.76.1(@emotion/is-prop-valid@1.3.1)(@types/babel__core@7.20.5)(@types/node@22.13.4)(@types/react@19.0.10)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(supports-color@8.1.1)(terser@5.39.0)(typescript@5.7.3)(yaml@2.7.0))(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1))
       '@sanity/code-input':
         specifier: ^4.1.4
-        version: 4.1.4(@babel/runtime@7.26.9)(@codemirror/lint@6.8.4)(@codemirror/theme-one-dark@6.1.2)(codemirror@6.0.1)(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1)(sanity@3.76.1(@emotion/is-prop-valid@1.3.1)(@types/babel__core@7.20.5)(@types/node@22.13.4)(@types/react@19.0.10)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(terser@5.39.0)(typescript@5.7.3)(yaml@2.7.0))(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1))
+        version: 4.1.4(@babel/runtime@7.26.9)(@codemirror/lint@6.8.4)(@codemirror/theme-one-dark@6.1.2)(codemirror@6.0.1)(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1)(sanity@3.76.1(@emotion/is-prop-valid@1.3.1)(@types/babel__core@7.20.5)(@types/node@22.13.4)(@types/react@19.0.10)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(supports-color@8.1.1)(terser@5.39.0)(typescript@5.7.3)(yaml@2.7.0))(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1))
       '@sanity/document-internationalization':
         specifier: ^3.0.0
-        version: 3.3.1(@emotion/is-prop-valid@1.3.1)(@types/react@19.0.10)(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1)(rxjs@7.8.1)(sanity@3.76.1(@emotion/is-prop-valid@1.3.1)(@types/babel__core@7.20.5)(@types/node@22.13.4)(@types/react@19.0.10)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(terser@5.39.0)(typescript@5.7.3)(yaml@2.7.0))(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1))
+        version: 3.3.1(@emotion/is-prop-valid@1.3.1)(@types/react@19.0.10)(debug@4.4.0(supports-color@5.5.0))(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1)(rxjs@7.8.1)(sanity@3.76.1(@emotion/is-prop-valid@1.3.1)(@types/babel__core@7.20.5)(@types/node@22.13.4)(@types/react@19.0.10)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(supports-color@8.1.1)(terser@5.39.0)(typescript@5.7.3)(yaml@2.7.0))(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(supports-color@8.1.1)
       '@sanity/eslint-config-studio':
         specifier: ^4.0.0
-        version: 4.0.0(eslint@8.57.1)(typescript@5.7.3)
+        version: 4.0.0(eslint@8.57.1(supports-color@5.5.0))(supports-color@8.1.1)(typescript@5.7.3)
       '@sanity/icons':
         specifier: ^3.6.0
         version: 3.6.0(react@18.3.1)
@@ -28,7 +28,7 @@ importers:
         version: 1.1.0
       '@sanity/language-filter':
         specifier: ^4.0.2
-        version: 4.0.3(@emotion/is-prop-valid@1.3.1)(@types/react@19.0.10)(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1)(sanity@3.76.1(@emotion/is-prop-valid@1.3.1)(@types/babel__core@7.20.5)(@types/node@22.13.4)(@types/react@19.0.10)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(terser@5.39.0)(typescript@5.7.3)(yaml@2.7.0))(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1))
+        version: 4.0.3(@emotion/is-prop-valid@1.3.1)(@types/react@19.0.10)(debug@4.4.0(supports-color@5.5.0))(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1)(sanity@3.76.1(@emotion/is-prop-valid@1.3.1)(@types/babel__core@7.20.5)(@types/node@22.13.4)(@types/react@19.0.10)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(supports-color@8.1.1)(terser@5.39.0)(typescript@5.7.3)(yaml@2.7.0))(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1))
       '@sanity/ui':
         specifier: ^2.14.0
         version: 2.14.0(@emotion/is-prop-valid@1.3.1)(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1)(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1))
@@ -37,13 +37,13 @@ importers:
         version: 3.76.1(@babel/runtime@7.26.9)(@codemirror/lint@6.8.4)(@codemirror/theme-one-dark@6.1.2)(@emotion/is-prop-valid@1.3.1)(codemirror@6.0.1)(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1)(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1))
       eslint:
         specifier: ^8.57.0
-        version: 8.57.1
+        version: 8.57.1(supports-color@5.5.0)
       eslint-config-prettier:
         specifier: ^8.10.0
-        version: 8.10.0(eslint@8.57.1)
+        version: 8.10.0(eslint@8.57.1(supports-color@5.5.0))
       eslint-plugin-prettier:
         specifier: ^4.2.1
-        version: 4.2.1(eslint-config-prettier@8.10.0(eslint@8.57.1))(eslint@8.57.1)(prettier@2.8.8)
+        version: 4.2.1(eslint-config-prettier@8.10.0(eslint@8.57.1(supports-color@5.5.0)))(eslint@8.57.1(supports-color@5.5.0))(prettier@2.8.8)
       framer-motion:
         specifier: ^11.1.9
         version: 11.18.2(@emotion/is-prop-valid@1.3.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -73,31 +73,31 @@ importers:
         version: 7.8.1
       sanity:
         specifier: ^3.41.1
-        version: 3.76.1(@emotion/is-prop-valid@1.3.1)(@types/babel__core@7.20.5)(@types/node@22.13.4)(@types/react@19.0.10)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(terser@5.39.0)(typescript@5.7.3)(yaml@2.7.0)
+        version: 3.76.1(@emotion/is-prop-valid@1.3.1)(@types/babel__core@7.20.5)(@types/node@22.13.4)(@types/react@19.0.10)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(supports-color@8.1.1)(terser@5.39.0)(typescript@5.7.3)(yaml@2.7.0)
       sanity-plugin-documents-pane:
         specifier: ^2.3.0
-        version: 2.3.0(@emotion/is-prop-valid@1.3.1)(@sanity/ui@2.14.0(@emotion/is-prop-valid@1.3.1)(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1)(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1)))(@types/react@19.0.10)(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1)(sanity@3.76.1(@emotion/is-prop-valid@1.3.1)(@types/babel__core@7.20.5)(@types/node@22.13.4)(@types/react@19.0.10)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(terser@5.39.0)(typescript@5.7.3)(yaml@2.7.0))(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1))
+        version: 2.3.0(@emotion/is-prop-valid@1.3.1)(@sanity/ui@2.14.0(@emotion/is-prop-valid@1.3.1)(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1)(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1)))(@types/react@19.0.10)(debug@4.4.0(supports-color@5.5.0))(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1)(sanity@3.76.1(@emotion/is-prop-valid@1.3.1)(@types/babel__core@7.20.5)(@types/node@22.13.4)(@types/react@19.0.10)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(supports-color@8.1.1)(terser@5.39.0)(typescript@5.7.3)(yaml@2.7.0))(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1))
       sanity-plugin-google-translate:
         specifier: ^3.0.0
-        version: 3.0.0(@babel/core@7.26.9)(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1)(sanity@3.76.1(@emotion/is-prop-valid@1.3.1)(@types/babel__core@7.20.5)(@types/node@22.13.4)(@types/react@19.0.10)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(terser@5.39.0)(typescript@5.7.3)(yaml@2.7.0))
+        version: 3.0.0(@babel/core@7.26.9(supports-color@8.1.1))(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1)(sanity@3.76.1(@emotion/is-prop-valid@1.3.1)(@types/babel__core@7.20.5)(@types/node@22.13.4)(@types/react@19.0.10)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(supports-color@8.1.1)(terser@5.39.0)(typescript@5.7.3)(yaml@2.7.0))
       sanity-plugin-iframe-pane:
         specifier: ^3.1.6
-        version: 3.2.1(@emotion/is-prop-valid@1.3.1)(@sanity/client@6.28.0)(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1)(sanity@3.76.1(@emotion/is-prop-valid@1.3.1)(@types/babel__core@7.20.5)(@types/node@22.13.4)(@types/react@19.0.10)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(terser@5.39.0)(typescript@5.7.3)(yaml@2.7.0))(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1))
+        version: 3.2.1(@emotion/is-prop-valid@1.3.1)(@sanity/client@6.28.0(debug@4.4.0(supports-color@5.5.0)))(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1)(sanity@3.76.1(@emotion/is-prop-valid@1.3.1)(@types/babel__core@7.20.5)(@types/node@22.13.4)(@types/react@19.0.10)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(supports-color@8.1.1)(terser@5.39.0)(typescript@5.7.3)(yaml@2.7.0))(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1))
       sanity-plugin-internationalized-array:
         specifier: ^3.0.0
-        version: 3.1.1(@emotion/is-prop-valid@1.3.1)(@types/react@19.0.10)(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1)(sanity@3.76.1(@emotion/is-prop-valid@1.3.1)(@types/babel__core@7.20.5)(@types/node@22.13.4)(@types/react@19.0.10)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(terser@5.39.0)(typescript@5.7.3)(yaml@2.7.0))(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1))
+        version: 3.1.1(@emotion/is-prop-valid@1.3.1)(@types/react@19.0.10)(debug@4.4.0(supports-color@5.5.0))(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1)(sanity@3.76.1(@emotion/is-prop-valid@1.3.1)(@types/babel__core@7.20.5)(@types/node@22.13.4)(@types/react@19.0.10)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(supports-color@8.1.1)(terser@5.39.0)(typescript@5.7.3)(yaml@2.7.0))(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1))
       sanity-plugin-schema-visualizer:
         specifier: ^1.1.1
-        version: 1.1.1(@sanity/ui@2.14.0(@emotion/is-prop-valid@1.3.1)(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1)(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1)))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sanity@3.76.1(@emotion/is-prop-valid@1.3.1)(@types/babel__core@7.20.5)(@types/node@22.13.4)(@types/react@19.0.10)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(terser@5.39.0)(typescript@5.7.3)(yaml@2.7.0))(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1))
+        version: 1.1.1(@sanity/ui@2.14.0(@emotion/is-prop-valid@1.3.1)(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1)(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1)))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sanity@3.76.1(@emotion/is-prop-valid@1.3.1)(@types/babel__core@7.20.5)(@types/node@22.13.4)(@types/react@19.0.10)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(supports-color@8.1.1)(terser@5.39.0)(typescript@5.7.3)(yaml@2.7.0))(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1))
       sanity-plugin-transifex:
         specifier: ^4.0.0
-        version: 4.0.0(@sanity/ui@2.14.0(@emotion/is-prop-valid@1.3.1)(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1)(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1)))(@types/react@19.0.10)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sanity@3.76.1(@emotion/is-prop-valid@1.3.1)(@types/babel__core@7.20.5)(@types/node@22.13.4)(@types/react@19.0.10)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(terser@5.39.0)(typescript@5.7.3)(yaml@2.7.0))(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1))
+        version: 4.0.0(@sanity/ui@2.14.0(@emotion/is-prop-valid@1.3.1)(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1)(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1)))(@types/react@19.0.10)(debug@4.4.0(supports-color@5.5.0))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sanity@3.76.1(@emotion/is-prop-valid@1.3.1)(@types/babel__core@7.20.5)(@types/node@22.13.4)(@types/react@19.0.10)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(supports-color@8.1.1)(terser@5.39.0)(typescript@5.7.3)(yaml@2.7.0))(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(supports-color@8.1.1)
       styled-components:
         specifier: ^6.1.11
         version: 6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       uuid:
         specifier: ^11.1.0
-        version: 11.1.0
+        version: 11.1.1
     devDependencies:
       '@types/node':
         specifier: ^22.13.4
@@ -1512,51 +1512,61 @@ packages:
     resolution: {integrity: sha512-A4iphFGNkWRd+5m3VIGuqHnG3MVnqKe7Al57u9mwgbyZ2/xF9Jio72MaY7xxh+Y87VAHmGQr73qoKL9HPbXj1g==}
     cpu: [arm]
     os: [linux]
+    libc: [glibc]
 
   '@rollup/rollup-linux-arm-musleabihf@4.34.8':
     resolution: {integrity: sha512-S0lqKLfTm5u+QTxlFiAnb2J/2dgQqRy/XvziPtDd1rKZFXHTyYLoVL58M/XFwDI01AQCDIevGLbQrMAtdyanpA==}
     cpu: [arm]
     os: [linux]
+    libc: [musl]
 
   '@rollup/rollup-linux-arm64-gnu@4.34.8':
     resolution: {integrity: sha512-jpz9YOuPiSkL4G4pqKrus0pn9aYwpImGkosRKwNi+sJSkz+WU3anZe6hi73StLOQdfXYXC7hUfsQlTnjMd3s1A==}
     cpu: [arm64]
     os: [linux]
+    libc: [glibc]
 
   '@rollup/rollup-linux-arm64-musl@4.34.8':
     resolution: {integrity: sha512-KdSfaROOUJXgTVxJNAZ3KwkRc5nggDk+06P6lgi1HLv1hskgvxHUKZ4xtwHkVYJ1Rep4GNo+uEfycCRRxht7+Q==}
     cpu: [arm64]
     os: [linux]
+    libc: [musl]
 
   '@rollup/rollup-linux-loongarch64-gnu@4.34.8':
     resolution: {integrity: sha512-NyF4gcxwkMFRjgXBM6g2lkT58OWztZvw5KkV2K0qqSnUEqCVcqdh2jN4gQrTn/YUpAcNKyFHfoOZEer9nwo6uQ==}
     cpu: [loong64]
     os: [linux]
+    libc: [glibc]
 
   '@rollup/rollup-linux-powerpc64le-gnu@4.34.8':
     resolution: {integrity: sha512-LMJc999GkhGvktHU85zNTDImZVUCJ1z/MbAJTnviiWmmjyckP5aQsHtcujMjpNdMZPT2rQEDBlJfubhs3jsMfw==}
     cpu: [ppc64]
     os: [linux]
+    libc: [glibc]
 
   '@rollup/rollup-linux-riscv64-gnu@4.34.8':
     resolution: {integrity: sha512-xAQCAHPj8nJq1PI3z8CIZzXuXCstquz7cIOL73HHdXiRcKk8Ywwqtx2wrIy23EcTn4aZ2fLJNBB8d0tQENPCmw==}
     cpu: [riscv64]
     os: [linux]
+    libc: [glibc]
 
   '@rollup/rollup-linux-s390x-gnu@4.34.8':
     resolution: {integrity: sha512-DdePVk1NDEuc3fOe3dPPTb+rjMtuFw89gw6gVWxQFAuEqqSdDKnrwzZHrUYdac7A7dXl9Q2Vflxpme15gUWQFA==}
     cpu: [s390x]
     os: [linux]
+    libc: [glibc]
 
   '@rollup/rollup-linux-x64-gnu@4.34.8':
     resolution: {integrity: sha512-8y7ED8gjxITUltTUEJLQdgpbPh1sUQ0kMTmufRF/Ns5tI9TNMNlhWtmPKKHCU0SilX+3MJkZ0zERYYGIVBYHIA==}
     cpu: [x64]
     os: [linux]
+    libc: [glibc]
 
   '@rollup/rollup-linux-x64-musl@4.34.8':
     resolution: {integrity: sha512-SCXcP0ZpGFIe7Ge+McxY5zKxiEI5ra+GT3QRxL0pMMtxPfpyLAKleZODi1zdRHkz5/BhueUrYtYVgubqe9JBNQ==}
     cpu: [x64]
     os: [linux]
+    libc: [musl]
 
   '@rollup/rollup-win32-arm64-msvc@4.34.8':
     resolution: {integrity: sha512-YHYsgzZgFJzTRbth4h7Or0m5O74Yda+hLin0irAIobkLQFRQd1qWmnoVfwmKm9TXIZVAD0nZ+GEb2ICicLyCnQ==}
@@ -1754,6 +1764,7 @@ packages:
   '@sanity/pkg-utils@6.13.4':
     resolution: {integrity: sha512-m4x0qyu2wiUHKuVxy/B2kcQRh20RvsyvUlUjPbiM5ENt4hwpJPLFfxtPe53GOCf3NJfcSK/te4yQkMOyL8RzAA==}
     engines: {node: '>=18.17.0'}
+    deprecated: 'UNSUPPORTED: Versions before v11 are no longer maintained or updated and will not receive fixes. Upgrade to @sanity/pkg-utils v11.'
     hasBin: true
     peerDependencies:
       babel-plugin-react-compiler: '*'
@@ -2089,6 +2100,7 @@ packages:
 
   '@ungap/structured-clone@1.3.0':
     resolution: {integrity: sha512-WmoN8qaIAo7WTYWbAZuG8PYEhn5fkz7dZrqTBZ7dtt//lL2Gwms1IcnQ5yHqjDfX8Ft5j4YzDM23f87zBfDe9g==}
+    deprecated: Potential CWE-502 - Update to 1.3.1 or higher
 
   '@vitejs/plugin-react@4.3.4':
     resolution: {integrity: sha512-SCCPBJtYLdE8PX/7ZQAs1QAZ8Jqwih+0VBLum1EGqmCCQal+MIUqLCzj3ZUy8ufbC0cAM4LRlSTm7IQJwWT4ug==}
@@ -3171,6 +3183,7 @@ packages:
 
   get-random-values-esm@1.0.2:
     resolution: {integrity: sha512-HMSDTgj1HPFAuZG0FqxzHbYt5JeEGDUeT9r1RLXhS6RZQS8rLRjokgjZ0Pd28CN0lhXlRwfH6eviZqZEJ2kIoA==}
+    deprecated: use crypto.getRandomValues() instead
 
   get-random-values@1.2.2:
     resolution: {integrity: sha512-lMyPjQyl0cNNdDf2oR+IQ/fM3itDvpoHy45Ymo2r0L1EjazeSl13SfbKZs7KtZ/3MDCeueiaJiuOEfKqRTsSgA==}
@@ -3214,20 +3227,23 @@ packages:
 
   glob@10.4.5:
     resolution: {integrity: sha512-7Bv8RF0k6xjo7d4A/PxYLbUCfb6c+Vpd2/mB2yRDlew7Jb5hEXiCD9ibfO7wpk8i4sevK6DFny9h7EYbM3/sHg==}
+    deprecated: Old versions of glob are not supported, and contain widely publicized security vulnerabilities, which have been fixed in the current version. Please update. Support for old versions may be purchased (at exorbitant rates) by contacting i@izs.me
     hasBin: true
 
   glob@11.0.1:
     resolution: {integrity: sha512-zrQDm8XPnYEKawJScsnM0QzobJxlT/kHOOlRTio8IH/GrmxRE5fjllkzdaHclIuNjUQTJYH2xHNIGfdpJkDJUw==}
     engines: {node: 20 || >=22}
+    deprecated: Old versions of glob are not supported, and contain widely publicized security vulnerabilities, which have been fixed in the current version. Please update. Support for old versions may be purchased (at exorbitant rates) by contacting i@izs.me
     hasBin: true
 
   glob@7.2.3:
     resolution: {integrity: sha512-nFR0zLpU2YCaRxwoCJvL6UvCH2JFyFVIvwTLsIf21AuHlMskA1hhTdk+LlYJtOlYt9v6dvszD2BGRqBL+iQK9Q==}
-    deprecated: Glob versions prior to v9 are no longer supported
+    deprecated: Old versions of glob are not supported, and contain widely publicized security vulnerabilities, which have been fixed in the current version. Please update. Support for old versions may be purchased (at exorbitant rates) by contacting i@izs.me
 
   glob@9.3.5:
     resolution: {integrity: sha512-e1LleDykUz2Iu+MTYdkSsuWX8lvAjAcs0Xef0lNIu0S2wOAzuTxCJtcd9S3cijlwYF18EsU3rzb8jPVobxDh9Q==}
     engines: {node: '>=16 || 14 >=14.17'}
+    deprecated: Old versions of glob are not supported, and contain widely publicized security vulnerabilities, which have been fixed in the current version. Please update. Support for old versions may be purchased (at exorbitant rates) by contacting i@izs.me
 
   global@4.4.0:
     resolution: {integrity: sha512-wv/LAoHdRE3BeTGz53FAamhGlPLhlssK45usmGFThIi4XqnBmjKQ16u+RNbP7WvigRZDxUsM0J3gcQ5yicaL0w==}
@@ -3679,6 +3695,7 @@ packages:
   json-2-csv@5.5.8:
     resolution: {integrity: sha512-eMQHOwV+av8Sgo+fkbEbQWOw/kwh89AZ5fNA8TYfcooG6TG1ZOL2WcPUrngIMIK8dBJitQ8QEU0zbncQ0CX4CQ==}
     engines: {node: '>= 16'}
+    deprecated: A security vulnerability has been reported with the preventCsvInjection option which has been fixed in version 5.5.11. Please upgrade as soon as possible.
 
   json-buffer@3.0.1:
     resolution: {integrity: sha512-4bV5BfR2mqfQTJm+V5tPPdf+ZpuhiIvTuAB5g8kcrXOZpTT/QwwVRWBywX1ozr6lEuPdbHxwaJlm9G6mI2sfSQ==}
@@ -4729,6 +4746,7 @@ packages:
   sanity@3.76.1:
     resolution: {integrity: sha512-68aIdN67zepCFXjC8x8yIIbZrtMWl0FgnMYuwiE6FWNC+FcJjUtEY+/k0Qa8xbjoTHBGP/XjKGDF50FGH06Brw==}
     engines: {node: '>=18'}
+    deprecated: This version is using an experimental version of the Sanity HTTP API and we strongly recommend upgrading to latest
     hasBin: true
     peerDependencies:
       react: ^18 || ^19.0.0
@@ -5038,6 +5056,7 @@ packages:
   tar@7.4.3:
     resolution: {integrity: sha512-5S7Va8hKfV7W5U6g3aYxXmlPoZVAwUMy9AOKyF2fVuZa2UD3qZjg578OrLRt8PcNN1PleVaL/5/yYATNL0ICUw==}
     engines: {node: '>=18'}
+    deprecated: Old versions of tar are not supported, and contain widely publicized security vulnerabilities, which have been fixed in the current version. Please update. Support for old versions may be purchased (at exorbitant rates) by contacting i@izs.me
 
   terser@5.39.0:
     resolution: {integrity: sha512-LBAhFyLho16harJoWMg/nZsQYgTrg5jXOn2nCYjRUcZZEdE3qa2zb8QEDRUGVZBW4rlazf2fxkg8tztybTaqWw==}
@@ -5324,12 +5343,13 @@ packages:
   util-deprecate@1.0.2:
     resolution: {integrity: sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==}
 
-  uuid@11.1.0:
-    resolution: {integrity: sha512-0/A9rDy9P7cJ+8w1c9WD9V//9Wj15Ce2MPz8Ri6032usz+NfePxx5AcN3bN+r6ZL6jEo066/yNYB3tn4pQEx+A==}
+  uuid@11.1.1:
+    resolution: {integrity: sha512-vIYxrBCC/N/K+Js3qSN88go7kIfNPssr/hHCesKCQNAjmgvYS2oqr69kIufEG+O4+PfezOH4EbIeHCfFov8ZgQ==}
     hasBin: true
 
   uuid@8.3.2:
     resolution: {integrity: sha512-+NYs2QeMWy+GWFOEm9xnn6HCDp0l7QBD7ml8zLUmJ+93Q5NF0NocErnwkTkXVFNiX3/fpC6afS8Dhb/gz7R7eg==}
+    deprecated: uuid@10 and below is no longer supported.  For ESM codebases, update to uuid@latest.  For CommonJS codebases, use uuid@11 (but be aware this version will likely be deprecated in 2028).
     hasBin: true
 
   uuidv7@0.4.4:
@@ -5409,6 +5429,7 @@ packages:
   whatwg-encoding@3.1.1:
     resolution: {integrity: sha512-6qN4hJdMwfYBtE3YBTTHhoeuUrDBPZmbQaxWAqSALV/MeEnR5z1xd8UKud2RAkFoPkmB+hli1TZSnyi84xz1vQ==}
     engines: {node: '>=18'}
+    deprecated: Use @exodus/bytes instead for a more spec-conformant and faster implementation
 
   whatwg-mimetype@4.0.0:
     resolution: {integrity: sha512-QaKxh0eNIi2mE9p2vEdzfagOKHCcj1pJ56EEHGQOVxp8r9/iszLUUV7v89x9O1p/T+NlTM5W7jW6+cz4Fq1YVg==}
@@ -5600,31 +5621,31 @@ snapshots:
 
   '@babel/compat-data@7.26.8': {}
 
-  '@babel/core@7.26.9':
+  '@babel/core@7.26.9(supports-color@8.1.1)':
     dependencies:
       '@ampproject/remapping': 2.3.0
       '@babel/code-frame': 7.26.2
       '@babel/generator': 7.26.9
       '@babel/helper-compilation-targets': 7.26.5
-      '@babel/helper-module-transforms': 7.26.0(@babel/core@7.26.9)
+      '@babel/helper-module-transforms': 7.26.0(@babel/core@7.26.9(supports-color@8.1.1))(supports-color@8.1.1)
       '@babel/helpers': 7.26.9
       '@babel/parser': 7.26.9
       '@babel/template': 7.26.9
-      '@babel/traverse': 7.26.9(supports-color@5.5.0)
+      '@babel/traverse': 7.26.9(supports-color@8.1.1)
       '@babel/types': 7.26.9
       convert-source-map: 2.0.0
-      debug: 4.4.0(supports-color@5.5.0)
+      debug: 4.4.0(supports-color@8.1.1)
       gensync: 1.0.0-beta.2
       json5: 2.2.3
       semver: 6.3.1
     transitivePeerDependencies:
       - supports-color
 
-  '@babel/eslint-parser@7.26.8(@babel/core@7.26.9)(eslint@8.57.1)':
+  '@babel/eslint-parser@7.26.8(@babel/core@7.26.9(supports-color@8.1.1))(eslint@8.57.1(supports-color@5.5.0))':
     dependencies:
-      '@babel/core': 7.26.9
+      '@babel/core': 7.26.9(supports-color@8.1.1)
       '@nicolo-ribaudo/eslint-scope-5-internals': 5.1.1-v1
-      eslint: 8.57.1
+      eslint: 8.57.1(supports-color@5.5.0)
       eslint-visitor-keys: 2.1.0
       semver: 6.3.1
 
@@ -5648,40 +5669,40 @@ snapshots:
       lru-cache: 5.1.1
       semver: 6.3.1
 
-  '@babel/helper-create-class-features-plugin@7.26.9(@babel/core@7.26.9)':
+  '@babel/helper-create-class-features-plugin@7.26.9(@babel/core@7.26.9(supports-color@8.1.1))(supports-color@8.1.1)':
     dependencies:
-      '@babel/core': 7.26.9
+      '@babel/core': 7.26.9(supports-color@8.1.1)
       '@babel/helper-annotate-as-pure': 7.25.9
-      '@babel/helper-member-expression-to-functions': 7.25.9
+      '@babel/helper-member-expression-to-functions': 7.25.9(supports-color@8.1.1)
       '@babel/helper-optimise-call-expression': 7.25.9
-      '@babel/helper-replace-supers': 7.26.5(@babel/core@7.26.9)
-      '@babel/helper-skip-transparent-expression-wrappers': 7.25.9
-      '@babel/traverse': 7.26.9(supports-color@5.5.0)
+      '@babel/helper-replace-supers': 7.26.5(@babel/core@7.26.9(supports-color@8.1.1))(supports-color@8.1.1)
+      '@babel/helper-skip-transparent-expression-wrappers': 7.25.9(supports-color@8.1.1)
+      '@babel/traverse': 7.26.9(supports-color@8.1.1)
       semver: 6.3.1
     transitivePeerDependencies:
       - supports-color
 
-  '@babel/helper-create-regexp-features-plugin@7.26.3(@babel/core@7.26.9)':
+  '@babel/helper-create-regexp-features-plugin@7.26.3(@babel/core@7.26.9(supports-color@8.1.1))':
     dependencies:
-      '@babel/core': 7.26.9
+      '@babel/core': 7.26.9(supports-color@8.1.1)
       '@babel/helper-annotate-as-pure': 7.25.9
       regexpu-core: 6.2.0
       semver: 6.3.1
 
-  '@babel/helper-define-polyfill-provider@0.6.3(@babel/core@7.26.9)':
+  '@babel/helper-define-polyfill-provider@0.6.3(@babel/core@7.26.9(supports-color@8.1.1))(supports-color@8.1.1)':
     dependencies:
-      '@babel/core': 7.26.9
+      '@babel/core': 7.26.9(supports-color@8.1.1)
       '@babel/helper-compilation-targets': 7.26.5
       '@babel/helper-plugin-utils': 7.26.5
-      debug: 4.4.0(supports-color@5.5.0)
+      debug: 4.4.0(supports-color@8.1.1)
       lodash.debounce: 4.0.8
       resolve: 1.22.10
     transitivePeerDependencies:
       - supports-color
 
-  '@babel/helper-member-expression-to-functions@7.25.9':
+  '@babel/helper-member-expression-to-functions@7.25.9(supports-color@8.1.1)':
     dependencies:
-      '@babel/traverse': 7.26.9(supports-color@5.5.0)
+      '@babel/traverse': 7.26.9(supports-color@8.1.1)
       '@babel/types': 7.26.9
     transitivePeerDependencies:
       - supports-color
@@ -5693,12 +5714,19 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@babel/helper-module-transforms@7.26.0(@babel/core@7.26.9)':
+  '@babel/helper-module-imports@7.25.9(supports-color@8.1.1)':
     dependencies:
-      '@babel/core': 7.26.9
-      '@babel/helper-module-imports': 7.25.9(supports-color@5.5.0)
+      '@babel/traverse': 7.26.9(supports-color@8.1.1)
+      '@babel/types': 7.26.9
+    transitivePeerDependencies:
+      - supports-color
+
+  '@babel/helper-module-transforms@7.26.0(@babel/core@7.26.9(supports-color@8.1.1))(supports-color@8.1.1)':
+    dependencies:
+      '@babel/core': 7.26.9(supports-color@8.1.1)
+      '@babel/helper-module-imports': 7.25.9(supports-color@8.1.1)
       '@babel/helper-validator-identifier': 7.25.9
-      '@babel/traverse': 7.26.9(supports-color@5.5.0)
+      '@babel/traverse': 7.26.9(supports-color@8.1.1)
     transitivePeerDependencies:
       - supports-color
 
@@ -5708,27 +5736,27 @@ snapshots:
 
   '@babel/helper-plugin-utils@7.26.5': {}
 
-  '@babel/helper-remap-async-to-generator@7.25.9(@babel/core@7.26.9)':
+  '@babel/helper-remap-async-to-generator@7.25.9(@babel/core@7.26.9(supports-color@8.1.1))(supports-color@8.1.1)':
     dependencies:
-      '@babel/core': 7.26.9
+      '@babel/core': 7.26.9(supports-color@8.1.1)
       '@babel/helper-annotate-as-pure': 7.25.9
-      '@babel/helper-wrap-function': 7.25.9
-      '@babel/traverse': 7.26.9(supports-color@5.5.0)
+      '@babel/helper-wrap-function': 7.25.9(supports-color@8.1.1)
+      '@babel/traverse': 7.26.9(supports-color@8.1.1)
     transitivePeerDependencies:
       - supports-color
 
-  '@babel/helper-replace-supers@7.26.5(@babel/core@7.26.9)':
+  '@babel/helper-replace-supers@7.26.5(@babel/core@7.26.9(supports-color@8.1.1))(supports-color@8.1.1)':
     dependencies:
-      '@babel/core': 7.26.9
-      '@babel/helper-member-expression-to-functions': 7.25.9
+      '@babel/core': 7.26.9(supports-color@8.1.1)
+      '@babel/helper-member-expression-to-functions': 7.25.9(supports-color@8.1.1)
       '@babel/helper-optimise-call-expression': 7.25.9
-      '@babel/traverse': 7.26.9(supports-color@5.5.0)
+      '@babel/traverse': 7.26.9(supports-color@8.1.1)
     transitivePeerDependencies:
       - supports-color
 
-  '@babel/helper-skip-transparent-expression-wrappers@7.25.9':
+  '@babel/helper-skip-transparent-expression-wrappers@7.25.9(supports-color@8.1.1)':
     dependencies:
-      '@babel/traverse': 7.26.9(supports-color@5.5.0)
+      '@babel/traverse': 7.26.9(supports-color@8.1.1)
       '@babel/types': 7.26.9
     transitivePeerDependencies:
       - supports-color
@@ -5739,10 +5767,10 @@ snapshots:
 
   '@babel/helper-validator-option@7.25.9': {}
 
-  '@babel/helper-wrap-function@7.25.9':
+  '@babel/helper-wrap-function@7.25.9(supports-color@8.1.1)':
     dependencies:
       '@babel/template': 7.26.9
-      '@babel/traverse': 7.26.9(supports-color@5.5.0)
+      '@babel/traverse': 7.26.9(supports-color@8.1.1)
       '@babel/types': 7.26.9
     transitivePeerDependencies:
       - supports-color
@@ -5756,548 +5784,548 @@ snapshots:
     dependencies:
       '@babel/types': 7.26.9
 
-  '@babel/plugin-bugfix-firefox-class-in-computed-class-key@7.25.9(@babel/core@7.26.9)':
+  '@babel/plugin-bugfix-firefox-class-in-computed-class-key@7.25.9(@babel/core@7.26.9(supports-color@8.1.1))(supports-color@8.1.1)':
     dependencies:
-      '@babel/core': 7.26.9
+      '@babel/core': 7.26.9(supports-color@8.1.1)
       '@babel/helper-plugin-utils': 7.26.5
-      '@babel/traverse': 7.26.9(supports-color@5.5.0)
+      '@babel/traverse': 7.26.9(supports-color@8.1.1)
     transitivePeerDependencies:
       - supports-color
 
-  '@babel/plugin-bugfix-safari-class-field-initializer-scope@7.25.9(@babel/core@7.26.9)':
+  '@babel/plugin-bugfix-safari-class-field-initializer-scope@7.25.9(@babel/core@7.26.9(supports-color@8.1.1))':
     dependencies:
-      '@babel/core': 7.26.9
+      '@babel/core': 7.26.9(supports-color@8.1.1)
       '@babel/helper-plugin-utils': 7.26.5
 
-  '@babel/plugin-bugfix-safari-id-destructuring-collision-in-function-expression@7.25.9(@babel/core@7.26.9)':
+  '@babel/plugin-bugfix-safari-id-destructuring-collision-in-function-expression@7.25.9(@babel/core@7.26.9(supports-color@8.1.1))':
     dependencies:
-      '@babel/core': 7.26.9
+      '@babel/core': 7.26.9(supports-color@8.1.1)
       '@babel/helper-plugin-utils': 7.26.5
 
-  '@babel/plugin-bugfix-v8-spread-parameters-in-optional-chaining@7.25.9(@babel/core@7.26.9)':
+  '@babel/plugin-bugfix-v8-spread-parameters-in-optional-chaining@7.25.9(@babel/core@7.26.9(supports-color@8.1.1))(supports-color@8.1.1)':
     dependencies:
-      '@babel/core': 7.26.9
+      '@babel/core': 7.26.9(supports-color@8.1.1)
       '@babel/helper-plugin-utils': 7.26.5
-      '@babel/helper-skip-transparent-expression-wrappers': 7.25.9
-      '@babel/plugin-transform-optional-chaining': 7.25.9(@babel/core@7.26.9)
+      '@babel/helper-skip-transparent-expression-wrappers': 7.25.9(supports-color@8.1.1)
+      '@babel/plugin-transform-optional-chaining': 7.25.9(@babel/core@7.26.9(supports-color@8.1.1))(supports-color@8.1.1)
     transitivePeerDependencies:
       - supports-color
 
-  '@babel/plugin-bugfix-v8-static-class-fields-redefine-readonly@7.25.9(@babel/core@7.26.9)':
+  '@babel/plugin-bugfix-v8-static-class-fields-redefine-readonly@7.25.9(@babel/core@7.26.9(supports-color@8.1.1))(supports-color@8.1.1)':
     dependencies:
-      '@babel/core': 7.26.9
+      '@babel/core': 7.26.9(supports-color@8.1.1)
       '@babel/helper-plugin-utils': 7.26.5
-      '@babel/traverse': 7.26.9(supports-color@5.5.0)
+      '@babel/traverse': 7.26.9(supports-color@8.1.1)
     transitivePeerDependencies:
       - supports-color
 
-  '@babel/plugin-proposal-private-property-in-object@7.21.0-placeholder-for-preset-env.2(@babel/core@7.26.9)':
+  '@babel/plugin-proposal-private-property-in-object@7.21.0-placeholder-for-preset-env.2(@babel/core@7.26.9(supports-color@8.1.1))':
     dependencies:
-      '@babel/core': 7.26.9
+      '@babel/core': 7.26.9(supports-color@8.1.1)
 
-  '@babel/plugin-syntax-import-assertions@7.26.0(@babel/core@7.26.9)':
+  '@babel/plugin-syntax-import-assertions@7.26.0(@babel/core@7.26.9(supports-color@8.1.1))':
     dependencies:
-      '@babel/core': 7.26.9
+      '@babel/core': 7.26.9(supports-color@8.1.1)
       '@babel/helper-plugin-utils': 7.26.5
 
-  '@babel/plugin-syntax-import-attributes@7.26.0(@babel/core@7.26.9)':
+  '@babel/plugin-syntax-import-attributes@7.26.0(@babel/core@7.26.9(supports-color@8.1.1))':
     dependencies:
-      '@babel/core': 7.26.9
+      '@babel/core': 7.26.9(supports-color@8.1.1)
       '@babel/helper-plugin-utils': 7.26.5
 
-  '@babel/plugin-syntax-jsx@7.25.9(@babel/core@7.26.9)':
+  '@babel/plugin-syntax-jsx@7.25.9(@babel/core@7.26.9(supports-color@8.1.1))':
     dependencies:
-      '@babel/core': 7.26.9
+      '@babel/core': 7.26.9(supports-color@8.1.1)
       '@babel/helper-plugin-utils': 7.26.5
 
-  '@babel/plugin-syntax-typescript@7.25.9(@babel/core@7.26.9)':
+  '@babel/plugin-syntax-typescript@7.25.9(@babel/core@7.26.9(supports-color@8.1.1))':
     dependencies:
-      '@babel/core': 7.26.9
+      '@babel/core': 7.26.9(supports-color@8.1.1)
       '@babel/helper-plugin-utils': 7.26.5
 
-  '@babel/plugin-syntax-unicode-sets-regex@7.18.6(@babel/core@7.26.9)':
+  '@babel/plugin-syntax-unicode-sets-regex@7.18.6(@babel/core@7.26.9(supports-color@8.1.1))':
     dependencies:
-      '@babel/core': 7.26.9
-      '@babel/helper-create-regexp-features-plugin': 7.26.3(@babel/core@7.26.9)
+      '@babel/core': 7.26.9(supports-color@8.1.1)
+      '@babel/helper-create-regexp-features-plugin': 7.26.3(@babel/core@7.26.9(supports-color@8.1.1))
       '@babel/helper-plugin-utils': 7.26.5
 
-  '@babel/plugin-transform-arrow-functions@7.25.9(@babel/core@7.26.9)':
+  '@babel/plugin-transform-arrow-functions@7.25.9(@babel/core@7.26.9(supports-color@8.1.1))':
     dependencies:
-      '@babel/core': 7.26.9
+      '@babel/core': 7.26.9(supports-color@8.1.1)
       '@babel/helper-plugin-utils': 7.26.5
 
-  '@babel/plugin-transform-async-generator-functions@7.26.8(@babel/core@7.26.9)':
+  '@babel/plugin-transform-async-generator-functions@7.26.8(@babel/core@7.26.9(supports-color@8.1.1))(supports-color@8.1.1)':
     dependencies:
-      '@babel/core': 7.26.9
+      '@babel/core': 7.26.9(supports-color@8.1.1)
       '@babel/helper-plugin-utils': 7.26.5
-      '@babel/helper-remap-async-to-generator': 7.25.9(@babel/core@7.26.9)
-      '@babel/traverse': 7.26.9(supports-color@5.5.0)
+      '@babel/helper-remap-async-to-generator': 7.25.9(@babel/core@7.26.9(supports-color@8.1.1))(supports-color@8.1.1)
+      '@babel/traverse': 7.26.9(supports-color@8.1.1)
     transitivePeerDependencies:
       - supports-color
 
-  '@babel/plugin-transform-async-to-generator@7.25.9(@babel/core@7.26.9)':
+  '@babel/plugin-transform-async-to-generator@7.25.9(@babel/core@7.26.9(supports-color@8.1.1))(supports-color@8.1.1)':
     dependencies:
-      '@babel/core': 7.26.9
-      '@babel/helper-module-imports': 7.25.9(supports-color@5.5.0)
+      '@babel/core': 7.26.9(supports-color@8.1.1)
+      '@babel/helper-module-imports': 7.25.9(supports-color@8.1.1)
       '@babel/helper-plugin-utils': 7.26.5
-      '@babel/helper-remap-async-to-generator': 7.25.9(@babel/core@7.26.9)
+      '@babel/helper-remap-async-to-generator': 7.25.9(@babel/core@7.26.9(supports-color@8.1.1))(supports-color@8.1.1)
     transitivePeerDependencies:
       - supports-color
 
-  '@babel/plugin-transform-block-scoped-functions@7.26.5(@babel/core@7.26.9)':
+  '@babel/plugin-transform-block-scoped-functions@7.26.5(@babel/core@7.26.9(supports-color@8.1.1))':
     dependencies:
-      '@babel/core': 7.26.9
+      '@babel/core': 7.26.9(supports-color@8.1.1)
       '@babel/helper-plugin-utils': 7.26.5
 
-  '@babel/plugin-transform-block-scoping@7.25.9(@babel/core@7.26.9)':
+  '@babel/plugin-transform-block-scoping@7.25.9(@babel/core@7.26.9(supports-color@8.1.1))':
     dependencies:
-      '@babel/core': 7.26.9
+      '@babel/core': 7.26.9(supports-color@8.1.1)
       '@babel/helper-plugin-utils': 7.26.5
 
-  '@babel/plugin-transform-class-properties@7.25.9(@babel/core@7.26.9)':
+  '@babel/plugin-transform-class-properties@7.25.9(@babel/core@7.26.9(supports-color@8.1.1))(supports-color@8.1.1)':
     dependencies:
-      '@babel/core': 7.26.9
-      '@babel/helper-create-class-features-plugin': 7.26.9(@babel/core@7.26.9)
-      '@babel/helper-plugin-utils': 7.26.5
-    transitivePeerDependencies:
-      - supports-color
-
-  '@babel/plugin-transform-class-static-block@7.26.0(@babel/core@7.26.9)':
-    dependencies:
-      '@babel/core': 7.26.9
-      '@babel/helper-create-class-features-plugin': 7.26.9(@babel/core@7.26.9)
+      '@babel/core': 7.26.9(supports-color@8.1.1)
+      '@babel/helper-create-class-features-plugin': 7.26.9(@babel/core@7.26.9(supports-color@8.1.1))(supports-color@8.1.1)
       '@babel/helper-plugin-utils': 7.26.5
     transitivePeerDependencies:
       - supports-color
 
-  '@babel/plugin-transform-classes@7.25.9(@babel/core@7.26.9)':
+  '@babel/plugin-transform-class-static-block@7.26.0(@babel/core@7.26.9(supports-color@8.1.1))(supports-color@8.1.1)':
     dependencies:
-      '@babel/core': 7.26.9
+      '@babel/core': 7.26.9(supports-color@8.1.1)
+      '@babel/helper-create-class-features-plugin': 7.26.9(@babel/core@7.26.9(supports-color@8.1.1))(supports-color@8.1.1)
+      '@babel/helper-plugin-utils': 7.26.5
+    transitivePeerDependencies:
+      - supports-color
+
+  '@babel/plugin-transform-classes@7.25.9(@babel/core@7.26.9(supports-color@8.1.1))(supports-color@8.1.1)':
+    dependencies:
+      '@babel/core': 7.26.9(supports-color@8.1.1)
       '@babel/helper-annotate-as-pure': 7.25.9
       '@babel/helper-compilation-targets': 7.26.5
       '@babel/helper-plugin-utils': 7.26.5
-      '@babel/helper-replace-supers': 7.26.5(@babel/core@7.26.9)
-      '@babel/traverse': 7.26.9(supports-color@5.5.0)
+      '@babel/helper-replace-supers': 7.26.5(@babel/core@7.26.9(supports-color@8.1.1))(supports-color@8.1.1)
+      '@babel/traverse': 7.26.9(supports-color@8.1.1)
       globals: 11.12.0
     transitivePeerDependencies:
       - supports-color
 
-  '@babel/plugin-transform-computed-properties@7.25.9(@babel/core@7.26.9)':
+  '@babel/plugin-transform-computed-properties@7.25.9(@babel/core@7.26.9(supports-color@8.1.1))':
     dependencies:
-      '@babel/core': 7.26.9
+      '@babel/core': 7.26.9(supports-color@8.1.1)
       '@babel/helper-plugin-utils': 7.26.5
       '@babel/template': 7.26.9
 
-  '@babel/plugin-transform-destructuring@7.25.9(@babel/core@7.26.9)':
+  '@babel/plugin-transform-destructuring@7.25.9(@babel/core@7.26.9(supports-color@8.1.1))':
     dependencies:
-      '@babel/core': 7.26.9
+      '@babel/core': 7.26.9(supports-color@8.1.1)
       '@babel/helper-plugin-utils': 7.26.5
 
-  '@babel/plugin-transform-dotall-regex@7.25.9(@babel/core@7.26.9)':
+  '@babel/plugin-transform-dotall-regex@7.25.9(@babel/core@7.26.9(supports-color@8.1.1))':
     dependencies:
-      '@babel/core': 7.26.9
-      '@babel/helper-create-regexp-features-plugin': 7.26.3(@babel/core@7.26.9)
+      '@babel/core': 7.26.9(supports-color@8.1.1)
+      '@babel/helper-create-regexp-features-plugin': 7.26.3(@babel/core@7.26.9(supports-color@8.1.1))
       '@babel/helper-plugin-utils': 7.26.5
 
-  '@babel/plugin-transform-duplicate-keys@7.25.9(@babel/core@7.26.9)':
+  '@babel/plugin-transform-duplicate-keys@7.25.9(@babel/core@7.26.9(supports-color@8.1.1))':
     dependencies:
-      '@babel/core': 7.26.9
+      '@babel/core': 7.26.9(supports-color@8.1.1)
       '@babel/helper-plugin-utils': 7.26.5
 
-  '@babel/plugin-transform-duplicate-named-capturing-groups-regex@7.25.9(@babel/core@7.26.9)':
+  '@babel/plugin-transform-duplicate-named-capturing-groups-regex@7.25.9(@babel/core@7.26.9(supports-color@8.1.1))':
     dependencies:
-      '@babel/core': 7.26.9
-      '@babel/helper-create-regexp-features-plugin': 7.26.3(@babel/core@7.26.9)
+      '@babel/core': 7.26.9(supports-color@8.1.1)
+      '@babel/helper-create-regexp-features-plugin': 7.26.3(@babel/core@7.26.9(supports-color@8.1.1))
       '@babel/helper-plugin-utils': 7.26.5
 
-  '@babel/plugin-transform-dynamic-import@7.25.9(@babel/core@7.26.9)':
+  '@babel/plugin-transform-dynamic-import@7.25.9(@babel/core@7.26.9(supports-color@8.1.1))':
     dependencies:
-      '@babel/core': 7.26.9
+      '@babel/core': 7.26.9(supports-color@8.1.1)
       '@babel/helper-plugin-utils': 7.26.5
 
-  '@babel/plugin-transform-exponentiation-operator@7.26.3(@babel/core@7.26.9)':
+  '@babel/plugin-transform-exponentiation-operator@7.26.3(@babel/core@7.26.9(supports-color@8.1.1))':
     dependencies:
-      '@babel/core': 7.26.9
+      '@babel/core': 7.26.9(supports-color@8.1.1)
       '@babel/helper-plugin-utils': 7.26.5
 
-  '@babel/plugin-transform-export-namespace-from@7.25.9(@babel/core@7.26.9)':
+  '@babel/plugin-transform-export-namespace-from@7.25.9(@babel/core@7.26.9(supports-color@8.1.1))':
     dependencies:
-      '@babel/core': 7.26.9
+      '@babel/core': 7.26.9(supports-color@8.1.1)
       '@babel/helper-plugin-utils': 7.26.5
 
-  '@babel/plugin-transform-for-of@7.26.9(@babel/core@7.26.9)':
+  '@babel/plugin-transform-for-of@7.26.9(@babel/core@7.26.9(supports-color@8.1.1))(supports-color@8.1.1)':
     dependencies:
-      '@babel/core': 7.26.9
+      '@babel/core': 7.26.9(supports-color@8.1.1)
       '@babel/helper-plugin-utils': 7.26.5
-      '@babel/helper-skip-transparent-expression-wrappers': 7.25.9
+      '@babel/helper-skip-transparent-expression-wrappers': 7.25.9(supports-color@8.1.1)
     transitivePeerDependencies:
       - supports-color
 
-  '@babel/plugin-transform-function-name@7.25.9(@babel/core@7.26.9)':
+  '@babel/plugin-transform-function-name@7.25.9(@babel/core@7.26.9(supports-color@8.1.1))(supports-color@8.1.1)':
     dependencies:
-      '@babel/core': 7.26.9
+      '@babel/core': 7.26.9(supports-color@8.1.1)
       '@babel/helper-compilation-targets': 7.26.5
       '@babel/helper-plugin-utils': 7.26.5
-      '@babel/traverse': 7.26.9(supports-color@5.5.0)
+      '@babel/traverse': 7.26.9(supports-color@8.1.1)
     transitivePeerDependencies:
       - supports-color
 
-  '@babel/plugin-transform-json-strings@7.25.9(@babel/core@7.26.9)':
+  '@babel/plugin-transform-json-strings@7.25.9(@babel/core@7.26.9(supports-color@8.1.1))':
     dependencies:
-      '@babel/core': 7.26.9
+      '@babel/core': 7.26.9(supports-color@8.1.1)
       '@babel/helper-plugin-utils': 7.26.5
 
-  '@babel/plugin-transform-literals@7.25.9(@babel/core@7.26.9)':
+  '@babel/plugin-transform-literals@7.25.9(@babel/core@7.26.9(supports-color@8.1.1))':
     dependencies:
-      '@babel/core': 7.26.9
+      '@babel/core': 7.26.9(supports-color@8.1.1)
       '@babel/helper-plugin-utils': 7.26.5
 
-  '@babel/plugin-transform-logical-assignment-operators@7.25.9(@babel/core@7.26.9)':
+  '@babel/plugin-transform-logical-assignment-operators@7.25.9(@babel/core@7.26.9(supports-color@8.1.1))':
     dependencies:
-      '@babel/core': 7.26.9
+      '@babel/core': 7.26.9(supports-color@8.1.1)
       '@babel/helper-plugin-utils': 7.26.5
 
-  '@babel/plugin-transform-member-expression-literals@7.25.9(@babel/core@7.26.9)':
+  '@babel/plugin-transform-member-expression-literals@7.25.9(@babel/core@7.26.9(supports-color@8.1.1))':
     dependencies:
-      '@babel/core': 7.26.9
+      '@babel/core': 7.26.9(supports-color@8.1.1)
       '@babel/helper-plugin-utils': 7.26.5
 
-  '@babel/plugin-transform-modules-amd@7.25.9(@babel/core@7.26.9)':
+  '@babel/plugin-transform-modules-amd@7.25.9(@babel/core@7.26.9(supports-color@8.1.1))(supports-color@8.1.1)':
     dependencies:
-      '@babel/core': 7.26.9
-      '@babel/helper-module-transforms': 7.26.0(@babel/core@7.26.9)
-      '@babel/helper-plugin-utils': 7.26.5
-    transitivePeerDependencies:
-      - supports-color
-
-  '@babel/plugin-transform-modules-commonjs@7.26.3(@babel/core@7.26.9)':
-    dependencies:
-      '@babel/core': 7.26.9
-      '@babel/helper-module-transforms': 7.26.0(@babel/core@7.26.9)
+      '@babel/core': 7.26.9(supports-color@8.1.1)
+      '@babel/helper-module-transforms': 7.26.0(@babel/core@7.26.9(supports-color@8.1.1))(supports-color@8.1.1)
       '@babel/helper-plugin-utils': 7.26.5
     transitivePeerDependencies:
       - supports-color
 
-  '@babel/plugin-transform-modules-systemjs@7.25.9(@babel/core@7.26.9)':
+  '@babel/plugin-transform-modules-commonjs@7.26.3(@babel/core@7.26.9(supports-color@8.1.1))(supports-color@8.1.1)':
     dependencies:
-      '@babel/core': 7.26.9
-      '@babel/helper-module-transforms': 7.26.0(@babel/core@7.26.9)
+      '@babel/core': 7.26.9(supports-color@8.1.1)
+      '@babel/helper-module-transforms': 7.26.0(@babel/core@7.26.9(supports-color@8.1.1))(supports-color@8.1.1)
+      '@babel/helper-plugin-utils': 7.26.5
+    transitivePeerDependencies:
+      - supports-color
+
+  '@babel/plugin-transform-modules-systemjs@7.25.9(@babel/core@7.26.9(supports-color@8.1.1))(supports-color@8.1.1)':
+    dependencies:
+      '@babel/core': 7.26.9(supports-color@8.1.1)
+      '@babel/helper-module-transforms': 7.26.0(@babel/core@7.26.9(supports-color@8.1.1))(supports-color@8.1.1)
       '@babel/helper-plugin-utils': 7.26.5
       '@babel/helper-validator-identifier': 7.25.9
-      '@babel/traverse': 7.26.9(supports-color@5.5.0)
+      '@babel/traverse': 7.26.9(supports-color@8.1.1)
     transitivePeerDependencies:
       - supports-color
 
-  '@babel/plugin-transform-modules-umd@7.25.9(@babel/core@7.26.9)':
+  '@babel/plugin-transform-modules-umd@7.25.9(@babel/core@7.26.9(supports-color@8.1.1))(supports-color@8.1.1)':
     dependencies:
-      '@babel/core': 7.26.9
-      '@babel/helper-module-transforms': 7.26.0(@babel/core@7.26.9)
+      '@babel/core': 7.26.9(supports-color@8.1.1)
+      '@babel/helper-module-transforms': 7.26.0(@babel/core@7.26.9(supports-color@8.1.1))(supports-color@8.1.1)
       '@babel/helper-plugin-utils': 7.26.5
     transitivePeerDependencies:
       - supports-color
 
-  '@babel/plugin-transform-named-capturing-groups-regex@7.25.9(@babel/core@7.26.9)':
+  '@babel/plugin-transform-named-capturing-groups-regex@7.25.9(@babel/core@7.26.9(supports-color@8.1.1))':
     dependencies:
-      '@babel/core': 7.26.9
-      '@babel/helper-create-regexp-features-plugin': 7.26.3(@babel/core@7.26.9)
+      '@babel/core': 7.26.9(supports-color@8.1.1)
+      '@babel/helper-create-regexp-features-plugin': 7.26.3(@babel/core@7.26.9(supports-color@8.1.1))
       '@babel/helper-plugin-utils': 7.26.5
 
-  '@babel/plugin-transform-new-target@7.25.9(@babel/core@7.26.9)':
+  '@babel/plugin-transform-new-target@7.25.9(@babel/core@7.26.9(supports-color@8.1.1))':
     dependencies:
-      '@babel/core': 7.26.9
+      '@babel/core': 7.26.9(supports-color@8.1.1)
       '@babel/helper-plugin-utils': 7.26.5
 
-  '@babel/plugin-transform-nullish-coalescing-operator@7.26.6(@babel/core@7.26.9)':
+  '@babel/plugin-transform-nullish-coalescing-operator@7.26.6(@babel/core@7.26.9(supports-color@8.1.1))':
     dependencies:
-      '@babel/core': 7.26.9
+      '@babel/core': 7.26.9(supports-color@8.1.1)
       '@babel/helper-plugin-utils': 7.26.5
 
-  '@babel/plugin-transform-numeric-separator@7.25.9(@babel/core@7.26.9)':
+  '@babel/plugin-transform-numeric-separator@7.25.9(@babel/core@7.26.9(supports-color@8.1.1))':
     dependencies:
-      '@babel/core': 7.26.9
+      '@babel/core': 7.26.9(supports-color@8.1.1)
       '@babel/helper-plugin-utils': 7.26.5
 
-  '@babel/plugin-transform-object-rest-spread@7.25.9(@babel/core@7.26.9)':
+  '@babel/plugin-transform-object-rest-spread@7.25.9(@babel/core@7.26.9(supports-color@8.1.1))':
     dependencies:
-      '@babel/core': 7.26.9
+      '@babel/core': 7.26.9(supports-color@8.1.1)
       '@babel/helper-compilation-targets': 7.26.5
       '@babel/helper-plugin-utils': 7.26.5
-      '@babel/plugin-transform-parameters': 7.25.9(@babel/core@7.26.9)
+      '@babel/plugin-transform-parameters': 7.25.9(@babel/core@7.26.9(supports-color@8.1.1))
 
-  '@babel/plugin-transform-object-super@7.25.9(@babel/core@7.26.9)':
+  '@babel/plugin-transform-object-super@7.25.9(@babel/core@7.26.9(supports-color@8.1.1))(supports-color@8.1.1)':
     dependencies:
-      '@babel/core': 7.26.9
+      '@babel/core': 7.26.9(supports-color@8.1.1)
       '@babel/helper-plugin-utils': 7.26.5
-      '@babel/helper-replace-supers': 7.26.5(@babel/core@7.26.9)
+      '@babel/helper-replace-supers': 7.26.5(@babel/core@7.26.9(supports-color@8.1.1))(supports-color@8.1.1)
     transitivePeerDependencies:
       - supports-color
 
-  '@babel/plugin-transform-optional-catch-binding@7.25.9(@babel/core@7.26.9)':
+  '@babel/plugin-transform-optional-catch-binding@7.25.9(@babel/core@7.26.9(supports-color@8.1.1))':
     dependencies:
-      '@babel/core': 7.26.9
+      '@babel/core': 7.26.9(supports-color@8.1.1)
       '@babel/helper-plugin-utils': 7.26.5
 
-  '@babel/plugin-transform-optional-chaining@7.25.9(@babel/core@7.26.9)':
+  '@babel/plugin-transform-optional-chaining@7.25.9(@babel/core@7.26.9(supports-color@8.1.1))(supports-color@8.1.1)':
     dependencies:
-      '@babel/core': 7.26.9
+      '@babel/core': 7.26.9(supports-color@8.1.1)
       '@babel/helper-plugin-utils': 7.26.5
-      '@babel/helper-skip-transparent-expression-wrappers': 7.25.9
+      '@babel/helper-skip-transparent-expression-wrappers': 7.25.9(supports-color@8.1.1)
     transitivePeerDependencies:
       - supports-color
 
-  '@babel/plugin-transform-parameters@7.25.9(@babel/core@7.26.9)':
+  '@babel/plugin-transform-parameters@7.25.9(@babel/core@7.26.9(supports-color@8.1.1))':
     dependencies:
-      '@babel/core': 7.26.9
+      '@babel/core': 7.26.9(supports-color@8.1.1)
       '@babel/helper-plugin-utils': 7.26.5
 
-  '@babel/plugin-transform-private-methods@7.25.9(@babel/core@7.26.9)':
+  '@babel/plugin-transform-private-methods@7.25.9(@babel/core@7.26.9(supports-color@8.1.1))(supports-color@8.1.1)':
     dependencies:
-      '@babel/core': 7.26.9
-      '@babel/helper-create-class-features-plugin': 7.26.9(@babel/core@7.26.9)
+      '@babel/core': 7.26.9(supports-color@8.1.1)
+      '@babel/helper-create-class-features-plugin': 7.26.9(@babel/core@7.26.9(supports-color@8.1.1))(supports-color@8.1.1)
       '@babel/helper-plugin-utils': 7.26.5
     transitivePeerDependencies:
       - supports-color
 
-  '@babel/plugin-transform-private-property-in-object@7.25.9(@babel/core@7.26.9)':
+  '@babel/plugin-transform-private-property-in-object@7.25.9(@babel/core@7.26.9(supports-color@8.1.1))(supports-color@8.1.1)':
     dependencies:
-      '@babel/core': 7.26.9
+      '@babel/core': 7.26.9(supports-color@8.1.1)
       '@babel/helper-annotate-as-pure': 7.25.9
-      '@babel/helper-create-class-features-plugin': 7.26.9(@babel/core@7.26.9)
+      '@babel/helper-create-class-features-plugin': 7.26.9(@babel/core@7.26.9(supports-color@8.1.1))(supports-color@8.1.1)
       '@babel/helper-plugin-utils': 7.26.5
     transitivePeerDependencies:
       - supports-color
 
-  '@babel/plugin-transform-property-literals@7.25.9(@babel/core@7.26.9)':
+  '@babel/plugin-transform-property-literals@7.25.9(@babel/core@7.26.9(supports-color@8.1.1))':
     dependencies:
-      '@babel/core': 7.26.9
+      '@babel/core': 7.26.9(supports-color@8.1.1)
       '@babel/helper-plugin-utils': 7.26.5
 
-  '@babel/plugin-transform-react-display-name@7.25.9(@babel/core@7.26.9)':
+  '@babel/plugin-transform-react-display-name@7.25.9(@babel/core@7.26.9(supports-color@8.1.1))':
     dependencies:
-      '@babel/core': 7.26.9
+      '@babel/core': 7.26.9(supports-color@8.1.1)
       '@babel/helper-plugin-utils': 7.26.5
 
-  '@babel/plugin-transform-react-jsx-development@7.25.9(@babel/core@7.26.9)':
+  '@babel/plugin-transform-react-jsx-development@7.25.9(@babel/core@7.26.9(supports-color@8.1.1))(supports-color@8.1.1)':
     dependencies:
-      '@babel/core': 7.26.9
-      '@babel/plugin-transform-react-jsx': 7.25.9(@babel/core@7.26.9)
+      '@babel/core': 7.26.9(supports-color@8.1.1)
+      '@babel/plugin-transform-react-jsx': 7.25.9(@babel/core@7.26.9(supports-color@8.1.1))(supports-color@8.1.1)
     transitivePeerDependencies:
       - supports-color
 
-  '@babel/plugin-transform-react-jsx-self@7.25.9(@babel/core@7.26.9)':
+  '@babel/plugin-transform-react-jsx-self@7.25.9(@babel/core@7.26.9(supports-color@8.1.1))':
     dependencies:
-      '@babel/core': 7.26.9
+      '@babel/core': 7.26.9(supports-color@8.1.1)
       '@babel/helper-plugin-utils': 7.26.5
 
-  '@babel/plugin-transform-react-jsx-source@7.25.9(@babel/core@7.26.9)':
+  '@babel/plugin-transform-react-jsx-source@7.25.9(@babel/core@7.26.9(supports-color@8.1.1))':
     dependencies:
-      '@babel/core': 7.26.9
+      '@babel/core': 7.26.9(supports-color@8.1.1)
       '@babel/helper-plugin-utils': 7.26.5
 
-  '@babel/plugin-transform-react-jsx@7.25.9(@babel/core@7.26.9)':
+  '@babel/plugin-transform-react-jsx@7.25.9(@babel/core@7.26.9(supports-color@8.1.1))(supports-color@8.1.1)':
     dependencies:
-      '@babel/core': 7.26.9
+      '@babel/core': 7.26.9(supports-color@8.1.1)
       '@babel/helper-annotate-as-pure': 7.25.9
-      '@babel/helper-module-imports': 7.25.9(supports-color@5.5.0)
+      '@babel/helper-module-imports': 7.25.9(supports-color@8.1.1)
       '@babel/helper-plugin-utils': 7.26.5
-      '@babel/plugin-syntax-jsx': 7.25.9(@babel/core@7.26.9)
+      '@babel/plugin-syntax-jsx': 7.25.9(@babel/core@7.26.9(supports-color@8.1.1))
       '@babel/types': 7.26.9
     transitivePeerDependencies:
       - supports-color
 
-  '@babel/plugin-transform-react-pure-annotations@7.25.9(@babel/core@7.26.9)':
+  '@babel/plugin-transform-react-pure-annotations@7.25.9(@babel/core@7.26.9(supports-color@8.1.1))':
     dependencies:
-      '@babel/core': 7.26.9
+      '@babel/core': 7.26.9(supports-color@8.1.1)
       '@babel/helper-annotate-as-pure': 7.25.9
       '@babel/helper-plugin-utils': 7.26.5
 
-  '@babel/plugin-transform-regenerator@7.25.9(@babel/core@7.26.9)':
+  '@babel/plugin-transform-regenerator@7.25.9(@babel/core@7.26.9(supports-color@8.1.1))':
     dependencies:
-      '@babel/core': 7.26.9
+      '@babel/core': 7.26.9(supports-color@8.1.1)
       '@babel/helper-plugin-utils': 7.26.5
       regenerator-transform: 0.15.2
 
-  '@babel/plugin-transform-regexp-modifiers@7.26.0(@babel/core@7.26.9)':
+  '@babel/plugin-transform-regexp-modifiers@7.26.0(@babel/core@7.26.9(supports-color@8.1.1))':
     dependencies:
-      '@babel/core': 7.26.9
-      '@babel/helper-create-regexp-features-plugin': 7.26.3(@babel/core@7.26.9)
+      '@babel/core': 7.26.9(supports-color@8.1.1)
+      '@babel/helper-create-regexp-features-plugin': 7.26.3(@babel/core@7.26.9(supports-color@8.1.1))
       '@babel/helper-plugin-utils': 7.26.5
 
-  '@babel/plugin-transform-reserved-words@7.25.9(@babel/core@7.26.9)':
+  '@babel/plugin-transform-reserved-words@7.25.9(@babel/core@7.26.9(supports-color@8.1.1))':
     dependencies:
-      '@babel/core': 7.26.9
+      '@babel/core': 7.26.9(supports-color@8.1.1)
       '@babel/helper-plugin-utils': 7.26.5
 
-  '@babel/plugin-transform-shorthand-properties@7.25.9(@babel/core@7.26.9)':
+  '@babel/plugin-transform-shorthand-properties@7.25.9(@babel/core@7.26.9(supports-color@8.1.1))':
     dependencies:
-      '@babel/core': 7.26.9
+      '@babel/core': 7.26.9(supports-color@8.1.1)
       '@babel/helper-plugin-utils': 7.26.5
 
-  '@babel/plugin-transform-spread@7.25.9(@babel/core@7.26.9)':
+  '@babel/plugin-transform-spread@7.25.9(@babel/core@7.26.9(supports-color@8.1.1))(supports-color@8.1.1)':
     dependencies:
-      '@babel/core': 7.26.9
+      '@babel/core': 7.26.9(supports-color@8.1.1)
       '@babel/helper-plugin-utils': 7.26.5
-      '@babel/helper-skip-transparent-expression-wrappers': 7.25.9
+      '@babel/helper-skip-transparent-expression-wrappers': 7.25.9(supports-color@8.1.1)
     transitivePeerDependencies:
       - supports-color
 
-  '@babel/plugin-transform-sticky-regex@7.25.9(@babel/core@7.26.9)':
+  '@babel/plugin-transform-sticky-regex@7.25.9(@babel/core@7.26.9(supports-color@8.1.1))':
     dependencies:
-      '@babel/core': 7.26.9
+      '@babel/core': 7.26.9(supports-color@8.1.1)
       '@babel/helper-plugin-utils': 7.26.5
 
-  '@babel/plugin-transform-template-literals@7.26.8(@babel/core@7.26.9)':
+  '@babel/plugin-transform-template-literals@7.26.8(@babel/core@7.26.9(supports-color@8.1.1))':
     dependencies:
-      '@babel/core': 7.26.9
+      '@babel/core': 7.26.9(supports-color@8.1.1)
       '@babel/helper-plugin-utils': 7.26.5
 
-  '@babel/plugin-transform-typeof-symbol@7.26.7(@babel/core@7.26.9)':
+  '@babel/plugin-transform-typeof-symbol@7.26.7(@babel/core@7.26.9(supports-color@8.1.1))':
     dependencies:
-      '@babel/core': 7.26.9
+      '@babel/core': 7.26.9(supports-color@8.1.1)
       '@babel/helper-plugin-utils': 7.26.5
 
-  '@babel/plugin-transform-typescript@7.26.8(@babel/core@7.26.9)':
+  '@babel/plugin-transform-typescript@7.26.8(@babel/core@7.26.9(supports-color@8.1.1))(supports-color@8.1.1)':
     dependencies:
-      '@babel/core': 7.26.9
+      '@babel/core': 7.26.9(supports-color@8.1.1)
       '@babel/helper-annotate-as-pure': 7.25.9
-      '@babel/helper-create-class-features-plugin': 7.26.9(@babel/core@7.26.9)
+      '@babel/helper-create-class-features-plugin': 7.26.9(@babel/core@7.26.9(supports-color@8.1.1))(supports-color@8.1.1)
       '@babel/helper-plugin-utils': 7.26.5
-      '@babel/helper-skip-transparent-expression-wrappers': 7.25.9
-      '@babel/plugin-syntax-typescript': 7.25.9(@babel/core@7.26.9)
+      '@babel/helper-skip-transparent-expression-wrappers': 7.25.9(supports-color@8.1.1)
+      '@babel/plugin-syntax-typescript': 7.25.9(@babel/core@7.26.9(supports-color@8.1.1))
     transitivePeerDependencies:
       - supports-color
 
-  '@babel/plugin-transform-unicode-escapes@7.25.9(@babel/core@7.26.9)':
+  '@babel/plugin-transform-unicode-escapes@7.25.9(@babel/core@7.26.9(supports-color@8.1.1))':
     dependencies:
-      '@babel/core': 7.26.9
+      '@babel/core': 7.26.9(supports-color@8.1.1)
       '@babel/helper-plugin-utils': 7.26.5
 
-  '@babel/plugin-transform-unicode-property-regex@7.25.9(@babel/core@7.26.9)':
+  '@babel/plugin-transform-unicode-property-regex@7.25.9(@babel/core@7.26.9(supports-color@8.1.1))':
     dependencies:
-      '@babel/core': 7.26.9
-      '@babel/helper-create-regexp-features-plugin': 7.26.3(@babel/core@7.26.9)
+      '@babel/core': 7.26.9(supports-color@8.1.1)
+      '@babel/helper-create-regexp-features-plugin': 7.26.3(@babel/core@7.26.9(supports-color@8.1.1))
       '@babel/helper-plugin-utils': 7.26.5
 
-  '@babel/plugin-transform-unicode-regex@7.25.9(@babel/core@7.26.9)':
+  '@babel/plugin-transform-unicode-regex@7.25.9(@babel/core@7.26.9(supports-color@8.1.1))':
     dependencies:
-      '@babel/core': 7.26.9
-      '@babel/helper-create-regexp-features-plugin': 7.26.3(@babel/core@7.26.9)
+      '@babel/core': 7.26.9(supports-color@8.1.1)
+      '@babel/helper-create-regexp-features-plugin': 7.26.3(@babel/core@7.26.9(supports-color@8.1.1))
       '@babel/helper-plugin-utils': 7.26.5
 
-  '@babel/plugin-transform-unicode-sets-regex@7.25.9(@babel/core@7.26.9)':
+  '@babel/plugin-transform-unicode-sets-regex@7.25.9(@babel/core@7.26.9(supports-color@8.1.1))':
     dependencies:
-      '@babel/core': 7.26.9
-      '@babel/helper-create-regexp-features-plugin': 7.26.3(@babel/core@7.26.9)
+      '@babel/core': 7.26.9(supports-color@8.1.1)
+      '@babel/helper-create-regexp-features-plugin': 7.26.3(@babel/core@7.26.9(supports-color@8.1.1))
       '@babel/helper-plugin-utils': 7.26.5
 
-  '@babel/preset-env@7.26.9(@babel/core@7.26.9)':
+  '@babel/preset-env@7.26.9(@babel/core@7.26.9(supports-color@8.1.1))(supports-color@8.1.1)':
     dependencies:
       '@babel/compat-data': 7.26.8
-      '@babel/core': 7.26.9
+      '@babel/core': 7.26.9(supports-color@8.1.1)
       '@babel/helper-compilation-targets': 7.26.5
       '@babel/helper-plugin-utils': 7.26.5
       '@babel/helper-validator-option': 7.25.9
-      '@babel/plugin-bugfix-firefox-class-in-computed-class-key': 7.25.9(@babel/core@7.26.9)
-      '@babel/plugin-bugfix-safari-class-field-initializer-scope': 7.25.9(@babel/core@7.26.9)
-      '@babel/plugin-bugfix-safari-id-destructuring-collision-in-function-expression': 7.25.9(@babel/core@7.26.9)
-      '@babel/plugin-bugfix-v8-spread-parameters-in-optional-chaining': 7.25.9(@babel/core@7.26.9)
-      '@babel/plugin-bugfix-v8-static-class-fields-redefine-readonly': 7.25.9(@babel/core@7.26.9)
-      '@babel/plugin-proposal-private-property-in-object': 7.21.0-placeholder-for-preset-env.2(@babel/core@7.26.9)
-      '@babel/plugin-syntax-import-assertions': 7.26.0(@babel/core@7.26.9)
-      '@babel/plugin-syntax-import-attributes': 7.26.0(@babel/core@7.26.9)
-      '@babel/plugin-syntax-unicode-sets-regex': 7.18.6(@babel/core@7.26.9)
-      '@babel/plugin-transform-arrow-functions': 7.25.9(@babel/core@7.26.9)
-      '@babel/plugin-transform-async-generator-functions': 7.26.8(@babel/core@7.26.9)
-      '@babel/plugin-transform-async-to-generator': 7.25.9(@babel/core@7.26.9)
-      '@babel/plugin-transform-block-scoped-functions': 7.26.5(@babel/core@7.26.9)
-      '@babel/plugin-transform-block-scoping': 7.25.9(@babel/core@7.26.9)
-      '@babel/plugin-transform-class-properties': 7.25.9(@babel/core@7.26.9)
-      '@babel/plugin-transform-class-static-block': 7.26.0(@babel/core@7.26.9)
-      '@babel/plugin-transform-classes': 7.25.9(@babel/core@7.26.9)
-      '@babel/plugin-transform-computed-properties': 7.25.9(@babel/core@7.26.9)
-      '@babel/plugin-transform-destructuring': 7.25.9(@babel/core@7.26.9)
-      '@babel/plugin-transform-dotall-regex': 7.25.9(@babel/core@7.26.9)
-      '@babel/plugin-transform-duplicate-keys': 7.25.9(@babel/core@7.26.9)
-      '@babel/plugin-transform-duplicate-named-capturing-groups-regex': 7.25.9(@babel/core@7.26.9)
-      '@babel/plugin-transform-dynamic-import': 7.25.9(@babel/core@7.26.9)
-      '@babel/plugin-transform-exponentiation-operator': 7.26.3(@babel/core@7.26.9)
-      '@babel/plugin-transform-export-namespace-from': 7.25.9(@babel/core@7.26.9)
-      '@babel/plugin-transform-for-of': 7.26.9(@babel/core@7.26.9)
-      '@babel/plugin-transform-function-name': 7.25.9(@babel/core@7.26.9)
-      '@babel/plugin-transform-json-strings': 7.25.9(@babel/core@7.26.9)
-      '@babel/plugin-transform-literals': 7.25.9(@babel/core@7.26.9)
-      '@babel/plugin-transform-logical-assignment-operators': 7.25.9(@babel/core@7.26.9)
-      '@babel/plugin-transform-member-expression-literals': 7.25.9(@babel/core@7.26.9)
-      '@babel/plugin-transform-modules-amd': 7.25.9(@babel/core@7.26.9)
-      '@babel/plugin-transform-modules-commonjs': 7.26.3(@babel/core@7.26.9)
-      '@babel/plugin-transform-modules-systemjs': 7.25.9(@babel/core@7.26.9)
-      '@babel/plugin-transform-modules-umd': 7.25.9(@babel/core@7.26.9)
-      '@babel/plugin-transform-named-capturing-groups-regex': 7.25.9(@babel/core@7.26.9)
-      '@babel/plugin-transform-new-target': 7.25.9(@babel/core@7.26.9)
-      '@babel/plugin-transform-nullish-coalescing-operator': 7.26.6(@babel/core@7.26.9)
-      '@babel/plugin-transform-numeric-separator': 7.25.9(@babel/core@7.26.9)
-      '@babel/plugin-transform-object-rest-spread': 7.25.9(@babel/core@7.26.9)
-      '@babel/plugin-transform-object-super': 7.25.9(@babel/core@7.26.9)
-      '@babel/plugin-transform-optional-catch-binding': 7.25.9(@babel/core@7.26.9)
-      '@babel/plugin-transform-optional-chaining': 7.25.9(@babel/core@7.26.9)
-      '@babel/plugin-transform-parameters': 7.25.9(@babel/core@7.26.9)
-      '@babel/plugin-transform-private-methods': 7.25.9(@babel/core@7.26.9)
-      '@babel/plugin-transform-private-property-in-object': 7.25.9(@babel/core@7.26.9)
-      '@babel/plugin-transform-property-literals': 7.25.9(@babel/core@7.26.9)
-      '@babel/plugin-transform-regenerator': 7.25.9(@babel/core@7.26.9)
-      '@babel/plugin-transform-regexp-modifiers': 7.26.0(@babel/core@7.26.9)
-      '@babel/plugin-transform-reserved-words': 7.25.9(@babel/core@7.26.9)
-      '@babel/plugin-transform-shorthand-properties': 7.25.9(@babel/core@7.26.9)
-      '@babel/plugin-transform-spread': 7.25.9(@babel/core@7.26.9)
-      '@babel/plugin-transform-sticky-regex': 7.25.9(@babel/core@7.26.9)
-      '@babel/plugin-transform-template-literals': 7.26.8(@babel/core@7.26.9)
-      '@babel/plugin-transform-typeof-symbol': 7.26.7(@babel/core@7.26.9)
-      '@babel/plugin-transform-unicode-escapes': 7.25.9(@babel/core@7.26.9)
-      '@babel/plugin-transform-unicode-property-regex': 7.25.9(@babel/core@7.26.9)
-      '@babel/plugin-transform-unicode-regex': 7.25.9(@babel/core@7.26.9)
-      '@babel/plugin-transform-unicode-sets-regex': 7.25.9(@babel/core@7.26.9)
-      '@babel/preset-modules': 0.1.6-no-external-plugins(@babel/core@7.26.9)
-      babel-plugin-polyfill-corejs2: 0.4.12(@babel/core@7.26.9)
-      babel-plugin-polyfill-corejs3: 0.11.1(@babel/core@7.26.9)
-      babel-plugin-polyfill-regenerator: 0.6.3(@babel/core@7.26.9)
+      '@babel/plugin-bugfix-firefox-class-in-computed-class-key': 7.25.9(@babel/core@7.26.9(supports-color@8.1.1))(supports-color@8.1.1)
+      '@babel/plugin-bugfix-safari-class-field-initializer-scope': 7.25.9(@babel/core@7.26.9(supports-color@8.1.1))
+      '@babel/plugin-bugfix-safari-id-destructuring-collision-in-function-expression': 7.25.9(@babel/core@7.26.9(supports-color@8.1.1))
+      '@babel/plugin-bugfix-v8-spread-parameters-in-optional-chaining': 7.25.9(@babel/core@7.26.9(supports-color@8.1.1))(supports-color@8.1.1)
+      '@babel/plugin-bugfix-v8-static-class-fields-redefine-readonly': 7.25.9(@babel/core@7.26.9(supports-color@8.1.1))(supports-color@8.1.1)
+      '@babel/plugin-proposal-private-property-in-object': 7.21.0-placeholder-for-preset-env.2(@babel/core@7.26.9(supports-color@8.1.1))
+      '@babel/plugin-syntax-import-assertions': 7.26.0(@babel/core@7.26.9(supports-color@8.1.1))
+      '@babel/plugin-syntax-import-attributes': 7.26.0(@babel/core@7.26.9(supports-color@8.1.1))
+      '@babel/plugin-syntax-unicode-sets-regex': 7.18.6(@babel/core@7.26.9(supports-color@8.1.1))
+      '@babel/plugin-transform-arrow-functions': 7.25.9(@babel/core@7.26.9(supports-color@8.1.1))
+      '@babel/plugin-transform-async-generator-functions': 7.26.8(@babel/core@7.26.9(supports-color@8.1.1))(supports-color@8.1.1)
+      '@babel/plugin-transform-async-to-generator': 7.25.9(@babel/core@7.26.9(supports-color@8.1.1))(supports-color@8.1.1)
+      '@babel/plugin-transform-block-scoped-functions': 7.26.5(@babel/core@7.26.9(supports-color@8.1.1))
+      '@babel/plugin-transform-block-scoping': 7.25.9(@babel/core@7.26.9(supports-color@8.1.1))
+      '@babel/plugin-transform-class-properties': 7.25.9(@babel/core@7.26.9(supports-color@8.1.1))(supports-color@8.1.1)
+      '@babel/plugin-transform-class-static-block': 7.26.0(@babel/core@7.26.9(supports-color@8.1.1))(supports-color@8.1.1)
+      '@babel/plugin-transform-classes': 7.25.9(@babel/core@7.26.9(supports-color@8.1.1))(supports-color@8.1.1)
+      '@babel/plugin-transform-computed-properties': 7.25.9(@babel/core@7.26.9(supports-color@8.1.1))
+      '@babel/plugin-transform-destructuring': 7.25.9(@babel/core@7.26.9(supports-color@8.1.1))
+      '@babel/plugin-transform-dotall-regex': 7.25.9(@babel/core@7.26.9(supports-color@8.1.1))
+      '@babel/plugin-transform-duplicate-keys': 7.25.9(@babel/core@7.26.9(supports-color@8.1.1))
+      '@babel/plugin-transform-duplicate-named-capturing-groups-regex': 7.25.9(@babel/core@7.26.9(supports-color@8.1.1))
+      '@babel/plugin-transform-dynamic-import': 7.25.9(@babel/core@7.26.9(supports-color@8.1.1))
+      '@babel/plugin-transform-exponentiation-operator': 7.26.3(@babel/core@7.26.9(supports-color@8.1.1))
+      '@babel/plugin-transform-export-namespace-from': 7.25.9(@babel/core@7.26.9(supports-color@8.1.1))
+      '@babel/plugin-transform-for-of': 7.26.9(@babel/core@7.26.9(supports-color@8.1.1))(supports-color@8.1.1)
+      '@babel/plugin-transform-function-name': 7.25.9(@babel/core@7.26.9(supports-color@8.1.1))(supports-color@8.1.1)
+      '@babel/plugin-transform-json-strings': 7.25.9(@babel/core@7.26.9(supports-color@8.1.1))
+      '@babel/plugin-transform-literals': 7.25.9(@babel/core@7.26.9(supports-color@8.1.1))
+      '@babel/plugin-transform-logical-assignment-operators': 7.25.9(@babel/core@7.26.9(supports-color@8.1.1))
+      '@babel/plugin-transform-member-expression-literals': 7.25.9(@babel/core@7.26.9(supports-color@8.1.1))
+      '@babel/plugin-transform-modules-amd': 7.25.9(@babel/core@7.26.9(supports-color@8.1.1))(supports-color@8.1.1)
+      '@babel/plugin-transform-modules-commonjs': 7.26.3(@babel/core@7.26.9(supports-color@8.1.1))(supports-color@8.1.1)
+      '@babel/plugin-transform-modules-systemjs': 7.25.9(@babel/core@7.26.9(supports-color@8.1.1))(supports-color@8.1.1)
+      '@babel/plugin-transform-modules-umd': 7.25.9(@babel/core@7.26.9(supports-color@8.1.1))(supports-color@8.1.1)
+      '@babel/plugin-transform-named-capturing-groups-regex': 7.25.9(@babel/core@7.26.9(supports-color@8.1.1))
+      '@babel/plugin-transform-new-target': 7.25.9(@babel/core@7.26.9(supports-color@8.1.1))
+      '@babel/plugin-transform-nullish-coalescing-operator': 7.26.6(@babel/core@7.26.9(supports-color@8.1.1))
+      '@babel/plugin-transform-numeric-separator': 7.25.9(@babel/core@7.26.9(supports-color@8.1.1))
+      '@babel/plugin-transform-object-rest-spread': 7.25.9(@babel/core@7.26.9(supports-color@8.1.1))
+      '@babel/plugin-transform-object-super': 7.25.9(@babel/core@7.26.9(supports-color@8.1.1))(supports-color@8.1.1)
+      '@babel/plugin-transform-optional-catch-binding': 7.25.9(@babel/core@7.26.9(supports-color@8.1.1))
+      '@babel/plugin-transform-optional-chaining': 7.25.9(@babel/core@7.26.9(supports-color@8.1.1))(supports-color@8.1.1)
+      '@babel/plugin-transform-parameters': 7.25.9(@babel/core@7.26.9(supports-color@8.1.1))
+      '@babel/plugin-transform-private-methods': 7.25.9(@babel/core@7.26.9(supports-color@8.1.1))(supports-color@8.1.1)
+      '@babel/plugin-transform-private-property-in-object': 7.25.9(@babel/core@7.26.9(supports-color@8.1.1))(supports-color@8.1.1)
+      '@babel/plugin-transform-property-literals': 7.25.9(@babel/core@7.26.9(supports-color@8.1.1))
+      '@babel/plugin-transform-regenerator': 7.25.9(@babel/core@7.26.9(supports-color@8.1.1))
+      '@babel/plugin-transform-regexp-modifiers': 7.26.0(@babel/core@7.26.9(supports-color@8.1.1))
+      '@babel/plugin-transform-reserved-words': 7.25.9(@babel/core@7.26.9(supports-color@8.1.1))
+      '@babel/plugin-transform-shorthand-properties': 7.25.9(@babel/core@7.26.9(supports-color@8.1.1))
+      '@babel/plugin-transform-spread': 7.25.9(@babel/core@7.26.9(supports-color@8.1.1))(supports-color@8.1.1)
+      '@babel/plugin-transform-sticky-regex': 7.25.9(@babel/core@7.26.9(supports-color@8.1.1))
+      '@babel/plugin-transform-template-literals': 7.26.8(@babel/core@7.26.9(supports-color@8.1.1))
+      '@babel/plugin-transform-typeof-symbol': 7.26.7(@babel/core@7.26.9(supports-color@8.1.1))
+      '@babel/plugin-transform-unicode-escapes': 7.25.9(@babel/core@7.26.9(supports-color@8.1.1))
+      '@babel/plugin-transform-unicode-property-regex': 7.25.9(@babel/core@7.26.9(supports-color@8.1.1))
+      '@babel/plugin-transform-unicode-regex': 7.25.9(@babel/core@7.26.9(supports-color@8.1.1))
+      '@babel/plugin-transform-unicode-sets-regex': 7.25.9(@babel/core@7.26.9(supports-color@8.1.1))
+      '@babel/preset-modules': 0.1.6-no-external-plugins(@babel/core@7.26.9(supports-color@8.1.1))
+      babel-plugin-polyfill-corejs2: 0.4.12(@babel/core@7.26.9(supports-color@8.1.1))(supports-color@8.1.1)
+      babel-plugin-polyfill-corejs3: 0.11.1(@babel/core@7.26.9(supports-color@8.1.1))(supports-color@8.1.1)
+      babel-plugin-polyfill-regenerator: 0.6.3(@babel/core@7.26.9(supports-color@8.1.1))(supports-color@8.1.1)
       core-js-compat: 3.40.0
       semver: 6.3.1
     transitivePeerDependencies:
       - supports-color
 
-  '@babel/preset-modules@0.1.6-no-external-plugins(@babel/core@7.26.9)':
+  '@babel/preset-modules@0.1.6-no-external-plugins(@babel/core@7.26.9(supports-color@8.1.1))':
     dependencies:
-      '@babel/core': 7.26.9
+      '@babel/core': 7.26.9(supports-color@8.1.1)
       '@babel/helper-plugin-utils': 7.26.5
       '@babel/types': 7.26.9
       esutils: 2.0.3
 
-  '@babel/preset-react@7.26.3(@babel/core@7.26.9)':
+  '@babel/preset-react@7.26.3(@babel/core@7.26.9(supports-color@8.1.1))(supports-color@8.1.1)':
     dependencies:
-      '@babel/core': 7.26.9
+      '@babel/core': 7.26.9(supports-color@8.1.1)
       '@babel/helper-plugin-utils': 7.26.5
       '@babel/helper-validator-option': 7.25.9
-      '@babel/plugin-transform-react-display-name': 7.25.9(@babel/core@7.26.9)
-      '@babel/plugin-transform-react-jsx': 7.25.9(@babel/core@7.26.9)
-      '@babel/plugin-transform-react-jsx-development': 7.25.9(@babel/core@7.26.9)
-      '@babel/plugin-transform-react-pure-annotations': 7.25.9(@babel/core@7.26.9)
+      '@babel/plugin-transform-react-display-name': 7.25.9(@babel/core@7.26.9(supports-color@8.1.1))
+      '@babel/plugin-transform-react-jsx': 7.25.9(@babel/core@7.26.9(supports-color@8.1.1))(supports-color@8.1.1)
+      '@babel/plugin-transform-react-jsx-development': 7.25.9(@babel/core@7.26.9(supports-color@8.1.1))(supports-color@8.1.1)
+      '@babel/plugin-transform-react-pure-annotations': 7.25.9(@babel/core@7.26.9(supports-color@8.1.1))
     transitivePeerDependencies:
       - supports-color
 
-  '@babel/preset-typescript@7.26.0(@babel/core@7.26.9)':
+  '@babel/preset-typescript@7.26.0(@babel/core@7.26.9(supports-color@8.1.1))(supports-color@8.1.1)':
     dependencies:
-      '@babel/core': 7.26.9
+      '@babel/core': 7.26.9(supports-color@8.1.1)
       '@babel/helper-plugin-utils': 7.26.5
       '@babel/helper-validator-option': 7.25.9
-      '@babel/plugin-syntax-jsx': 7.25.9(@babel/core@7.26.9)
-      '@babel/plugin-transform-modules-commonjs': 7.26.3(@babel/core@7.26.9)
-      '@babel/plugin-transform-typescript': 7.26.8(@babel/core@7.26.9)
+      '@babel/plugin-syntax-jsx': 7.25.9(@babel/core@7.26.9(supports-color@8.1.1))
+      '@babel/plugin-transform-modules-commonjs': 7.26.3(@babel/core@7.26.9(supports-color@8.1.1))(supports-color@8.1.1)
+      '@babel/plugin-transform-typescript': 7.26.8(@babel/core@7.26.9(supports-color@8.1.1))(supports-color@8.1.1)
     transitivePeerDependencies:
       - supports-color
 
-  '@babel/register@7.25.9(@babel/core@7.26.9)':
+  '@babel/register@7.25.9(@babel/core@7.26.9(supports-color@8.1.1))':
     dependencies:
-      '@babel/core': 7.26.9
+      '@babel/core': 7.26.9(supports-color@8.1.1)
       clone-deep: 4.0.1
       find-cache-dir: 2.1.0
       make-dir: 2.1.0
@@ -6322,6 +6350,18 @@ snapshots:
       '@babel/template': 7.26.9
       '@babel/types': 7.26.9
       debug: 4.4.0(supports-color@5.5.0)
+      globals: 11.12.0
+    transitivePeerDependencies:
+      - supports-color
+
+  '@babel/traverse@7.26.9(supports-color@8.1.1)':
+    dependencies:
+      '@babel/code-frame': 7.26.2
+      '@babel/generator': 7.26.9
+      '@babel/parser': 7.26.9
+      '@babel/template': 7.26.9
+      '@babel/types': 7.26.9
+      debug: 4.4.0(supports-color@8.1.1)
       globals: 11.12.0
     transitivePeerDependencies:
       - supports-color
@@ -6680,14 +6720,14 @@ snapshots:
   '@esbuild/win32-x64@0.24.2':
     optional: true
 
-  '@eslint-community/eslint-utils@4.4.1(eslint@8.57.1)':
+  '@eslint-community/eslint-utils@4.4.1(eslint@8.57.1(supports-color@5.5.0))':
     dependencies:
-      eslint: 8.57.1
+      eslint: 8.57.1(supports-color@5.5.0)
       eslint-visitor-keys: 3.4.3
 
   '@eslint-community/regexpp@4.12.1': {}
 
-  '@eslint/eslintrc@2.1.4':
+  '@eslint/eslintrc@2.1.4(supports-color@5.5.0)':
     dependencies:
       ajv: 6.12.6
       debug: 4.4.0(supports-color@5.5.0)
@@ -6728,7 +6768,7 @@ snapshots:
 
   '@floating-ui/utils@0.2.9': {}
 
-  '@humanwhocodes/config-array@0.13.0':
+  '@humanwhocodes/config-array@0.13.0(supports-color@5.5.0)':
     dependencies:
       '@humanwhocodes/object-schema': 2.0.3
       debug: 4.4.0(supports-color@5.5.0)
@@ -6980,20 +7020,20 @@ snapshots:
       '@pnpm/network.ca-file': 1.0.2
       config-chain: 1.1.13
 
-  '@portabletext/block-tools@1.1.8(@sanity/types@3.76.1(@types/react@19.0.10)(debug@4.4.0))(@types/react@19.0.10)':
+  '@portabletext/block-tools@1.1.8(@sanity/types@3.76.1(@types/react@19.0.10)(debug@4.4.0(supports-color@5.5.0)))(@types/react@19.0.10)':
     dependencies:
-      '@sanity/types': 3.76.1(@types/react@19.0.10)(debug@4.4.0)
+      '@sanity/types': 3.76.1(@types/react@19.0.10)(debug@4.4.0(supports-color@5.5.0))
       '@types/react': 19.0.10
       get-random-values-esm: 1.0.2
       lodash: 4.17.21
 
-  '@portabletext/editor@1.34.1(@sanity/schema@3.76.1(@types/react@19.0.10)(debug@4.4.0))(@sanity/types@3.76.1(@types/react@19.0.10)(debug@4.4.0))(@types/react@19.0.10)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(rxjs@7.8.1)':
+  '@portabletext/editor@1.34.1(@sanity/schema@3.76.1(@types/react@19.0.10)(debug@4.4.0(supports-color@5.5.0))(supports-color@8.1.1))(@sanity/types@3.76.1(@types/react@19.0.10)(debug@4.4.0(supports-color@5.5.0)))(@types/react@19.0.10)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(rxjs@7.8.1)(supports-color@5.5.0)':
     dependencies:
-      '@portabletext/block-tools': 1.1.8(@sanity/types@3.76.1(@types/react@19.0.10)(debug@4.4.0))(@types/react@19.0.10)
+      '@portabletext/block-tools': 1.1.8(@sanity/types@3.76.1(@types/react@19.0.10)(debug@4.4.0(supports-color@5.5.0)))(@types/react@19.0.10)
       '@portabletext/patches': 1.1.3
       '@portabletext/to-html': 2.0.14
-      '@sanity/schema': 3.76.1(@types/react@19.0.10)(debug@4.4.0)
-      '@sanity/types': 3.76.1(@types/react@19.0.10)(debug@4.4.0)
+      '@sanity/schema': 3.76.1(@types/react@19.0.10)(debug@4.4.0(supports-color@5.5.0))(supports-color@8.1.1)
+      '@sanity/types': 3.76.1(@types/react@19.0.10)(debug@4.4.0(supports-color@5.5.0))
       '@xstate/react': 5.0.2(@types/react@19.0.10)(react@18.3.1)(xstate@5.19.2)
       debug: 4.4.0(supports-color@5.5.0)
       get-random-values-esm: 1.0.2
@@ -7049,10 +7089,10 @@ snapshots:
     optionalDependencies:
       rollup: 4.34.8
 
-  '@rollup/plugin-babel@6.0.4(@babel/core@7.26.9)(@types/babel__core@7.20.5)(rollup@4.34.8)':
+  '@rollup/plugin-babel@6.0.4(@babel/core@7.26.9(supports-color@8.1.1))(@types/babel__core@7.20.5)(rollup@4.34.8)(supports-color@8.1.1)':
     dependencies:
-      '@babel/core': 7.26.9
-      '@babel/helper-module-imports': 7.25.9(supports-color@5.5.0)
+      '@babel/core': 7.26.9(supports-color@8.1.1)
+      '@babel/helper-module-imports': 7.25.9(supports-color@8.1.1)
       '@rollup/pluginutils': 5.1.4(rollup@4.34.8)
     optionalDependencies:
       '@types/babel__core': 7.20.5
@@ -7206,11 +7246,11 @@ snapshots:
 
   '@sanity/asset-utils@2.2.1': {}
 
-  '@sanity/assist@3.1.1(@emotion/is-prop-valid@1.3.1)(@sanity/mutator@3.76.1(@types/react@19.0.10))(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1)(sanity@3.76.1(@emotion/is-prop-valid@1.3.1)(@types/babel__core@7.20.5)(@types/node@22.13.4)(@types/react@19.0.10)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(terser@5.39.0)(typescript@5.7.3)(yaml@2.7.0))(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1))':
+  '@sanity/assist@3.1.1(@emotion/is-prop-valid@1.3.1)(@sanity/mutator@3.76.1(@types/react@19.0.10)(supports-color@8.1.1))(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1)(sanity@3.76.1(@emotion/is-prop-valid@1.3.1)(@types/babel__core@7.20.5)(@types/node@22.13.4)(@types/react@19.0.10)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(supports-color@8.1.1)(terser@5.39.0)(typescript@5.7.3)(yaml@2.7.0))(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1))':
     dependencies:
       '@sanity/icons': 3.6.0(react@18.3.1)
       '@sanity/incompatible-plugin': 1.0.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@sanity/mutator': 3.76.1(@types/react@19.0.10)
+      '@sanity/mutator': 3.76.1(@types/react@19.0.10)(supports-color@8.1.1)
       '@sanity/ui': 2.14.0(@emotion/is-prop-valid@1.3.1)(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1)(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1))
       date-fns: 3.6.0
       lodash: 4.17.21
@@ -7219,7 +7259,7 @@ snapshots:
       react-fast-compare: 3.2.2
       rxjs: 7.8.1
       rxjs-exhaustmap-with-trailing: 2.1.1(rxjs@7.8.1)
-      sanity: 3.76.1(@emotion/is-prop-valid@1.3.1)(@types/babel__core@7.20.5)(@types/node@22.13.4)(@types/react@19.0.10)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(terser@5.39.0)(typescript@5.7.3)(yaml@2.7.0)
+      sanity: 3.76.1(@emotion/is-prop-valid@1.3.1)(@types/babel__core@7.20.5)(@types/node@22.13.4)(@types/react@19.0.10)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(supports-color@8.1.1)(terser@5.39.0)(typescript@5.7.3)(yaml@2.7.0)
       styled-components: 6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
     transitivePeerDependencies:
       - '@emotion/is-prop-valid'
@@ -7231,9 +7271,9 @@ snapshots:
       nanoid: 3.3.8
       rxjs: 7.8.1
 
-  '@sanity/block-tools@3.70.0(@types/react@19.0.10)':
+  '@sanity/block-tools@3.70.0(@types/react@19.0.10)(debug@4.4.0(supports-color@5.5.0))':
     dependencies:
-      '@sanity/types': 3.70.0(@types/react@19.0.10)
+      '@sanity/types': 3.70.0(@types/react@19.0.10)(debug@4.4.0(supports-color@5.5.0))
       '@types/react': 19.0.10
       get-random-values-esm: 1.0.2
       lodash: 4.17.21
@@ -7242,21 +7282,21 @@ snapshots:
 
   '@sanity/browserslist-config@1.0.5': {}
 
-  '@sanity/cli@3.76.1(@types/babel__core@7.20.5)(@types/node@22.13.4)(@types/react@19.0.10)(react@18.3.1)(typescript@5.7.3)':
+  '@sanity/cli@3.76.1(@types/babel__core@7.20.5)(@types/node@22.13.4)(@types/react@19.0.10)(react@18.3.1)(supports-color@8.1.1)(typescript@5.7.3)':
     dependencies:
-      '@babel/traverse': 7.26.9(supports-color@5.5.0)
-      '@sanity/client': 6.28.0(debug@4.4.0)
-      '@sanity/codegen': 3.76.1
+      '@babel/traverse': 7.26.9(supports-color@8.1.1)
+      '@sanity/client': 6.28.0(debug@4.4.0(supports-color@5.5.0))
+      '@sanity/codegen': 3.76.1(supports-color@8.1.1)
       '@sanity/telemetry': 0.7.9(react@18.3.1)
-      '@sanity/template-validator': 2.4.0(@types/babel__core@7.20.5)(@types/node@22.13.4)(debug@4.4.0)(typescript@5.7.3)
-      '@sanity/util': 3.76.1(@types/react@19.0.10)(debug@4.4.0)
+      '@sanity/template-validator': 2.4.0(@types/babel__core@7.20.5)(@types/node@22.13.4)(debug@4.4.0(supports-color@5.5.0))(supports-color@8.1.1)(typescript@5.7.3)
+      '@sanity/util': 3.76.1(@types/react@19.0.10)(debug@4.4.0(supports-color@5.5.0))
       chalk: 4.1.2
       debug: 4.4.0(supports-color@5.5.0)
       decompress: 4.2.1
       esbuild: 0.21.5
-      esbuild-register: 3.6.0(esbuild@0.21.5)
-      get-it: 8.6.7(debug@4.4.0)
-      groq-js: 1.15.0
+      esbuild-register: 3.6.0(esbuild@0.21.5)(supports-color@8.1.1)
+      get-it: 8.6.7(debug@4.4.0(supports-color@5.5.0))
+      groq-js: 1.15.0(supports-color@8.1.1)
       pkg-dir: 5.0.0
       prettier: 3.5.1
       semver: 7.7.1
@@ -7270,15 +7310,15 @@ snapshots:
       - supports-color
       - typescript
 
-  '@sanity/client@6.28.0(debug@4.4.0)':
+  '@sanity/client@6.28.0(debug@4.4.0(supports-color@5.5.0))':
     dependencies:
       '@sanity/eventsource': 5.0.2
-      get-it: 8.6.7(debug@4.4.0)
+      get-it: 8.6.7(debug@4.4.0(supports-color@5.5.0))
       rxjs: 7.8.1
     transitivePeerDependencies:
       - debug
 
-  '@sanity/code-input@4.1.4(@babel/runtime@7.26.9)(@codemirror/lint@6.8.4)(@codemirror/theme-one-dark@6.1.2)(codemirror@6.0.1)(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1)(sanity@3.76.1(@emotion/is-prop-valid@1.3.1)(@types/babel__core@7.20.5)(@types/node@22.13.4)(@types/react@19.0.10)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(terser@5.39.0)(typescript@5.7.3)(yaml@2.7.0))(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1))':
+  '@sanity/code-input@4.1.4(@babel/runtime@7.26.9)(@codemirror/lint@6.8.4)(@codemirror/theme-one-dark@6.1.2)(codemirror@6.0.1)(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1)(sanity@3.76.1(@emotion/is-prop-valid@1.3.1)(@types/babel__core@7.20.5)(@types/node@22.13.4)(@types/react@19.0.10)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(supports-color@8.1.1)(terser@5.39.0)(typescript@5.7.3)(yaml@2.7.0))(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1))':
     dependencies:
       '@codemirror/autocomplete': 6.18.6
       '@codemirror/commands': 6.8.0
@@ -7302,7 +7342,7 @@ snapshots:
       '@uiw/react-codemirror': 4.23.8(@babel/runtime@7.26.9)(@codemirror/autocomplete@6.18.6)(@codemirror/language@6.10.8)(@codemirror/lint@6.8.4)(@codemirror/search@6.5.9)(@codemirror/state@6.5.2)(@codemirror/theme-one-dark@6.1.2)(@codemirror/view@6.36.3)(codemirror@6.0.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
-      sanity: 3.76.1(@emotion/is-prop-valid@1.3.1)(@types/babel__core@7.20.5)(@types/node@22.13.4)(@types/react@19.0.10)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(terser@5.39.0)(typescript@5.7.3)(yaml@2.7.0)
+      sanity: 3.76.1(@emotion/is-prop-valid@1.3.1)(@types/babel__core@7.20.5)(@types/node@22.13.4)(@types/react@19.0.10)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(supports-color@8.1.1)(terser@5.39.0)(typescript@5.7.3)(yaml@2.7.0)
       styled-components: 6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
     transitivePeerDependencies:
       - '@babel/runtime'
@@ -7311,20 +7351,20 @@ snapshots:
       - codemirror
       - react-is
 
-  '@sanity/codegen@3.76.1':
+  '@sanity/codegen@3.76.1(supports-color@8.1.1)':
     dependencies:
-      '@babel/core': 7.26.9
+      '@babel/core': 7.26.9(supports-color@8.1.1)
       '@babel/generator': 7.26.9
-      '@babel/preset-env': 7.26.9(@babel/core@7.26.9)
-      '@babel/preset-react': 7.26.3(@babel/core@7.26.9)
-      '@babel/preset-typescript': 7.26.0(@babel/core@7.26.9)
-      '@babel/register': 7.25.9(@babel/core@7.26.9)
-      '@babel/traverse': 7.26.9(supports-color@5.5.0)
+      '@babel/preset-env': 7.26.9(@babel/core@7.26.9(supports-color@8.1.1))(supports-color@8.1.1)
+      '@babel/preset-react': 7.26.3(@babel/core@7.26.9(supports-color@8.1.1))(supports-color@8.1.1)
+      '@babel/preset-typescript': 7.26.0(@babel/core@7.26.9(supports-color@8.1.1))(supports-color@8.1.1)
+      '@babel/register': 7.25.9(@babel/core@7.26.9(supports-color@8.1.1))
+      '@babel/traverse': 7.26.9(supports-color@8.1.1)
       '@babel/types': 7.26.9
       debug: 4.4.0(supports-color@5.5.0)
       globby: 11.1.0
       groq: 3.76.1
-      groq-js: 1.15.0
+      groq-js: 1.15.0(supports-color@8.1.1)
       json5: 2.2.3
       tsconfig-paths: 4.2.0
       zod: 3.24.2
@@ -7338,7 +7378,7 @@ snapshots:
   '@sanity/comlink@3.0.1':
     dependencies:
       rxjs: 7.8.1
-      uuid: 11.1.0
+      uuid: 11.1.1
       xstate: 5.19.2
 
   '@sanity/diff-match-patch@3.2.0': {}
@@ -7351,17 +7391,17 @@ snapshots:
     dependencies:
       '@sanity/diff-match-patch': 3.2.0
 
-  '@sanity/document-internationalization@3.3.1(@emotion/is-prop-valid@1.3.1)(@types/react@19.0.10)(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1)(rxjs@7.8.1)(sanity@3.76.1(@emotion/is-prop-valid@1.3.1)(@types/babel__core@7.20.5)(@types/node@22.13.4)(@types/react@19.0.10)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(terser@5.39.0)(typescript@5.7.3)(yaml@2.7.0))(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1))':
+  '@sanity/document-internationalization@3.3.1(@emotion/is-prop-valid@1.3.1)(@types/react@19.0.10)(debug@4.4.0(supports-color@5.5.0))(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1)(rxjs@7.8.1)(sanity@3.76.1(@emotion/is-prop-valid@1.3.1)(@types/babel__core@7.20.5)(@types/node@22.13.4)(@types/react@19.0.10)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(supports-color@8.1.1)(terser@5.39.0)(typescript@5.7.3)(yaml@2.7.0))(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(supports-color@8.1.1)':
     dependencies:
       '@sanity/icons': 3.6.0(react@18.3.1)
       '@sanity/incompatible-plugin': 1.0.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@sanity/mutator': 3.76.1(@types/react@19.0.10)
+      '@sanity/mutator': 3.76.1(@types/react@19.0.10)(supports-color@8.1.1)
       '@sanity/ui': 2.14.0(@emotion/is-prop-valid@1.3.1)(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1)(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1))
       '@sanity/uuid': 3.0.2
       react: 18.3.1
-      sanity: 3.76.1(@emotion/is-prop-valid@1.3.1)(@types/babel__core@7.20.5)(@types/node@22.13.4)(@types/react@19.0.10)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(terser@5.39.0)(typescript@5.7.3)(yaml@2.7.0)
-      sanity-plugin-internationalized-array: 3.1.1(@emotion/is-prop-valid@1.3.1)(@types/react@19.0.10)(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1)(sanity@3.76.1(@emotion/is-prop-valid@1.3.1)(@types/babel__core@7.20.5)(@types/node@22.13.4)(@types/react@19.0.10)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(terser@5.39.0)(typescript@5.7.3)(yaml@2.7.0))(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1))
-      sanity-plugin-utils: 1.6.7(@emotion/is-prop-valid@1.3.1)(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1)(rxjs@7.8.1)(sanity@3.76.1(@emotion/is-prop-valid@1.3.1)(@types/babel__core@7.20.5)(@types/node@22.13.4)(@types/react@19.0.10)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(terser@5.39.0)(typescript@5.7.3)(yaml@2.7.0))(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1))
+      sanity: 3.76.1(@emotion/is-prop-valid@1.3.1)(@types/babel__core@7.20.5)(@types/node@22.13.4)(@types/react@19.0.10)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(supports-color@8.1.1)(terser@5.39.0)(typescript@5.7.3)(yaml@2.7.0)
+      sanity-plugin-internationalized-array: 3.1.1(@emotion/is-prop-valid@1.3.1)(@types/react@19.0.10)(debug@4.4.0(supports-color@5.5.0))(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1)(sanity@3.76.1(@emotion/is-prop-valid@1.3.1)(@types/babel__core@7.20.5)(@types/node@22.13.4)(@types/react@19.0.10)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(supports-color@8.1.1)(terser@5.39.0)(typescript@5.7.3)(yaml@2.7.0))(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1))
+      sanity-plugin-utils: 1.6.7(@emotion/is-prop-valid@1.3.1)(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1)(rxjs@7.8.1)(sanity@3.76.1(@emotion/is-prop-valid@1.3.1)(@types/babel__core@7.20.5)(@types/node@22.13.4)(@types/react@19.0.10)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(supports-color@8.1.1)(terser@5.39.0)(typescript@5.7.3)(yaml@2.7.0))(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1))
       styled-components: 6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
     transitivePeerDependencies:
       - '@emotion/is-prop-valid'
@@ -7372,19 +7412,19 @@ snapshots:
       - rxjs
       - supports-color
 
-  '@sanity/eslint-config-studio@4.0.0(eslint@8.57.1)(typescript@5.7.3)':
+  '@sanity/eslint-config-studio@4.0.0(eslint@8.57.1(supports-color@5.5.0))(supports-color@8.1.1)(typescript@5.7.3)':
     dependencies:
-      '@babel/core': 7.26.9
-      '@babel/eslint-parser': 7.26.8(@babel/core@7.26.9)(eslint@8.57.1)
-      '@babel/preset-env': 7.26.9(@babel/core@7.26.9)
-      '@babel/preset-react': 7.26.3(@babel/core@7.26.9)
+      '@babel/core': 7.26.9(supports-color@8.1.1)
+      '@babel/eslint-parser': 7.26.8(@babel/core@7.26.9(supports-color@8.1.1))(eslint@8.57.1(supports-color@5.5.0))
+      '@babel/preset-env': 7.26.9(@babel/core@7.26.9(supports-color@8.1.1))(supports-color@8.1.1)
+      '@babel/preset-react': 7.26.3(@babel/core@7.26.9(supports-color@8.1.1))(supports-color@8.1.1)
       '@rushstack/eslint-patch': 1.10.5
-      '@typescript-eslint/eslint-plugin': 7.18.0(@typescript-eslint/parser@7.18.0(eslint@8.57.1)(typescript@5.7.3))(eslint@8.57.1)(typescript@5.7.3)
-      '@typescript-eslint/parser': 7.18.0(eslint@8.57.1)(typescript@5.7.3)
+      '@typescript-eslint/eslint-plugin': 7.18.0(@typescript-eslint/parser@7.18.0(eslint@8.57.1(supports-color@5.5.0))(supports-color@5.5.0)(typescript@5.7.3))(eslint@8.57.1(supports-color@5.5.0))(supports-color@8.1.1)(typescript@5.7.3)
+      '@typescript-eslint/parser': 7.18.0(eslint@8.57.1(supports-color@5.5.0))(supports-color@5.5.0)(typescript@5.7.3)
       confusing-browser-globals: 1.0.11
-      eslint-plugin-jsx-a11y: 6.10.2(eslint@8.57.1)
-      eslint-plugin-react: 7.37.4(eslint@8.57.1)
-      eslint-plugin-react-hooks: 4.6.2(eslint@8.57.1)
+      eslint-plugin-jsx-a11y: 6.10.2(eslint@8.57.1(supports-color@5.5.0))
+      eslint-plugin-react: 7.37.4(eslint@8.57.1(supports-color@5.5.0))
+      eslint-plugin-react-hooks: 4.6.2(eslint@8.57.1(supports-color@5.5.0))
     transitivePeerDependencies:
       - eslint
       - supports-color
@@ -7397,13 +7437,13 @@ snapshots:
       event-source-polyfill: 1.0.31
       eventsource: 2.0.2
 
-  '@sanity/export@3.42.2(@types/react@19.0.10)':
+  '@sanity/export@3.42.2(@types/react@19.0.10)(supports-color@5.5.0)':
     dependencies:
-      '@sanity/client': 6.28.0(debug@4.4.0)
-      '@sanity/util': 3.68.3(@types/react@19.0.10)(debug@4.4.0)
+      '@sanity/client': 6.28.0(debug@4.4.0(supports-color@5.5.0))
+      '@sanity/util': 3.68.3(@types/react@19.0.10)(debug@4.4.0(supports-color@5.5.0))
       archiver: 7.0.1
       debug: 4.4.0(supports-color@5.5.0)
-      get-it: 8.6.7(debug@4.4.0)
+      get-it: 8.6.7(debug@4.4.0(supports-color@5.5.0))
       json-stream-stringify: 2.0.4
       lodash: 4.17.21
       mississippi: 4.0.0
@@ -7428,16 +7468,16 @@ snapshots:
 
   '@sanity/image-url@1.1.0': {}
 
-  '@sanity/import@3.37.9(@types/react@19.0.10)':
+  '@sanity/import@3.37.9(@types/react@19.0.10)(supports-color@8.1.1)':
     dependencies:
       '@sanity/asset-utils': 2.2.1
       '@sanity/generate-help-url': 3.0.0
-      '@sanity/mutator': 3.76.1(@types/react@19.0.10)
+      '@sanity/mutator': 3.76.1(@types/react@19.0.10)(supports-color@8.1.1)
       '@sanity/uuid': 3.0.2
       debug: 4.4.0(supports-color@5.5.0)
       file-url: 2.0.2
-      get-it: 8.6.7(debug@4.4.0)
-      get-uri: 2.0.4
+      get-it: 8.6.7(debug@4.4.0(supports-color@5.5.0))
+      get-uri: 2.0.4(supports-color@8.1.1)
       gunzip-maybe: 1.4.2
       is-tar: 1.0.0
       lodash: 4.17.21
@@ -7460,10 +7500,10 @@ snapshots:
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
 
-  '@sanity/insert-menu@1.1.2(@emotion/is-prop-valid@1.3.1)(@sanity/types@3.76.1(@types/react@19.0.10)(debug@4.4.0))(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1)(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1))':
+  '@sanity/insert-menu@1.1.2(@emotion/is-prop-valid@1.3.1)(@sanity/types@3.76.1(@types/react@19.0.10)(debug@4.4.0(supports-color@5.5.0)))(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1)(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1))':
     dependencies:
       '@sanity/icons': 3.6.0(react@18.3.1)
-      '@sanity/types': 3.76.1(@types/react@19.0.10)(debug@4.4.0)
+      '@sanity/types': 3.76.1(@types/react@19.0.10)(debug@4.4.0(supports-color@5.5.0))
       '@sanity/ui': 2.14.0(@emotion/is-prop-valid@1.3.1)(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1)(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1))
       lodash: 4.17.21
       react: 18.3.1
@@ -7474,14 +7514,14 @@ snapshots:
       - '@emotion/is-prop-valid'
       - styled-components
 
-  '@sanity/language-filter@4.0.3(@emotion/is-prop-valid@1.3.1)(@types/react@19.0.10)(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1)(sanity@3.76.1(@emotion/is-prop-valid@1.3.1)(@types/babel__core@7.20.5)(@types/node@22.13.4)(@types/react@19.0.10)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(terser@5.39.0)(typescript@5.7.3)(yaml@2.7.0))(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1))':
+  '@sanity/language-filter@4.0.3(@emotion/is-prop-valid@1.3.1)(@types/react@19.0.10)(debug@4.4.0(supports-color@5.5.0))(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1)(sanity@3.76.1(@emotion/is-prop-valid@1.3.1)(@types/babel__core@7.20.5)(@types/node@22.13.4)(@types/react@19.0.10)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(supports-color@8.1.1)(terser@5.39.0)(typescript@5.7.3)(yaml@2.7.0))(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1))':
     dependencies:
       '@sanity/icons': 3.6.0(react@18.3.1)
       '@sanity/incompatible-plugin': 1.0.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@sanity/ui': 2.14.0(@emotion/is-prop-valid@1.3.1)(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1)(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1))
-      '@sanity/util': 3.76.1(@types/react@19.0.10)(debug@4.4.0)
+      '@sanity/util': 3.76.1(@types/react@19.0.10)(debug@4.4.0(supports-color@5.5.0))
       react: 18.3.1
-      sanity: 3.76.1(@emotion/is-prop-valid@1.3.1)(@types/babel__core@7.20.5)(@types/node@22.13.4)(@types/react@19.0.10)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(terser@5.39.0)(typescript@5.7.3)(yaml@2.7.0)
+      sanity: 3.76.1(@emotion/is-prop-valid@1.3.1)(@types/babel__core@7.20.5)(@types/node@22.13.4)(@types/react@19.0.10)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(supports-color@8.1.1)(terser@5.39.0)(typescript@5.7.3)(yaml@2.7.0)
       styled-components: 6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
     transitivePeerDependencies:
       - '@emotion/is-prop-valid'
@@ -7495,24 +7535,24 @@ snapshots:
       '@sanity/color': 3.0.6
       react: 18.3.1
 
-  '@sanity/migrate@3.76.1(@types/react@19.0.10)':
+  '@sanity/migrate@3.76.1(@types/react@19.0.10)(supports-color@8.1.1)':
     dependencies:
-      '@sanity/client': 6.28.0(debug@4.4.0)
-      '@sanity/mutate': 0.12.1(debug@4.4.0)
-      '@sanity/types': 3.76.1(@types/react@19.0.10)(debug@4.4.0)
-      '@sanity/util': 3.76.1(@types/react@19.0.10)(debug@4.4.0)
+      '@sanity/client': 6.28.0(debug@4.4.0(supports-color@5.5.0))
+      '@sanity/mutate': 0.12.1(debug@4.4.0(supports-color@5.5.0))
+      '@sanity/types': 3.76.1(@types/react@19.0.10)(debug@4.4.0(supports-color@5.5.0))
+      '@sanity/util': 3.76.1(@types/react@19.0.10)(debug@4.4.0(supports-color@5.5.0))
       arrify: 2.0.1
       debug: 4.4.0(supports-color@5.5.0)
       fast-fifo: 1.3.2
-      groq-js: 1.15.0
+      groq-js: 1.15.0(supports-color@8.1.1)
       p-map: 7.0.3
     transitivePeerDependencies:
       - '@types/react'
       - supports-color
 
-  '@sanity/mutate@0.12.1(debug@4.4.0)':
+  '@sanity/mutate@0.12.1(debug@4.4.0(supports-color@5.5.0))':
     dependencies:
-      '@sanity/client': 6.28.0(debug@4.4.0)
+      '@sanity/client': 6.28.0(debug@4.4.0(supports-color@5.5.0))
       '@sanity/diff-match-patch': 3.2.0
       '@sanity/uuid': 3.0.2
       hotscript: 1.0.13
@@ -7523,27 +7563,27 @@ snapshots:
     transitivePeerDependencies:
       - debug
 
-  '@sanity/mutator@3.76.1(@types/react@19.0.10)':
+  '@sanity/mutator@3.76.1(@types/react@19.0.10)(supports-color@8.1.1)':
     dependencies:
       '@sanity/diff-match-patch': 3.2.0
-      '@sanity/types': 3.76.1(@types/react@19.0.10)(debug@4.4.0)
+      '@sanity/types': 3.76.1(@types/react@19.0.10)(debug@4.4.0(supports-color@5.5.0))
       '@sanity/uuid': 3.0.2
-      debug: 4.4.0(supports-color@5.5.0)
+      debug: 4.4.0(supports-color@8.1.1)
       lodash: 4.17.21
     transitivePeerDependencies:
       - '@types/react'
       - supports-color
 
-  '@sanity/pkg-utils@6.13.4(@types/babel__core@7.20.5)(@types/node@22.13.4)(debug@4.4.0)(typescript@5.7.3)':
+  '@sanity/pkg-utils@6.13.4(@types/babel__core@7.20.5)(@types/node@22.13.4)(debug@4.4.0(supports-color@5.5.0))(supports-color@8.1.1)(typescript@5.7.3)':
     dependencies:
-      '@babel/core': 7.26.9
-      '@babel/preset-typescript': 7.26.0(@babel/core@7.26.9)
+      '@babel/core': 7.26.9(supports-color@8.1.1)
+      '@babel/preset-typescript': 7.26.0(@babel/core@7.26.9(supports-color@8.1.1))(supports-color@8.1.1)
       '@babel/types': 7.26.9
       '@microsoft/api-extractor': 7.48.1(@types/node@22.13.4)
       '@microsoft/tsdoc-config': 0.17.1
       '@optimize-lodash/rollup-plugin': 5.0.0(rollup@4.34.8)
       '@rollup/plugin-alias': 5.1.1(rollup@4.34.8)
-      '@rollup/plugin-babel': 6.0.4(@babel/core@7.26.9)(@types/babel__core@7.20.5)(rollup@4.34.8)
+      '@rollup/plugin-babel': 6.0.4(@babel/core@7.26.9(supports-color@8.1.1))(@types/babel__core@7.20.5)(rollup@4.34.8)(supports-color@8.1.1)
       '@rollup/plugin-commonjs': 28.0.2(rollup@4.34.8)
       '@rollup/plugin-json': 6.1.0(rollup@4.34.8)
       '@rollup/plugin-node-resolve': 16.0.0(rollup@4.34.8)
@@ -7555,9 +7595,9 @@ snapshots:
       chalk: 4.1.2
       chokidar: 4.0.3
       esbuild: 0.24.2
-      esbuild-register: 3.6.0(esbuild@0.24.2)
+      esbuild-register: 3.6.0(esbuild@0.24.2)(supports-color@8.1.1)
       find-config: 1.0.0
-      get-latest-version: 5.1.0(debug@4.4.0)
+      get-latest-version: 5.1.0(debug@4.4.0(supports-color@5.5.0))
       git-url-parse: 16.0.1
       globby: 11.1.0
       jsonc-parser: 3.3.1
@@ -7571,11 +7611,11 @@ snapshots:
       recast: 0.23.9
       rimraf: 4.4.1
       rollup: 4.34.8
-      rollup-plugin-esbuild: 6.2.0(esbuild@0.24.2)(rollup@4.34.8)
+      rollup-plugin-esbuild: 6.2.0(esbuild@0.24.2)(rollup@4.34.8)(supports-color@5.5.0)
       rxjs: 7.8.1
       treeify: 1.1.0
       typescript: 5.7.3
-      uuid: 11.1.0
+      uuid: 11.1.1
       zod: 3.24.1
       zod-validation-error: 3.4.0(zod@3.24.1)
     transitivePeerDependencies:
@@ -7584,25 +7624,25 @@ snapshots:
       - debug
       - supports-color
 
-  '@sanity/presentation-comlink@1.0.7(@sanity/client@6.28.0(debug@4.4.0))(@sanity/types@3.76.1(@types/react@19.0.10)(debug@4.4.0))':
+  '@sanity/presentation-comlink@1.0.7(@sanity/client@6.28.0(debug@4.4.0(supports-color@5.5.0)))(@sanity/types@3.76.1(@types/react@19.0.10)(debug@4.4.0(supports-color@5.5.0)))':
     dependencies:
-      '@sanity/client': 6.28.0(debug@4.4.0)
+      '@sanity/client': 6.28.0(debug@4.4.0(supports-color@5.5.0))
       '@sanity/comlink': 3.0.1
-      '@sanity/visual-editing-types': 1.0.7(@sanity/client@6.28.0(debug@4.4.0))(@sanity/types@3.76.1(@types/react@19.0.10)(debug@4.4.0))
+      '@sanity/visual-editing-types': 1.0.7(@sanity/client@6.28.0(debug@4.4.0(supports-color@5.5.0)))(@sanity/types@3.76.1(@types/react@19.0.10)(debug@4.4.0(supports-color@5.5.0)))
     transitivePeerDependencies:
       - '@sanity/types'
 
-  '@sanity/preview-url-secret@2.1.4(@sanity/client@6.28.0(debug@4.4.0))':
+  '@sanity/preview-url-secret@2.1.4(@sanity/client@6.28.0(debug@4.4.0(supports-color@5.5.0)))':
     dependencies:
-      '@sanity/client': 6.28.0(debug@4.4.0)
+      '@sanity/client': 6.28.0(debug@4.4.0(supports-color@5.5.0))
       '@sanity/uuid': 3.0.2
 
-  '@sanity/schema@3.76.1(@types/react@19.0.10)(debug@4.4.0)':
+  '@sanity/schema@3.76.1(@types/react@19.0.10)(debug@4.4.0(supports-color@5.5.0))(supports-color@8.1.1)':
     dependencies:
       '@sanity/generate-help-url': 3.0.0
-      '@sanity/types': 3.76.1(@types/react@19.0.10)(debug@4.4.0)
+      '@sanity/types': 3.76.1(@types/react@19.0.10)(debug@4.4.0(supports-color@5.5.0))
       arrify: 2.0.1
-      groq-js: 1.15.0
+      groq-js: 1.15.0(supports-color@8.1.1)
       humanize-list: 1.0.1
       leven: 3.1.0
       lodash: 4.17.21
@@ -7619,11 +7659,11 @@ snapshots:
       rxjs: 7.8.1
       typeid-js: 0.3.0
 
-  '@sanity/template-validator@2.4.0(@types/babel__core@7.20.5)(@types/node@22.13.4)(debug@4.4.0)(typescript@5.7.3)':
+  '@sanity/template-validator@2.4.0(@types/babel__core@7.20.5)(@types/node@22.13.4)(debug@4.4.0(supports-color@5.5.0))(supports-color@8.1.1)(typescript@5.7.3)':
     dependencies:
       '@actions/core': 1.11.1
       '@actions/github': 6.0.0
-      '@sanity/pkg-utils': 6.13.4(@types/babel__core@7.20.5)(@types/node@22.13.4)(debug@4.4.0)(typescript@5.7.3)
+      '@sanity/pkg-utils': 6.13.4(@types/babel__core@7.20.5)(@types/node@22.13.4)(debug@4.4.0(supports-color@5.5.0))(supports-color@8.1.1)(typescript@5.7.3)
       yaml: 2.7.0
     transitivePeerDependencies:
       - '@types/babel__core'
@@ -7633,23 +7673,23 @@ snapshots:
       - supports-color
       - typescript
 
-  '@sanity/types@3.68.3(@types/react@19.0.10)(debug@4.4.0)':
+  '@sanity/types@3.68.3(@types/react@19.0.10)(debug@4.4.0(supports-color@5.5.0))':
     dependencies:
-      '@sanity/client': 6.28.0(debug@4.4.0)
+      '@sanity/client': 6.28.0(debug@4.4.0(supports-color@5.5.0))
       '@types/react': 19.0.10
     transitivePeerDependencies:
       - debug
 
-  '@sanity/types@3.70.0(@types/react@19.0.10)':
+  '@sanity/types@3.70.0(@types/react@19.0.10)(debug@4.4.0(supports-color@5.5.0))':
     dependencies:
-      '@sanity/client': 6.28.0(debug@4.4.0)
+      '@sanity/client': 6.28.0(debug@4.4.0(supports-color@5.5.0))
       '@types/react': 19.0.10
     transitivePeerDependencies:
       - debug
 
-  '@sanity/types@3.76.1(@types/react@19.0.10)(debug@4.4.0)':
+  '@sanity/types@3.76.1(@types/react@19.0.10)(debug@4.4.0(supports-color@5.5.0))':
     dependencies:
-      '@sanity/client': 6.28.0(debug@4.4.0)
+      '@sanity/client': 6.28.0(debug@4.4.0(supports-color@5.5.0))
       '@types/react': 19.0.10
     transitivePeerDependencies:
       - debug
@@ -7685,10 +7725,10 @@ snapshots:
     transitivePeerDependencies:
       - '@emotion/is-prop-valid'
 
-  '@sanity/util@3.68.3(@types/react@19.0.10)(debug@4.4.0)':
+  '@sanity/util@3.68.3(@types/react@19.0.10)(debug@4.4.0(supports-color@5.5.0))':
     dependencies:
-      '@sanity/client': 6.28.0(debug@4.4.0)
-      '@sanity/types': 3.68.3(@types/react@19.0.10)(debug@4.4.0)
+      '@sanity/client': 6.28.0(debug@4.4.0(supports-color@5.5.0))
+      '@sanity/types': 3.68.3(@types/react@19.0.10)(debug@4.4.0(supports-color@5.5.0))
       get-random-values-esm: 1.0.2
       moment: 2.30.1
       rxjs: 7.8.1
@@ -7696,10 +7736,10 @@ snapshots:
       - '@types/react'
       - debug
 
-  '@sanity/util@3.76.1(@types/react@19.0.10)(debug@4.4.0)':
+  '@sanity/util@3.76.1(@types/react@19.0.10)(debug@4.4.0(supports-color@5.5.0))':
     dependencies:
-      '@sanity/client': 6.28.0(debug@4.4.0)
-      '@sanity/types': 3.76.1(@types/react@19.0.10)(debug@4.4.0)
+      '@sanity/client': 6.28.0(debug@4.4.0(supports-color@5.5.0))
+      '@sanity/types': 3.76.1(@types/react@19.0.10)(debug@4.4.0(supports-color@5.5.0))
       get-random-values-esm: 1.0.2
       moment: 2.30.1
       rxjs: 7.8.1
@@ -7747,11 +7787,11 @@ snapshots:
       - react-dom
       - react-is
 
-  '@sanity/visual-editing-types@1.0.7(@sanity/client@6.28.0(debug@4.4.0))(@sanity/types@3.76.1(@types/react@19.0.10)(debug@4.4.0))':
+  '@sanity/visual-editing-types@1.0.7(@sanity/client@6.28.0(debug@4.4.0(supports-color@5.5.0)))(@sanity/types@3.76.1(@types/react@19.0.10)(debug@4.4.0(supports-color@5.5.0)))':
     dependencies:
-      '@sanity/client': 6.28.0(debug@4.4.0)
+      '@sanity/client': 6.28.0(debug@4.4.0(supports-color@5.5.0))
     optionalDependencies:
-      '@sanity/types': 3.76.1(@types/react@19.0.10)(debug@4.4.0)
+      '@sanity/types': 3.76.1(@types/react@19.0.10)(debug@4.4.0(supports-color@5.5.0))
 
   '@sentry-internal/browser-utils@8.55.0':
     dependencies:
@@ -7907,15 +7947,15 @@ snapshots:
 
   '@types/uuid@8.3.4': {}
 
-  '@typescript-eslint/eslint-plugin@7.18.0(@typescript-eslint/parser@7.18.0(eslint@8.57.1)(typescript@5.7.3))(eslint@8.57.1)(typescript@5.7.3)':
+  '@typescript-eslint/eslint-plugin@7.18.0(@typescript-eslint/parser@7.18.0(eslint@8.57.1(supports-color@5.5.0))(supports-color@5.5.0)(typescript@5.7.3))(eslint@8.57.1(supports-color@5.5.0))(supports-color@8.1.1)(typescript@5.7.3)':
     dependencies:
       '@eslint-community/regexpp': 4.12.1
-      '@typescript-eslint/parser': 7.18.0(eslint@8.57.1)(typescript@5.7.3)
+      '@typescript-eslint/parser': 7.18.0(eslint@8.57.1(supports-color@5.5.0))(supports-color@5.5.0)(typescript@5.7.3)
       '@typescript-eslint/scope-manager': 7.18.0
-      '@typescript-eslint/type-utils': 7.18.0(eslint@8.57.1)(typescript@5.7.3)
-      '@typescript-eslint/utils': 7.18.0(eslint@8.57.1)(typescript@5.7.3)
+      '@typescript-eslint/type-utils': 7.18.0(eslint@8.57.1(supports-color@5.5.0))(supports-color@8.1.1)(typescript@5.7.3)
+      '@typescript-eslint/utils': 7.18.0(eslint@8.57.1(supports-color@5.5.0))(supports-color@8.1.1)(typescript@5.7.3)
       '@typescript-eslint/visitor-keys': 7.18.0
-      eslint: 8.57.1
+      eslint: 8.57.1(supports-color@5.5.0)
       graphemer: 1.4.0
       ignore: 5.3.2
       natural-compare: 1.4.0
@@ -7925,14 +7965,14 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@typescript-eslint/parser@7.18.0(eslint@8.57.1)(typescript@5.7.3)':
+  '@typescript-eslint/parser@7.18.0(eslint@8.57.1(supports-color@5.5.0))(supports-color@5.5.0)(typescript@5.7.3)':
     dependencies:
       '@typescript-eslint/scope-manager': 7.18.0
       '@typescript-eslint/types': 7.18.0
-      '@typescript-eslint/typescript-estree': 7.18.0(typescript@5.7.3)
+      '@typescript-eslint/typescript-estree': 7.18.0(supports-color@5.5.0)(typescript@5.7.3)
       '@typescript-eslint/visitor-keys': 7.18.0
       debug: 4.4.0(supports-color@5.5.0)
-      eslint: 8.57.1
+      eslint: 8.57.1(supports-color@5.5.0)
     optionalDependencies:
       typescript: 5.7.3
     transitivePeerDependencies:
@@ -7943,12 +7983,12 @@ snapshots:
       '@typescript-eslint/types': 7.18.0
       '@typescript-eslint/visitor-keys': 7.18.0
 
-  '@typescript-eslint/type-utils@7.18.0(eslint@8.57.1)(typescript@5.7.3)':
+  '@typescript-eslint/type-utils@7.18.0(eslint@8.57.1(supports-color@5.5.0))(supports-color@8.1.1)(typescript@5.7.3)':
     dependencies:
-      '@typescript-eslint/typescript-estree': 7.18.0(typescript@5.7.3)
-      '@typescript-eslint/utils': 7.18.0(eslint@8.57.1)(typescript@5.7.3)
+      '@typescript-eslint/typescript-estree': 7.18.0(supports-color@8.1.1)(typescript@5.7.3)
+      '@typescript-eslint/utils': 7.18.0(eslint@8.57.1(supports-color@5.5.0))(supports-color@8.1.1)(typescript@5.7.3)
       debug: 4.4.0(supports-color@5.5.0)
-      eslint: 8.57.1
+      eslint: 8.57.1(supports-color@5.5.0)
       ts-api-utils: 1.4.3(typescript@5.7.3)
     optionalDependencies:
       typescript: 5.7.3
@@ -7957,7 +7997,7 @@ snapshots:
 
   '@typescript-eslint/types@7.18.0': {}
 
-  '@typescript-eslint/typescript-estree@7.18.0(typescript@5.7.3)':
+  '@typescript-eslint/typescript-estree@7.18.0(supports-color@5.5.0)(typescript@5.7.3)':
     dependencies:
       '@typescript-eslint/types': 7.18.0
       '@typescript-eslint/visitor-keys': 7.18.0
@@ -7972,13 +8012,28 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@typescript-eslint/utils@7.18.0(eslint@8.57.1)(typescript@5.7.3)':
+  '@typescript-eslint/typescript-estree@7.18.0(supports-color@8.1.1)(typescript@5.7.3)':
     dependencies:
-      '@eslint-community/eslint-utils': 4.4.1(eslint@8.57.1)
+      '@typescript-eslint/types': 7.18.0
+      '@typescript-eslint/visitor-keys': 7.18.0
+      debug: 4.4.0(supports-color@8.1.1)
+      globby: 11.1.0
+      is-glob: 4.0.3
+      minimatch: 9.0.5
+      semver: 7.7.1
+      ts-api-utils: 1.4.3(typescript@5.7.3)
+    optionalDependencies:
+      typescript: 5.7.3
+    transitivePeerDependencies:
+      - supports-color
+
+  '@typescript-eslint/utils@7.18.0(eslint@8.57.1(supports-color@5.5.0))(supports-color@8.1.1)(typescript@5.7.3)':
+    dependencies:
+      '@eslint-community/eslint-utils': 4.4.1(eslint@8.57.1(supports-color@5.5.0))
       '@typescript-eslint/scope-manager': 7.18.0
       '@typescript-eslint/types': 7.18.0
-      '@typescript-eslint/typescript-estree': 7.18.0(typescript@5.7.3)
-      eslint: 8.57.1
+      '@typescript-eslint/typescript-estree': 7.18.0(supports-color@8.1.1)(typescript@5.7.3)
+      eslint: 8.57.1(supports-color@5.5.0)
     transitivePeerDependencies:
       - supports-color
       - typescript
@@ -8023,11 +8078,11 @@ snapshots:
 
   '@ungap/structured-clone@1.3.0': {}
 
-  '@vitejs/plugin-react@4.3.4(vite@6.1.1(@types/node@22.13.4)(terser@5.39.0)(yaml@2.7.0))':
+  '@vitejs/plugin-react@4.3.4(supports-color@8.1.1)(vite@6.1.1(@types/node@22.13.4)(terser@5.39.0)(yaml@2.7.0))':
     dependencies:
-      '@babel/core': 7.26.9
-      '@babel/plugin-transform-react-jsx-self': 7.25.9(@babel/core@7.26.9)
-      '@babel/plugin-transform-react-jsx-source': 7.25.9(@babel/core@7.26.9)
+      '@babel/core': 7.26.9(supports-color@8.1.1)
+      '@babel/plugin-transform-react-jsx-self': 7.25.9(@babel/core@7.26.9(supports-color@8.1.1))
+      '@babel/plugin-transform-react-jsx-source': 7.25.9(@babel/core@7.26.9(supports-color@8.1.1))
       '@types/babel__core': 7.20.5
       react-refresh: 0.14.2
       vite: 6.1.1(@types/node@22.13.4)(terser@5.39.0)(yaml@2.7.0)
@@ -8225,38 +8280,38 @@ snapshots:
 
   b4a@1.6.7: {}
 
-  babel-plugin-polyfill-corejs2@0.4.12(@babel/core@7.26.9):
+  babel-plugin-polyfill-corejs2@0.4.12(@babel/core@7.26.9(supports-color@8.1.1))(supports-color@8.1.1):
     dependencies:
       '@babel/compat-data': 7.26.8
-      '@babel/core': 7.26.9
-      '@babel/helper-define-polyfill-provider': 0.6.3(@babel/core@7.26.9)
+      '@babel/core': 7.26.9(supports-color@8.1.1)
+      '@babel/helper-define-polyfill-provider': 0.6.3(@babel/core@7.26.9(supports-color@8.1.1))(supports-color@8.1.1)
       semver: 6.3.1
     transitivePeerDependencies:
       - supports-color
 
-  babel-plugin-polyfill-corejs3@0.11.1(@babel/core@7.26.9):
+  babel-plugin-polyfill-corejs3@0.11.1(@babel/core@7.26.9(supports-color@8.1.1))(supports-color@8.1.1):
     dependencies:
-      '@babel/core': 7.26.9
-      '@babel/helper-define-polyfill-provider': 0.6.3(@babel/core@7.26.9)
+      '@babel/core': 7.26.9(supports-color@8.1.1)
+      '@babel/helper-define-polyfill-provider': 0.6.3(@babel/core@7.26.9(supports-color@8.1.1))(supports-color@8.1.1)
       core-js-compat: 3.40.0
     transitivePeerDependencies:
       - supports-color
 
-  babel-plugin-polyfill-regenerator@0.6.3(@babel/core@7.26.9):
+  babel-plugin-polyfill-regenerator@0.6.3(@babel/core@7.26.9(supports-color@8.1.1))(supports-color@8.1.1):
     dependencies:
-      '@babel/core': 7.26.9
-      '@babel/helper-define-polyfill-provider': 0.6.3(@babel/core@7.26.9)
+      '@babel/core': 7.26.9(supports-color@8.1.1)
+      '@babel/helper-define-polyfill-provider': 0.6.3(@babel/core@7.26.9(supports-color@8.1.1))(supports-color@8.1.1)
     transitivePeerDependencies:
       - supports-color
 
-  babel-plugin-styled-components@2.1.4(@babel/core@7.26.9)(styled-components@5.3.11(@babel/core@7.26.9)(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1))(supports-color@5.5.0):
+  babel-plugin-styled-components@2.1.4(@babel/core@7.26.9(supports-color@8.1.1))(styled-components@5.3.11(@babel/core@7.26.9(supports-color@8.1.1))(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1))(supports-color@5.5.0):
     dependencies:
       '@babel/helper-annotate-as-pure': 7.25.9
       '@babel/helper-module-imports': 7.25.9(supports-color@5.5.0)
-      '@babel/plugin-syntax-jsx': 7.25.9(@babel/core@7.26.9)
+      '@babel/plugin-syntax-jsx': 7.25.9(@babel/core@7.26.9(supports-color@8.1.1))
       lodash: 4.17.21
       picomatch: 2.3.1
-      styled-components: 5.3.11(@babel/core@7.26.9)(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1)
+      styled-components: 5.3.11(@babel/core@7.26.9(supports-color@8.1.1))(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1)
     transitivePeerDependencies:
       - '@babel/core'
       - supports-color
@@ -8601,15 +8656,23 @@ snapshots:
 
   debounce@1.2.1: {}
 
-  debug@2.6.9:
+  debug@2.6.9(supports-color@8.1.1):
     dependencies:
       ms: 2.0.0
+    optionalDependencies:
+      supports-color: 8.1.1
 
   debug@4.4.0(supports-color@5.5.0):
     dependencies:
       ms: 2.1.3
     optionalDependencies:
       supports-color: 5.5.0
+
+  debug@4.4.0(supports-color@8.1.1):
+    dependencies:
+      ms: 2.1.3
+    optionalDependencies:
+      supports-color: 8.1.1
 
   decamelize-keys@1.1.1:
     dependencies:
@@ -8880,16 +8943,16 @@ snapshots:
       is-date-object: 1.1.0
       is-symbol: 1.1.1
 
-  esbuild-register@3.6.0(esbuild@0.21.5):
+  esbuild-register@3.6.0(esbuild@0.21.5)(supports-color@8.1.1):
     dependencies:
-      debug: 4.4.0(supports-color@5.5.0)
+      debug: 4.4.0(supports-color@8.1.1)
       esbuild: 0.21.5
     transitivePeerDependencies:
       - supports-color
 
-  esbuild-register@3.6.0(esbuild@0.24.2):
+  esbuild-register@3.6.0(esbuild@0.24.2)(supports-color@8.1.1):
     dependencies:
-      debug: 4.4.0(supports-color@5.5.0)
+      debug: 4.4.0(supports-color@8.1.1)
       esbuild: 0.24.2
     transitivePeerDependencies:
       - supports-color
@@ -8954,11 +9017,11 @@ snapshots:
 
   escape-string-regexp@4.0.0: {}
 
-  eslint-config-prettier@8.10.0(eslint@8.57.1):
+  eslint-config-prettier@8.10.0(eslint@8.57.1(supports-color@5.5.0)):
     dependencies:
-      eslint: 8.57.1
+      eslint: 8.57.1(supports-color@5.5.0)
 
-  eslint-plugin-jsx-a11y@6.10.2(eslint@8.57.1):
+  eslint-plugin-jsx-a11y@6.10.2(eslint@8.57.1(supports-color@5.5.0)):
     dependencies:
       aria-query: 5.3.2
       array-includes: 3.1.8
@@ -8968,7 +9031,7 @@ snapshots:
       axobject-query: 4.1.0
       damerau-levenshtein: 1.0.8
       emoji-regex: 9.2.2
-      eslint: 8.57.1
+      eslint: 8.57.1(supports-color@5.5.0)
       hasown: 2.0.2
       jsx-ast-utils: 3.3.5
       language-tags: 1.0.9
@@ -8977,19 +9040,19 @@ snapshots:
       safe-regex-test: 1.1.0
       string.prototype.includes: 2.0.1
 
-  eslint-plugin-prettier@4.2.1(eslint-config-prettier@8.10.0(eslint@8.57.1))(eslint@8.57.1)(prettier@2.8.8):
+  eslint-plugin-prettier@4.2.1(eslint-config-prettier@8.10.0(eslint@8.57.1(supports-color@5.5.0)))(eslint@8.57.1(supports-color@5.5.0))(prettier@2.8.8):
     dependencies:
-      eslint: 8.57.1
+      eslint: 8.57.1(supports-color@5.5.0)
       prettier: 2.8.8
       prettier-linter-helpers: 1.0.0
     optionalDependencies:
-      eslint-config-prettier: 8.10.0(eslint@8.57.1)
+      eslint-config-prettier: 8.10.0(eslint@8.57.1(supports-color@5.5.0))
 
-  eslint-plugin-react-hooks@4.6.2(eslint@8.57.1):
+  eslint-plugin-react-hooks@4.6.2(eslint@8.57.1(supports-color@5.5.0)):
     dependencies:
-      eslint: 8.57.1
+      eslint: 8.57.1(supports-color@5.5.0)
 
-  eslint-plugin-react@7.37.4(eslint@8.57.1):
+  eslint-plugin-react@7.37.4(eslint@8.57.1(supports-color@5.5.0)):
     dependencies:
       array-includes: 3.1.8
       array.prototype.findlast: 1.2.5
@@ -8997,7 +9060,7 @@ snapshots:
       array.prototype.tosorted: 1.1.4
       doctrine: 2.1.0
       es-iterator-helpers: 1.2.1
-      eslint: 8.57.1
+      eslint: 8.57.1(supports-color@5.5.0)
       estraverse: 5.3.0
       hasown: 2.0.2
       jsx-ast-utils: 3.3.5
@@ -9025,13 +9088,13 @@ snapshots:
 
   eslint-visitor-keys@3.4.3: {}
 
-  eslint@8.57.1:
+  eslint@8.57.1(supports-color@5.5.0):
     dependencies:
-      '@eslint-community/eslint-utils': 4.4.1(eslint@8.57.1)
+      '@eslint-community/eslint-utils': 4.4.1(eslint@8.57.1(supports-color@5.5.0))
       '@eslint-community/regexpp': 4.12.1
-      '@eslint/eslintrc': 2.1.4
+      '@eslint/eslintrc': 2.1.4(supports-color@5.5.0)
       '@eslint/js': 8.57.1
-      '@humanwhocodes/config-array': 0.13.0
+      '@humanwhocodes/config-array': 0.13.0(supports-color@5.5.0)
       '@humanwhocodes/module-importer': 1.0.1
       '@nodelib/fs.walk': 1.2.8
       '@ungap/structured-clone': 1.3.0
@@ -9205,7 +9268,7 @@ snapshots:
     dependencies:
       tslib: 2.8.1
 
-  follow-redirects@1.15.9(debug@4.4.0):
+  follow-redirects@1.15.9(debug@4.4.0(supports-color@5.5.0)):
     optionalDependencies:
       debug: 4.4.0(supports-color@5.5.0)
 
@@ -9306,21 +9369,21 @@ snapshots:
       hasown: 2.0.2
       math-intrinsics: 1.1.0
 
-  get-it@8.6.7(debug@4.4.0):
+  get-it@8.6.7(debug@4.4.0(supports-color@5.5.0)):
     dependencies:
       '@types/follow-redirects': 1.14.4
       '@types/progress-stream': 2.0.5
       decompress-response: 7.0.0
-      follow-redirects: 1.15.9(debug@4.4.0)
+      follow-redirects: 1.15.9(debug@4.4.0(supports-color@5.5.0))
       is-retry-allowed: 2.2.0
       progress-stream: 2.0.0
       tunnel-agent: 0.6.0
     transitivePeerDependencies:
       - debug
 
-  get-latest-version@5.1.0(debug@4.4.0):
+  get-latest-version@5.1.0(debug@4.4.0(supports-color@5.5.0)):
     dependencies:
-      get-it: 8.6.7(debug@4.4.0)
+      get-it: 8.6.7(debug@4.4.0(supports-color@5.5.0))
       registry-auth-token: 5.1.0
       registry-url: 5.1.0
       semver: 7.7.1
@@ -9359,10 +9422,10 @@ snapshots:
     dependencies:
       resolve-pkg-maps: 1.0.0
 
-  get-uri@2.0.4:
+  get-uri@2.0.4(supports-color@8.1.1):
     dependencies:
       data-uri-to-buffer: 1.2.0
-      debug: 2.6.9
+      debug: 2.6.9(supports-color@8.1.1)
       extend: 3.0.2
       file-uri-to-path: 1.0.0
       ftp: 0.3.10
@@ -9456,9 +9519,9 @@ snapshots:
 
   graphemer@1.4.0: {}
 
-  groq-js@1.15.0:
+  groq-js@1.15.0(supports-color@8.1.1):
     dependencies:
-      debug: 4.4.0(supports-color@5.5.0)
+      debug: 4.4.0(supports-color@8.1.1)
     transitivePeerDependencies:
       - supports-color
 
@@ -9535,17 +9598,31 @@ snapshots:
     dependencies:
       void-elements: 3.1.0
 
-  http-proxy-agent@7.0.2:
+  http-proxy-agent@7.0.2(supports-color@5.5.0):
     dependencies:
       agent-base: 7.1.3
       debug: 4.4.0(supports-color@5.5.0)
     transitivePeerDependencies:
       - supports-color
 
-  https-proxy-agent@7.0.6:
+  http-proxy-agent@7.0.2(supports-color@8.1.1):
+    dependencies:
+      agent-base: 7.1.3
+      debug: 4.4.0(supports-color@8.1.1)
+    transitivePeerDependencies:
+      - supports-color
+
+  https-proxy-agent@7.0.6(supports-color@5.5.0):
     dependencies:
       agent-base: 7.1.3
       debug: 4.4.0(supports-color@5.5.0)
+    transitivePeerDependencies:
+      - supports-color
+
+  https-proxy-agent@7.0.6(supports-color@8.1.1):
+    dependencies:
+      agent-base: 7.1.3
+      debug: 4.4.0(supports-color@8.1.1)
     transitivePeerDependencies:
       - supports-color
 
@@ -9779,10 +9856,10 @@ snapshots:
 
   isobject@3.0.1: {}
 
-  isomorphic-dompurify@2.22.0:
+  isomorphic-dompurify@2.22.0(supports-color@8.1.1):
     dependencies:
       dompurify: 3.2.4
-      jsdom: 26.0.0
+      jsdom: 26.0.0(supports-color@8.1.1)
     transitivePeerDependencies:
       - bufferutil
       - canvas
@@ -9816,11 +9893,11 @@ snapshots:
     dependencies:
       argparse: 2.0.1
 
-  jsdom-global@3.0.2(jsdom@23.2.0):
+  jsdom-global@3.0.2(jsdom@23.2.0(supports-color@5.5.0)):
     dependencies:
-      jsdom: 23.2.0
+      jsdom: 23.2.0(supports-color@5.5.0)
 
-  jsdom@23.2.0:
+  jsdom@23.2.0(supports-color@5.5.0):
     dependencies:
       '@asamuzakjp/dom-selector': 2.0.2
       cssstyle: 4.2.1
@@ -9828,8 +9905,8 @@ snapshots:
       decimal.js: 10.5.0
       form-data: 4.0.2
       html-encoding-sniffer: 4.0.0
-      http-proxy-agent: 7.0.2
-      https-proxy-agent: 7.0.6
+      http-proxy-agent: 7.0.2(supports-color@5.5.0)
+      https-proxy-agent: 7.0.6(supports-color@5.5.0)
       is-potential-custom-element-name: 1.0.1
       parse5: 7.2.1
       rrweb-cssom: 0.6.0
@@ -9848,15 +9925,15 @@ snapshots:
       - supports-color
       - utf-8-validate
 
-  jsdom@26.0.0:
+  jsdom@26.0.0(supports-color@8.1.1):
     dependencies:
       cssstyle: 4.2.1
       data-urls: 5.0.0
       decimal.js: 10.5.0
       form-data: 4.0.2
       html-encoding-sniffer: 4.0.0
-      http-proxy-agent: 7.0.2
-      https-proxy-agent: 7.0.6
+      http-proxy-agent: 7.0.2(supports-color@8.1.1)
+      https-proxy-agent: 7.0.6(supports-color@8.1.1)
       is-potential-custom-element-name: 1.0.1
       nwsapi: 2.2.16
       parse5: 7.2.1
@@ -10788,7 +10865,7 @@ snapshots:
     optionalDependencies:
       '@babel/code-frame': 7.26.2
 
-  rollup-plugin-esbuild@6.2.0(esbuild@0.24.2)(rollup@4.34.8):
+  rollup-plugin-esbuild@6.2.0(esbuild@0.24.2)(rollup@4.34.8)(supports-color@5.5.0):
     dependencies:
       debug: 4.4.0(supports-color@5.5.0)
       es-module-lexer: 1.6.0
@@ -10873,35 +10950,35 @@ snapshots:
 
   safer-buffer@2.1.2: {}
 
-  sanity-naive-html-serializer@3.1.8(@types/react@19.0.10)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sanity@3.76.1(@emotion/is-prop-valid@1.3.1)(@types/babel__core@7.20.5)(@types/node@22.13.4)(@types/react@19.0.10)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(terser@5.39.0)(typescript@5.7.3)(yaml@2.7.0)):
+  sanity-naive-html-serializer@3.1.8(@types/react@19.0.10)(debug@4.4.0(supports-color@5.5.0))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sanity@3.76.1(@emotion/is-prop-valid@1.3.1)(@types/babel__core@7.20.5)(@types/node@22.13.4)(@types/react@19.0.10)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(supports-color@8.1.1)(terser@5.39.0)(typescript@5.7.3)(yaml@2.7.0))(supports-color@8.1.1):
     dependencies:
       '@portabletext/to-html': 2.0.14
-      '@sanity/block-tools': 3.70.0(@types/react@19.0.10)
+      '@sanity/block-tools': 3.70.0(@types/react@19.0.10)(debug@4.4.0(supports-color@5.5.0))
       '@sanity/incompatible-plugin': 1.0.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@sanity/mutator': 3.76.1(@types/react@19.0.10)
-      '@sanity/schema': 3.76.1(@types/react@19.0.10)(debug@4.4.0)
+      '@sanity/mutator': 3.76.1(@types/react@19.0.10)(supports-color@8.1.1)
+      '@sanity/schema': 3.76.1(@types/react@19.0.10)(debug@4.4.0(supports-color@5.5.0))(supports-color@8.1.1)
       react: 18.3.1
-      sanity: 3.76.1(@emotion/is-prop-valid@1.3.1)(@types/babel__core@7.20.5)(@types/node@22.13.4)(@types/react@19.0.10)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(terser@5.39.0)(typescript@5.7.3)(yaml@2.7.0)
+      sanity: 3.76.1(@emotion/is-prop-valid@1.3.1)(@types/babel__core@7.20.5)(@types/node@22.13.4)(@types/react@19.0.10)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(supports-color@8.1.1)(terser@5.39.0)(typescript@5.7.3)(yaml@2.7.0)
     transitivePeerDependencies:
       - '@types/react'
       - debug
       - react-dom
       - supports-color
 
-  sanity-plugin-documents-pane@2.3.0(@emotion/is-prop-valid@1.3.1)(@sanity/ui@2.14.0(@emotion/is-prop-valid@1.3.1)(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1)(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1)))(@types/react@19.0.10)(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1)(sanity@3.76.1(@emotion/is-prop-valid@1.3.1)(@types/babel__core@7.20.5)(@types/node@22.13.4)(@types/react@19.0.10)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(terser@5.39.0)(typescript@5.7.3)(yaml@2.7.0))(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1)):
+  sanity-plugin-documents-pane@2.3.0(@emotion/is-prop-valid@1.3.1)(@sanity/ui@2.14.0(@emotion/is-prop-valid@1.3.1)(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1)(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1)))(@types/react@19.0.10)(debug@4.4.0(supports-color@5.5.0))(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1)(sanity@3.76.1(@emotion/is-prop-valid@1.3.1)(@types/babel__core@7.20.5)(@types/node@22.13.4)(@types/react@19.0.10)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(supports-color@8.1.1)(terser@5.39.0)(typescript@5.7.3)(yaml@2.7.0))(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1)):
     dependencies:
       '@sanity/icons': 2.11.8(react@18.3.1)
       '@sanity/incompatible-plugin': 1.0.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@sanity/ui': 2.14.0(@emotion/is-prop-valid@1.3.1)(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1)(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1))
-      '@sanity/util': 3.76.1(@types/react@19.0.10)(debug@4.4.0)
+      '@sanity/util': 3.76.1(@types/react@19.0.10)(debug@4.4.0(supports-color@5.5.0))
       '@sanity/uuid': 3.0.2
       dlv: 1.1.3
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
       react-fast-compare: 3.2.2
       rxjs: 7.8.1
-      sanity: 3.76.1(@emotion/is-prop-valid@1.3.1)(@types/babel__core@7.20.5)(@types/node@22.13.4)(@types/react@19.0.10)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(terser@5.39.0)(typescript@5.7.3)(yaml@2.7.0)
-      sanity-plugin-utils: 1.6.7(@emotion/is-prop-valid@1.3.1)(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1)(rxjs@7.8.1)(sanity@3.76.1(@emotion/is-prop-valid@1.3.1)(@types/babel__core@7.20.5)(@types/node@22.13.4)(@types/react@19.0.10)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(terser@5.39.0)(typescript@5.7.3)(yaml@2.7.0))(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1))
+      sanity: 3.76.1(@emotion/is-prop-valid@1.3.1)(@types/babel__core@7.20.5)(@types/node@22.13.4)(@types/react@19.0.10)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(supports-color@8.1.1)(terser@5.39.0)(typescript@5.7.3)(yaml@2.7.0)
+      sanity-plugin-utils: 1.6.7(@emotion/is-prop-valid@1.3.1)(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1)(rxjs@7.8.1)(sanity@3.76.1(@emotion/is-prop-valid@1.3.1)(@types/babel__core@7.20.5)(@types/node@22.13.4)(@types/react@19.0.10)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(supports-color@8.1.1)(terser@5.39.0)(typescript@5.7.3)(yaml@2.7.0))(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1))
       styled-components: 6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
     transitivePeerDependencies:
       - '@emotion/is-prop-valid'
@@ -10909,27 +10986,27 @@ snapshots:
       - debug
       - react-is
 
-  sanity-plugin-google-translate@3.0.0(@babel/core@7.26.9)(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1)(sanity@3.76.1(@emotion/is-prop-valid@1.3.1)(@types/babel__core@7.20.5)(@types/node@22.13.4)(@types/react@19.0.10)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(terser@5.39.0)(typescript@5.7.3)(yaml@2.7.0)):
+  sanity-plugin-google-translate@3.0.0(@babel/core@7.26.9(supports-color@8.1.1))(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1)(sanity@3.76.1(@emotion/is-prop-valid@1.3.1)(@types/babel__core@7.20.5)(@types/node@22.13.4)(@types/react@19.0.10)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(supports-color@8.1.1)(terser@5.39.0)(typescript@5.7.3)(yaml@2.7.0)):
     dependencies:
       '@sanity/icons': 2.11.8(react@18.3.1)
       '@sanity/incompatible-plugin': 1.0.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       react: 18.3.1
-      sanity: 3.76.1(@emotion/is-prop-valid@1.3.1)(@types/babel__core@7.20.5)(@types/node@22.13.4)(@types/react@19.0.10)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(terser@5.39.0)(typescript@5.7.3)(yaml@2.7.0)
-      styled-components: 5.3.11(@babel/core@7.26.9)(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1)
+      sanity: 3.76.1(@emotion/is-prop-valid@1.3.1)(@types/babel__core@7.20.5)(@types/node@22.13.4)(@types/react@19.0.10)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(supports-color@8.1.1)(terser@5.39.0)(typescript@5.7.3)(yaml@2.7.0)
+      styled-components: 5.3.11(@babel/core@7.26.9(supports-color@8.1.1))(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1)
     transitivePeerDependencies:
       - '@babel/core'
       - react-dom
       - react-is
 
-  sanity-plugin-iframe-pane@3.2.1(@emotion/is-prop-valid@1.3.1)(@sanity/client@6.28.0)(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1)(sanity@3.76.1(@emotion/is-prop-valid@1.3.1)(@types/babel__core@7.20.5)(@types/node@22.13.4)(@types/react@19.0.10)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(terser@5.39.0)(typescript@5.7.3)(yaml@2.7.0))(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1)):
+  sanity-plugin-iframe-pane@3.2.1(@emotion/is-prop-valid@1.3.1)(@sanity/client@6.28.0(debug@4.4.0(supports-color@5.5.0)))(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1)(sanity@3.76.1(@emotion/is-prop-valid@1.3.1)(@types/babel__core@7.20.5)(@types/node@22.13.4)(@types/react@19.0.10)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(supports-color@8.1.1)(terser@5.39.0)(typescript@5.7.3)(yaml@2.7.0))(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1)):
     dependencies:
       '@sanity/icons': 3.6.0(react@18.3.1)
       '@sanity/incompatible-plugin': 1.0.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@sanity/preview-url-secret': 2.1.4(@sanity/client@6.28.0(debug@4.4.0))
+      '@sanity/preview-url-secret': 2.1.4(@sanity/client@6.28.0(debug@4.4.0(supports-color@5.5.0)))
       '@sanity/ui': 2.14.0(@emotion/is-prop-valid@1.3.1)(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1)(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1))
       framer-motion: 12.4.5(@emotion/is-prop-valid@1.3.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       react: 18.3.1
-      sanity: 3.76.1(@emotion/is-prop-valid@1.3.1)(@types/babel__core@7.20.5)(@types/node@22.13.4)(@types/react@19.0.10)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(terser@5.39.0)(typescript@5.7.3)(yaml@2.7.0)
+      sanity: 3.76.1(@emotion/is-prop-valid@1.3.1)(@types/babel__core@7.20.5)(@types/node@22.13.4)(@types/react@19.0.10)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(supports-color@8.1.1)(terser@5.39.0)(typescript@5.7.3)(yaml@2.7.0)
       styled-components: 6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       suspend-react: 0.1.3(react@18.3.1)
     transitivePeerDependencies:
@@ -10938,16 +11015,16 @@ snapshots:
       - react-dom
       - react-is
 
-  sanity-plugin-internationalized-array@3.1.1(@emotion/is-prop-valid@1.3.1)(@types/react@19.0.10)(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1)(sanity@3.76.1(@emotion/is-prop-valid@1.3.1)(@types/babel__core@7.20.5)(@types/node@22.13.4)(@types/react@19.0.10)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(terser@5.39.0)(typescript@5.7.3)(yaml@2.7.0))(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1)):
+  sanity-plugin-internationalized-array@3.1.1(@emotion/is-prop-valid@1.3.1)(@types/react@19.0.10)(debug@4.4.0(supports-color@5.5.0))(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1)(sanity@3.76.1(@emotion/is-prop-valid@1.3.1)(@types/babel__core@7.20.5)(@types/node@22.13.4)(@types/react@19.0.10)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(supports-color@8.1.1)(terser@5.39.0)(typescript@5.7.3)(yaml@2.7.0))(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1)):
     dependencies:
       '@sanity/icons': 3.6.0(react@18.3.1)
       '@sanity/incompatible-plugin': 1.0.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@sanity/language-filter': 4.0.3(@emotion/is-prop-valid@1.3.1)(@types/react@19.0.10)(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1)(sanity@3.76.1(@emotion/is-prop-valid@1.3.1)(@types/babel__core@7.20.5)(@types/node@22.13.4)(@types/react@19.0.10)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(terser@5.39.0)(typescript@5.7.3)(yaml@2.7.0))(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1))
+      '@sanity/language-filter': 4.0.3(@emotion/is-prop-valid@1.3.1)(@types/react@19.0.10)(debug@4.4.0(supports-color@5.5.0))(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1)(sanity@3.76.1(@emotion/is-prop-valid@1.3.1)(@types/babel__core@7.20.5)(@types/node@22.13.4)(@types/react@19.0.10)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(supports-color@8.1.1)(terser@5.39.0)(typescript@5.7.3)(yaml@2.7.0))(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1))
       '@sanity/ui': 2.14.0(@emotion/is-prop-valid@1.3.1)(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1)(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1))
       fast-deep-equal: 3.1.3
       lodash: 4.17.21
       react: 18.3.1
-      sanity: 3.76.1(@emotion/is-prop-valid@1.3.1)(@types/babel__core@7.20.5)(@types/node@22.13.4)(@types/react@19.0.10)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(terser@5.39.0)(typescript@5.7.3)(yaml@2.7.0)
+      sanity: 3.76.1(@emotion/is-prop-valid@1.3.1)(@types/babel__core@7.20.5)(@types/node@22.13.4)(@types/react@19.0.10)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(supports-color@8.1.1)(terser@5.39.0)(typescript@5.7.3)(yaml@2.7.0)
       styled-components: 6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       suspend-react: 0.1.3(react@18.3.1)
     transitivePeerDependencies:
@@ -10957,24 +11034,24 @@ snapshots:
       - react-dom
       - react-is
 
-  sanity-plugin-schema-visualizer@1.1.1(@sanity/ui@2.14.0(@emotion/is-prop-valid@1.3.1)(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1)(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1)))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sanity@3.76.1(@emotion/is-prop-valid@1.3.1)(@types/babel__core@7.20.5)(@types/node@22.13.4)(@types/react@19.0.10)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(terser@5.39.0)(typescript@5.7.3)(yaml@2.7.0))(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1)):
+  sanity-plugin-schema-visualizer@1.1.1(@sanity/ui@2.14.0(@emotion/is-prop-valid@1.3.1)(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1)(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1)))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sanity@3.76.1(@emotion/is-prop-valid@1.3.1)(@types/babel__core@7.20.5)(@types/node@22.13.4)(@types/react@19.0.10)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(supports-color@8.1.1)(terser@5.39.0)(typescript@5.7.3)(yaml@2.7.0))(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1)):
     dependencies:
       '@sanity/incompatible-plugin': 1.0.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@sanity/ui': 2.14.0(@emotion/is-prop-valid@1.3.1)(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1)(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1))
       framer-motion: 10.18.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       react: 18.3.1
       react-xarrows: 2.0.2(react@18.3.1)
-      sanity: 3.76.1(@emotion/is-prop-valid@1.3.1)(@types/babel__core@7.20.5)(@types/node@22.13.4)(@types/react@19.0.10)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(terser@5.39.0)(typescript@5.7.3)(yaml@2.7.0)
+      sanity: 3.76.1(@emotion/is-prop-valid@1.3.1)(@types/babel__core@7.20.5)(@types/node@22.13.4)(@types/react@19.0.10)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(supports-color@8.1.1)(terser@5.39.0)(typescript@5.7.3)(yaml@2.7.0)
       styled-components: 6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
     transitivePeerDependencies:
       - react-dom
 
-  sanity-plugin-transifex@4.0.0(@sanity/ui@2.14.0(@emotion/is-prop-valid@1.3.1)(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1)(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1)))(@types/react@19.0.10)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sanity@3.76.1(@emotion/is-prop-valid@1.3.1)(@types/babel__core@7.20.5)(@types/node@22.13.4)(@types/react@19.0.10)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(terser@5.39.0)(typescript@5.7.3)(yaml@2.7.0))(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1)):
+  sanity-plugin-transifex@4.0.0(@sanity/ui@2.14.0(@emotion/is-prop-valid@1.3.1)(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1)(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1)))(@types/react@19.0.10)(debug@4.4.0(supports-color@5.5.0))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sanity@3.76.1(@emotion/is-prop-valid@1.3.1)(@types/babel__core@7.20.5)(@types/node@22.13.4)(@types/react@19.0.10)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(supports-color@8.1.1)(terser@5.39.0)(typescript@5.7.3)(yaml@2.7.0))(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(supports-color@8.1.1):
     dependencies:
       '@sanity/incompatible-plugin': 1.0.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       react: 18.3.1
-      sanity: 3.76.1(@emotion/is-prop-valid@1.3.1)(@types/babel__core@7.20.5)(@types/node@22.13.4)(@types/react@19.0.10)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(terser@5.39.0)(typescript@5.7.3)(yaml@2.7.0)
-      sanity-translations-tab: 4.3.0(@sanity/ui@2.14.0(@emotion/is-prop-valid@1.3.1)(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1)(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1)))(@types/react@19.0.10)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sanity@3.76.1(@emotion/is-prop-valid@1.3.1)(@types/babel__core@7.20.5)(@types/node@22.13.4)(@types/react@19.0.10)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(terser@5.39.0)(typescript@5.7.3)(yaml@2.7.0))(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1))
+      sanity: 3.76.1(@emotion/is-prop-valid@1.3.1)(@types/babel__core@7.20.5)(@types/node@22.13.4)(@types/react@19.0.10)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(supports-color@8.1.1)(terser@5.39.0)(typescript@5.7.3)(yaml@2.7.0)
+      sanity-translations-tab: 4.3.0(@sanity/ui@2.14.0(@emotion/is-prop-valid@1.3.1)(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1)(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1)))(@types/react@19.0.10)(debug@4.4.0(supports-color@5.5.0))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sanity@3.76.1(@emotion/is-prop-valid@1.3.1)(@types/babel__core@7.20.5)(@types/node@22.13.4)(@types/react@19.0.10)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(supports-color@8.1.1)(terser@5.39.0)(typescript@5.7.3)(yaml@2.7.0))(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(supports-color@8.1.1)
     transitivePeerDependencies:
       - '@sanity/ui'
       - '@types/react'
@@ -10983,7 +11060,7 @@ snapshots:
       - styled-components
       - supports-color
 
-  sanity-plugin-utils@1.6.7(@emotion/is-prop-valid@1.3.1)(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1)(rxjs@7.8.1)(sanity@3.76.1(@emotion/is-prop-valid@1.3.1)(@types/babel__core@7.20.5)(@types/node@22.13.4)(@types/react@19.0.10)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(terser@5.39.0)(typescript@5.7.3)(yaml@2.7.0))(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1)):
+  sanity-plugin-utils@1.6.7(@emotion/is-prop-valid@1.3.1)(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1)(rxjs@7.8.1)(sanity@3.76.1(@emotion/is-prop-valid@1.3.1)(@types/babel__core@7.20.5)(@types/node@22.13.4)(@types/react@19.0.10)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(supports-color@8.1.1)(terser@5.39.0)(typescript@5.7.3)(yaml@2.7.0))(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1)):
     dependencies:
       '@sanity/icons': 3.6.0(react@18.3.1)
       '@sanity/incompatible-plugin': 1.0.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -10991,65 +11068,65 @@ snapshots:
       react: 18.3.1
       react-fast-compare: 3.2.2
       rxjs: 7.8.1
-      sanity: 3.76.1(@emotion/is-prop-valid@1.3.1)(@types/babel__core@7.20.5)(@types/node@22.13.4)(@types/react@19.0.10)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(terser@5.39.0)(typescript@5.7.3)(yaml@2.7.0)
+      sanity: 3.76.1(@emotion/is-prop-valid@1.3.1)(@types/babel__core@7.20.5)(@types/node@22.13.4)(@types/react@19.0.10)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(supports-color@8.1.1)(terser@5.39.0)(typescript@5.7.3)(yaml@2.7.0)
       styled-components: 6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
     transitivePeerDependencies:
       - '@emotion/is-prop-valid'
       - react-dom
       - react-is
 
-  sanity-translations-tab@4.3.0(@sanity/ui@2.14.0(@emotion/is-prop-valid@1.3.1)(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1)(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1)))(@types/react@19.0.10)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sanity@3.76.1(@emotion/is-prop-valid@1.3.1)(@types/babel__core@7.20.5)(@types/node@22.13.4)(@types/react@19.0.10)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(terser@5.39.0)(typescript@5.7.3)(yaml@2.7.0))(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1)):
+  sanity-translations-tab@4.3.0(@sanity/ui@2.14.0(@emotion/is-prop-valid@1.3.1)(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1)(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1)))(@types/react@19.0.10)(debug@4.4.0(supports-color@5.5.0))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sanity@3.76.1(@emotion/is-prop-valid@1.3.1)(@types/babel__core@7.20.5)(@types/node@22.13.4)(@types/react@19.0.10)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(supports-color@8.1.1)(terser@5.39.0)(typescript@5.7.3)(yaml@2.7.0))(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(supports-color@8.1.1):
     dependencies:
       '@sanity/incompatible-plugin': 1.0.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@sanity/ui': 2.14.0(@emotion/is-prop-valid@1.3.1)(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1)(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1))
-      '@sanity/util': 3.76.1(@types/react@19.0.10)(debug@4.4.0)
+      '@sanity/util': 3.76.1(@types/react@19.0.10)(debug@4.4.0(supports-color@5.5.0))
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
-      sanity: 3.76.1(@emotion/is-prop-valid@1.3.1)(@types/babel__core@7.20.5)(@types/node@22.13.4)(@types/react@19.0.10)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(terser@5.39.0)(typescript@5.7.3)(yaml@2.7.0)
-      sanity-naive-html-serializer: 3.1.8(@types/react@19.0.10)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sanity@3.76.1(@emotion/is-prop-valid@1.3.1)(@types/babel__core@7.20.5)(@types/node@22.13.4)(@types/react@19.0.10)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(terser@5.39.0)(typescript@5.7.3)(yaml@2.7.0))
+      sanity: 3.76.1(@emotion/is-prop-valid@1.3.1)(@types/babel__core@7.20.5)(@types/node@22.13.4)(@types/react@19.0.10)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(supports-color@8.1.1)(terser@5.39.0)(typescript@5.7.3)(yaml@2.7.0)
+      sanity-naive-html-serializer: 3.1.8(@types/react@19.0.10)(debug@4.4.0(supports-color@5.5.0))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sanity@3.76.1(@emotion/is-prop-valid@1.3.1)(@types/babel__core@7.20.5)(@types/node@22.13.4)(@types/react@19.0.10)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(supports-color@8.1.1)(terser@5.39.0)(typescript@5.7.3)(yaml@2.7.0))(supports-color@8.1.1)
       styled-components: 6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
     transitivePeerDependencies:
       - '@types/react'
       - debug
       - supports-color
 
-  sanity@3.76.1(@emotion/is-prop-valid@1.3.1)(@types/babel__core@7.20.5)(@types/node@22.13.4)(@types/react@19.0.10)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(terser@5.39.0)(typescript@5.7.3)(yaml@2.7.0):
+  sanity@3.76.1(@emotion/is-prop-valid@1.3.1)(@types/babel__core@7.20.5)(@types/node@22.13.4)(@types/react@19.0.10)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(supports-color@8.1.1)(terser@5.39.0)(typescript@5.7.3)(yaml@2.7.0):
     dependencies:
       '@dnd-kit/core': 6.3.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@dnd-kit/modifiers': 6.0.1(@dnd-kit/core@6.3.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)
       '@dnd-kit/sortable': 7.0.2(@dnd-kit/core@6.3.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)
       '@dnd-kit/utilities': 3.2.2(react@18.3.1)
       '@juggle/resize-observer': 3.4.0
-      '@portabletext/block-tools': 1.1.8(@sanity/types@3.76.1(@types/react@19.0.10)(debug@4.4.0))(@types/react@19.0.10)
-      '@portabletext/editor': 1.34.1(@sanity/schema@3.76.1(@types/react@19.0.10)(debug@4.4.0))(@sanity/types@3.76.1(@types/react@19.0.10)(debug@4.4.0))(@types/react@19.0.10)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(rxjs@7.8.1)
+      '@portabletext/block-tools': 1.1.8(@sanity/types@3.76.1(@types/react@19.0.10)(debug@4.4.0(supports-color@5.5.0)))(@types/react@19.0.10)
+      '@portabletext/editor': 1.34.1(@sanity/schema@3.76.1(@types/react@19.0.10)(debug@4.4.0(supports-color@5.5.0))(supports-color@8.1.1))(@sanity/types@3.76.1(@types/react@19.0.10)(debug@4.4.0(supports-color@5.5.0)))(@types/react@19.0.10)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(rxjs@7.8.1)(supports-color@5.5.0)
       '@portabletext/react': 3.2.1(react@18.3.1)
       '@portabletext/toolkit': 2.0.17
       '@rexxars/react-json-inspector': 9.0.1(react@18.3.1)
       '@sanity/asset-utils': 2.2.1
       '@sanity/bifur-client': 0.4.1
-      '@sanity/cli': 3.76.1(@types/babel__core@7.20.5)(@types/node@22.13.4)(@types/react@19.0.10)(react@18.3.1)(typescript@5.7.3)
-      '@sanity/client': 6.28.0(debug@4.4.0)
+      '@sanity/cli': 3.76.1(@types/babel__core@7.20.5)(@types/node@22.13.4)(@types/react@19.0.10)(react@18.3.1)(supports-color@8.1.1)(typescript@5.7.3)
+      '@sanity/client': 6.28.0(debug@4.4.0(supports-color@5.5.0))
       '@sanity/color': 3.0.6
       '@sanity/comlink': 3.0.1
       '@sanity/diff': 3.76.1
       '@sanity/diff-match-patch': 3.2.0
       '@sanity/diff-patch': 5.0.0
       '@sanity/eventsource': 5.0.2
-      '@sanity/export': 3.42.2(@types/react@19.0.10)
+      '@sanity/export': 3.42.2(@types/react@19.0.10)(supports-color@5.5.0)
       '@sanity/icons': 3.6.0(react@18.3.1)
       '@sanity/image-url': 1.1.0
-      '@sanity/import': 3.37.9(@types/react@19.0.10)
-      '@sanity/insert-menu': 1.1.2(@emotion/is-prop-valid@1.3.1)(@sanity/types@3.76.1(@types/react@19.0.10)(debug@4.4.0))(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1)(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1))
+      '@sanity/import': 3.37.9(@types/react@19.0.10)(supports-color@8.1.1)
+      '@sanity/insert-menu': 1.1.2(@emotion/is-prop-valid@1.3.1)(@sanity/types@3.76.1(@types/react@19.0.10)(debug@4.4.0(supports-color@5.5.0)))(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1)(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1))
       '@sanity/logos': 2.1.13(@sanity/color@3.0.6)(react@18.3.1)
-      '@sanity/migrate': 3.76.1(@types/react@19.0.10)
-      '@sanity/mutator': 3.76.1(@types/react@19.0.10)
-      '@sanity/presentation-comlink': 1.0.7(@sanity/client@6.28.0(debug@4.4.0))(@sanity/types@3.76.1(@types/react@19.0.10)(debug@4.4.0))
-      '@sanity/preview-url-secret': 2.1.4(@sanity/client@6.28.0(debug@4.4.0))
-      '@sanity/schema': 3.76.1(@types/react@19.0.10)(debug@4.4.0)
+      '@sanity/migrate': 3.76.1(@types/react@19.0.10)(supports-color@8.1.1)
+      '@sanity/mutator': 3.76.1(@types/react@19.0.10)(supports-color@8.1.1)
+      '@sanity/presentation-comlink': 1.0.7(@sanity/client@6.28.0(debug@4.4.0(supports-color@5.5.0)))(@sanity/types@3.76.1(@types/react@19.0.10)(debug@4.4.0(supports-color@5.5.0)))
+      '@sanity/preview-url-secret': 2.1.4(@sanity/client@6.28.0(debug@4.4.0(supports-color@5.5.0)))
+      '@sanity/schema': 3.76.1(@types/react@19.0.10)(debug@4.4.0(supports-color@5.5.0))(supports-color@8.1.1)
       '@sanity/telemetry': 0.7.9(react@18.3.1)
-      '@sanity/types': 3.76.1(@types/react@19.0.10)(debug@4.4.0)
+      '@sanity/types': 3.76.1(@types/react@19.0.10)(debug@4.4.0(supports-color@5.5.0))
       '@sanity/ui': 2.14.0(@emotion/is-prop-valid@1.3.1)(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1)(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1))
-      '@sanity/util': 3.76.1(@types/react@19.0.10)(debug@4.4.0)
+      '@sanity/util': 3.76.1(@types/react@19.0.10)(debug@4.4.0(supports-color@5.5.0))
       '@sanity/uuid': 3.0.2
       '@sentry/react': 8.55.0(react@18.3.1)
       '@tanstack/react-table': 8.21.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -11059,7 +11136,7 @@ snapshots:
       '@types/speakingurl': 13.0.6
       '@types/tar-stream': 3.1.3
       '@types/use-sync-external-store': 0.0.6
-      '@vitejs/plugin-react': 4.3.4(vite@6.1.1(@types/node@22.13.4)(terser@5.39.0)(yaml@2.7.0))
+      '@vitejs/plugin-react': 4.3.4(supports-color@8.1.1)(vite@6.1.1(@types/node@22.13.4)(terser@5.39.0)(yaml@2.7.0))
       archiver: 7.0.1
       arrify: 2.0.1
       async-mutex: 0.4.1
@@ -11073,22 +11150,22 @@ snapshots:
       date-fns: 2.30.0
       debug: 4.4.0(supports-color@5.5.0)
       esbuild: 0.21.5
-      esbuild-register: 3.6.0(esbuild@0.21.5)
+      esbuild-register: 3.6.0(esbuild@0.21.5)(supports-color@8.1.1)
       execa: 2.1.0
       exif-component: 1.0.1
       fast-deep-equal: 3.1.3
       form-data: 4.0.2
       framer-motion: 12.4.5(@emotion/is-prop-valid@1.3.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      get-it: 8.6.7(debug@4.4.0)
+      get-it: 8.6.7(debug@4.4.0(supports-color@5.5.0))
       get-random-values-esm: 1.0.2
-      groq-js: 1.15.0
+      groq-js: 1.15.0(supports-color@8.1.1)
       history: 5.3.0
       i18next: 23.16.8
       import-fresh: 3.3.1
       is-hotkey-esm: 1.0.0
-      isomorphic-dompurify: 2.22.0
-      jsdom: 23.2.0
-      jsdom-global: 3.0.2(jsdom@23.2.0)
+      isomorphic-dompurify: 2.22.0(supports-color@8.1.1)
+      jsdom: 23.2.0(supports-color@5.5.0)
+      jsdom-global: 3.0.2(jsdom@23.2.0(supports-color@5.5.0))
       json-lexer: 1.2.0
       json-reduce: 3.0.0
       json5: 2.2.3
@@ -11139,7 +11216,7 @@ snapshots:
       use-effect-event: 1.0.2(react@18.3.1)
       use-hot-module-reload: 2.0.0(react@18.3.1)
       use-sync-external-store: 1.4.0(react@18.3.1)
-      uuid: 11.1.0
+      uuid: 11.1.1
       valibot: 0.31.1
       vite: 6.1.1(@types/node@22.13.4)(terser@5.39.0)(yaml@2.7.0)
       yargs: 17.7.2
@@ -11450,14 +11527,14 @@ snapshots:
 
   style-mod@4.1.2: {}
 
-  styled-components@5.3.11(@babel/core@7.26.9)(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1):
+  styled-components@5.3.11(@babel/core@7.26.9(supports-color@8.1.1))(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1):
     dependencies:
       '@babel/helper-module-imports': 7.25.9(supports-color@5.5.0)
       '@babel/traverse': 7.26.9(supports-color@5.5.0)
       '@emotion/is-prop-valid': 1.3.1
       '@emotion/stylis': 0.8.5
       '@emotion/unitless': 0.7.5
-      babel-plugin-styled-components: 2.1.4(@babel/core@7.26.9)(styled-components@5.3.11(@babel/core@7.26.9)(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1))(supports-color@5.5.0)
+      babel-plugin-styled-components: 2.1.4(@babel/core@7.26.9(supports-color@8.1.1))(styled-components@5.3.11(@babel/core@7.26.9(supports-color@8.1.1))(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1))(supports-color@5.5.0)
       css-to-react-native: 3.2.0
       hoist-non-react-statics: 3.3.2
       react: 18.3.1
@@ -11821,7 +11898,7 @@ snapshots:
 
   util-deprecate@1.0.2: {}
 
-  uuid@11.1.0: {}
+  uuid@11.1.1: {}
 
   uuid@8.3.2: {}
 
